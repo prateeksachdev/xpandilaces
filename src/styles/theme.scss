@@ -1,41 +1,108 @@
 @charset 'UTF-8';
 
 /**
- * [replace with theme name] | Built with Slate
+ * XPAND | Built with Slate
  */
-@import '~normalize.css/normalize';
+$gap: 0;
 
-@import '~bulma/bulma';
+@import "~bulma/sass/utilities/initial-variables.sass";
+$navbar-breakpoint: $tablet;
+@import "~bulma/bulma";
+@import "fonts";
 
-// Settings
-@import './variables';
+.navbar-item img {
+  max-height: 35px;
+}
 
-// Tools
-@import './tools/mixins';
-@import './tools/functions';
+.navbar {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
+  .announcement {
+    background-color: #ffd828;
 
-// Core
-@import './core/forms';
-@import './core/helpers';
-@import './core/layout';
-@import './core/media';
-@import './core/responsive-tables';
-@import './core/rte';
-@import './core/typography';
+    .text-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
 
-// Components
-@import './components/buttons';
-@import './components/hero-banner';
-@import './components/icons';
-@import './components/placeholders';
-@import './components/responsive-images';
+      &:first-child {
+        margin-right: 30px;
+      }
 
-// Sections
-@import './sections/blog-posts';
-@import './sections/collection-list';
-@import './sections/featured-collection';
-@import './sections/image-with-text';
+      @media screen and (max-width: $tablet) {
+        height: 20px;
+        display: flex;
+      }
+    }
 
-// Templates
-@import './templates/gift_card';
-@import './templates/product';
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: white;
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    .announcement-icon {
+      height: 17px;
+      margin-right: 8px;
+
+      @media screen and (max-width: $tablet) {
+        display: none;
+      }
+    }
+
+    p {
+      display: inline;
+      font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+      margin-bottom: 0;
+      letter-spacing: 0;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  & > .container .navbar-brand {
+    @media screen and (min-width: $tablet) {
+      margin-left: 0px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-left: -.75rem;
+    }
+  }
+
+  .navbar-brand, .navbar-menu {
+    font-family: "neuzeitgroteskblack";
+    font-size: 17px;
+
+    .navbar-item {
+      color: #606060;
+    }
+  }
+
+  .navbar-brand .navbar-item.cta {
+    margin-left: 60px;
+  }
+
+  .navbar-menu {
+    margin-left: 60px;
+  }
+}
+
+.rows {
+  flex-wrap: wrap;
+
+  .row {
+    width: 100%;
+  }
+}

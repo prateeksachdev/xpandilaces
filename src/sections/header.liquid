@@ -10,7 +10,7 @@
   Theme Store optional settings
   - Home page only: only shows on the home page
 {%- endcomment -%}
-<section data-section-id="{{ section.id }}" data-section-type="header">
+<nav class="navbar is-fixed-top rows" role="navigation" data-section-id="{{ section.id }}" data-section-type="header">
   {%- if section.settings.announcement_bar_enabled -%}
     <div>
       {%- if section.settings.announcement_bar_home_page_only == false or template.name == 'index' -%}
@@ -25,7 +25,44 @@
     </div>
   {%- endif -%}
 
-  <header role="banner">
+  {%- if section.settings.announcement_bar_enabled -%}
+    <div class="row announcement">
+      <div class="container has-text-centered">
+        <div class="text-wrap">
+          <img class="announcement-icon" src="{{ 'box.svg' | asset_url }}">
+          {{ section.settings.shipping_text }}
+        </div>
+
+        <div class="text-wrap">
+          <i class="announcement-icon fa fa-heart"></i>
+          {{ section.settings.promo_text }}
+        </div>
+      </div>
+
+      <a href="javascript:;" class="close">
+        <i class="fa fa-times"></i>
+      </a>
+    </div>
+  {%- endif -%}
+
+  <div class="container row">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{ shop.url }}">
+        <img src="{{ section.settings.logo | img_url: '200x' }}">
+      </a>
+
+      <a class="navbar-item cta" href="#">Shop Products</a>
+    </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="#">Reviews</a>
+        <a class="navbar-item" href="#">How it works</a>
+      </div>
+    </div>
+  </div>
+
+<!--   <header role="banner">
     {% if template.name == 'index' %}
       <h1>
     {% else %}
@@ -124,8 +161,8 @@
         {% endif %}
       {% endfor %}
     </ul>
-  </nav>
-</section>
+  </nav> -->
+</nav>
 
 {% if section.settings.logo != blank %}
   <style>
@@ -142,13 +179,13 @@
     "settings": [
       {
         "type": "header",
-        "content": "Announcement bar"
+        "content": "Announcement Bar"
       },
       {
         "type": "checkbox",
         "id": "announcement_bar_enabled",
-        "label": "Show announcement",
-        "default": false
+        "label": "Show Announcement Bar",
+        "default": true
       },
       {
         "type": "checkbox",
@@ -157,10 +194,14 @@
         "default": true
       },
       {
-        "type": "text",
-        "id": "announcement_bar_text",
-        "label": "Announcement text",
-        "default": "Announce something here"
+        "type": "richtext",
+        "id": "shipping_text",
+        "label": "Shipping Text"
+      },
+      {
+        "type": "richtext",
+        "id": "promo_text",
+        "label": "Promo Text"
       },
       {
         "type": "url",
@@ -176,16 +217,6 @@
         "type": "image_picker",
         "id": "logo",
         "label": "Logo image"
-      },
-      {
-        "type": "range",
-        "id": "logo_max_width",
-        "min": 50,
-        "max": 450,
-        "step": 10,
-        "unit": "px",
-        "label": "Custom logo width",
-        "default": 250
       },
       {
         "type": "link_list",
