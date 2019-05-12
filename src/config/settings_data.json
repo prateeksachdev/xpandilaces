@@ -84,12 +84,12 @@
         "type": "header",
         "settings": {
           "announcement_bar_enabled": true,
-          "announcement_bar_home_page_only": true,
           "shipping_text": "<p><strong>Free Shipping when you order 4 or more<\/strong><\/p>",
           "promo_text": "<p><strong>3 for $25 |&nbsp;6 for $35&nbsp;WITH&nbsp;PROMO CODE:&nbsp;<\/strong><em>6FOR35<\/em><\/p>",
-          "announcement_bar_link": "",
           "logo": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
-          "menu": "main-menu"
+          "primary_menu": "new-main-menu-2",
+          "secondary_menu": "new-second-menu-2",
+          "mobile_menu": "new-mobile-menu-2"
         }
       },
       "footer": {

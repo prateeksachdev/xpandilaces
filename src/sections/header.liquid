@@ -12,20 +12,6 @@
 {%- endcomment -%}
 <nav class="navbar is-fixed-top rows" role="navigation" data-section-id="{{ section.id }}" data-section-type="header">
   {%- if section.settings.announcement_bar_enabled -%}
-    <div>
-      {%- if section.settings.announcement_bar_home_page_only == false or template.name == 'index' -%}
-        {%- if section.settings.announcement_bar_link != blank -%}
-          <a href="{{ section.settings.announcement_bar_link }}">
-            {{ section.settings.announcement_bar_text | escape }}
-          </a>
-        {%- else -%}
-          <p>{{ section.settings.announcement_bar_text | escape }}</p>
-        {%- endif -%}
-      {%- endif -%}
-    </div>
-  {%- endif -%}
-
-  {%- if section.settings.announcement_bar_enabled -%}
     <div class="row announcement">
       <div class="container has-text-centered">
         <div class="text-wrap">
@@ -45,22 +31,98 @@
     </div>
   {%- endif -%}
 
-  <div class="container row">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="{{ shop.url }}">
-        <img src="{{ section.settings.logo | img_url: '200x' }}">
-      </a>
+  <div class="row menu">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item logo" href="{{ shop.url }}">
+          <img src="{{ section.settings.logo | img_url: '200x' }}">
+        </a>
 
-      <a class="navbar-item cta" href="#">Shop Products</a>
-    </div>
+        <a class="navbar-item mobile" href="javascript:;">
+          SHOP
+          <span class="icon-down-arrow">
+        </a>
+      </div>
 
-    <div class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="#">Reviews</a>
-        <a class="navbar-item" href="#">How it works</a>
+      <div class="navbar-menu primary">
+        <div class="navbar-start">
+          {% for link in linklists[section.settings.primary_menu].links %}
+            <a class="navbar-item" href="{{ link.url }}">
+              {{ link.title }}
+              <span class="icon-down-arrow">
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="navbar-menu secondary">
+        <div class="navbar-start">
+          {% for link in linklists[section.settings.secondary_menu].links %}
+            <a class="navbar-item" href="{{ link.url }}">{{ link.title }}</a>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="row drop-menu">
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+  </div>
+
+<!--   <div class="container row mobile-menu" style="opacity: 0.95;">
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+  </div> -->
 
 <!--   <header role="banner">
     {% if template.name == 'index' %}
@@ -188,12 +250,6 @@
         "default": true
       },
       {
-        "type": "checkbox",
-        "id": "announcement_bar_home_page_only",
-        "label": "Show on home page only",
-        "default": true
-      },
-      {
         "type": "richtext",
         "id": "shipping_text",
         "label": "Shipping Text"
@@ -202,12 +258,6 @@
         "type": "richtext",
         "id": "promo_text",
         "label": "Promo Text"
-      },
-      {
-        "type": "url",
-        "id": "announcement_bar_link",
-        "label": "Announcement link",
-        "info": "Optional"
       },
       {
         "type": "header",
@@ -220,9 +270,18 @@
       },
       {
         "type": "link_list",
-        "id": "menu",
-        "label": "Menu",
-        "default": "main-menu"
+        "id": "primary_menu",
+        "label": "Primary Menu"
+      },
+      {
+        "type": "link_list",
+        "id": "secondary_menu",
+        "label": "Secondary Menu"
+      },
+      {
+        "type": "link_list",
+        "id": "mobile_menu",
+        "label": "Mobile Menu"
       }
     ]
   }

@@ -10,12 +10,10 @@ $navbar-breakpoint: $tablet;
 @import "~bulma/bulma";
 @import "fonts";
 
-.navbar-item img {
-  max-height: 35px;
-}
-
 .navbar {
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
+  overflow-y: scroll;
+  overflow-x: hidden;
+
   .announcement {
     background-color: #ffd828;
 
@@ -29,7 +27,7 @@ $navbar-breakpoint: $tablet;
         margin-right: 30px;
       }
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: $tablet - 1px) {
         height: 20px;
         display: flex;
       }
@@ -56,7 +54,7 @@ $navbar-breakpoint: $tablet;
       height: 17px;
       margin-right: 8px;
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: $tablet - 1px) {
         display: none;
       }
     }
@@ -71,9 +69,35 @@ $navbar-breakpoint: $tablet;
     }
   }
 
-  & > .container .navbar-brand {
+  .menu {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
+    margin-bottom: 10px;
+
+    .container {
+      align-items: stretch;
+      display: flex;
+      min-height: 3.25rem;
+      width: 100%;
+      height: 60px;
+
+      @media screen and (max-width: $tablet - 1px) {
+        min-height: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  .drop-menu {
+
+  }
+
+  .navbar-brand {
+    @media screen and (max-width: $tablet - 1px) {
+      min-height: 40px;
+    }
+
     @media screen and (min-width: $tablet) {
-      margin-left: 0px;
+      margin-left: 0;
     }
 
     @media screen and (min-width: $desktop) {
@@ -84,18 +108,67 @@ $navbar-breakpoint: $tablet;
   .navbar-brand, .navbar-menu {
     font-family: "neuzeitgroteskblack";
     font-size: 17px;
-
-    .navbar-item {
-      color: #606060;
-    }
-  }
-
-  .navbar-brand .navbar-item.cta {
-    margin-left: 60px;
   }
 
   .navbar-menu {
     margin-left: 60px;
+  }
+
+  .navbar-item {
+    @media screen and (max-width: $tablet - 1px) {
+      max-height: 40px;
+    }
+
+    padding-top: 12px;
+    color: #606060;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom: solid 1px #606060;
+      color: #008ffd;
+      background: none;
+    }
+
+    img {
+      @media screen and (max-width: $tablet - 1px) {
+        height: 20px;
+      }
+
+      max-height: 35px;
+    }
+
+    .icon-down-arrow {
+      font-size: 12px;
+      line-height: 13px;
+      margin-left: 6px;
+    }
+  }
+
+  .navbar-item.mobile {
+    @media screen and (max-width: $tablet - 1px) {
+      display: flex;
+    }
+
+    display: none;
+    width: 100px;
+    margin-left: 60px;
+    border-bottom: none;
+    background-color: #0090fc;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: white;
+
+    &:hover {
+      background-color: #0090fc;
+    }
+  }
+
+  .navbar-item.logo {
+    padding-top: 8px;
+
+    &:hover {
+      border-bottom: 1px solid transparent;
+    }
   }
 }
 

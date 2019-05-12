@@ -32,3 +32,67 @@
 //   font-weight: normal;
 //   font-style: normal;
 // }
+
+
+@font-face {
+  font-family: 'turbo';
+  src: url('../assets/fonts/turbo.eot');
+  src: url('../assets/fonts/turbo.eot') format('embedded-opentype'),
+       url('../assets/fonts/turbo.woff') format('woff'),
+       url('../assets/fonts/turbo.ttf') format('truetype'),
+       url('../assets/fonts/turbo.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "turbo";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .15em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pinterest:before { content: "\e906"; }
+.icon-bag:before { content: "\e900"; }
+.icon-cart:before { content: "\e901"; }
+.icon-check:before { content: "\e902"; }
+.icon-cross:before { content: "\e903"; }
+.icon-down-arrow:before { content: "\e904"; }
+.icon-mail:before { content: "\e905"; }
+.icon-left-arrow:before { content: "\e90a"; }
+.icon-menu:before { content: "\e90c"; }
+.icon-minus:before { content: "\e90d"; }
+.icon-phone:before { content: "\e90e"; }
+.icon-plus:before { content: "\e910"; }
+.icon-right-arrow:before { content: "\e911" }
+.icon-search:before { content: "\e913"; }
+.icon-up-arrow:before { content: "\e917"; }
+.icon-user:before { content: "\e918"; }
+.icon-youtube:before { content: "\e914"; }
+.icon-gplus:before { content: "\e907"; }
+.icon-vimeo:before { content: "\e912"; }
+.icon-rss:before { content: "\e908"; }
+.icon-houzz:before { content: "\e909"; }
+.icon-snapchat:before { content: "\e90b"; }
+.icon-instagram:before { content: "\e90f"; }
+.icon-facebook:before { content: "\ea90"; }
+.icon-twitter:before { content: "\ea96"; }
+.icon-tumblr:before { content: "\eab9"; }
+.icon-linkedin:before { content: "\eaca"; }
+
+.icon-twitter-share:before { content: "\ea96"; }
+.icon-facebook-share:before { content: "\ea90"; }
+.icon-gplus-share:before { content: "\e907"; }
+.icon-pinterest-share:before { content: "\e906"; }
+.icon-mail-share:before { content: "\e905"; }
