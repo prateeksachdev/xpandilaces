@@ -37,7 +37,7 @@
     <div class="container">
       <div class="navbar-brand">
         <a class="navbar-item logo" href="{{ shop.url }}">
-          <img src="{{ section.settings.logo | img_url: '200x' }}">
+          <img src="{{ section.settings.logo | img_url: '200x' }}" alt="{{ shop.name | escape }}">
         </a>
 
         <a class="navbar-item mobile" href="javascript:;" @click="toggleMobileMega">
@@ -66,7 +66,7 @@
           {% if shop.customer_accounts_enabled %}
             <a class="navbar-item" href="/account">
               {% if customer %}
-                {{ 'layout.customer.account' | t }}
+                {{ 'layout.customer.my_account' | t }}
               {% else %}
                 {{ 'layout.customer.log_in' | t }}
               {% endif %}
@@ -76,68 +76,127 @@
       </div>
 
       <div class="navbar-icons">
-        <a href="/cart" class="navbar-item cart">
-          <img src="{{ 'cart.png' | asset_url }}">
+        <a @click="toggleCartDetail" class="navbar-item cart">
+          <img src="{{ 'cart.png' | asset_url }}" alt="{{ 'cart.general.title' | t }}">
           <span class="cart-count">{{ cart.item_count }}</span>
         </a>
       </div>
     </div>
   </div>
 
-  <div v-if="isMobileMegaVisible" class="row mobile mega-drop">
-    <div class="columns is-mobile">
-      {% for block in section.blocks %}
-        {% if block.settings.enable_block %}
-          <div class="column">
-            <a href="javascript:;" class="item">
-              <img src="{{ block.settings.image | img_url: '400x' }}">
-              <h3>{{ block.settings.name }}</h3>
-              <p>{{ block.settings.caption }}</p>
-            </a>
-          </div>
-          {% endif %}
-      {% endfor %}
-    </div>
+  <transition name="fade">
+    <div v-show="isMobileMegaVisible" class="row mobile mega-drop">
+      <div class="columns is-mobile">
+        {% for block in section.blocks %}
+          {% if block.settings.enable_block %}
+            <div class="column">
+              <a href="javascript:;" class="item">
+                <img src="{{ block.settings.image | img_url: '400x' }}">
+                <h3>{{ block.settings.name }}</h3>
+                <p>{{ block.settings.caption }}</p>
+              </a>
+            </div>
+            {% endif %}
+        {% endfor %}
+      </div>
 
-    <ul class="menu">
-      {% for link in linklists[section.settings.secondary_menu].links %}
+      <ul class="menu">
+        {% for link in linklists[section.settings.secondary_menu].links %}
+          <li>
+            <a href="{{ link.url }}">
+              {{ link.title }}
+            </a>
+          </li>
+        {% endfor %}
+
         <li>
+          {% assign link = linklists[section.settings.mobile_menu].links.first %}
           <a href="{{ link.url }}">
             {{ link.title }}
           </a>
         </li>
-      {% endfor %}
 
-      <li>
-        {% assign link = linklists[section.settings.mobile_menu].links.first %}
-        <a href="{{ link.url }}">
-          {{ link.title }}
+        <li>
+          <a @click="toggleMobileMore" href="javascript:;">
+            More
+            <span class="icon-down-arrow">
+          </a>
+
+          <height-transition>
+            <ul v-if="isMobileMoreExpanded" class="more">
+              {% for link in linklists[section.settings.mobile_menu].links %}
+                {% unless forloop.first %}
+                  <li>
+                    <a href="{{ link.url }}">
+                      {{ link.title }}
+                    </a>
+                  </li>
+                {% endunless %}
+              {% endfor %}
+            </ul>
+          </height-transition>
+        </li>
+      </ul>
+    </div>
+  </transition>
+
+  <transition name="fade">
+    <div v-show="isCartDetailVisible" class="row mobile cart-detail">
+      <div class="drawer">
+        <a href="javascript:;" class="continue-shopping">
+          {{ 'cart.general.continue_shopping_link_html' | t }}
         </a>
-      </li>
 
-      <li>
-        <a @click="toggleMobileMore" href="javascript:;">
-          More
-          <span class="icon-down-arrow">
-        </a>
+        <ul>
+          {% for item in cart.items %}
+            <li class="cart-item">
+              <a href="{{ item.url}}">
+                <div class="image">
+                  <img src="{{ item | img_url: '160x' }}" alt="{{ item.title | escape }}">
+                </div>
+                <div class="title">
+                  <span>{{ item.product.title }}</span>
+                </div>
+                <div class="price">
+                  <span>{{ item.price | money}}</span>
+                </div>
+              </a>
 
-        <height-transition>
-          <ul v-if="isMobileMoreExpanded" class="more">
-            {% for link in linklists[section.settings.mobile_menu].links %}
-              {% unless forloop.first %}
-                <li>
-                  <a href="{{ link.url }}">
-                    {{ link.title }}
-                  </a>
-                </li>
-              {% endunless %}
-            {% endfor %}
-          </ul>
-        </height-transition>
-      </li>
+              <div class="quantity">
+                <div class="field has-addons">
+                  <p class="control">
+                    <a class="button">
+                      <span class="icon-minus"></span>
+                    </a>
+                  </p>
+                  <p class="control">
+                    <input class="input" type="text" size="2" value="{{ item.quantity }}">
+                  </p>
+                  <p class="control">
+                    <a class="button">
+                      <span class="icon-plus"></span>
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
 
-    </ul>
-  </div>
+        <div class="foot">
+          <p class="subtotal">
+            <span>{{ 'layout.general.subtotal' | t }}</span>
+            <span class="is-pulled-right">{{ cart.total_price | money }}</span>
+          </p>
+          <p class="text-center">
+            <a class="button" href="javascript:;">
+              {{ 'layout.general.go_to_cart' | t }}
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </transition>
 
 <!--   <header role="banner">
     {% if template.name == 'index' %}

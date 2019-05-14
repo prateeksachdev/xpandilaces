@@ -3,10 +3,17 @@
   overflow-x: hidden;
   background: none;
 
-  .height-enter-active,
-  .height-leave-active {
+  .height-enter-active, .height-leave-active {
     transition: height 0.3s linear;
     overflow: hidden;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .3s linear;
+  }
+
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
   }
 }
 
@@ -114,6 +121,7 @@
 
     .navbar-item.cart:hover {
       border-bottom: 1px solid transparent;
+      color: white;
     }
 
     .navbar-item {
@@ -194,6 +202,10 @@
   border-top: 1px solid #ccc;
   display: none;
 
+  &.fade-enter, &.fade-leave-to {
+    opacity: 0;
+  }
+
   @media screen and (max-width: $tablet - 1px) {
     display: block;
   }
@@ -253,6 +265,124 @@
 
     .more li {
       background-color: #e5e5e5;
+    }
+  }
+}
+
+.navbar .cart-detail {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -10px;
+
+  .drawer {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-right: 0px;
+    width: 320px;
+  }
+
+  .continue-shopping {
+    display: block;
+    color: #333333;
+    font-family: "sf_display_regular";
+    font-size: 13px;
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 1px solid #cccccc
+  }
+
+  ul {
+    padding: 15px 20px;
+  }
+
+  .cart-item {
+    font-family: "neuzeit_grotesk_light";
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #cccccc;
+
+    &:last-child {
+      border-bottom: 0px;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+    }
+
+    a {
+      display: flex;
+      width: 100%;
+    }
+
+    .image {
+      max-width: 60px;
+      padding-right: 10px;
+    }
+
+    .title {
+      width: 130px;
+      font-weight: normal;
+      letter-spacing: 1;
+      font-size: 13px;
+      line-height: 1.6em;
+    }
+
+    .price {
+      color: #333333;
+      display: flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .quantity {
+      padding-left: 70px;
+      margin-top: -12px;
+      margin-bottom: 10px;
+
+      input {
+        height: 30px;
+        font-size: 15px;
+        width: 40px;
+        text-align: center;
+      }
+
+      a {
+        height: 30px;
+        width: 32px;
+        font-size: 12px;
+        background-color: #f2f2f2;
+        padding: 0px;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .foot {
+    border-top: 1px solid #aaaaaa;
+    padding: 25px 20px 40px 20px;
+    font-family: "neuzeit_grotesk_light";
+    font-weight: bold;
+    font-size: 13px;
+
+    .subtotal {
+      margin-bottom: 12px;
+    }
+
+    a {
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      height: 40px;
+      width: 260px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #36807c;
+      border-color: #36807c;
+      color: white;
     }
   }
 }

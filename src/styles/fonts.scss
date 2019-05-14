@@ -1,14 +1,14 @@
-// @font-face {
-//   font-family: 'neuzeit_grotesk_light';
-//   src: url('neuzeit-grotesk-light-webfont.eot');
-//   src: url('neuzeit-grotesk-light-webfont.eot?#iefix') format('embedded-opentype'),
-//        url('neuzeit-grotesk-light-webfont.woff2') format('woff2'),
-//        url('neuzeit-grotesk-light-webfont.woff') format('woff'),
-//        url('neuzeit-grotesk-light-webfont.ttf') format('truetype'),
-//        url('neuzeit-grotesk-light-webfont.svg#neuzeit_grotesklight') format('svg');
-//   font-weight: normal;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'neuzeit_grotesk_light';
+  src: url('../assets/fonts/neuzeit-grotesk-light-webfont.eot');
+  src: url('../assets/fonts/neuzeit-grotesk-light-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../assets/fonts/neuzeit-grotesk-light-webfont.woff2') format('woff2'),
+       url('../assets/fonts/neuzeit-grotesk-light-webfont.woff') format('woff'),
+       url('../assets/fonts/neuzeit-grotesk-light-webfont.ttf') format('truetype'),
+       url('../assets/fonts/neuzeit-grotesk-light-webfont.svg#neuzeit_grotesklight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'neuzeit_grotesk_regular';

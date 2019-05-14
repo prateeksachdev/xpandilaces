@@ -58,7 +58,8 @@
         return {
           isAnnouncementVisible: true,
           isMobileMegaVisible: false,
-          isMobileMoreExpanded: false
+          isMobileMoreExpanded: false,
+          isCartDetailVisible: false
         }
       },
       methods: {
@@ -68,6 +69,10 @@
 
         toggleMobileMore () {
           this.isMobileMoreExpanded = !this.isMobileMoreExpanded
+        },
+
+        toggleCartDetail () {
+          this.isCartDetailVisible = !this.isCartDetailVisible
         },
 
         hideAnnouncement () {

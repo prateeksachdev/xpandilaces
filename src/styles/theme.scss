@@ -16,6 +16,14 @@ $navbar-breakpoint: $tablet;
   display: none;
 }
 
+input {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .rows {
   flex-wrap: wrap;
 
