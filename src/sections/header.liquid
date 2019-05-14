@@ -62,6 +62,17 @@
           {% for link in linklists[section.settings.secondary_menu].links %}
             <a class="navbar-item" href="{{ link.url }}">{{ link.title }}</a>
           {% endfor %}
+
+          {% if shop.customer_accounts_enabled %}
+            <a class="navbar-item" href="/account">
+              {% if customer %}
+                {{ 'layout.customer.account' | t }}
+              {% else %}
+                {{ 'layout.customer.log_in' | t }}
+              {% endif %}
+            </a>
+          {% endif %}
+        </div>
         </div>
       </div>
     </div>
