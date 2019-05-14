@@ -87,6 +87,14 @@
     @media screen and (max-width: $tablet - 1px) {
       min-height: 40px;
     }
+
+    img {
+      @media screen and (max-width: $tablet - 1px) {
+        height: 20px;
+      }
+
+      max-height: 35px;
+    }
   }
 
   .navbar-brand, .navbar-menu {
@@ -96,6 +104,37 @@
 
   .navbar-menu {
     margin-left: 60px;
+  }
+
+  .navbar-icons {
+    flex-grow: 1;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-end;
+
+    .navbar-item.cart:hover {
+      border-bottom: 1px solid transparent;
+    }
+
+    .navbar-item {
+      font-family: "neuzeit_grotesk_regular";
+      color: white;
+
+      @media screen and (max-width: $tablet - 1px) {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+
+      .cart-count {
+        position: absolute;
+        bottom: 10px;
+        right: 17px;
+
+        @media screen and (max-width: $tablet - 1px) {
+          bottom: 3px;
+        }
+      }
+    }
   }
 
   .navbar-item {
@@ -111,14 +150,6 @@
       border-bottom: solid 1px #606060;
       color: #008ffd;
       background: none;
-    }
-
-    img {
-      @media screen and (max-width: $tablet - 1px) {
-        height: 20px;
-      }
-
-      max-height: 35px;
     }
 
     .icon-down-arrow {
@@ -161,6 +192,11 @@
   background-color: white;
   opacity: 0.95;
   border-top: 1px solid #ccc;
+  display: none;
+
+  @media screen and (max-width: $tablet - 1px) {
+    display: block;
+  }
 
   .columns {
     padding: 0 10px;

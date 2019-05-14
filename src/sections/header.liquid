@@ -73,7 +73,13 @@
             </a>
           {% endif %}
         </div>
-        </div>
+      </div>
+
+      <div class="navbar-icons">
+        <a href="/cart" class="navbar-item cart">
+          <img src="{{ 'cart.png' | asset_url }}">
+          <span class="cart-count">{{ cart.item_count }}</span>
+        </a>
       </div>
     </div>
   </div>
