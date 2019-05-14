@@ -10,25 +10,27 @@
   Theme Store optional settings
   - Home page only: only shows on the home page
 {%- endcomment -%}
-<nav class="navbar is-fixed-top rows" role="navigation" data-section-id="{{ section.id }}" data-section-type="header">
+<nav id="navbar" v-cloak class="navbar is-fixed-top rows" role="navigation" data-section-id="{{ section.id }}" data-section-type="header">
   {%- if section.settings.announcement_bar_enabled -%}
-    <div class="row announcement">
-      <div class="container has-text-centered">
-        <div class="text-wrap">
-          <img class="announcement-icon" src="{{ 'box.svg' | asset_url }}">
-          {{ section.settings.shipping_text }}
+    <height-transition>
+      <div v-if="isAnnouncementVisible" class="row announcement">
+        <div class="container has-text-centered">
+          <div class="text-wrap">
+            <img class="announcement-icon" src="{{ 'box.svg' | asset_url }}">
+            {{ section.settings.shipping_text }}
+          </div>
+
+          <div class="text-wrap">
+            <i class="announcement-icon fa fa-heart"></i>
+            {{ section.settings.promo_text }}
+          </div>
         </div>
 
-        <div class="text-wrap">
-          <i class="announcement-icon fa fa-heart"></i>
-          {{ section.settings.promo_text }}
-        </div>
+        <a @click="hideAnnouncement" href="javascript:;" class="close">
+          <i class="fa fa-times"></i>
+        </a>
       </div>
-
-      <a href="javascript:;" class="close">
-        <i class="fa fa-times"></i>
-      </a>
-    </div>
+    </height-transition>
   {%- endif -%}
 
   <div class="row menu">
@@ -38,7 +40,7 @@
           <img src="{{ section.settings.logo | img_url: '200x' }}">
         </a>
 
-        <a class="navbar-item mobile" href="javascript:;">
+        <a class="navbar-item mobile" href="javascript:;" @click="toggleMobileMega">
           SHOP
           <span class="icon-down-arrow">
         </a>
@@ -65,64 +67,60 @@
     </div>
   </div>
 
-  <div class="row drop-menu">
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-  </div>
+  <div v-if="isMobileMegaVisible" class="row mobile mega-drop">
+    <div class="columns is-mobile">
+      {% for block in section.blocks %}
+        {% if block.settings.enable_block %}
+          <div class="column">
+            <a href="javascript:;" class="item">
+              <img src="{{ block.settings.image | img_url: '400x' }}">
+              <h3>{{ block.settings.name }}</h3>
+              <p>{{ block.settings.caption }}</p>
+            </a>
+          </div>
+          {% endif %}
+      {% endfor %}
+    </div>
 
-<!--   <div class="container row mobile-menu" style="opacity: 0.95;">
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-  </div> -->
+    <ul class="menu">
+      {% for link in linklists[section.settings.secondary_menu].links %}
+        <li>
+          <a href="{{ link.url }}">
+            {{ link.title }}
+          </a>
+        </li>
+      {% endfor %}
+
+      <li>
+        {% assign link = linklists[section.settings.mobile_menu].links.first %}
+        <a href="{{ link.url }}">
+          {{ link.title }}
+        </a>
+      </li>
+
+      <li>
+        <a @click="toggleMobileMore" href="javascript:;">
+          More
+          <span class="icon-down-arrow">
+        </a>
+
+        <height-transition>
+          <ul v-if="isMobileMoreExpanded" class="more">
+            {% for link in linklists[section.settings.mobile_menu].links %}
+              {% unless forloop.first %}
+                <li>
+                  <a href="{{ link.url }}">
+                    {{ link.title }}
+                  </a>
+                </li>
+              {% endunless %}
+            {% endfor %}
+          </ul>
+        </height-transition>
+      </li>
+
+    </ul>
+  </div>
 
 <!--   <header role="banner">
     {% if template.name == 'index' %}
@@ -226,15 +224,7 @@
   </nav> -->
 </nav>
 
-{% if section.settings.logo != blank %}
-  <style>
-    .logo-image {
-      display: block;
-      max-width: {{ section.settings.logo_max_width }}px;
-    }
-  </style>
-{% endif %}
-
+<!-- Roy -->
 {% schema %}
   {
     "name": "Header",
@@ -282,6 +272,41 @@
         "type": "link_list",
         "id": "mobile_menu",
         "label": "Mobile Menu"
+      }
+    ],
+    "max_blocks": 4,
+    "blocks": [
+      {
+        "type": "mega_item",
+        "name": "Mega Item",
+        "settings": [
+          {
+            "type":"checkbox",
+            "id":"enable_block",
+            "label":"Enable Block",
+            "default": true
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name"
+          },
+          {
+            "type": "richtext",
+            "id": "caption",
+            "label": "Caption"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
       }
     ]
   }

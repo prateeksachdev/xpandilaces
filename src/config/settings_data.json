@@ -82,6 +82,32 @@
       },
       "header": {
         "type": "header",
+        "blocks": {
+          "1557712947539": {
+            "type": "mega_item",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Original_No_Tie.png",
+              "name": "Original No-Tie",
+              "caption": "<p>Lacing System<\/p>",
+              "link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
+            }
+          },
+          "1557713608141": {
+            "type": "mega_item",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Quick_Release.png",
+              "name": "Quick-Release",
+              "caption": "<p>Lacing System<\/p>",
+              "link": "shopify:\/\/products\/quick-release-round-lacing-system"
+            }
+          }
+        },
+        "block_order": [
+          "1557712947539",
+          "1557713608141"
+        ],
         "settings": {
           "announcement_bar_enabled": true,
           "shipping_text": "<p><strong>Free Shipping when you order 4 or more<\/strong><\/p>",
