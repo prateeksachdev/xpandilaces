@@ -72,6 +72,7 @@
         },
 
         toggleCartDetail () {
+          this.isMobileMegaVisible = false
           this.isCartDetailVisible = !this.isCartDetailVisible
         },
 

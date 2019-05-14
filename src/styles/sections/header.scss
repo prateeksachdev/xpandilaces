@@ -21,18 +21,18 @@
   background-color: #ffd828;
 
   .text-wrap {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    height: 30px;
+    height: 20px;
 
     &:first-child {
       margin-right: 30px;
     }
 
-    @media screen and (max-width: $tablet - 1px) {
-      height: 20px;
-      display: flex;
+    @media screen and (min-width: $tablet) {
+      height: 30px;
+      display: inline-flex;
     }
   }
 
@@ -56,9 +56,10 @@
   .announcement-icon {
     height: 17px;
     margin-right: 8px;
+    display: none;
 
-    @media screen and (max-width: $tablet - 1px) {
-      display: none;
+    @media screen and (min-width: $tablet) {
+      display: block;
     }
   }
 
@@ -80,27 +81,26 @@
   .container {
     align-items: stretch;
     display: flex;
-    min-height: 3.25rem;
     width: 100%;
-    height: 60px;
+    min-height: 40px;
+    height: 40px;
 
-    @media screen and (max-width: $tablet - 1px) {
-      min-height: 40px;
-      height: 40px;
+    @media screen and (min-width: $tablet) {
+      min-height: 3.25rem;
+      height: 60px;
     }
   }
 
   .navbar-brand {
-    @media screen and (max-width: $tablet - 1px) {
-      min-height: 40px;
-    }
+    min-height: 40px;
 
     img {
-      @media screen and (max-width: $tablet - 1px) {
-        height: 20px;
-      }
-
+      height: 20px;
       max-height: 35px;
+
+      @media screen and (min-width: $tablet) {
+        height: auto;
+      }
     }
   }
 
@@ -127,32 +127,35 @@
     .navbar-item {
       font-family: "neuzeit_grotesk_regular";
       color: white;
+      padding-top: 5px;
+      padding-bottom: 5px;
 
-      @media screen and (max-width: $tablet - 1px) {
-        padding-top: 5px;
-        padding-bottom: 5px;
+      @media screen and (min-width: $tablet) {
+        padding-top: 12px;
+        padding-bottom: 8px;
       }
 
       .cart-count {
         position: absolute;
-        bottom: 10px;
+        bottom: 3px;
         right: 17px;
 
-        @media screen and (max-width: $tablet - 1px) {
-          bottom: 3px;
+        @media screen and (min-width: $tablet) {
+          bottom: 10px;
         }
       }
     }
   }
 
   .navbar-item {
-    @media screen and (max-width: $tablet - 1px) {
-      max-height: 40px;
-    }
-
+    max-height: 40px;
     padding-top: 12px;
     color: #606060;
     border-bottom: 1px solid transparent;
+
+    @media screen and (min-width: $tablet) {
+      max-height: none;
+    }
 
     &:hover {
       border-bottom: solid 1px #606060;
@@ -168,11 +171,7 @@
   }
 
   .navbar-item.mobile {
-    @media screen and (max-width: $tablet - 1px) {
-      display: flex;
-    }
-
-    display: none;
+    display: flex;
     width: 100px;
     margin-left: 60px;
     border-bottom: none;
@@ -180,6 +179,10 @@
     font-size: 14px;
     letter-spacing: 1px;
     color: white;
+
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
 
     &:hover {
       background-color: #0090fc;
@@ -200,14 +203,13 @@
   background-color: white;
   opacity: 0.95;
   border-top: 1px solid #ccc;
-  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
 
   &.fade-enter, &.fade-leave-to {
     opacity: 0;
-  }
-
-  @media screen and (max-width: $tablet - 1px) {
-    display: block;
   }
 
   .columns {
