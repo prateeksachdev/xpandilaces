@@ -9,8 +9,12 @@ $fullhd-enabled: false;
 @import "~bulma/sass/utilities/initial-variables.sass";
 $navbar-breakpoint: $tablet;
 @import "~bulma/bulma";
+
+$large-phone: '576px';
+
 @import "fonts";
 @import "sections/header";
+
 
 [v-cloak] {
   display: none;

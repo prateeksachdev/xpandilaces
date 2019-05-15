@@ -93,7 +93,7 @@
               <a href="javascript:;" class="item">
                 <img src="{{ block.settings.image | img_url: '400x' }}">
                 <h3>{{ block.settings.name }}</h3>
-                <p>{{ block.settings.caption }}</p>
+                {{ block.settings.caption }}
               </a>
             </div>
             {% endif %}
@@ -136,6 +136,21 @@
             </ul>
           </height-transition>
         </li>
+
+        {% if shop.customer_accounts_enabled %}
+          {% if customer %}
+            <li>
+              <a href="/account">{{ customer.name }}</a>
+            </li>
+            <li>
+              {{ 'layout.customer.log_out' | t | customer_logout_link }}
+            </li>
+          {% else %}
+            <li>
+              {{ 'layout.customer.log_in' | t | customer_login_link }}
+            </li>
+          {% endif %}
+        {% endif %}
       </ul>
     </div>
   </transition>
@@ -189,7 +204,7 @@
             <span class="is-pulled-right">{{ cart.total_price | money }}</span>
           </p>
           <p class="text-center">
-            <a class="button" href="javascript:;">
+            <a class="button" href="/cart">
               {{ 'layout.general.go_to_cart' | t }}
             </a>
           </p>
