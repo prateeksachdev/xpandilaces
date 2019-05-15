@@ -285,6 +285,12 @@
     border: 1px solid #ccc;
     border-right: 0px;
     width: 320px;
+    max-height: 70vh;
+    overflow-y: auto;
+
+    @media screen and (min-width: $large-phone) {
+      width: 360px;
+    }
   }
 
   .continue-shopping {
@@ -323,6 +329,10 @@
     .image {
       max-width: 60px;
       padding-right: 10px;
+
+      @media screen and (min-width: $large-phone) {
+        max-width: 100px;
+      }
     }
 
     .title {
@@ -341,12 +351,20 @@
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 1px;
+
+      @media screen and (min-width: $large-phone) {
+        font-size: 18px;
+      }
     }
 
     .quantity {
       padding-left: 70px;
       margin-top: -12px;
       margin-bottom: 10px;
+
+      @media screen and (min-width: $large-phone) {
+        padding-left: 110px;
+      }
 
       input {
         height: 30px;
