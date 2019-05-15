@@ -1,3 +1,5 @@
+import vClickOutside from 'v-click-outside'
+
 (function () {
   Vue.component('height-transition', {
     functional: true,
@@ -51,9 +53,13 @@
   })
 
   document.addEventListener('DOMContentLoaded', function () {
-    let vm = new Vue({
+
+    new Vue({
       el: '#navbar',
       delimiters: ['${', '}'],
+      directives: {
+        clickOutside: vClickOutside.directive
+      },
       data: function () {
         return {
           isAnnouncementVisible: true,
@@ -74,6 +80,10 @@
         toggleCartDetail () {
           this.isMobileMegaVisible = false
           this.isCartDetailVisible = !this.isCartDetailVisible
+        },
+
+        hideCartDetail (e) {
+          this.isCartDetailVisible = false
         },
 
         hideAnnouncement () {

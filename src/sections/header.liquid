@@ -156,9 +156,9 @@
   </transition>
 
   <transition name="fade">
-    <div v-show="isCartDetailVisible" class="row mobile cart-detail">
-      <div class="drawer">
-        <a href="javascript:;" class="continue-shopping">
+    <div v-if="isCartDetailVisible" class="row mobile cart-detail">
+      <div class="drawer" v-click-outside="hideCartDetail">
+        <a @click="hideCartDetail" href="javascript:;" class="continue-shopping">
           {{ 'cart.general.continue_shopping_link_html' | t }}
         </a>
 
