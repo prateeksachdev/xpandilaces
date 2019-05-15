@@ -275,6 +275,40 @@
   }
 }
 
+.navbar .mega-drop.desktop {
+  display: flex;
+  justify-content: center;
+  margin-top: -10px;
+  background-color: white;
+  height: 240px;
+
+  .item {
+    padding: 15px 40px 30px 40px;
+    text-align: center;
+    color: #0080ce;
+
+    img {
+      height: 100px;
+    }
+
+    h3 {
+      padding-top: 10px;
+      font-family: "neuzeitgroteskblack";
+      font-size: 16px;
+      line-height: 18px;
+      font-weight: 700;
+      letter-spacing: -0.1px;
+    }
+
+    p {
+      font-family: "neuzeitgroteskblack";
+      font-size: 13px;
+      line-height: 16px;
+      letter-spacing: -0.1px;
+    }
+  }
+}
+
 .navbar .cart-detail {
   display: flex;
   justify-content: flex-end;

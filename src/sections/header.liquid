@@ -49,7 +49,7 @@
       <div class="navbar-menu primary">
         <div class="navbar-start">
           {% for link in linklists[section.settings.primary_menu].links %}
-            <a class="navbar-item" href="{{ link.url }}">
+            <a @mouseenter="showDesktopMega" class="navbar-item" href="{{ link.url }}">
               {{ link.title }}
               <span class="icon-down-arrow">
             </a>
@@ -85,7 +85,7 @@
   </div>
 
   <transition name="fade">
-    <div v-show="isMobileMegaVisible" class="row mobile mega-drop">
+    <div v-show="isMobileMegaVisible" class="row mega-drop mobile">
       <div class="columns is-mobile">
         {% for block in section.blocks %}
           {% if block.settings.enable_block %}
@@ -96,7 +96,7 @@
                 {{ block.settings.caption }}
               </a>
             </div>
-            {% endif %}
+          {% endif %}
         {% endfor %}
       </div>
 
@@ -154,6 +154,18 @@
       </ul>
     </div>
   </transition>
+
+  <div v-show="isDesktopMegaVisible" @mouseleave="hideDesktopMega" class="row mega-drop desktop">
+    {% for block in section.blocks %}
+      {% if block.settings.enable_block %}
+        <a href="javascript:;" class="item">
+          <img src="{{ block.settings.image | img_url: 'x200' }}">
+          <h3>{{ block.settings.name }}</h3>
+          {{ block.settings.caption }}
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
 
   <transition name="fade">
     <div v-if="isCartDetailVisible" class="row mobile cart-detail">

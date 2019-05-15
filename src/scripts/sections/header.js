@@ -65,7 +65,8 @@ import vClickOutside from 'v-click-outside'
           isAnnouncementVisible: true,
           isMobileMegaVisible: false,
           isMobileMoreExpanded: false,
-          isCartDetailVisible: false
+          isDesktopMegaVisible: false,
+          isCartDetailVisible: false,
         }
       },
       methods: {
@@ -77,13 +78,21 @@ import vClickOutside from 'v-click-outside'
           this.isMobileMoreExpanded = !this.isMobileMoreExpanded
         },
 
+        showDesktopMega () {
+          this.isDesktopMegaVisible = true
+        },
+
         toggleCartDetail () {
           this.isMobileMegaVisible = false
           this.isCartDetailVisible = !this.isCartDetailVisible
         },
 
-        hideCartDetail (e) {
+        hideCartDetail () {
           this.isCartDetailVisible = false
+        },
+
+        hideDesktopMega () {
+          this.isDesktopMegaVisible = false
         },
 
         hideAnnouncement () {
