@@ -76,6 +76,10 @@
       </div>
 
       <div class="navbar-icons">
+        <a @click="toggleSearch" class="navbar-item search">
+          <img src="{{ 'search.png' | asset_url }}" alt="{{ 'general.search.title' | t }}">
+        </a>
+
         <a @click="toggleCartDetail" class="navbar-item cart">
           <img src="{{ 'cart.png' | asset_url }}" alt="{{ 'cart.general.title' | t }}">
           <span class="cart-count">{{ cart.item_count }}</span>
@@ -222,6 +226,21 @@
           </p>
         </div>
       </div>
+    </div>
+  </transition>
+
+  <transition name="fade">
+    <div v-if="isSearchVisible" class="row search">
+      <form action="/search">
+        {% if settings.search_option != 'everything' %}
+          <input type="hidden" name="type" value="product" />
+        {% endif %}
+
+        <div class="control has-icons-right">
+          <input class="input" type="text" name="q" placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}" autocapitalize="off" autocomplete="off" autocorrect="off">
+          <button class="icon-search icon is-right is-large" type="submit"></button>
+        </div>
+      </form>
     </div>
   </transition>
 

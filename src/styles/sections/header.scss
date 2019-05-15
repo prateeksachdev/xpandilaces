@@ -1,6 +1,5 @@
 .navbar {
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow-y: visible;
   background: none;
 
   .height-enter-active, .height-leave-active {
@@ -17,7 +16,7 @@
   }
 }
 
-.navbar .announcement {
+.navbar > .announcement {
   background-color: #ffd828;
 
   .text-wrap {
@@ -73,7 +72,7 @@
   }
 }
 
-.navbar .menu {
+.navbar > .menu {
   background: white;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
   margin-bottom: 10px;
@@ -119,9 +118,19 @@
     flex-shrink: 0;
     justify-content: flex-end;
 
-    .navbar-item.cart:hover {
+    .navbar-item:hover {
       border-bottom: 1px solid transparent;
       color: white;
+    }
+
+    .navbar-item.search {
+      img {
+        padding: 3px;
+      }
+
+      @media screen and (min-width: $tablet) {
+        display: none;
+      }
     }
 
     .navbar-item {
@@ -198,8 +207,9 @@
   }
 }
 
-.navbar .mega-drop.mobile {
-  margin-top: -10px;
+.navbar > .mega-drop.mobile {
+  position: absolute;
+  top: 80px;
   background-color: white;
   opacity: 0.95;
   border-top: 1px solid #ccc;
@@ -275,7 +285,7 @@
   }
 }
 
-.navbar .mega-drop.desktop {
+.navbar > .mega-drop.desktop {
   display: flex;
   justify-content: center;
   margin-top: -10px;
@@ -309,10 +319,48 @@
   }
 }
 
-.navbar .cart-detail {
+.navbar > .search {
+  position: absolute;
+  top: 80px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  background-color: white;
+  padding: 30px 20px;
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+
+  input {
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid #606060;
+    font-size: 22px;
+    font-family: sf_display_regular;
+    box-shadow: none;
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+
+  .icon-search {
+    font-size: 22px;
+    height: 100%;
+  }
+}
+
+.navbar > .cart-detail {
+  position: absolute;
+  top: 80px;
   display: flex;
   justify-content: flex-end;
-  margin-top: -10px;
+
+  @media screen and (min-width: $tablet) {
+    top: 90px;
+  }
 
   .drawer {
     background-color: white;

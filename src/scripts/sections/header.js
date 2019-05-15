@@ -66,11 +66,14 @@ import vClickOutside from 'v-click-outside'
           isMobileMegaVisible: false,
           isMobileMoreExpanded: false,
           isDesktopMegaVisible: false,
+          isSearchVisible: false,
           isCartDetailVisible: false,
         }
       },
       methods: {
         toggleMobileMega () {
+          this.isMobileMegaVisible = false
+          this.isSearchVisible = false
           this.isMobileMegaVisible = !this.isMobileMegaVisible
         },
 
@@ -82,8 +85,15 @@ import vClickOutside from 'v-click-outside'
           this.isDesktopMegaVisible = true
         },
 
+        toggleSearch () {
+          this.isMobileMegaVisible = false
+          this.isCartDetailVisible = false
+          this.isSearchVisible = !this.isSearchVisible
+        },
+
         toggleCartDetail () {
           this.isMobileMegaVisible = false
+          this.isSearchVisible = false
           this.isCartDetailVisible = !this.isCartDetailVisible
         },
 
