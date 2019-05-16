@@ -136,6 +136,26 @@
     ]
   },
   {
+    "name": "Search",
+    "settings": [
+      {
+        "type": "select",
+        "id": "search_option",
+        "label": "Search results",
+        "options": [
+          {
+            "value": "products",
+            "label": "Products"
+          },
+          {
+            "value": "everything",
+            "label": "Everything"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Cart",
     "settings": [
       {
