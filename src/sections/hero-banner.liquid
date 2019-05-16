@@ -1,7 +1,3 @@
-{% comment %}
-
-{% endcomment %}
-
 {% if section.settings.type == 'video' and section.settings.video_url != blank %}
   <section class="hero">
     <video autoplay="" loop="loop" muted playsinline {% if section.settings.video_poster %}poster="{{ section.settings.video_poster | img_url: 'master' }}" {% endif %}>

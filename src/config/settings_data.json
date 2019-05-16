@@ -90,10 +90,20 @@
           "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1206\/8416\/files\/VERSION_3_-_Lifestyle_Compressed.mp4?15232893892029590591",
           "video_poster": "shopify:\/\/shop_images\/Thumbnail_4a2105de-5f94-456a-9b87-8e111f89d346.jpg"
         }
+      },
+      "1557977971910": {
+        "type": "text-banner",
+        "settings": {
+          "title": "COMFORT. STYLE. PERFORMANCE.",
+          "text": "<p><strong>No-Tie Shoelace System - Adults &amp; Kids<\/strong><\/p>",
+          "cta_text": "SHOP NOW",
+          "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
+        }
       }
     },
     "content_for_index": [
-      "1557967708681"
+      "1557967708681",
+      "1557977971910"
     ]
   },
   "presets": {

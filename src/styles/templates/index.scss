@@ -1,0 +1,46 @@
+@import "~bulma/sass/utilities/initial-variables.sass";
+
+.section.text-banner {
+  h2 {
+    font-family: "neuzeitgroteskblack";
+    letter-spacing: 0.1px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    line-height: 1.1;
+    margin-top: 0px;
+    margin-bottom: 10px;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+  }
+
+  p {
+    font-family: "neuzeit_grotesk_light" ;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  a {
+    color: white;
+    background-color: #008ffd;
+    border: 1px solid #008ffd;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    width: 240px;
+  }
+}

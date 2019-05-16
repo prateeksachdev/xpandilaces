@@ -1,0 +1,51 @@
+<section class="section text-banner">
+  {% if section.settings.title != blank %}
+    <h2>{{ section.settings.title }}</h2>
+  {% endif %}
+
+  {% if section.settings.text != blank %}
+    {{ section.settings.text }}
+  {% endif %}
+
+  {% if section.settings.cta_text != blank %}
+    <p>
+      <a class="button" href="{{ section.settings.cta_link }}">
+        {{ section.settings.cta_text}}
+      </a>
+    </p>
+  {% endif %}
+</section>
+
+{% schema %}
+  {
+    "name": "Text Banner",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Text"
+      },
+      {
+        "type": "url",
+        "id": "cta_link",
+        "label": "CTA Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text Banner",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}
