@@ -72,7 +72,7 @@ import vClickOutside from 'v-click-outside'
       },
       methods: {
         toggleMobileMega () {
-          this.isMobileMegaVisible = false
+          this.isCartDetailVisible = false
           this.isSearchVisible = false
           this.isMobileMegaVisible = !this.isMobileMegaVisible
         },
