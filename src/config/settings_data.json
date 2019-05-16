@@ -99,11 +99,43 @@
           "cta_text": "SHOP NOW",
           "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
         }
+      },
+      "1558041214466": {
+        "type": "featured-box",
+        "blocks": {
+          "1558041238811": {
+            "type": "box",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Flat_Lace_3_1.jpg",
+              "title": "Original No-Tie <br>Lacing System",
+              "link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+              "link_text": "SHOP NOW"
+            }
+          },
+          "1558041246675": {
+            "type": "box",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Round_Lace_1.jpg",
+              "title": "Quick-Release <br>Lacing System",
+              "link": "shopify:\/\/products\/quick-release-round-lacing-system",
+              "link_text": "SHOP NOW"
+            }
+          }
+        },
+        "block_order": [
+          "1558041238811",
+          "1558041246675"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
       "1557967708681",
-      "1557977971910"
+      "1557977971910",
+      "1558041214466"
     ]
   },
   "presets": {
