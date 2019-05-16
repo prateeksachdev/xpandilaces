@@ -18,6 +18,7 @@
     "social_tumblr_link": "",
     "social_youtube_link": "",
     "social_vimeo_link": "",
+    "search_option": "products",
     "cart_notes_enable": true,
     "favicon": "",
     "checkout_header_image": "",
@@ -35,51 +36,6 @@
     "checkout_button_color": "#197bbd",
     "checkout_error_color": "#e32c2b",
     "sections": {
-      "collection-list": {
-        "type": "collection-list",
-        "blocks": {
-          "collection-list-0": {
-            "type": "collection",
-            "settings": {
-              "collection": ""
-            }
-          },
-          "collection-list-1": {
-            "type": "collection",
-            "settings": {
-              "collection": ""
-            }
-          },
-          "collection-list-2": {
-            "type": "collection",
-            "settings": {
-              "collection": ""
-            }
-          }
-        },
-        "block_order": [
-          "collection-list-0",
-          "collection-list-1",
-          "collection-list-2"
-        ],
-        "settings": {
-          "title": "Collection list"
-        }
-      },
-      "featured-collection": {
-        "type": "featured-collection",
-        "settings": {
-          "title": "Featured collection",
-          "collection": "frontpage"
-        }
-      },
-      "featured-product": {
-        "type": "featured-product",
-        "settings": {
-          "product": "",
-          "show_share_buttons": false
-        }
-      },
       "header": {
         "type": "header",
         "blocks": {
@@ -124,12 +80,20 @@
           "footer_linklist": "footer",
           "show_payment_icons": false
         }
+      },
+      "1557967708681": {
+        "type": "hero-banner",
+        "settings": {
+          "type": "video",
+          "image": "",
+          "image_mobile": "",
+          "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1206\/8416\/files\/VERSION_3_-_Lifestyle_Compressed.mp4?15232893892029590591",
+          "video_poster": "shopify:\/\/shop_images\/Thumbnail_4a2105de-5f94-456a-9b87-8e111f89d346.jpg"
+        }
       }
     },
     "content_for_index": [
-      "collection-list",
-      "featured-collection",
-      "featured-product"
+      "1557967708681"
     ]
   },
   "presets": {

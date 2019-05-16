@@ -1,0 +1,69 @@
+{% comment %}
+
+{% endcomment %}
+
+{% if section.settings.type == 'video' and section.settings.video_url != blank %}
+  <section class="hero">
+    <video autoplay="" loop="loop" muted playsinline {% if section.settings.video_poster %}poster="{{ section.settings.video_poster | img_url: 'master' }}" {% endif %}>
+      <source src="{{section.settings.video_url}}" type="video/mp4">
+    </video>
+  </section>
+{% endif %}
+
+{% if section.settings.type == 'image' and section.settings.image %}
+  <section class="hero">
+    <img src="{{ section.settings.image | img_url: 'master' }}">
+  </section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Hero Banner",
+    "settings": [
+      {
+        "type": "radio",
+        "id": "type",
+        "label": "Enable",
+        "options": [
+          { "value": "image", "label": "Image" },
+          { "value": "video", "label": "Video" }
+        ],
+        "default":   "image"
+      },
+      {
+       "type": "header",
+       "content": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Mobile Image"
+      },
+      {
+       "type": "header",
+       "content": "Video"
+      },
+      {
+        "type": "text",
+        "id": "video_url",
+        "label": "Video URL"
+      },
+      {
+        "type": "image_picker",
+        "id": "video_poster",
+        "label": "Video Poster"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Banner",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}
