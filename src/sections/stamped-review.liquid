@@ -1,0 +1,31 @@
+<section class="stamped-review-wrapper">
+  <h2>{{ section.settings.title }}</h2>
+  <div class="reviews">
+    {{ section.settings.code_snippet }}
+  </div>
+  <div class="clearfix"></div>
+</section>
+
+{% schema %}
+{
+  "name": "Stamped Review",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "code_snippet",
+      "label": "Stamped Snippet"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stamped Review",
+      "category": "Review"
+    }
+  ]
+}
+{% endschema %}

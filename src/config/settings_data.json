@@ -130,12 +130,20 @@
         ],
         "settings": {
         }
+      },
+      "1558048205172": {
+        "type": "stamped-review",
+        "settings": {
+          "title": "Loved by Millions",
+          "code_snippet": "<div id=\"stamped-reviews-widget\" data-widget-type=\"visual-gallery\" data-product-ids=\"2009897304175\" data-min-rating=\"3\" data-random=\"true\" data-feed-type=\"carousel\" data-with-photos=\"true\"><\/div>"
+        }
       }
     },
     "content_for_index": [
       "1557967708681",
       "1557977971910",
-      "1558041214466"
+      "1558041214466",
+      "1558048205172"
     ]
   },
   "presets": {
