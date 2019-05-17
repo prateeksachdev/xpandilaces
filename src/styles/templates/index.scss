@@ -128,7 +128,7 @@
       margin: 0 auto;
       width: 800px;
 
-      @media (max-width: 360px) {
+      @media screen and (max-width: 360px) {
         height: 120px !important;
       }
     }
@@ -153,12 +153,12 @@
       width: 200px !important;
       height: 200px !important;
 
-      @media (max-width: 991px) {
+      @media screen and (max-width: 991px) {
         width: 160px !important;
         height: 160px !important;
       }
 
-      @media (max-width: 360px) {
+      @media screen and (max-width: 360px) {
         width: 130px !important;
         height: 130px !important;
       }
@@ -167,6 +167,120 @@
     .stamped-visual-gallery-media-block-template {
       width: 90%;
       left: 5%;
+    }
+  }
+}
+
+
+.section.three-item-banner {
+  background-color: #00837e;
+
+  h2 {
+    font-size: 30px;
+    line-height: 28px;
+    text-align: left;
+    padding: 0px 20px;
+    color: white;
+    font-family: 'neuzeitgroteskblack';
+    margin-bottom: 60px;
+
+    @media screen and (min-width: $tablet) {
+      text-align: center;
+    }
+  }
+
+  .item {
+    height: 160px;
+
+    .number-1, .number-2, .number-3 {
+      display: block;
+      width: 50px;
+      height: 50px;
+      margin: 0 calc(50% - 25px) 34px;
+    }
+
+    .number-1 {
+      background: url('../../assets/icons/cinemagraph_sprites.png') -5px -96px;
+    }
+
+    .number-2 {
+      background: url('../../assets/icons/cinemagraph_sprites.png') -66px -96px;
+    }
+
+    .number-3 {
+      background: url('../../assets/icons/cinemagraph_sprites.png') -92px -10px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 20px;
+      line-height: 20px;
+      color: white;
+      font-family: 'neuzeit_grotesk_regular'
+    }
+  }
+
+  .swiper-wrapper {
+    padding-bottom: 20px;
+  }
+
+  .swiper-pagination {
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+  }
+
+  .cta {
+    display: none;
+    text-align: center;
+
+    a {
+      width: 243px;
+      font-size: 12px;
+      background-color: #ff085a;
+      border: none;
+      font-weight: bold;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: white;
+      height: 40px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
+  }
+}
+
+.section.image-with-text {
+  h2 {
+    margin-bottom: 42px;
+    font-size: 30px;
+    color: #211f1e;
+    font-family: "neuzeitgroteskblack";
+    text-align: center;
+  }
+
+  .image-wrapper {
+    margin: 0 -1.5em;
+  }
+
+  img {
+    height: 60px;
+  }
+
+  p {
+    margin-top: 40px;
+    text-align: center;
+
+    a {
+      height: 40px;
+      background: #ff085a;
+      border: 0;
+      color: #fff;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      letter-spacing: 1.2;
+      font-weight: bold;
+      width: 180px;
     }
   }
 }

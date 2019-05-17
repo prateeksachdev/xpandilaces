@@ -137,13 +137,47 @@
           "title": "Loved by Millions",
           "code_snippet": "<div id=\"stamped-reviews-widget\" data-widget-type=\"visual-gallery\" data-product-ids=\"2009897304175\" data-min-rating=\"3\" data-random=\"true\" data-feed-type=\"carousel\" data-with-photos=\"true\"><\/div>"
         }
+      },
+      "1558075345034": {
+        "type": "three-item-banner",
+        "blocks": {
+          "1558075392065": {
+            "type": "item",
+            "settings": {
+              "text": "<p>100% money back<\/p>\n<p>guarantee!<\/p>"
+            }
+          },
+          "1558075403234": {
+            "type": "item",
+            "settings": {
+              "text": "<p>Try Xpand<\/p>\n<p>for 90 days<\/p>"
+            }
+          },
+          "1558075411721": {
+            "type": "item",
+            "settings": {
+              "text": "<p>Free worldwide<\/p>\n<p>shipping<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1558075392065",
+          "1558075403234",
+          "1558075411721"
+        ],
+        "settings": {
+          "title": "Our Satisfaction Guarantee",
+          "cta_text": "SHOP NOW",
+          "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
+        }
       }
     },
     "content_for_index": [
       "1557967708681",
       "1557977971910",
       "1558041214466",
-      "1558048205172"
+      "1558048205172",
+      "1558075345034"
     ]
   },
   "presets": {
