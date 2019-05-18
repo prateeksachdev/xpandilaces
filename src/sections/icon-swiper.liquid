@@ -1,0 +1,51 @@
+<section class="section icon-swiper">
+  <div class="container">
+    <swiper :options="swiperOption">
+      {% for block in section.blocks %}
+        <swiper-slide>
+          <a class="item" href="{{ block.settings.link }}">
+            <img src="{{ block.settings.image | img_url: 'master' }}">
+            {{ block.settings.text }}
+          </a>
+        </swiper-slide>
+      {% endfor %}
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Icon Swiper",
+    "max_blocks": 12,
+    "blocks": [
+      {
+        "type": "icon",
+        "name": "Icon",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Icon Swiper",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

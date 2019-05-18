@@ -247,6 +247,60 @@
           "link_text": "DISCOVER ALL COLORS",
           "link": "shopify:\/\/pages\/compare-laces"
         }
+      },
+      "1558160927845": {
+        "type": "icon-swiper",
+        "blocks": {
+          "1558160952848": {
+            "type": "icon",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Ellen_1_3f85b3d6-3179-4276-91eb-023d6f292629.png",
+              "link": "https:\/\/twitter.com\/TheEllenShow\/status\/994695612812611584",
+              "text": "<p>As featured by<\/p>\n<p>Ellen DeGeneres<\/p>"
+            }
+          },
+          "1558161066843": {
+            "type": "icon",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/today_show_010ba4e0-504a-4bcd-94d4-dcbd3802eaff.png",
+              "link": "https:\/\/www.today.com\/home\/10-must-have-products-make-even-busiest-mornings-easy-t137729",
+              "text": "<p>As seen on<\/p>\n<p>The Today Show<\/p>"
+            }
+          },
+          "1558161144526": {
+            "type": "icon",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/50777438-90041a00-12d6-11e9-9e68-d06f82c61f25_3166b84a-248d-4ded-8be7-dd934af86662.png",
+              "link": "https:\/\/www.cbc.ca\/news\/business\/shoelace-shoes-fitness-fashion-health-foot-health-podiatry-christmas-gifts-1.4949031",
+              "text": "<p>As seen on<\/p>\n<p>CBC National<\/p>"
+            }
+          },
+          "1558161234072": {
+            "type": "icon",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Kickstarter_logo1_1_618076b8-15dd-4391-985a-d29a6142fd08.png",
+              "link": "https:\/\/www.kickstarter.com\/projects\/914635363\/xpand-lacing-system",
+              "text": "<p>The $1.2 Million<\/p>\n<p>Kickstarter success<\/p>"
+            }
+          },
+          "1558161287842": {
+            "type": "icon",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Breakfast_Television_logo_1_4a1b4307-72f7-4522-af5f-335ff11828d4.png",
+              "link": "https:\/\/www.bttoronto.ca\/videos\/the-6-dad-is-in-the-house\/",
+              "text": "<p>Featured on<\/p>\n<p>Breakfast Television<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1558160952848",
+          "1558161066843",
+          "1558161144526",
+          "1558161234072",
+          "1558161287842"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
@@ -256,7 +310,8 @@
       "1558048205172",
       "1558075345034",
       "1558131609639",
-      "1558154461671"
+      "1558154461671",
+      "1558160927845"
     ]
   },
   "presets": {
