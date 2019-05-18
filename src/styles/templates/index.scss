@@ -266,6 +266,10 @@
 
   img {
     height: 60px;
+
+    @media screen and (min-width: $tablet) {
+      padding: 0 20px;
+    }
   }
 
   p {
