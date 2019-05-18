@@ -1,19 +1,21 @@
 <section class="section text-banner">
-  {% if section.settings.title != blank %}
-    <h2>{{ section.settings.title }}</h2>
-  {% endif %}
+  <div class="container">
+    {% if section.settings.title != blank %}
+      <h2>{{ section.settings.title }}</h2>
+    {% endif %}
 
-  {% if section.settings.text != blank %}
-    {{ section.settings.text }}
-  {% endif %}
+    {% if section.settings.text != blank %}
+      {{ section.settings.text }}
+    {% endif %}
 
-  {% if section.settings.cta_text != blank %}
-    <p>
-      <a class="button" href="{{ section.settings.cta_link }}">
-        {{ section.settings.cta_text}}
-      </a>
-    </p>
-  {% endif %}
+    {% if section.settings.cta_text != blank %}
+      <p>
+        <a class="button" href="{{ section.settings.cta_link }}">
+          {{ section.settings.cta_text}}
+        </a>
+      </p>
+    {% endif %}
+  </div>
 </section>
 
 {% schema %}
