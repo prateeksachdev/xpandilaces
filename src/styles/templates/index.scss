@@ -1,4 +1,5 @@
 @import "~bulma/sass/utilities/initial-variables.sass";
+@import "../variables.scss";
 
 .section.text-banner {
   h2 {
@@ -171,7 +172,6 @@
   }
 }
 
-
 .section.three-item-banner {
   background-color: #00837e;
 
@@ -267,13 +267,6 @@
   img {
     height: 60px;
     width: 100%;
-
-    @media screen and (min-width: $tablet) {
-      padding: 0 20px;
-      display: block;
-      margin: 0 auto;
-      max-width: 900px;
-    }
   }
 
   p {
@@ -289,6 +282,104 @@
       letter-spacing: 1.2;
       font-weight: bold;
       width: 180px;
+    }
+  }
+}
+
+.section.featured-products {
+  background-color: #f3f4f4;
+
+  h2 {
+    font-size: 32px;
+    font-family: "neuzeitgroteskblack";
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .columns {
+    flex-wrap: wrap;
+    max-width: 992px;
+    margin: 0 auto;
+  }
+
+  .product {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+
+    @media screen and (min-width: $large-phone) {
+      width: 420px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      width: 100%;
+    }
+
+    .info {
+      position: absolute;
+      padding: 20px;
+      width: 100%;
+    }
+
+    h3, p {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: 'Univers-Cn';
+
+      @media screen and (min-width: $large-phone) {
+        display: inline;
+      }
+    }
+
+    p {
+      font-weight: bold;
+
+      @media screen and (min-width: $large-phone) {
+        margin-left: 30px;
+      }
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .foot {
+      position: absolute;
+      bottom: 0;
+      line-height: 30px;
+      padding: 15px 20px;
+      border-top: 1px solid #fff;
+      width: 100%;
+
+      a {
+        line-height: 30px;
+        font-size: 18px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        color: white;
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    margin-top: 30px;
+
+    a {
+      height: 42px;
+      padding: 0 20px;
+      line-height: 40px;
+      background: #ff085a;
+      border: 0;
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      letter-spacing: 1px;
     }
   }
 }

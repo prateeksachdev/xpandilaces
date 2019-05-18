@@ -170,6 +170,83 @@
           "cta_text": "SHOP NOW",
           "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
         }
+      },
+      "1558131609639": {
+        "type": "image-with-text",
+        "settings": {
+          "title": "Over 40 Colors",
+          "image": "shopify:\/\/shop_images\/Screen_Shot_2018-11-18_at_07.33.20.png",
+          "cta_text": "SHOP NOW",
+          "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
+        }
+      },
+      "1558154461671": {
+        "type": "featured-products",
+        "blocks": {
+          "1558154465957": {
+            "type": "product",
+            "settings": {
+              "enable_block": true,
+              "product": "no-tie-original-elastic-lacing-system",
+              "variant_id": "19252571471983",
+              "image": "shopify:\/\/shop_images\/DSC04721_21212101-435f-4891-933f-4c6cadb343d0.jpg",
+              "title": "ORIGINAL NO-TIE LACING SYSTEM",
+              "caption": "<p>BLACK<\/p>",
+              "font_color": "#ffffff",
+              "link_text": "view product"
+            }
+          },
+          "1558154777831": {
+            "type": "product",
+            "settings": {
+              "enable_block": true,
+              "product": "quick-release-round-lacing-system",
+              "variant_id": "19252727840879",
+              "image": "shopify:\/\/shop_images\/DSC04722_a8f4e321-d0f4-425d-9b54-214518df7453.jpg",
+              "title": "QUICK-RELEASE LACING SYSTEM",
+              "caption": "<p>WHITE<\/p>",
+              "font_color": "#000000",
+              "link_text": "view product"
+            }
+          },
+          "1558154946227": {
+            "type": "product",
+            "settings": {
+              "enable_block": true,
+              "product": "no-tie-original-elastic-lacing-system",
+              "variant_id": "19252660764783",
+              "image": "shopify:\/\/shop_images\/DSC04725_b5e62389-4265-4a55-a713-2efb0b0d6df5.jpg",
+              "title": "ORIGINAL NO-TIE LACING SYSTEM",
+              "caption": "<p>RED<\/p>",
+              "font_color": "#000000",
+              "link_text": "view product"
+            }
+          },
+          "1558155113834": {
+            "type": "product",
+            "settings": {
+              "enable_block": true,
+              "product": "quick-release-round-lacing-system",
+              "variant_id": "19252728004719",
+              "image": "shopify:\/\/shop_images\/DSC04724_9e906acd-f65e-4ed3-9cae-4e69af786244.jpg",
+              "title": "QUICK-RELEASE LACING SYSTEM",
+              "caption": "<p>TRUE BLUE<\/p>",
+              "font_color": "#ffffff",
+              "link_text": "view product"
+            }
+          }
+        },
+        "block_order": [
+          "1558154465957",
+          "1558154777831",
+          "1558154946227",
+          "1558155113834"
+        ],
+        "settings": {
+          "title": "Our Best Sellers",
+          "link_text": "DISCOVER ALL COLORS",
+          "link": "shopify:\/\/pages\/compare-laces"
+        }
       }
     },
     "content_for_index": [
@@ -177,7 +254,9 @@
       "1557977971910",
       "1558041214466",
       "1558048205172",
-      "1558075345034"
+      "1558075345034",
+      "1558131609639",
+      "1558154461671"
     ]
   },
   "presets": {
