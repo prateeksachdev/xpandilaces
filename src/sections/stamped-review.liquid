@@ -1,7 +1,9 @@
 <section class="stamped-review-wrapper">
   <h2>{{ section.settings.title }}</h2>
-  <div class="reviews">
-    {{ section.settings.code_snippet }}
+  <div class="reviews lazyload" @lazybeforeunveil="load">
+    <template v-if="show">
+      {{ section.settings.code_snippet }}
+    </template>
   </div>
   <div class="clearfix"></div>
 </section>

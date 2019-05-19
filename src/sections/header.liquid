@@ -16,18 +16,20 @@
       <div v-if="isAnnouncementVisible" class="row announcement">
         <div class="container has-text-centered">
           <div class="text-wrap">
-            <img class="announcement-icon" src="{{ 'box.svg' | asset_url }}">
+            <img class="announcement-icon lazyload" data-src="{{ 'box.svg' | asset_url }}">
             {{ section.settings.shipping_text }}
           </div>
 
           <div class="text-wrap">
-            <i class="announcement-icon fa fa-heart"></i>
+            <span class="announcement-icon">
+              <svg width="16" height="16" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z"/></svg>
+            </span>
             {{ section.settings.promo_text }}
           </div>
         </div>
 
         <a @click="hideAnnouncement" href="javascript:;" class="close">
-          <i class="fa fa-times"></i>
+          <svg width="12" height="12" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z" fill="#fff"/></svg>
         </a>
       </div>
     </height-transition>
@@ -37,7 +39,13 @@
     <div class="container">
       <div class="navbar-brand">
         <a class="navbar-item logo" href="{{ shop.url }}">
-          <img src="{{ section.settings.logo | img_url: '200x' }}" alt="{{ shop.name | escape }}">
+          <img
+            srcset="{{ section.settings.logo | img_url: '200x' }} 200w,
+                    {{ section.settings.logo | img_url: '100x' }} 100w,
+                    {{ section.settings.logo | img_url: '50x' }} 50w"
+            src="{{ section.settings.logo | img_url: '100x' }}"
+            alt="{{ shop.name | escape }}"
+          >
         </a>
 
         <a class="navbar-item mobile" href="javascript:;" @click="toggleMobileMega">
@@ -95,7 +103,7 @@
           {% if block.settings.enable_block %}
             <div class="column">
               <a href="javascript:;" class="item">
-                <img src="{{ block.settings.image | img_url: '400x' }}">
+                <img class="lazyload" data-src="{{ block.settings.image | img_url: '400x' }}">
                 <h3>{{ block.settings.name }}</h3>
                 {{ block.settings.caption }}
               </a>
@@ -164,7 +172,7 @@
       {% for block in section.blocks %}
         {% if block.settings.enable_block %}
           <a href="javascript:;" class="item">
-            <img src="{{ block.settings.image | img_url: 'x200' }}">
+            <img class="lazyload" data-src="{{ block.settings.image | img_url: 'x200' }}">
             <h3>{{ block.settings.name }}</h3>
             {{ block.settings.caption }}
           </a>

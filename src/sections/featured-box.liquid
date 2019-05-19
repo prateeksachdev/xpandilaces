@@ -4,7 +4,7 @@
       {% for block in section.blocks %}
         {% if block.settings.enable_block %}
           <div class="column">
-            <div class="item" style="background-image: url('{{ block.settings.image | img_url: 'master' }}');">
+            <div class="item lazyload" data-bg="{{ block.settings.image | img_url: 'master' }}">
               <h3>{{ block.settings.title }}</h3>
 
               <div class="foot">

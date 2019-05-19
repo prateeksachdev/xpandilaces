@@ -16,7 +16,7 @@
               </div>
 
               <div>
-                <img src="{{ block.settings.image | img_url: 'master' }}">
+                <img class="lazyload" data-src="{{ block.settings.image | img_url: 'master' }}">
               </div>
               <div class="foot">
                 <a href="{{ product.url }}?variant={{block.settings.variant_id}}">{{ block.settings.link_text }}</a>

@@ -4,7 +4,7 @@
       {% for block in section.blocks %}
         <swiper-slide>
           <a class="item" href="{{ block.settings.link }}">
-            <img src="{{ block.settings.image | img_url: 'master' }}">
+            <img class="lazyload" data-src="{{ block.settings.image | img_url: 'master' }}">
             {{ block.settings.text }}
           </a>
         </swiper-slide>
