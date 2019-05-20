@@ -76,9 +76,43 @@
       },
       "footer": {
         "type": "footer",
+        "blocks": {
+          "1558329282090": {
+            "type": "link_column",
+            "settings": {
+              "link_list": "new-footer-menu-3"
+            }
+          },
+          "1558329329721": {
+            "type": "link_column",
+            "settings": {
+              "link_list": "support"
+            }
+          },
+          "1558329349340": {
+            "type": "link_column",
+            "settings": {
+              "link_list": "contact-us"
+            }
+          },
+          "1558329357917": {
+            "type": "newsletter_column",
+            "settings": {
+              "title": "Sign up & get 10% off",
+              "action_url": "",
+              "button_text": "submit"
+            }
+          }
+        },
+        "block_order": [
+          "1558329282090",
+          "1558329329721",
+          "1558329349340",
+          "1558329357917"
+        ],
         "settings": {
-          "footer_linklist": "footer",
-          "show_payment_icons": false
+          "logo": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
+          "bottom_links": "new-footer-menu-3"
         }
       },
       "1557967708681": {
@@ -301,6 +335,15 @@
         ],
         "settings": {
         }
+      },
+      "1558366114449": {
+        "type": "newsletter",
+        "settings": {
+          "title": "Get 10% Off",
+          "text": "Sign up to receive your promo code and be the first to know about exclusive offers",
+          "button_text": "SUBMIT",
+          "action_url": "\/\/manage.kmail-lists.com\/subscriptions\/subscribe"
+        }
       }
     },
     "content_for_index": [
@@ -311,7 +354,8 @@
       "1558075345034",
       "1558131609639",
       "1558154461671",
-      "1558160927845"
+      "1558160927845",
+      "1558366114449"
     ]
   },
   "presets": {

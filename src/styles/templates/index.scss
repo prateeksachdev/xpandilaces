@@ -430,3 +430,64 @@
     }
   }
 }
+
+.section.newsletter {
+  background-color: #e5e5e5;
+  color: black;
+
+  .container {
+    text-align: center;
+  }
+
+  h2 {
+    font-family: "neuzeitgroteskblack";
+    letter-spacing: 0.1px;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 0.75em;
+  }
+
+  p {
+    font-family: 'neuzeit_grotesk_light';
+  }
+
+  form {
+    margin-top: 15px;
+
+    input[type="email"] {
+      width: 100%;
+      height: 42px;
+      padding: 0 10px;
+      border: 0;
+      outline: none;
+      background: #fff;
+      color: #444;
+      font-size: 13px;
+      font: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin-bottom: 15px;
+      border-radius: 3px;
+
+      @media screen and (min-width: $tablet) {
+        width: 320px;
+      }
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      background: #36807c;
+      color: white;
+      border: 0;
+      font-size: 14px;
+      height: 42px;
+      padding: 0 20px;
+      line-height: 40px;
+      font-weight: bold;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      letter-spacing: 1px;
+
+      @media screen and (min-width: $tablet) {
+        width: 120px;
+      }
+    }
+  }
+}
