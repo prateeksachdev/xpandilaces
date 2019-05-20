@@ -55,8 +55,7 @@
     height: 420px;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 20px;
-    padding-top: 50px;
+    padding: 50px 0px 20px 0px;
     position: relative;
     margin: 0 auto;
     max-width: 420px;
@@ -370,7 +369,7 @@
     }
   }
 
-  p {
+  p.link-button {
     text-align: center;
     margin-top: 30px;
 
