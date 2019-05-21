@@ -1,48 +1,82 @@
 <footer>
+  <div class="go-to-top">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 100 100" id="Layer_1" version="1.1" viewBox="0 0 100 100" xml:space="preserve"><polygon fill="#010101" points="22.4,64.1 50.8,36.5 79.3,64.1 80.8,63.2 50.8,34.1 20.8,63.2 22.4,64.1 "/></svg>
+  </div>
+  <div class="container">
+    <div class="columns">
+      <div class="column logo">
+        <img
+          class="lazyload"
+          data-srcset="{{ section.settings.logo | img_url: '200x' }} 200w,
+                  {{ section.settings.logo | img_url: '100x' }} 100w,
+                  {{ section.settings.logo | img_url: '50x' }} 50w"
+          data-src="{{ section.settings.logo | img_url: '100x' }}"
+          alt="{{ shop.name | escape }}"
+        >
+      </div>
 
-  {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-  <ul>
-    {% for social in social_accounts %}
-      {%- assign social_handle = social | handleize -%}
-      {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-      {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
+      {% for block in section.blocks %}
+        {% if block.type == 'link_column' %}
+          <div class="column link">
+            <h6>{{ linklists[block.settings.link_list].title }}</h6>
 
-      {% if settings[social_link] != blank %}
-        <li>
-          <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
-            {% include social_icon %}
-            <span class="icon-fallback-text">{{ social }}</span>
-          </a>
-        </li>
-      {% endif %}
+            <ul>
+              {% for link in linklists[block.settings.link_list].links %}
+                <li>
+                  <a class="navbar-item" href="{{ link.url }}">
+                    {{ link.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
 
-    {% endfor %}
-  </ul>
+        {% if block.type == 'newsletter_column' %}
+          <div class="column newsletter">
+            <h6>{{ block.settings.title }}</h6>
 
-  {% if section.settings.show_payment_icons %}
-    {% unless shop.enabled_payment_types == empty %}
-      <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
-      <ul class="payment-icons">
-        {% for type in shop.enabled_payment_types %}
-          <li>
-            {{ type | payment_type_svg_tag: class: 'icon' }}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endunless %}
-  {% endif %}
+            <form action="{{ block.settings.action_url }}"  target="_blank">
+              <input type="hidden" name="g" value="NDrWDc">
+              <input type="email" name="email" placeholder="{{ 'general.newsletter_form.placeholder' | t }}">
+              <button type="submit" class="button">{{ block.settings.button_text }}</button>
+            </form>
 
-  {%- assign footer_linklist = section.settings.footer_linklist -%}
-  {% if linklists[footer_linklist].links.size > 0 %}
-    <ul>
-      {% for link in linklists[footer_linklist].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            <ul class="social-icons">
+              {% if settings.social_instagram_link != blank %}
+                <li><a href="{{ settings.social_instagram_link }}"target="_blank" class="icon-instagram"></a></li>
+              {% endif %}
+              {% if settings.social_facebook_link != blank %}
+                <li><a href="{{ settings.social_facebook_link }}" target="_blank" class="icon-facebook"></a></li>
+              {% endif %}
+
+              {% if settings.social_twitter_link != blank %}
+                <li><a href="{{ settings.social_twitter_link }}" target="_blank" class="icon-twitter"></a></li>
+              {% endif %}
+            </ul>
+          </div>
+        {% endif %}
       {% endfor %}
-    </ul>
-  {% endif %}
 
-  <div>
-    <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. {{ powered_by_link }}</small>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      {% if section.settings.bottom_links != blank %}
+        <ul>
+          <li>
+            &copy; {{ "now" | date: "%Y" }} {{ shop.name | link_to: '/' }}.
+          </li>
+          {% for link in linklists[section.settings.bottom_links].links %}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
   </div>
 </footer>
 
@@ -51,18 +85,67 @@
     "name": "Footer",
     "settings": [
       {
-        "type": "link_list",
-        "id": "footer_linklist",
-        "label": "First menu",
-        "default": "footer"
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
       },
       {
-        "type": "checkbox",
-        "id": "show_payment_icons",
-        "label": "Show payment icons",
-        "default": false
+        "type": "link_list",
+        "id": "bottom_links",
+        "label": "Bottom Links"
       }
-    ]
+    ],
+    "max_blocks": 4,
+    "blocks": [
+      {
+        "type": "link_column",
+        "name": "Link Column",
+        "settings": [
+          {
+            "type": "link_list",
+            "id": "link_list",
+            "label": "Link List"
+          }
+        ]
+      },
+      {
+        "type": "newsletter_column",
+        "name": "Newsletter Column",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "action_url",
+            "label": "Newsletter URL"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+          }
+        ]
+      }
+    ],
+    "default": {
+      "blocks": [
+        {
+          "type": "link_column"
+        },
+        {
+          "type": "link_column"
+        },
+        {
+          "type": "link_column"
+        },
+        {
+          "type": "newsletter_column"
+        }
+      ]
+    }
   }
 
 {% endschema %}

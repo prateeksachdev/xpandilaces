@@ -13,6 +13,7 @@ $navbar-breakpoint: $tablet;
 $large-phone: '576px';
 
 @import "sections/header";
+@import "sections/footer";
 
 [v-cloak] {
   display: none;

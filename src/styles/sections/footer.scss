@@ -1,0 +1,189 @@
+footer {
+  position: relative;
+
+  .columns {
+    padding: 0px;
+    width: 100%;
+    margin: 0;
+    margin-top: 35px;
+  }
+
+  .column {
+    h6 {
+      font-family: "neuzeitgroteskblack";
+      font-size: 22px;
+      text-transform: lowercase;
+      margin: 0;
+      padding: 0 0 5px 0;
+      color: #bebebe;
+    }
+
+    &.logo {
+      display: none;
+
+      @media screen and (min-width: $tablet) {
+        display: block;
+        flex: none;
+        width: 18%;
+      }
+
+      img {
+        max-width: 200px;
+        width: 60%;
+      }
+    }
+
+    &.link {
+      width: 50%;
+      float: left;
+
+      @media screen and (min-width: $tablet) {
+        flex: none;
+        float: none;
+        width: 18%;
+      }
+
+      li {
+        margin-bottom: 10px;
+        line-height: 1.1;
+
+        a {
+          font-size: 16px;
+          color: #757575;
+          font-family: "neuzeitgroteskblack";
+          padding: 0;
+          &:hover {
+            background-color: transparent;
+            color: black;
+          }
+        }
+      }
+    }
+
+    &.newsletter {
+      width: 100%;
+      float: left;
+
+      @media screen and (min-width: $tablet) {
+        margin-bottom: 30px;
+      }
+
+      input[type="email"] {
+        width: calc(100% - 80px);
+        float: left;
+        border: 1px solid #000;
+        border-radius: 4px 0 0 4px;
+        font-size: 16px;
+        height: 42px;
+        padding: 0 10px;
+        outline: none;
+        background: #fff;
+        color: #5f6a7d;
+        margin-bottom: 15px;
+      }
+
+      button {
+        width: 80px;
+        height: 42px;
+        border-radius: 0 4px 4px 0;
+        background: #000;
+        border: 1px solid #000;
+        font-size: 14px;
+        color: #fff;
+        font-weight: bold;
+        outline: 0;
+      }
+
+      .social-icons {
+        display: block;
+        padding-left: 0px;
+        width: 200px;
+        margin-bottom: 15px;
+
+        li {
+          display: inline;
+          margin-bottom: 1em;
+          padding-right: 2px;
+        }
+
+        a {
+          font-size: 16px;
+          height: 30px;
+          width: 30px;
+          padding: 0;
+          line-height: 30px;
+          border: 1px solid #000;
+          border-radius: 100%;
+          text-align: center;
+          margin: 0 3px;
+          color: black;
+          display: inline-block;
+
+          &.icon-instagram:before {
+            content: "\e90f";;
+          }
+
+          &.icon-facebook:before {
+            content: "\ea90";
+          }
+
+          &.icon-twitter:before {
+            content: "\ea96";
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    background: #000;
+    color: #fff;
+
+    .container {
+      padding: 10px 0;
+    }
+
+    ul {
+      text-align: center;
+
+      li {
+        padding: 0 10px;
+        display: inline-block;
+        margin-bottom: 0;
+        font-family: "Univers-Cn";
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        &:first-child {
+          display: block;
+
+          @media screen and (min-width: $tablet) {
+            display: inline-block;
+          }
+        }
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .go-to-top {
+    width: 70px;
+    height: 70px;
+    padding: 0px 0px 5px;
+    cursor: pointer;
+    text-align: center;
+    background: #f3f4f4;
+    border-radius: 50%;
+    position: absolute;
+    right: 50px;
+    top: -70px;
+
+    img {
+      width: 50px;
+    }
+  }
+}
