@@ -60,14 +60,20 @@ import vClickOutside from 'v-click-outside'
       directives: {
         clickOutside: vClickOutside.directive
       },
-      data: function () {
+      data () {
         return {
-          isAnnouncementVisible: true,
+          isAnnouncementVisible: localStorage.getItem('navbar.isAnnouncementVisible') != 'false',
           isMobileMegaVisible: false,
           isMobileMoreExpanded: false,
           isDesktopMegaVisible: false,
           isSearchVisible: false,
           isCartDetailVisible: false,
+        }
+      },
+      mounted () {
+        if (this.$refs.announcement && this.isAnnouncementVisible) {
+          const body = document.body
+          body.classList.add('announcement-visible')
         }
       },
       methods: {
@@ -107,6 +113,11 @@ import vClickOutside from 'v-click-outside'
 
         hideAnnouncement () {
           this.isAnnouncementVisible = false
+
+          const body = document.body
+          body.classList.remove('announcement-visible')
+
+          localStorage.setItem('navbar.isAnnouncementVisible', 'false')
         }
       }
     })
