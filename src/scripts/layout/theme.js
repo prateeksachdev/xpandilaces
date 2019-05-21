@@ -11,11 +11,15 @@ import '../../styles/theme.scss';
 import '../../styles/theme.scss.liquid';
 
 import '../sections/header';
+import '../sections/footer';
 
 import {focusHash, bindInPageLinks} from '@shopify/theme-a11y';
 
 import VueAwesomeSwiper from 'vue-awesome-swiper';
+import VueScrollTo from 'vue-scrollto';
+
 Vue.use(VueAwesomeSwiper, /* { default global options } */);
+Vue.use(VueScrollTo);
 
 // Common a11y fixes
 focusHash();
