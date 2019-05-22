@@ -496,3 +496,103 @@
     }
   }
 }
+
+.bottom-banner {
+  background-color: #36807c;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'neuzeit_grotesk_light';
+
+  .container {
+    padding-top: 15px;
+  }
+
+  .column {
+    padding: 0;
+  }
+
+  .promotion-title {
+    font-weight: bold;
+    color: #fff;
+    padding: 0px 15px;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 15px;
+    line-height: 0.8;
+
+    @media screen and (min-width: $tablet) {
+      width: 80%;
+      font-size: 50px;
+      text-align: left;
+      margin-bottom: 0px;
+    }
+  }
+
+  .promotion-code {
+    padding-top: 0;
+
+    @media screen and (min-width: $tablet) {
+      width: 72%;
+      float: none;
+    }
+
+    .column {
+      width: 50%;
+      float: left;
+      margin-top: 0;
+    }
+
+    h5 {
+      font-size: 20px;
+      text-align: center;
+      display: block;
+      color: #fff;
+
+      @media screen and (min-width: $tablet) {
+        font-size: 30px;
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+    }
+
+    span {
+      font-size: 14px;
+      display: block;
+      padding: 5px 15px;
+      background: #000;
+      text-align: center;
+      width: 80%;
+      color: #fff;
+      padding: 5px 15px;
+      margin: 10px auto 0;
+      border: 1px solid #fff;
+
+      @media screen and (min-width: $tablet) {
+        font-size: 20px;
+        background: #ebebec;
+        color: #000;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+
+    svg {
+      height: 20px;
+      width: 20px;
+
+      @media screen and (min-width: $tablet) {
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+}

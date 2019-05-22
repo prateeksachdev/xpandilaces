@@ -344,6 +344,34 @@
           "button_text": "SUBMIT",
           "action_url": "\/\/manage.kmail-lists.com\/subscriptions\/subscribe"
         }
+      },
+      "1558510378449": {
+        "type": "bottom-banner",
+        "blocks": {
+          "1558510583817": {
+            "type": "item",
+            "settings": {
+              "title": "6 Packs for $35",
+              "text": "CODE: 6FOR35"
+            }
+          },
+          "1558510609132": {
+            "type": "item",
+            "settings": {
+              "title": "8 Packs for $45",
+              "text": "CODE: 8FOR45"
+            }
+          }
+        },
+        "block_order": [
+          "1558510583817",
+          "1558510609132"
+        ],
+        "settings": {
+          "title": "LIMITED TIME DEAL",
+          "text_color": "#ffffff",
+          "background_color": "#36807c"
+        }
       }
     },
     "content_for_index": [
@@ -355,7 +383,8 @@
       "1558131609639",
       "1558154461671",
       "1558160927845",
-      "1558366114449"
+      "1558366114449",
+      "1558510378449"
     ]
   },
   "presets": {
