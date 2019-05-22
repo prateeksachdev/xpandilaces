@@ -10,10 +10,10 @@
   Theme Store optional settings
   - Home page only: only shows on the home page
 {%- endcomment -%}
-<nav v-cloak id="navbar" class="navbar is-fixed-top rows" role="navigation" data-section-id="{{ section.id }}" data-section-type="header">
+<nav id="navbar" class="navbar is-fixed-top rows" role="navigation" data-section-id="{{ section.id }}" data-section-type="header">
   {% if section.settings.announcement_bar_enabled %}
     <height-transition>
-      <div v-if="isAnnouncementVisible" ref="announcement" class="row announcement">
+      <div v-cloak v-if="isAnnouncementVisible" ref="announcement" class="row announcement">
         <div class="container has-text-centered">
           <div class="text-wrap">
             <img class="announcement-icon lazyload" data-src="{{ 'box.svg' | asset_url }}">
@@ -97,7 +97,7 @@
   </div>
 
   <transition name="fade">
-    <div v-show="isMobileMegaVisible" class="nav-drop row mega-drop mobile">
+    <div v-cloak v-show="isMobileMegaVisible" class="nav-drop row mega-drop mobile">
       <div class="columns is-mobile">
         {% for block in section.blocks %}
           {% if block.settings.enable_block %}
@@ -168,7 +168,7 @@
   </transition>
 
   <transition name="fade">
-    <div v-show="isDesktopMegaVisible" @mouseleave="hideDesktopMega" class="nav-drop row mega-drop desktop">
+    <div v-cloak v-show="isDesktopMegaVisible" @mouseleave="hideDesktopMega" class="nav-drop row mega-drop desktop">
       {% for block in section.blocks %}
         {% if block.settings.enable_block %}
           <a href="javascript:;" class="item">
@@ -182,7 +182,7 @@
   </transition>
 
   <transition name="fade">
-    <div v-if="isCartDetailVisible" class="nav-drop row mobile cart-detail">
+    <div v-cloak v-if="isCartDetailVisible" class="nav-drop row mobile cart-detail">
       <div class="drawer" v-click-outside="hideCartDetail">
         {% if cart.item_count > 0 %}
           <a @click="hideCartDetail" href="javascript:;" class="continue-shopping">
@@ -244,7 +244,7 @@
   </transition>
 
   <transition name="fade">
-    <div v-if="isSearchVisible" class="nav-drop row search">
+    <div v-cloak v-if="isSearchVisible" class="nav-drop row search">
       <form action="/search">
         {% if settings.search_option != 'everything' %}
           <input type="hidden" name="type" value="product" />

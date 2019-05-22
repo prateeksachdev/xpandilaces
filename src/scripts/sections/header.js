@@ -104,7 +104,9 @@ import vClickOutside from 'v-click-outside'
         },
 
         hideCartDetail () {
-          this.isCartDetailVisible = false
+          setTimeout(() => {
+            this.isCartDetailVisible = false
+          }, 66)
         },
 
         hideDesktopMega () {

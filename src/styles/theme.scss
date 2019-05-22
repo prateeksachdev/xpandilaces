@@ -16,7 +16,7 @@ $large-phone: '576px';
 @import "sections/footer";
 
 [v-cloak] {
-  display: none;
+  display: none !important;
 }
 
 input {
