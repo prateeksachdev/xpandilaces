@@ -376,31 +376,38 @@
       "compare-banner": {
         "type": "compare-banner",
         "blocks": {
-          "1558512239422": {
-            "type": "image",
+          "1558580187344": {
+            "type": "item",
             "settings": {
               "image": "shopify:\/\/shop_images\/Xpand_Navigation_Flat-Laces3.png",
-              "heading": "Original No-Tie Lacing System",
-              "button_label": "SHOP NOW",
-              "button_url": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
+              "title": "Original No-Tie Lacing System",
+              "button_text": "SHOP NOW",
+              "link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
             }
           },
-          "1558512320897": {
-            "type": "image",
+          "1558580245980": {
+            "type": "item",
             "settings": {
               "image": "shopify:\/\/shop_images\/Xpand_Navigation_Round_Laces-1_500x_c0668201-8e9b-4568-a40f-4b323c42f3c4.png",
-              "heading": "Quick-Release Lacing System",
-              "button_label": "Shop Now",
-              "button_url": "shopify:\/\/products\/quick-release-round-lacing-system"
+              "title": "Quick-Release Lacing System",
+              "button_text": "SHOP NOW",
+              "link": "shopify:\/\/products\/quick-release-round-lacing-system"
             }
           }
         },
         "block_order": [
-          "1558512239422",
-          "1558512320897"
+          "1558580187344",
+          "1558580245980"
         ],
         "settings": {
-          "heading": "Meet the Laces"
+          "title": "Meet the Laces"
+        }
+      },
+      "stamped-review": {
+        "type": "stamped-review",
+        "settings": {
+          "title": "Loved by All",
+          "code_snippet": "<div id=\"stamped-reviews-widget\" data-widget-type=\"visual-gallery\" data-product-ids=\"2009897304175\" data-min-rating=\"3\" data-random=\"true\" data-feed-type=\"carousel\" data-with-photos=\"true\"><\/div>"
         }
       }
     },
