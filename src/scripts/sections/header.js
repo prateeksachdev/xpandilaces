@@ -68,6 +68,10 @@ import vClickOutside from 'v-click-outside'
           isDesktopMegaVisible: false,
           isSearchVisible: false,
           isCartDetailVisible: false,
+          vcoCartDetail: {
+            handler: this.hideCartDetail,
+            middleware: this.notCartDetailToggler
+          }
         }
       },
       mounted () {
@@ -97,6 +101,10 @@ import vClickOutside from 'v-click-outside'
           this.isSearchVisible = !this.isSearchVisible
         },
 
+        notCartDetailToggler (e) {
+          return !e.target.closest('.cart')
+        },
+
         toggleCartDetail () {
           this.isMobileMegaVisible = false
           this.isSearchVisible = false
@@ -104,9 +112,7 @@ import vClickOutside from 'v-click-outside'
         },
 
         hideCartDetail () {
-          setTimeout(() => {
-            this.isCartDetailVisible = false
-          }, 66)
+          this.isCartDetailVisible = false
         },
 
         hideDesktopMega () {

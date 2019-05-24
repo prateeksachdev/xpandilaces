@@ -183,7 +183,7 @@
 
   <transition name="fade">
     <div v-cloak v-if="isCartDetailVisible" class="nav-drop row mobile cart-detail">
-      <div class="drawer" v-click-outside="hideCartDetail">
+      <div class="drawer" v-click-outside="vcoCartDetail">
         {% if cart.item_count > 0 %}
           <a @click="hideCartDetail" href="javascript:;" class="continue-shopping">
             {{ 'cart.general.continue_shopping_link_html' | t }}
