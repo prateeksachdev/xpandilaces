@@ -33,7 +33,8 @@ body {
 }
 
 .navbar {
-  overflow-y: visible;
+  height: 100%;
+  overflow-y: scroll;
   background: none;
 
   .height-enter-active, .height-leave-active {
