@@ -10,7 +10,7 @@
   Theme Store optional settings
   - Home page only: only shows on the home page
 {%- endcomment -%}
-<nav id="navbar" class="navbar is-fixed-top rows" role="navigation" data-section-id="{{ section.id }}" data-section-type="header">
+<nav id="navbar" :class="{ scrollable: isMobileMegaVisible }" class="navbar is-fixed-top rows" role="navigation" data-section-id="{{ section.id }}" data-section-type="header">
   {% if section.settings.announcement_bar_enabled %}
     <height-transition>
       <div v-cloak v-if="isAnnouncementVisible" ref="announcement" class="row announcement">
