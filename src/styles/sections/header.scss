@@ -35,7 +35,13 @@ body {
 .navbar {
   height: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
   background: none;
+
+  @media screen and (min-width: $tablet) {
+    height: auto;
+    overflow: visible;
+  }
 
   .height-enter-active, .height-leave-active {
     transition: height 0.3s linear;
