@@ -11,7 +11,6 @@ import '../../styles/theme.scss';
 import '../../styles/theme.scss.liquid';
 
 import '../sections/header';
-import '../sections/footer';
 
 import {focusHash, bindInPageLinks} from '@shopify/theme-a11y';
 

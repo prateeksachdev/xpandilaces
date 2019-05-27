@@ -1,0 +1,66 @@
+<section class="section faq">
+  <div class="container">
+    <h2>{{ section.settings.title }}</h2>
+
+    <div class="columns">
+      <ul class="column faq-content">
+        {% for block in section.blocks %}
+          <li id="{{ block.id }}" class="faq-item">
+            <a href="javascript:;" @click="toggleFaq" :class="{ selected: isItemVisible }">{{ block.settings.question }}</a>
+
+            <height-transition>
+              <div v-if="isItemVisible">
+                <p>{{ block.settings.answer }}</p>
+              </div>
+            </height-transition>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <a href="{{section.settings.link}}" class="button">{{ section.settings.link_text }}</a>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "FAQ Info",
+    "class": "faq-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Frequently Asked Questions"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Button Label",
+        "default": "See All FAQs"
+      }
+    ],
+    "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+         {
+           "id": "question",
+           "type": "textarea",
+           "label": "Question"
+         },
+         {
+          "id": "answer",
+          "type": "textarea",
+          "label": "Answer"
+        }
+      ]
+    }
+    ]
+  }
+{% endschema %}
