@@ -10,7 +10,7 @@
   Theme Store optional settings
   - Home page only: only shows on the home page
 {%- endcomment -%}
-<nav id="navbar" :class="{ scrollable: isMobileMegaVisible }" class="navbar is-fixed-top rows" role="navigation" data-section-id="{{ section.id }}" data-section-type="header">
+<!-- <nav id="navbar" :class="{ scrollable: isMobileMegaVisible }" class="navbar is-fixed-top rows" role="navigation" data-section-id="{{ section.id }}" data-section-type="header">
   {% if section.settings.announcement_bar_enabled %}
     <height-transition>
       <div v-cloak v-if="isAnnouncementVisible" ref="announcement" class="row announcement">
@@ -257,7 +257,258 @@
       </form>
     </div>
   </transition>
-</nav>
+</nav> -->
+
+<div data-section-id="{{ section.id }}" data-section-type="header">
+  <top-nav>
+    <template #announcement="{ hide }">
+      <div class="row announcement">
+        <div class="container has-text-centered">
+          <div class="text-wrap">
+            <img class="announcement-icon lazyload" data-src="{{ 'box.svg' | asset_url }}">
+            {{ section.settings.shipping_text }} {{isAnnouncementVisible}}
+          </div>
+
+          <div class="text-wrap">
+            <span class="announcement-icon">
+              <svg width="16" height="16" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z"/></svg>
+            </span>
+            {{ section.settings.promo_text }}
+          </div>
+        </div>
+
+        <a @click="hide" href="javascript:;" class="close">
+          <svg width="12" height="12" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z" fill="#fff"/></svg>
+        </a>
+      </div>
+    </template>
+
+    <template #menu="{ showDesktopMega, toggleMobileMega, toggleSearch, toggleCartDetail }">
+      <div class="row menu">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item logo" href="{{ shop.url }}">
+              <img
+                srcset="{{ section.settings.logo | img_url: '200x' }} 200w,
+                        {{ section.settings.logo | img_url: '100x' }} 100w,
+                        {{ section.settings.logo | img_url: '50x' }} 50w"
+                src="{{ section.settings.logo | img_url: '100x' }}"
+                alt="{{ shop.name | escape }}"
+              >
+            </a>
+
+            <a class="navbar-item mobile" href="javascript:;" @click="toggleMobileMega">
+              SHOP
+              <span class="icon-down-arrow">
+            </a>
+          </div>
+
+          <div class="navbar-menu primary">
+            <div class="navbar-start">
+              {% for link in linklists[section.settings.primary_menu].links %}
+                <a @mouseenter="showDesktopMega" class="navbar-item" href="{{ link.url }}">
+                  {{ link.title }}
+                  <span class="icon-down-arrow">
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="navbar-menu secondary">
+            <div class="navbar-start">
+              {% for link in linklists[section.settings.secondary_menu].links %}
+                <a class="navbar-item" href="{{ link.url }}">{{ link.title }}</a>
+              {% endfor %}
+
+              {% if shop.customer_accounts_enabled %}
+                <a class="navbar-item" href="/account">
+                  {% if customer %}
+                    {{ 'layout.customer.my_account' | t }}
+                  {% else %}
+                    {{ 'layout.customer.log_in' | t }}
+                  {% endif %}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="navbar-icons">
+            <a @click="toggleSearch" class="navbar-item search">
+              <img src="{{ 'search.png' | asset_url }}" alt="{{ 'general.search.title' | t }}">
+            </a>
+
+            <a @click="toggleCartDetail" class="navbar-item cart">
+              <img src="{{ 'cart.png' | asset_url }}" alt="{{ 'cart.general.title' | t }}">
+              <span class="cart-count">{{ cart.item_count }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template #mobile-mega="{ toggleMore, isMoreExpanded }">
+      <div class="nav-drop row mega-drop mobile">
+        <div class="columns is-mobile">
+          {% for block in section.blocks %}
+            {% if block.settings.enable_block %}
+              <div class="column">
+                <a href="javascript:;" class="item">
+                  <img class="lazyload" data-src="{{ block.settings.image | img_url: '400x' }}">
+                  <h3>{{ block.settings.name }}</h3>
+                  {{ block.settings.caption }}
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <ul class="menu">
+          {% for link in linklists[section.settings.secondary_menu].links %}
+            <li>
+              <a href="{{ link.url }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+
+          <li>
+            {% assign link = linklists[section.settings.mobile_menu].links.first %}
+            <a href="{{ link.url }}">
+              {{ link.title }}
+            </a>
+          </li>
+
+          <li>
+            <a @click="toggleMore" href="javascript:;">
+              More
+              <span class="icon-down-arrow">
+            </a>
+
+            <height-transition>
+              <ul v-if="isMoreExpanded" class="more">
+                {% for link in linklists[section.settings.mobile_menu].links %}
+                  {% unless forloop.first %}
+                    <li>
+                      <a href="{{ link.url }}">
+                        {{ link.title }}
+                      </a>
+                    </li>
+                  {% endunless %}
+                {% endfor %}
+              </ul>
+            </height-transition>
+          </li>
+
+          {% if shop.customer_accounts_enabled %}
+            {% if customer %}
+              <li>
+                <a href="/account">{{ customer.name }}</a>
+              </li>
+              <li>
+                {{ 'layout.customer.log_out' | t | customer_logout_link }}
+              </li>
+            {% else %}
+              <li>
+                {{ 'layout.customer.log_in' | t | customer_login_link }}
+              </li>
+            {% endif %}
+          {% endif %}
+        </ul>
+      </div>
+    </template>
+
+    <template #desktop-mega="{ hide }">
+      <div @mouseleave="hide" class="nav-drop row mega-drop desktop">
+        {% for block in section.blocks %}
+          {% if block.settings.enable_block %}
+            <a href="javascript:;" class="item">
+              <img class="lazyload" data-src="{{ block.settings.image | img_url: 'x200' }}">
+              <h3>{{ block.settings.name }}</h3>
+              {{ block.settings.caption }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </template>
+
+    <template #cart-detail="{ vco, hide }">
+      <div class="nav-drop row mobile cart-detail">
+        <div class="drawer" v-click-outside="vco">
+          {% if cart.item_count > 0 %}
+            <a @click="hide" href="javascript:;" class="continue-shopping">
+              {{ 'cart.general.continue_shopping_link_html' | t }}
+            </a>
+
+            <ul>
+              {% for item in cart.items %}
+                <li class="cart-item">
+                  <a href="{{ item.url}}">
+                    <div class="image">
+                      <img src="{{ item | img_url: '160x' }}" alt="{{ item.title | escape }}">
+                    </div>
+                    <div class="title">
+                      <span>{{ item.product.title }}</span>
+                    </div>
+                    <div class="price">
+                      <span>{{ item.price | money}}</span>
+                    </div>
+                  </a>
+
+                  <div class="quantity">
+                    <div class="field has-addons">
+                      <p class="control">
+                        <a class="button">
+                          <span class="icon-minus"></span>
+                        </a>
+                      </p>
+                      <p class="control">
+                        <input class="input" type="text" size="2" value="{{ item.quantity }}">
+                      </p>
+                      <p class="control">
+                        <a class="button">
+                          <span class="icon-plus"></span>
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+
+            <div class="foot">
+              <p class="subtotal">
+                <span>{{ 'layout.general.subtotal' | t }}</span>
+                <span class="is-pulled-right">{{ cart.total_price | money }}</span>
+              </p>
+              <p class="text-center">
+                <a class="button" href="/cart">
+                  {{ 'layout.general.go_to_cart' | t }}
+                </a>
+              </p>
+            </div>
+          {% else %}
+            <p class="empty">{{ 'layout.general.empty_cart' | t }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </template>
+
+    <template #search-bar>
+      <div class="nav-drop row search">
+        <form action="/search">
+          {% if settings.search_option != 'everything' %}
+            <input type="hidden" name="type" value="product" />
+          {% endif %}
+
+          <div class="control has-icons-right">
+            <input class="input" type="text" name="q" placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}" autocapitalize="off" autocomplete="off" autocorrect="off">
+            <button class="icon-search icon is-right is-large" type="submit"></button>
+          </div>
+        </form>
+      </div>
+    </template>
+  </top-nav>
+</div>
 
 {% schema %}
   {

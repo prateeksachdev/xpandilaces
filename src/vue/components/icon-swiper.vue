@@ -1,17 +1,27 @@
-document.addEventListener('DOMContentLoaded', function () {
+<template>
+  <section class="section icon-swiper">
+    <div class="container">
+      <swiper :options="swiperOption">
+        <slot name="slides"></slot>
+        <div class="swiper-pagination" slot="pagination"></div>
+      </swiper>
+    </div>
+  </section>
+</template>
 
-  new Vue({
-    el: 'section.three-item-banner',
-    delimiters: ['${', '}'],
+<script>
+  export default {
+    name: 'IconSwiper',
     data: function () {
       return {
         swiperOption: {
-          slidesPerView: 3,
+          slidesPerView: 5,
           spaceBetween: 30,
           pagination: {
             el: '.swiper-pagination',
             clickable: true
           },
+          loop: true,
           breakpoints: {
             // when window width is <= 575px
             575: {
@@ -21,14 +31,16 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             // when window width is <= 768px
             768: {
-              centeredSlides: false,
-              slidesPerView: 2,
+              centeredSlides: true,
+              slidesPerView: 1,
               spaceBetween: 30
             }
           }
         }
       }
     }
-  })
+  }
+</script>
 
-})
+<style lang="scss" scoped>
+</style>

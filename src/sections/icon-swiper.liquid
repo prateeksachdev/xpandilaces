@@ -1,18 +1,15 @@
-<section class="section icon-swiper">
-  <div class="container">
-    <swiper :options="swiperOption">
-      {% for block in section.blocks %}
-        <swiper-slide>
-          <a class="item" href="{{ block.settings.link }}">
-            <img class="lazyload" data-src="{{ block.settings.image | img_url: 'master' }}">
-            {{ block.settings.text }}
-          </a>
-        </swiper-slide>
-      {% endfor %}
-      <div class="swiper-pagination" slot="pagination"></div>
-    </swiper>
-  </div>
-</section>
+<icon-swiper>
+  <template #slides>
+    {% for block in section.blocks %}
+      <swiper-slide>
+        <a class="item" href="{{ block.settings.link }}">
+          <img class="lazyload" data-src="{{ block.settings.image | img_url: 'master' }}">
+          {{ block.settings.text }}
+        </a>
+      </swiper-slide>
+    {% endfor %}
+  </template>
+</icon-swiper>
 
 {% schema %}
   {

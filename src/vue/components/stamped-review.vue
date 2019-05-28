@@ -1,8 +1,16 @@
-document.addEventListener('DOMContentLoaded', function () {
+<template>
+  <section class="stamped-review-wrapper">
+    <slot name="title"></slot>
 
-  new Vue({
-    el: '.stamped-review-wrapper',
-    delimiters: ['${', '}'],
+    <div class="reviews lazyload" @lazybeforeunveil="load">
+      <slot v-if="show" name="snippet"></slot>
+    </div>
+  </section>
+</template>
+
+<script>
+  export default {
+    name: 'StampedReview',
     data: function () {
       return {
         show: false
@@ -30,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
         })
       }
     }
-  })
+  }
+</script>
 
-})
+<style lang="scss" scoped>
+</style>

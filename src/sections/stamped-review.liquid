@@ -1,11 +1,12 @@
-<section class="stamped-review-wrapper">
-  <h2>{{ section.settings.title }}</h2>
-  <div class="reviews lazyload" @lazybeforeunveil="load">
-    <template v-if="show">
-      {{ section.settings.code_snippet }}
-    </template>
-  </div>
-</section>
+<stamped-review>
+  <template #title>
+    <h2>{{ section.settings.title }}</h2>
+  </template>
+
+  <template #snippet>
+    {{ section.settings.code_snippet }}
+  </template>
+</stamped-review>
 
 {% schema %}
 {

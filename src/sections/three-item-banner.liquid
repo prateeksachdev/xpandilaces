@@ -1,21 +1,22 @@
-<section class="section three-item-banner">
-  <div class="container">
+<three-item-banner>
+  <template #title>
     {% if section.settings.title != blank %}
       <h2>{{ section.settings.title }}</h2>
     {% endif %}
+  </template>
 
-    <swiper :options="swiperOption">
-      {% for block in section.blocks %}
-        <swiper-slide>
-          <div class="item">
-            <span class="number-{{forloop.index}}"></span>
-            {{ block.settings.text }}
-          </div>
-        </swiper-slide>
-      {% endfor %}
-      <div class="swiper-pagination" slot="pagination"></div>
-    </swiper>
+  <template #slides>
+    {% for block in section.blocks %}
+      <swiper-slide>
+        <div class="item">
+          <span class="number-{{forloop.index}}"></span>
+          {{ block.settings.text }}
+        </div>
+      </swiper-slide>
+    {% endfor %}
+  </template>
 
+  <template #cta>
     {% if section.settings.cta_text != blank %}
       <p class="cta">
         <a class="button" href="{{ section.settings.cta_link }}">
@@ -23,9 +24,8 @@
         </a>
       </p>
     {% endif %}
-  </div>
-</section>
-
+  </template>
+</three-item-banner>
 {% schema %}
   {
     "name": "Three Item Banner",

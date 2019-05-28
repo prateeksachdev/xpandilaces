@@ -409,6 +409,42 @@
           "title": "Loved by All",
           "code_snippet": "<div id=\"stamped-reviews-widget\" data-widget-type=\"visual-gallery\" data-product-ids=\"2009897304175\" data-min-rating=\"3\" data-random=\"true\" data-feed-type=\"carousel\" data-with-photos=\"true\"><\/div>"
         }
+      },
+      "faq": {
+        "type": "faq",
+        "blocks": {
+          "1559077626568": {
+            "type": "faq",
+            "settings": {
+              "question": "Are Xpand Laces adjustable?",
+              "answer": "Yes! Finding the perfect fit is easy with Xpand Laces. We recommend testing the length before you trim the laces. Always set the initial adjustment on the loose side, so that you can always tighten them up if needed."
+            }
+          },
+          "1559077706831": {
+            "type": "faq",
+            "settings": {
+              "question": "Will Xpand Laces fit kids shoes or boots and high-tops?",
+              "answer": "Absolutely. Xpand Laces are designed to stretch and trimmed to fit, which makes them perfect for all types of shoes - from kids shoes to adult boots."
+            }
+          },
+          "1559077723984": {
+            "type": "faq",
+            "settings": {
+              "question": "What are the lengths of the Xpand Laces?",
+              "answer": "Xpand Laces are 52 inches long, and can stretch out to over twice that length, which makes them long enough for all types of shoes or boots."
+            }
+          }
+        },
+        "block_order": [
+          "1559077626568",
+          "1559077706831",
+          "1559077723984"
+        ],
+        "settings": {
+          "title": "Frequently Asked Questions",
+          "link": "shopify:\/\/pages\/faqs",
+          "link_text": "SEE ALL FAQs"
+        }
       }
     },
     "content_for_index": [

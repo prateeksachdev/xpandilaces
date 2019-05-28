@@ -5,19 +5,19 @@
     <div class="columns">
       <ul class="column faq-content">
         {% for block in section.blocks %}
-          <li id="{{ block.id }}" class="faq-item">
-            <a href="javascript:;" @click="toggleFaq" :class="{ selected: isItemVisible }">{{ block.settings.question }}</a>
+          <faq-item>
+            <template #question>
+              {{ block.settings.question }}
+            </template>
 
-            <height-transition>
-              <div v-if="isItemVisible">
-                <p>{{ block.settings.answer }}</p>
-              </div>
-            </height-transition>
-          </li>
+            <template #answer>
+              <p>{{ block.settings.answer }}</p>
+            </template>
+          </faq-item>
         {% endfor %}
       </ul>
     </div>
-    <a href="{{section.settings.link}}" class="button">{{ section.settings.link_text }}</a>
+    <a href="{{ section.settings.link }}" class="button">{{ section.settings.link_text }}</a>
   </div>
 </section>
 
