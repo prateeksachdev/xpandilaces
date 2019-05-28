@@ -3,8 +3,6 @@
 // Configuration file for all things Slate.
 // For more information, visit https://github.com/Shopify/slate/wiki/Slate-Configuration
 
-console.log(process.env.NODE_ENV);
-
 const path = require('path');
 const merge = require('webpack-merge');
 const {VueLoaderPlugin} = require('vue-loader');
