@@ -103,7 +103,7 @@
           {% for block in section.blocks %}
             {% if block.settings.enable_block %}
               <div class="column">
-                <a href="javascript:;" class="item">
+                <a href="{{ block.settings.link }}" class="item">
                   <img class="lazyload" data-src="{{ block.settings.image | img_url: '400x' }}">
                   <h3>{{ block.settings.name }}</h3>
                   {{ block.settings.caption }}
@@ -172,7 +172,7 @@
       <div @mouseleave="hide" class="nav-drop row mega-drop desktop">
         {% for block in section.blocks %}
           {% if block.settings.enable_block %}
-            <a href="javascript:;" class="item">
+            <a href="{{ block.settings.link }}" class="item">
               <img class="lazyload" data-src="{{ block.settings.image | img_url: 'x200' }}">
               <h3>{{ block.settings.name }}</h3>
               {{ block.settings.caption }}
