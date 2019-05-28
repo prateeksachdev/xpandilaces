@@ -41,6 +41,12 @@
         }
       }
     },
+    mounted () {
+      if (this.isAnnouncementVisible) {
+        const body = document.body
+        body.classList.add('announcement-visible')
+      }
+    },
     methods: {
       toggleMobileMega () {
         this.isCartDetailVisible = false
