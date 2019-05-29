@@ -1,0 +1,189 @@
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "../variables.scss";
+
+.login {
+
+  .slide-fade-enter-active {
+    transition: all 1s ease;
+  }
+
+  .slide-fade-enter, .slide-fade-leave-to {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+
+  .container {
+    padding-bottom: 50px;
+  }
+
+  .form-success {
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  h1 {
+    color: #0090fc;
+    font-family: 'neuzeitgroteskblack';
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin: 0 auto 30px;
+    padding: 0 1em;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 36px;
+      margin: 0 auto 50px;
+      padding: 0;
+    }
+  }
+
+  .login-form {
+    box-shadow: none;
+
+    @media screen and (min-width: $tablet) {
+      width: 340px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    &.hide {
+      display: none;
+    }
+
+    .errors {
+      ul {
+        list-style: disc outside;
+        margin-bottom: 20px;
+        font-family: 'neuzeit_grotesk_light';
+        margin-left: 30px;
+
+        li {
+          font-size: 15px;
+          color: #333333;
+          line-height: 1.6em;
+        }
+      }
+    }
+
+    h2 {
+      font-family: neuzeit_grotesk_regular;
+      font-size: 20px;
+      font-weight: bold;
+      font-style: normal;
+      text-transform: none;
+      line-height: 1.5;
+      color: #333333;
+      display: block;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+
+      @media screen and (min-width: $tablet) {
+        font-size: 25px;
+      }
+    }
+
+    .field {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      label {
+        font-family: 'neuzeit_grotesk_light';
+        display: block;
+        font-weight: bold;
+        font-size: 13px;
+        text-align: left;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+
+        a {
+          color: #03a196;
+          text-decoration: none;
+          float: right;
+          font-family: 'neuzeit_grotesk_light';
+          text-transform: none;
+          font-style: italic;
+          font-weight: normal;
+        }
+      }
+
+      input[type="email"], input[type="password"] {
+        box-shadow: none;
+        height: 42px;
+        color: #5f6a7d;
+        padding: 0 10px;
+        margin: 0;
+        line-height: 22px;
+        border: 1px solid #cccccc;
+        outline: none;
+        background: #fff;
+        color: #5f6a7d;
+        font: 13px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+        &:focus {
+          border-color: #aaa;
+        }
+      }
+    }
+
+    input[type="submit"] {
+      background: #ff085a;
+      border-color: #ff085a;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      display: inline-block;
+      padding: 0 20px;
+      text-align: center;
+      cursor: pointer;
+      min-height: 42px;
+      height: 40px;
+      line-height: 1.2;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #fff;
+      margin-right: 5px;
+    }
+
+    .register {
+      text-decoration: none;
+      float: right;
+      font-family: 'neuzeit_grotesk_light';
+      text-transform: none;
+      font-style: normal;
+      font-weight: normal;
+      margin-top: 8px;
+      font-size: 14px;
+
+      a {
+        color: #03a196;
+      }
+    }
+
+    .or-cancel {
+      font-family: 'neuzeit_grotesk_light';
+      font-size: 15px;
+    }
+
+    .cancel {
+      border: none;
+      background: none;
+      color: #03a196;
+      text-decoration: none;
+      font-size: 15px;
+      display: inline-block;
+      margin-top: 8px;
+      cursor: pointer;
+      font-family: 'neuzeit_grotesk_light';
+      padding: 0;
+    }
+
+    .note {
+      margin: 0 0 15px;
+      font-style: italic;
+      line-height: 1.6em;
+      font-family: 'neuzeit_grotesk_light';
+    }
+  }
+}

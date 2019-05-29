@@ -34,3 +34,44 @@ input {
 .clearfix {
   clear: both;
 }
+
+.shopify-challenge__container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 100px 0 200px 0;
+
+  @media screen and (min-width: $tablet) {
+    padding: 160px 0 320px 0;
+  }
+
+  p {
+    font-family: 'neuzeit_grotesk_light';
+    margin: 0 0 15px;
+    font-style: normal;
+    line-height: 1.6em;
+    font-size: 15px;
+  }
+
+  input[type="submit"] {
+    // margin: 0 auto;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    background: #36807c;
+    color: #ffffff;
+    border: 1px solid #36807c;
+    padding: 0 20px;
+    text-align: center;
+    cursor: pointer;
+    min-height: 42px;
+    line-height: 1.2;
+    vertical-align: top;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 3px;
+  }
+
+  iframe {
+    height: 78px;
+  }
+}
