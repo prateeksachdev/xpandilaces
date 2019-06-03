@@ -1,140 +1,155 @@
-<section data-section-id="{{ section.id }}" data-section-type="product">
+{%- include 'bold-product' with product, hide_action: 'break', output: 'none' -%}
+{% assign variant_selected = product.selected_or_first_available_variant %}
+{% assign image_identifier = variant_selected.title | remove: ' ' | downcase %}
 
-  {%- assign current_variant = product.selected_or_first_available_variant -%}
-  {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
-
-  {% for image in product.images %}
-    {% capture wrapper_class %}
-      {%- unless featured_image == image -%}
-        hide
-      {%- endunless -%}
+<section class="section product">
+  <div class="container">
+    {% capture imageGroupData %}
+      {% for image in product.images %}
+        {{image.id}}`~`{{image.alt}}`~`{{image | img_url: '80x'}}`~`{{image | img_url: '600x'}}`~~`
+      {% endfor %}
     {% endcapture %}
 
-    {% include 'responsive-image' with
-      image: image,
-      max_width: 700,
-      max_height: 800,
-      image_attributes: "data-product-featured-image",
-      wrapper_class: wrapper_class,
-      wrapper_attributes: "data-product-image-wrapper",
-    %}
-  {% endfor %}
+    {% assign prefix = product.type | split: ' ' | first | downcase | append: '-' %}
+    {% capture variantsData %}
+      {% for variant in product.variants %}
+        {% if variant.inventory_quantity > 0 and variant.available %}
+          {% assign swatch_filename = variant.title | downcase | replace: ' ', '-' | prepend: prefix | append: '.png' %}
 
-  {% if product.images.size > 1 %}
-    <ul>
-      {% for image in product.images %}
-        <li>
-          <a href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail{% if featured_image == image %} aria-current="true"{% endif %}>
-            <img class="product-single__thumbnail-image" src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
-          </a>
-        </li>
+          {{variant.id}}`~`{{variant.title}}`~`{{variant.price | money}}`~`{{swatch_filename | asset_img_url: '40x' }}`~`{{variant.image.id}}`~`{{variant.image.alt}}`~`{{variant.image | img_url: '80x'}}`~`{{variant.image | img_url: '600x'}}`~~`
+        {% endif %}
       {% endfor %}
-    </ul>
-  {% endif %}
+    {% endcapture %}
 
-  <h1>{{ product.title }}</h1>
-  <p>{{ product.vendor }}</p>
+    <product-form raw-image-group-data="{{imageGroupData}}" raw-variants-data="{{variantsData}}" default-variant-id="{{variant_selected.id}}" loading-gif-url="{{ 'loader.gif' | asset_url }}">
+      <template #brief>
+        <h1>{{product.title}}</h1>
+      </template>
 
+      <template #stamped-review-mobile>
+        <span class="mobile only-mobile stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-sku="{{ product.handle }}">{{ product.metafields.stamped.badge }}</span>
+      </template>
 
-  {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
-    {% unless product.has_only_default_variant %}
-      {% for option in product.options_with_values %}
-        <div class="js">
+      <template #stamped-review-desktop>
+        <span class="desktop stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-sku="{{ product.handle }}" >{{ product.metafields.stamped.badge }}</span>
+      </template>
 
-          {% if forloop.index0 > 0 %}
+      <template #price-note-mobile>
+        <span class="price-note mobile">{{section.settings.price_note_mobile}}</span>
+      </template>
 
-            {% for value in option.values %}
-              <input type="radio" id="Option{{ option.position }}-{{ value }}" name="options[{{ option.name }}]" value="{{ value }}"{% if option.selected_value == value %} checked{% endif %}>
-              <label for="Option{{ option.position }}-{{ value }}">{{ value }}</label>
-            {% endfor %}
+      <template #price-note-desktop>
+        <span class="price-note desktop">{{section.settings.price_note_desktop}}</span>
+      </template>
 
-          {% else %}
+      <template #promo>
+        <h3>{{section.settings.promo_title}}</h3>
 
-            <label for="Option{{ option.position }}">
-              {{ option.name }}
-            </label>
-
-            <select
-              id="Option{{ option.position }}"
-              name="options[{{ option.name | escape }}]">
-              {% for value in option.values %}
-                <option
-                  value="{{ value | escape }}"
-                  {% if option.selected_value == value %}selected="selected"{% endif %}>
-                    {{ value }}
-                </option>
-              {% endfor %}
-            </select>
-
-          {% endif %}
+        <div class="text">
+          <p>{{section.settings.promo_one}}</p>
+          <p>{{section.settings.promo_two}}</p>
+          <p>{{section.settings.promo_three}}</p>
         </div>
-      {% endfor %}
-    {% endunless %}
 
-    <noscript>
-      <select name="id">
-        {% for variant in product.variants %}
-          <option
-            {% if variant == current_variant %}selected="selected"{% endif %}
-            {% unless variant.available %}disabled="disabled"{% endunless %}
-            value="{{ variant.id }}">
-              {{ variant.title }}
-          </option>
-        {% endfor %}
-      </select>
-    </noscript>
+        <div class="code">
+          <p>{{section.settings.code_one}}</p>
+          <p>{{section.settings.code_two}}</p>
+          <p>{{section.settings.code_three}}</p>
+        </div>
+      </template>
 
-    <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
-    <input type="number" id="Quantity" name="quantity" value="1" min="1">
+      <template #shoes-types-desktop>
+        <div class="shoes-types desktop">
+          <ul>
+            <li>{{ 'running.svg' | asset_url | img_tag }}<span>Running</span></li>
+            <li>{{ 'walking.svg' | asset_url | img_tag }}<span>Walking</span></li>
+            <li>{{ 'biking.svg' | asset_url | img_tag }}<span>Biking</span></li>
+            <li>{{ 'hiking.svg' | asset_url | img_tag }}<span>Hiking</span></li>
+            <li>{{ 'sport.svg' | asset_url | img_tag }}<span>Sports</span></li>
+            <li>{{ 'marathon.svg' | asset_url | img_tag }}<span>Marathons</span></li>
+            <li>{{ 'kids.svg' | asset_url | img_tag }}<span>Kids</span></li>
+          </ul>
+        </div>
+      </template>
 
-    <div data-price-wrapper>
-      <span data-product-price>
-        {{ current_variant.price | money }}
-      </span>
-
-      {% if product.compare_at_price_max > product.price %}
-        <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
-        <s data-compare-price>
-          {% if current_variant.compare_at_price > current_variant.price %}
-            {{ current_variant.compare_at_price | money }}
-          {% endif %}
-        </s>
-      {% endif %}
-    </div>
-
-    <button
-      type="submit"
-      name="add"
-      data-submit-button
-      {% unless current_variant.available %}disabled="disabled"{% endunless %}>
-        <span data-submit-button-text>
-          {% if current_variant.available %}
-            {{ 'products.product.add_to_cart' | t }}
-          {% else %}
-            {{ 'products.product.sold_out' | t }}
-          {% endif %}
-        </span>
-    </button>
-  {% endform %}
-
-  <div class="rte">
-    {{ product.description }}
+      <template #shoes-types-mobile>
+        <div class="shoes-types mobile">
+          <ul>
+            <li>{{ 'running.svg' | asset_url | img_tag }}<span>Running</span></li>
+            <li>{{ 'walking.svg' | asset_url | img_tag }}<span>Walking</span></li>
+            <li>{{ 'biking.svg' | asset_url | img_tag }}<span>Biking</span></li>
+            <li>{{ 'hiking.svg' | asset_url | img_tag }}<span>Hiking</span></li>
+            <li>{{ 'sport.svg' | asset_url | img_tag }}<span>Sports</span></li>
+            <li>{{ 'marathon.svg' | asset_url | img_tag }}<span>Marathons</span></li>
+            <li>{{ 'kids.svg' | asset_url | img_tag }}<span>Kids</span></li>
+          </ul>
+        </div>
+      </template>
+    </product-form>
   </div>
-
-  {% if section.settings.show_share_buttons %}
-    {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
-  {% endif %}
 </section>
 
 {% schema %}
   {
-    "name": "Product pages",
+    "name": "Product",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "show_share_buttons",
-        "label": "Show social sharing buttons",
-        "default": true
+        "type": "header",
+        "content": "Pricing"
+      },
+      {
+        "type": "text",
+        "id": "price_note_desktop",
+        "label": "Price Note (Desktop)"
+      },
+      {
+        "type": "text",
+        "id": "price_note_mobile",
+        "label": "Price Note (Mobile)"
+      },
+      {
+        "type": "header",
+        "content": "Promo"
+      },
+      {
+        "type": "text",
+        "id": "promo_title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "promo_one",
+        "label": "Promo 1",
+        "default": "3 FOR $25"
+      },
+      {
+        "type": "text",
+        "id": "promo_two",
+        "label": "Promo 2",
+        "default": "6 FOR $35"
+      },
+      {
+        "type": "text",
+        "id": "promo_three",
+        "label": "Promo 3",
+        "default": "8 FOR $45"
+      },
+      {
+        "type": "text",
+        "id": "code_one",
+        "label": "Code 1"
+      },
+      {
+        "type": "text",
+        "id": "code_two",
+        "label": "Code 2",
+        "default": "CODE: 6for35"
+      },
+      {
+        "type": "text",
+        "id": "code_three",
+        "label": "Code 3",
+        "default": "CODE: 8for45"
       }
     ]
   }

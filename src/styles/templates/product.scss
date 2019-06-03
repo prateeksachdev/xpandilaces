@@ -1,0 +1,506 @@
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "../variables.scss";
+
+.product {
+  background-color: #f1f2f2;
+  padding: 0;
+
+  @media screen and (min-width: $tablet) {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .desktop {
+    display: none;
+
+    @media screen and (min-width: $tablet) {
+      display: inline-block;
+      margin-left: 15px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .mobile {
+    display: block;
+
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+  }
+
+  .columns:not(.product-gallery) {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .columns {
+    margin-left: 0;
+    margin-right: 0;
+
+    @media screen and (min-width: $tablet) {
+      margin-left: -0.75rem;
+      margin-right: -0.75rem;
+    }
+  }
+
+  .p20 {
+    padding: 20px;
+  }
+
+  .column.gallery {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0;
+
+    @media screen and (min-width: $tablet) {
+      max-width: 560px;
+      padding: 0.75rem;
+    }
+  }
+
+  .shoes-types {
+    margin: 0px;
+    padding-top: 10px;
+
+    ul {
+      text-align: center;
+
+      li {
+        display: inline-flex;
+        float: none;
+        text-align: left;
+        margin: 0 auto;
+        position: relative;
+        padding: 3px;
+
+        @media screen and (min-width: $tablet) {
+          display: inline-block;
+          padding: 3px 0;
+        }
+
+        span {
+          padding-left: 3px;
+          text-transform: uppercase;
+        }
+
+        img {
+          width: 38px;
+          margin: 0 auto;
+        }
+
+        span {
+          text-align: center;
+          letter-spacing: 0.1px;
+          color: #000000;
+          font-size: 10px;
+          font-weight: bold;
+          font-family: 'neuzeitgroteskblack';
+          margin-top:  12px;
+        }
+      }
+    }
+
+    @media screen and (min-width: $tablet) {
+      ul {
+        margin-top: 0;
+
+        li {
+          width: 70px;
+          text-align: center;
+
+          img {
+            display: block;
+          }
+
+          span {
+            position: relative;
+            margin: 0;
+          }
+
+        }
+      }
+    }
+  }
+
+  .column.controls {
+    margin: 0;
+    max-width: 100%;
+    background-color: white;
+
+    @media screen and (min-width: $tablet) {
+      background-color: inherit;
+      margin: 0 auto;
+      max-width: 360px;
+    }
+
+    .brief {
+      h1 {
+        font-family: 'neuzeitgroteskblack';
+        font-size: 20px;
+        line-height: 1.2;
+        letter-spacing: 0.3px;
+        width: auto;
+        padding-top: 10px;
+        margin-bottom: 10px;
+        color: black;
+
+        @media screen and (min-width: $tablet) {
+          width: 200px;
+          padding-top: 0;
+        }
+      }
+
+      .price-note {
+        display: block;
+        color: #898989;
+        font-size: 15px;
+        font-family: 'neuzeit_grotesk_light';
+        margin-bottom: 15px;
+
+        @media screen and (min-width: $tablet) {
+          display: none;
+        }
+      }
+    }
+
+    .stamped-main-badge {
+      margin-bottom: 25px;
+      margin-left: 0;
+    }
+
+    .stamped-product-reviews-badge .stamped-badge-caption {
+      font-weight: bold;
+      font-family: HelveticaNeue;
+      margin-left: 15px;
+
+      @media screen and (min-width: $tablet) {
+        display: inline-block !important;;
+      }
+    }
+
+    .price {
+      font-family: HelveticaNeue;
+      font-size: 20px;
+      letter-spacing: 0.1px;
+      font-weight: bold;
+
+      @media screen and (min-width: $tablet) {
+        font-size: 14px;
+      }
+
+      .price-note {
+        color: #898989;
+        font-size: 15px;
+        font-family: 'neuzeit_grotesk_light';
+      }
+    }
+
+    .selected-swatch-text {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: 'neuzeitgroteskblack';
+      font-size: 12px;
+      letter-spacing: 0.1px;
+      margin-bottom: 10px;
+
+      @media screen and (min-width: $tablet) {
+        margin-bottom: 38px;
+        margin-left: 0;
+      }
+    }
+
+    .add-to-cart {
+      margin-bottom: 10px;
+
+      @media screen and (min-width: $tablet) {
+        margin-bottom: 40px;
+      }
+
+      .icon-plus, .icon-minus, input[name="quantity"] {
+        max-width: 33px;
+        border: 2px solid #000;
+        border-radius: 5px;
+        color: #000;
+        line-height: 42px;
+        font-size: 18px;
+        background: #f2f2f2;
+        font-weight: 300;
+        cursor: pointer;
+        height: 42px;
+        width: 25%;
+        text-align: center;
+        background-color: white;
+
+        &:before {
+          font-weight: bold;
+        }
+
+        @media screen and (min-width: $tablet) {
+          background-color: inherit;
+        }
+      }
+
+      input[type=number] {
+        max-width: 43px;
+        font-weight: bold;
+        margin: 0 6px;
+      }
+
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+      }
+
+      button {
+        float: right;
+        width: calc(100% - 140px);
+        background-color: #0090fc;
+        border: 1px solid #0090fc;
+        border-radius: 5px;
+        color: #fff;
+        text-transform: uppercase;
+        font-family: "neuzeitgroteskblack";
+        font-weight: bold;
+        letter-spacing: 1.2px;
+        padding: 9px 20px;
+        height: 41px;
+
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          margin: auto;
+
+          path {
+            stroke-dasharray: 19.79 19.79;
+            stroke-dashoffset: 19.79;
+            opacity: 0;
+          }
+        }
+
+        span {
+          animation-duration: 0.8s;
+          animation-name: fadeInDown;
+        }
+
+        &.loading {
+          span {
+            animation-duration: 0.8s;
+            animation-name: zoomOut;
+          }
+
+          .checkmark path {
+            animation: drawCheckmark 0.5s linear alternate forwards;
+          }
+        }
+      }
+    }
+
+    .promo {
+      padding: 16px 0px 25px;
+      margin: 0;
+
+      &.mobile {
+        display: block;
+        margin-bottom: 10px;
+        background-color: #f1f2f2;
+
+        @media screen and (min-width: $tablet) {
+          display: none;
+        }
+      }
+
+      &.desktop {
+        display: none;
+        background-color: white;
+
+        @media screen and (min-width: $tablet) {
+          display: block;
+        }
+      }
+
+      @media screen and (min-width: $tablet) {
+        background-color: #fff;
+      }
+
+      h3 {
+        text-align: center;
+        color: #0090fc;
+        margin-bottom: 18px;
+        font-family: 'neuzeitgroteskblack';
+        margin-bottom: 15px;
+      }
+
+      .text {
+        text-align: center;
+
+        p {
+          display: inline-block;
+          border: 2px solid #bcbec0;
+          border-radius: 5px;
+          background-color: white;
+          color: #000;
+          padding: 6px;
+          font-family: 'neuzeitgroteskblack';
+          font-weight: bold;
+          padding: 6px 6px 6px;
+          font-size: 12px;
+        }
+      }
+
+      .code {
+        text-align: center;
+
+        p {
+          font-size: 9px;
+          border: none;
+          padding: 0;
+          text-align: center;
+          background-color: transparent;
+          display: inline-block;
+          font-family: 'neuzeitgroteskblack';
+          font-weight: bold;
+          width: 70px;
+
+          @media screen and (min-width: $tablet) {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+
+  .product-gallery {
+    margin-bottom: 0px;
+
+    .column.thumbnail {
+      width: 60px;
+      max-width: 60px;
+      display: none;
+
+      a {
+        display: inline-block;
+      }
+
+      @media screen and (min-width: $tablet) {
+        display: block;
+      }
+    }
+
+    .column.banner {
+      text-align: center;
+      width: 100%;
+      height: 412px;
+      padding-bottom: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+
+      @media screen and (min-width: $large-phone) {
+        height: 472px;
+      }
+
+      @media screen and (min-width: $tablet) {
+        width: 300px;
+        min-height: 300px;
+        padding: .75rem;
+        height: auto;
+      }
+
+      .swiper-container {
+        height: 400px;
+
+        @media screen and (min-width: $large-phone) {
+          height: 460px;
+        }
+
+        @media screen and (min-width: $tablet) {
+          height: auto;
+        }
+      }
+
+      .swiper-slide img {
+        display: block;
+        margin: 0 auto;
+        height: inherit;
+
+        @media screen and (min-width: $tablet) {
+          height: auto;
+          width: 100%;
+        }
+      }
+
+      .loading {
+        padding-top: 128px;
+      }
+    }
+  }
+
+  .product-swatch {
+    margin-bottom: 15px;
+
+    .swatch {
+      border: #e2e2e2 1px solid;
+      margin: 0px 4px 4px 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-block;
+      padding: 3px;
+      box-sizing: border-box;
+
+      @media screen and (min-width: $tablet) {
+        width: 28px;
+        height: 28px;
+        padding: 2px;
+      }
+
+      &.selected {
+        border-width: 1px;
+        border-color: #000;
+        box-shadow: 0px 0px 0px 2px #fff;
+        padding: 3px;
+
+        @media screen and (min-width: $tablet) {
+          padding: 1px;
+          border-width: 2px;
+        }
+      }
+
+      a {
+        display: inline-block;
+        min-height: 34px;
+        min-width: 34px;
+        width: 34px;
+        height: 34px;
+        border: #e2e2e2 2px solid;
+        border-radius: 50%;
+        background-position: center;
+        background-size: cover;
+
+
+        @media screen and (min-width: $tablet) {
+          min-height: 22px;
+          min-width: 22px;
+          width: 22px;
+          height: 22px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes drawCheckmark {
+  from {
+    stroke-dashoffset: 19.79;
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {0%{opacity:0;transform:translate3d(0,-20px,0)}to{opacity:1;transform:none}}.fadeInDown{animation-name:fadeInDown}
+@keyframes zoomOut {0%{opacity:1}50%{opacity:0;transform:scale3d(.3,.3,.3)}to{opacity:0}}.zoomOut{animation-name:zoomOut}
+

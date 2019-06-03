@@ -11,7 +11,7 @@
   - Home page only: only shows on the home page
 {%- endcomment -%}
 <div data-section-id="{{ section.id }}" data-section-type="header">
-  <top-nav>
+  <top-nav cart-json='{{cart | json}}'>
     <template #announcement="{ hide }">
       <div class="row announcement">
         <div class="container has-text-centered">
@@ -34,7 +34,7 @@
       </div>
     </template>
 
-    <template #menu="{ showDesktopMega, toggleMobileMega, toggleSearch, toggleCartDetail }">
+    <template #menu="{ showDesktopMega, toggleMobileMega, toggleSearch, showCartDetail }">
       <div class="row menu">
         <div class="container">
           <div class="navbar-brand">
@@ -88,9 +88,9 @@
               <img src="{{ 'search.png' | asset_url }}" alt="{{ 'general.search.title' | t }}">
             </a>
 
-            <a @click="toggleCartDetail" class="navbar-item cart">
+            <a @mouseenter="showCartDetail" class="navbar-item cart">
               <img src="{{ 'cart.png' | asset_url }}" alt="{{ 'cart.general.title' | t }}">
-              <span class="cart-count">{{ cart.item_count }}</span>
+              <cart-count></cart-count>
             </a>
           </div>
         </div>
@@ -184,7 +184,25 @@
 
     <template #cart-detail="{ vco, hide }">
       <div class="nav-drop row mobile cart-detail">
-        <div class="drawer" v-click-outside="vco">
+        <cart-drawer v-click-outside="vco" @hide="hide">
+          <template #continue-shopping>
+            {{ 'cart.general.continue_shopping_link_html' | t }}
+          </template>
+
+          <template #empty-msg>
+            {{ 'layout.general.empty_cart' | t }}
+          </template>
+
+          <template #sub-total-text>
+            {{ 'layout.general.subtotal' | t }}
+          </template>
+
+          <template #go-to-cart>
+            {{ 'layout.general.go_to_cart' | t }}
+          </template>
+        </cart-drawer>
+
+<!--         <div class="drawer" v-click-outside="vco">
           {% if cart.item_count > 0 %}
             <a @click="hide" href="javascript:;" class="continue-shopping">
               {{ 'cart.general.continue_shopping_link_html' | t }}
@@ -240,7 +258,7 @@
           {% else %}
             <p class="empty">{{ 'layout.general.empty_cart' | t }}</p>
           {% endif %}
-        </div>
+        </div> -->
       </div>
     </template>
 

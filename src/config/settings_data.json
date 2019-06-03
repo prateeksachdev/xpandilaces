@@ -445,6 +445,20 @@
           "link": "shopify:\/\/pages\/faqs",
           "link_text": "SEE ALL FAQs"
         }
+      },
+      "product": {
+        "type": "product",
+        "settings": {
+          "price_note_desktop": "&#149; one size fits all  &#149; for all shoe types",
+          "price_note_mobile": "One Size Fits All - Adults & Kids",
+          "promo_title": "Bundle up for savings.",
+          "promo_one": "3 FOR $25",
+          "promo_two": "6 FOR $35",
+          "promo_three": "8 FOR $45",
+          "code_one": "",
+          "code_two": "CODE: 6for35",
+          "code_three": "CODE: 8for45"
+        }
       }
     },
     "content_for_index": [

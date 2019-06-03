@@ -4,7 +4,7 @@
       <slot name="announcement" v-if="isAnnouncementVisible" :hide="hideAnnouncement"></slot>
     </height-transition>
 
-    <slot name="menu" :showDesktopMega="showDesktopMega" :toggleMobileMega="toggleMobileMega" :toggleSearch="toggleSearch" :toggleCartDetail="toggleCartDetail"></slot>
+    <slot name="menu" :showDesktopMega="showDesktopMega" :toggleMobileMega="toggleMobileMega" :toggleSearch="toggleSearch" :showCartDetail="showCartDetail"></slot>
 
     <transition name="fade">
       <slot name="mobile-mega" v-if="isMobileMegaVisible" :toggleMore="toggleMobileMore" :isMoreExpanded="isMobileMoreExpanded"></slot>
@@ -25,8 +25,13 @@
 </template>
 
 <script>
+  import store from '../store'
+
   export default {
     name: 'TopNav',
+    props: {
+      cartJson: String
+    },
     data () {
       return {
         isAnnouncementVisible: localStorage.getItem('navbar.isAnnouncementVisible') != 'false',
@@ -42,6 +47,9 @@
       }
     },
     mounted () {
+      store.setCart(JSON.parse(this.cartJson))
+      console.log(store.state.cart)
+
       if (this.isAnnouncementVisible) {
         const body = document.body
         body.classList.add('announcement-visible')
@@ -72,7 +80,7 @@
         return !e.target.closest('.cart')
       },
 
-      toggleCartDetail () {
+      showCartDetail () {
         this.isMobileMegaVisible = false
         this.isSearchVisible = false
         this.isCartDetailVisible = !this.isCartDetailVisible

@@ -75,3 +75,11 @@ input {
     height: 78px;
   }
 }
+
+.icon-minus:before {
+  content: "\e90d";
+}
+
+.icon-plus:before {
+  content: "\e910";
+}
