@@ -1,0 +1,60 @@
+<section class="how-it-work-tab">
+  <div class="container">
+    <h1>{{ section.settings.title }}</h1>
+
+    <tab-content>
+      <template #head="{ selectTab, activeTab }">
+        <ul class="columns">
+          {% for block in section.blocks %}
+            <li class="column" :class="{ active: activeTab === 'tab-{{forloop.index}}' }">
+              <span @click="selectTab" id="tab-{{forloop.index}}">{{ block.settings.title }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </template>
+
+      <template #body="{ activeTab }">
+        {% for block in section.blocks %}
+        <transition name="fade" mode="in-out">
+          <div v-if="activeTab === 'tab-{{forloop.index}}'" class="body-content">
+            {{ block.settings.content }}
+          </div>
+        </transition>
+        {% endfor %}
+      </template>
+    </tab-content>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Tab",
+    "class": "tab-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Installation Guide"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "tab",
+        "name": "Tab Content",
+        "settings": [
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Tab Title"
+          },
+          {
+            "id": "content",
+            "type": "html",
+            "label": "Tab Content"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
