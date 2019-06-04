@@ -1,0 +1,561 @@
+{% assign product_prefix = product.type | split: ' ' | first | downcase %}
+
+<section class="product-tab">
+  <tab-content>
+    <template #head="{ selectTab, activeTab }">
+      <div class="container">
+        <ul class="columns is-mobile">
+          {% for block in section.blocks %}
+            <li @click="selectTab" id="tab-{{forloop.index}}" class="column" :class="{ active: activeTab === 'tab-{{forloop.index}}' }">
+              {{ block.settings.name }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </template>
+
+    <template #body="{ activeTab }">
+      {% for block in section.blocks %}
+        <transition name="fade" mode="in-out">
+          <div v-if="activeTab === 'tab-{{forloop.index}}'" class="body-content">
+            {% if block.type == 'about' %}
+              <div class="container">
+                {% if product_prefix == 'flat' and block.settings.flat_top_video_url != blank %}
+                  <div class="top-video">
+                    <video autoplay="" loop="loop" muted playsinline>
+                      <source src="{{block.settings.flat_top_video_url}}" type="video/mp4">
+                    </video>
+                  </div>
+                {% endif %}
+
+                {% if product_prefix == 'round' and block.settings.round_top_video_url != blank %}
+                  <div class="top-video">
+                    <video autoplay="" loop="loop" muted playsinline>
+                      <source src="{{block.settings.round_top_video_url}}" type="video/mp4">
+                    </video>
+                  </div>
+                {% endif %}
+
+                <h2>{{block.settings.title}}</h2>
+
+                <div class="videos">
+                  <div class="columns is-mobile">
+                    <div class="column">
+                      <video autoplay="" loop="loop" muted playsinline>
+                        {% if product_prefix == 'flat' and block.settings.flat_video1_url %}
+                          <source src="{{block.settings.flat_video1_url}}" type="video/mp4">
+                        {% endif %}
+
+                        {% if product_prefix == 'round' and block.settings.round_video1_url %}
+                          <source src="{{block.settings.round_video1_url}}" type="video/mp4">
+                        {% endif %}
+                      </video>
+
+                      {% if product_prefix == 'flat' and block.settings.flat_video1_text %}
+                        <p>{{block.settings.flat_video1_text}}</p>
+                      {% endif %}
+
+                      {% if product_prefix == 'round' and block.settings.round_video1_text %}
+                        <p>{{block.settings.round_video1_text}}</p>
+                      {% endif %}
+                    </div>
+
+                    <div class="column">
+                      <video autoplay="" loop="loop" muted playsinline>
+                        {% if product_prefix == 'flat' and block.settings.flat_video1_url %}
+                          <source src="{{block.settings.flat_video2_url}}" type="video/mp4">
+                        {% endif %}
+
+                        {% if product_prefix == 'round' and block.settings.round_video1_url %}
+                          <source src="{{block.settings.round_video2_url}}" type="video/mp4">
+                        {% endif %}
+                      </video>
+
+                      {% if product_prefix == 'flat' and block.settings.flat_video2_text %}
+                        <p>{{block.settings.flat_video2_text}}</p>
+                      {% endif %}
+
+                      {% if product_prefix == 'round' and block.settings.round_video2_text %}
+                        <p>{{block.settings.round_video2_text}}</p>
+                      {% endif %}
+                    </div>
+                  </div>
+
+                  <div class="columns is-mobile">
+                    <div class="column">
+                      <video autoplay="" loop="loop" muted playsinline{% if product_prefix == 'flat' %} class="v3fix"{% endif %}>
+                        {% if product_prefix == 'flat' and block.settings.flat_video1_url %}
+                          <source src="{{block.settings.flat_video3_url}}" type="video/mp4">
+                        {% endif %}
+
+                        {% if product_prefix == 'round' and block.settings.round_video1_url %}
+                          <source src="{{block.settings.round_video3_url}}" type="video/mp4">
+                        {% endif %}
+                      </video>
+
+                      {% if product_prefix == 'flat' and block.settings.flat_video3_text %}
+                        <p>{{block.settings.flat_video3_text}}</p>
+                      {% endif %}
+
+                      {% if product_prefix == 'round' and block.settings.round_video3_text %}
+                        <p>{{block.settings.round_video3_text}}</p>
+                      {% endif %}
+                    </div>
+
+                    <div class="column">
+                      <video autoplay="" loop="loop" muted playsinline>
+                        {% if product_prefix == 'flat' and block.settings.flat_video1_url %}
+                          <source src="{{block.settings.flat_video4_url}}" type="video/mp4">
+                        {% endif %}
+
+                        {% if product_prefix == 'round' and block.settings.round_video1_url %}
+                          <source src="{{block.settings.round_video4_url}}" type="video/mp4">
+                        {% endif %}
+                      </video>
+
+                      {% if product_prefix == 'flat' and block.settings.flat_video4_text %}
+                        <p>{{block.settings.flat_video4_text}}</p>
+                      {% endif %}
+
+                      {% if product_prefix == 'round' and block.settings.round_video4_text %}
+                        <p>{{block.settings.round_video4_text}}</p>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="highlights">
+                <div class="container">
+                  <div class="columns">
+                    <div class="column text">
+                      {% if product_prefix == 'flat' and block.settings.flat_highlight1_title %}
+                        <p class="caption">{{block.settings.flat_highlight1_caption}}</p>
+                        <h3>{{block.settings.flat_highlight1_title}}</h3>
+                        {{block.settings.flat_highlight1_text}}
+                      {% endif %}
+
+                      {% if product_prefix == 'round' and block.settings.round_highlight1_title %}
+                        <p class="caption">{{block.settings.round_highlight1_caption}}</p>
+                        <h3>{{block.settings.round_highlight1_title}}</h3>
+                        <p>{{block.settings.round_highlight1_text}}</p>
+                      {% endif %}
+                    </div>
+
+                    <div class="column media">
+                      {% if product_prefix == 'flat' %}
+                        {% if block.settings.flat_highlight1_type == 'image' and block.settings.flat_highlight1_image %}
+                          <img src="{{block.settings.flat_highlight1_image | img_url: 'master'}}">
+                        {% endif %}
+
+                        {% if block.settings.flat_highlight1_type == 'video' and block.settings.flat_highlight1_video_url %}
+                          <video autoplay="" loop="loop" muted playsinline>
+                            <source src="{{block.settings.flat_highlight1_video_url}}" type="video/mp4">
+                          </video>
+                        {% endif %}
+                      {% endif %}
+
+                      {% if product_prefix == 'round' %}
+                        {% if block.settings.round_highlight1_type == 'image' and block.settings.round_highlight1_image %}
+                          <img src="{{block.settings.round_highlight1_image | img_url: 'master'}}">
+                        {% endif %}
+
+                        {% if block.settings.round_highlight1_type == 'video' and block.settings.round_highlight1_video_url %}
+                          <video autoplay="" loop="loop" muted playsinline>
+                            <source src="{{block.settings.round_highlight1_video_url}}" type="video/mp4">
+                          </video>
+                        {% endif %}
+                      {% endif %}
+                    </div>
+                  </div>
+
+                  <div class="columns">
+                    <div class="column text">
+                      {% if product_prefix == 'flat' and block.settings.flat_highlight2_title %}
+                        <p class="caption">{{block.settings.flat_highlight2_caption}}</p>
+                        <h3>{{block.settings.flat_highlight2_title}}</h3>
+                        {{block.settings.flat_highlight2_text}}
+                      {% endif %}
+
+                      {% if product_prefix == 'round' and block.settings.round_highlight2_title %}
+                        <p class="caption">{{block.settings.round_highlight2_caption}}</p>
+                        <h3>{{block.settings.round_highlight2_title}}</h3>
+                        <p>{{block.settings.round_highlight2_text}}</p>
+                      {% endif %}
+                    </div>
+
+                    <div class="column media">
+                      {% if product_prefix == 'flat' %}
+                        {% if block.settings.flat_highlight2_type == 'image' and block.settings.flat_highlight2_image %}
+                          <img src="{{block.settings.flat_highlight2_image | img_url: 'master'}}">
+                        {% endif %}
+
+                        {% if block.settings.flat_highlight2_type == 'video' and block.settings.flat_highlight2_video_url %}
+                          <video autoplay="" loop="loop" muted playsinline>
+                            <source src="{{block.settings.flat_highlight2_video_url}}" type="video/mp4">
+                          </video>
+                        {% endif %}
+                      {% endif %}
+
+                      {% if product_prefix == 'round' %}
+                        {% if block.settings.round_highlight2_type == 'image' and block.settings.round_highlight2_image %}
+                          <img src="{{block.settings.round_highlight2_image | img_url: 'master'}}">
+                        {% endif %}
+
+                        {% if block.settings.round_highlight2_type == 'video' and block.settings.round_highlight2_video_url %}
+                          <video autoplay="" loop="loop" muted playsinline>
+                            <source src="{{block.settings.round_highlight2_video_url}}" type="video/mp4">
+                          </video>
+                        {% endif %}
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </transition>
+      {% endfor %}
+    </template>
+  </tab-content>
+</section>
+
+{% schema %}
+  {
+    "name": "Product Tab",
+    "max_blocks": 4,
+    "blocks": [
+      {
+        "type": "about",
+        "name": "About",
+        "settings": [
+          {
+            "id": "name",
+            "type": "text",
+            "label": "Name"
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Title"
+          },
+          {
+            "type": "header",
+            "content": "Flat Lacing System"
+          },
+          {
+            "type": "text",
+            "id": "flat_top_video_url",
+            "label": "Top Video URL"
+          },
+          {
+            "type": "text",
+            "id": "flat_video1_url",
+            "label": "Video #1 URL"
+          },
+          {
+            "type": "text",
+            "id": "flat_video1_text",
+            "label": "Video #1 Text"
+          },
+          {
+            "type": "text",
+            "id": "flat_video2_url",
+            "label": "Video #2 URL"
+          },
+          {
+            "type": "text",
+            "id": "flat_video2_text",
+            "label": "Video #2 Text"
+          },
+          {
+            "type": "text",
+            "id": "flat_video3_url",
+            "label": "Video #3 URL"
+          },
+          {
+            "type": "text",
+            "id": "flat_video3_text",
+            "label": "Video #3 Text"
+          },
+          {
+            "type": "text",
+            "id": "flat_video4_url",
+            "label": "Video #4 URL"
+          },
+          {
+            "type": "text",
+            "id": "flat_video4_text",
+            "label": "Video #4 Text"
+          },
+          {
+            "type": "header",
+            "content": "Highlight #1"
+          },
+          {
+            "type": "radio",
+            "id": "flat_highlight1_type",
+            "label": "Enable",
+            "options": [
+              { "value": "image", "label": "Image" },
+              { "value": "video", "label": "Video" }
+            ],
+            "default":   "image"
+          },
+          {
+            "type": "text",
+            "id": "flat_highlight1_title",
+            "label": "Highlight #1 Title"
+          },
+          {
+            "type": "text",
+            "id": "flat_highlight1_caption",
+            "label": "Highlight #1 Caption"
+          },
+          {
+            "type": "richtext",
+            "id": "flat_highlight1_text",
+            "label": "Highlight #1 Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "flat_highlight1_image",
+            "label": "Highlight #1 Image"
+          },
+          {
+            "type": "text",
+            "id": "flat_highlight1_video_url",
+            "label": "Highlight #1 Video URL"
+          },
+          {
+            "type": "header",
+            "content": "Highlight #2"
+          },
+          {
+            "type": "radio",
+            "id": "flat_highlight2_type",
+            "label": "Enable",
+            "options": [
+              { "value": "image", "label": "Image" },
+              { "value": "video", "label": "Video" }
+            ],
+            "default":   "image"
+          },
+          {
+            "type": "text",
+            "id": "flat_highlight2_title",
+            "label": "Highlight #2 Title"
+          },
+          {
+            "type": "text",
+            "id": "flat_highlight2_caption",
+            "label": "Highlight #2 Caption"
+          },
+          {
+            "type": "richtext",
+            "id": "flat_highlight2_text",
+            "label": "Highlight #2 Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "flat_highlight2_image",
+            "label": "Highlight #2 Image"
+          },
+          {
+            "type": "text",
+            "id": "flat_highlight2_video_url",
+            "label": "Highlight #2 Video URL"
+          },
+          {
+            "type": "header",
+            "content": "Round Lacing System"
+          },
+          {
+            "type": "text",
+            "id": "round_top_video_url",
+            "label": "Top Video URL"
+          },
+          {
+            "type": "text",
+            "id": "round_video1_url",
+            "label": "Video #1 URL"
+          },
+          {
+            "type": "text",
+            "id": "round_video1_text",
+            "label": "Video #1 Text"
+          },
+          {
+            "type": "text",
+            "id": "round_video2_url",
+            "label": "Video #2 URL"
+          },
+          {
+            "type": "text",
+            "id": "round_video2_text",
+            "label": "Video #2 Text"
+          },
+          {
+            "type": "text",
+            "id": "round_video3_url",
+            "label": "Video #3 URL"
+          },
+          {
+            "type": "text",
+            "id": "round_video3_text",
+            "label": "Video #3 Text"
+          },
+          {
+            "type": "text",
+            "id": "round_video4_url",
+            "label": "Video #4 URL"
+          },
+          {
+            "type": "text",
+            "id": "round_video4_text",
+            "label": "Video #4 Text"
+          },
+          {
+            "type": "header",
+            "content": "Highlight #1"
+          },
+          {
+            "type": "radio",
+            "id": "round_highlight1_type",
+            "label": "Enable",
+            "options": [
+              { "value": "image", "label": "Image" },
+              { "value": "video", "label": "Video" }
+            ],
+            "default":   "image"
+          },
+          {
+            "type": "text",
+            "id": "round_highlight1_title",
+            "label": "Highlight #1 Title"
+          },
+          {
+            "type": "text",
+            "id": "round_highlight1_caption",
+            "label": "Highlight #1 Caption"
+          },
+          {
+            "type": "richtext",
+            "id": "round_highlight1_text",
+            "label": "Highlight #1 Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "round_highlight1_image",
+            "label": "Highlight #1 Image"
+          },
+          {
+            "type": "text",
+            "id": "round_highlight1_video_url",
+            "label": "Highlight #1 Video URL"
+          },
+          {
+            "type": "header",
+            "content": "Highlight #2"
+          },
+          {
+            "type": "radio",
+            "id": "round_highlight2_type",
+            "label": "Enable",
+            "options": [
+              { "value": "image", "label": "Image" },
+              { "value": "video", "label": "Video" }
+            ],
+            "default":   "image"
+          },
+          {
+            "type": "text",
+            "id": "round_highlight2_title",
+            "label": "Highlight #2 Title"
+          },
+          {
+            "type": "text",
+            "id": "round_highlight2_caption",
+            "label": "Highlight #2 Caption"
+          },
+          {
+            "type": "richtext",
+            "id": "round_highlight2_text",
+            "label": "Highlight #2 Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "round_highlight2_image",
+            "label": "Highlight #2 Image"
+          },
+          {
+            "type": "text",
+            "id": "round_highlight2_video_url",
+            "label": "Highlight #2 Video URL"
+          }
+        ]
+      },
+      {
+        "type": "spec",
+        "name": "Specs",
+        "settings": [
+          {
+            "id": "name",
+            "type": "text",
+            "label": "Name"
+          },
+          {
+            "type": "header",
+            "content": "Flat Lacing System"
+          },
+          {
+            "type": "richtext",
+            "id": "flat_description",
+            "label": "Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "flat_image",
+            "label": "Image"
+          },
+          {
+            "type": "header",
+            "content": "Round Lacing System"
+          },
+          {
+            "type": "richtext",
+            "id": "round_description",
+            "label": "Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "round_image",
+            "label": "Image"
+          }
+        ]
+      },
+      {
+        "type": "review",
+        "name": "Review",
+        "settings": [
+          {
+            "id": "name",
+            "type": "text",
+            "label": "Name"
+          }
+        ]
+      },
+      {
+        "type": "installation",
+        "name": "Installation",
+        "settings": [
+          {
+            "id": "name",
+            "type": "text",
+            "label": "Name"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

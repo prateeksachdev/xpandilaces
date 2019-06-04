@@ -10,6 +10,7 @@ Vue.component('stamped-review', require('../../vue/components/stamped-review.vue
 Vue.component('product-form', require('../../vue/components/product-form.vue').default)
 Vue.component('product-gallery', require('../../vue/components/product-gallery.vue').default)
 Vue.component('product-swatch', require('../../vue/components/product-swatch.vue').default)
+Vue.component('tab-content', require('../../vue/components/tab-content.vue').default)
 
 import init from "../../vue/init.js";
 

@@ -496,6 +496,90 @@
         "settings": {
           "text_color": "#32b3aa"
         }
+      },
+      "how-it-work-tab": {
+        "type": "how-it-work-tab",
+        "blocks": {
+          "1559665951963": {
+            "type": "tab",
+            "settings": {
+              "title": "Test",
+              "content": "test"
+            }
+          },
+          "1559665975847": {
+            "type": "tab",
+            "settings": {
+              "title": "Test2",
+              "content": "test2"
+            }
+          }
+        },
+        "block_order": [
+          "1559665951963",
+          "1559665975847"
+        ],
+        "settings": {
+          "title": "Installation Guide"
+        }
+      },
+      "product-tab": {
+        "type": "product-tab",
+        "blocks": {
+          "1559669561171": {
+            "type": "about",
+            "settings": {
+              "name": "About",
+              "title": "Get to know the laces",
+              "flat_top_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1206\/8416\/files\/XPAND.mp4?16646853987851673823",
+              "flat_video1_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Hidden_and_Visible.mp4?4757277608672948829",
+              "flat_video1_text": "HIDDEN & VISIBLE MODE",
+              "flat_video2_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Slip_On.mp4?4757277608672948829",
+              "flat_video2_text": "SLIP ON & GO",
+              "flat_video3_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Install_and_Adjust.mp4?4757277608672948829",
+              "flat_video3_text": "EASY TO INSTALL",
+              "flat_video4_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Less_Pain.mp4?4757277608672948829",
+              "flat_video4_text": "LAY FLAT",
+              "flat_highlight1_type": "video",
+              "flat_highlight1_title": "Zero-Memory Elastic Laces",
+              "flat_highlight1_caption": "PERFORMANCE & DURABILITY",
+              "flat_highlight1_text": "<p>Xpand Laces are made with zero-memory elastic rubber, which ensure a consistent comfortable fit throughout your day and during your workouts. Xpand Laces can work with any type of shoes or boots as you simply trim off the excess ends.<\/p>",
+              "flat_highlight1_image": "",
+              "flat_highlight1_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Horizontal_Sretch.mp4?4757277608672948829",
+              "flat_highlight2_type": "image",
+              "flat_highlight2_title": "Lace Anchor Clips",
+              "flat_highlight2_caption": "PATENTED TECHNOLOGY",
+              "flat_highlight2_text": "<p>Our patented Lace Anchors secure your laces in place through any vigorous activities, while maintaining an unbelievably comfortable fit. The Lace Anchors are manufactured with fiber reinforced resin, which provides amazing strength and prevents any breakage or warping.<\/p>",
+              "flat_highlight2_image": "shopify:\/\/shop_images\/Flat_Lace_Specs.jpg",
+              "flat_highlight2_video_url": "",
+              "round_top_video_url": "",
+              "round_highlight1_title": "",
+              "round_highlight1_caption": "",
+              "round_highlight1_text": "",
+              "round_highlight1_image": "",
+              "round_highlight2_title": "",
+              "round_highlight2_caption": "",
+              "round_highlight2_text": "",
+              "round_highlight2_image": ""
+            }
+          },
+          "1559669589872": {
+            "type": "spec",
+            "settings": {
+              "name": "Specs",
+              "flat_description": "",
+              "flat_image": "",
+              "round_description": "",
+              "round_image": "shopify:\/\/shop_images\/flat_specs.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1559669561171",
+          "1559669589872"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [

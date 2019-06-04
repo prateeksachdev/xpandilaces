@@ -606,3 +606,228 @@
     }
   }
 }
+
+.product-tab {
+  padding-top: 40px;
+
+  .head {
+    width: 100%;
+
+    .container {
+      @media screen and (min-width: $tablet) {
+        padding: 0 10px;
+      }
+    }
+
+    .columns {
+      margin: 0px;
+    }
+
+    ul {
+      @media screen and (min-width: $tablet) {
+        border-bottom: 2px solid #afafaf;
+      }
+    }
+
+    li {
+      text-align: center;
+      padding: 0;
+      cursor: pointer;
+      background-color: #f8f8f8;
+      border: none;
+      color: #bdbdbd;
+      padding: 10px 0;
+      font-family: "neuzeit_grotesk_regular";
+      font-size: 17px;
+
+      @media screen and (min-width: $tablet) {
+        position: relative;
+        bottom: -2px;
+        color: #bdbdbd;
+        font-weight: bold;
+        background: #f8f8f8;
+        height: 43px;
+        border: 2px solid #d7d7d7;
+        border-radius: 5px 5px 0px 0px;
+        font-family: "neuzeitgroteskblack";
+        border-bottom: 0px;
+      }
+
+      &:not(:last-child) {
+        border-right: 1px solid #d7d7d7;
+
+        @media screen and (min-width: $tablet) {
+          margin-right: 13px;
+          border-right: 2px solid #d7d7d7;
+        }
+      }
+
+      &.active {
+        position: relative;
+        background-color: #0090fc;
+        color: #fff;
+
+        @media screen and (min-width: $tablet) {
+          height: 45px;
+          border-bottom: 0px;
+          margin-bottom: 0px;
+          color: #008ffd;
+          background: #fff;
+          border-color: #afafaf;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 0px;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          width: 0;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-bottom: 5px solid #fff;
+        }
+      }
+    }
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .3s;
+  }
+
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+
+  .body-content {
+    padding-top: 30px;
+
+    @media screen and (min-width: $tablet) {
+      padding: 40px 0;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .top-video {
+    padding: 0px 10px 40px 10px;
+  }
+
+  h2 {
+    font-size: 28px;
+    color: #008ffd;
+    text-align: center;
+    letter-spacing: 0.1px;
+    font-family: "neuzeitgroteskblack";
+    margin-bottom: 30px;
+  }
+
+  .videos {
+    padding: 0 10px 90px 10px;
+  }
+
+  .videos .column {
+    height: 430px;
+    position: relative;
+    overflow: hidden;
+    padding: 0px;
+    margin: 10px;
+
+    @media screen and (min-width: $tablet) {
+      height: 530px;
+    }
+
+    video {
+      position: absolute;
+      bottom: -70px;
+
+      &.v3fix {
+        @media screen and (min-width: $desktop) {
+          bottom: -240px;
+        }
+      }
+    }
+
+    p {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      text-align: center;
+      padding: 10px 30px 40px 30px;
+      font-weight: bold;
+      font-size: 16px;
+      font-family: "neuzeit_grotesk_regular";
+      color: black;
+    }
+  }
+
+  .highlights {
+    background-color: #f7f7f7;
+
+    .columns {
+      display: flex;
+      flex-direction: column-reverse;
+
+      @media screen and (min-width: $tablet) {
+        flex-direction: unset;
+      }
+    }
+
+    .column.media {
+      padding: 0px;
+    }
+
+    .column.text {
+      text-align: center;
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 20px 0;
+
+      @media screen and (min-width: $tablet) {
+        text-align: left;
+        max-width: none;
+      }
+    }
+
+    @media screen and (min-width: $tablet) {
+      .container {
+        padding: 60px 0px;
+      }
+    }
+
+    .column.media, .column.text {
+      @media screen and (min-width: $tablet) {
+        padding: 0px 20px;
+      }
+    }
+
+    p.caption {
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-family: 'neuzeit_grotesk_regular';
+    }
+
+    h3 {
+      color: #0090fc;
+      font-family: 'neuzeit_grotesk_regular';
+      font-size: 26px;
+
+      @media screen and (min-width: $tablet) {
+        font-size: 36px;
+        line-height: normal;
+        margin: 10px 0;
+      }
+    }
+
+    p {
+      font-family: 'neuzeit_grotesk_light';
+      font-size: 18px;
+      color: black;
+    }
+  }
+}
