@@ -17,7 +17,7 @@
     <template #body="{ activeTab }">
       {% for block in section.blocks %}
         <transition name="fade" mode="in-out">
-          <div v-if="activeTab === 'tab-{{forloop.index}}'" class="body-content">
+          <div v-show="activeTab === 'tab-{{forloop.index}}'" class="body-content {{block.type}}">
             {% if block.type == 'about' %}
               <div class="container">
                 {% if product_prefix == 'flat' and block.settings.flat_top_video_url != blank %}
@@ -209,6 +209,34 @@
                         {% endif %}
                       {% endif %}
                     </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+            {% if block.type == 'specs' %}
+              <div class="container">
+                <div class="columns">
+                  <div class="column is-4 text">
+                    {% if product_prefix == 'flat' %}
+                      <h3>{{ block.settings.flat_title }}</h3>
+                      {{ block.settings.flat_description }}
+                    {% endif %}
+
+                    {% if product_prefix == 'round' %}
+                      <h3>{{ block.settings.round_title }}</h3>
+                      {{ block.settings.round_description }}
+                    {% endif %}
+                  </div>
+
+                  <div class="column is-8 media">
+                    {% if product_prefix == 'flat' %}
+                      <img src="{{block.settings.flat_image | img_url: 'master'}}">
+                    {% endif %}
+
+                    {% if product_prefix == 'round' %}
+                      <img src="{{block.settings.round_image | img_url: 'master'}}">
+                    {% endif %}
                   </div>
                 </div>
               </div>
@@ -496,7 +524,7 @@
         ]
       },
       {
-        "type": "spec",
+        "type": "specs",
         "name": "Specs",
         "settings": [
           {
@@ -507,6 +535,11 @@
           {
             "type": "header",
             "content": "Flat Lacing System"
+          },
+          {
+            "type": "text",
+            "id": "flat_title",
+            "label": "Title"
           },
           {
             "type": "richtext",
@@ -521,6 +554,11 @@
           {
             "type": "header",
             "content": "Round Lacing System"
+          },
+          {
+            "type": "text",
+            "id": "round_title",
+            "label": "Title"
           },
           {
             "type": "richtext",

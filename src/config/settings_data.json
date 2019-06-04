@@ -529,7 +529,7 @@
           "1559669561171": {
             "type": "about",
             "settings": {
-              "name": "About",
+              "name": "about",
               "title": "Get to know the laces",
               "flat_top_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1206\/8416\/files\/XPAND.mp4?16646853987851673823",
               "flat_video1_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Hidden_and_Visible.mp4?4757277608672948829",
@@ -553,30 +553,58 @@
               "flat_highlight2_image": "shopify:\/\/shop_images\/Flat_Lace_Specs.jpg",
               "flat_highlight2_video_url": "",
               "round_top_video_url": "",
-              "round_highlight1_title": "",
-              "round_highlight1_caption": "",
-              "round_highlight1_text": "",
-              "round_highlight1_image": "",
-              "round_highlight2_title": "",
-              "round_highlight2_caption": "",
-              "round_highlight2_text": "",
-              "round_highlight2_image": ""
+              "round_video1_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Round_-_Vertical_Active_to_Relaxed.mp4?15022662146648040962%20",
+              "round_video1_text": "LOCK & UNLOCK MODE",
+              "round_video2_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Round_-_Slip_On.mp4?15022662146648040962",
+              "round_video2_text": "SLIP ON & GO",
+              "round_video3_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Round_-_Install.mp4?15022662146648040962",
+              "round_video3_text": "EASY TO INSTALL",
+              "round_video4_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Round_-_Low_Profile.mp4?15022662146648040962",
+              "round_video4_text": "LAY FLAT",
+              "round_highlight1_type": "image",
+              "round_highlight1_title": "Guaranteed Not to Slip",
+              "round_highlight1_caption": "PERFORMANCE & DURABILITY",
+              "round_highlight1_text": "<p>The Xpand Lock holds over 30 lbs (16.5kg) of pressure, ensuring that your feet are secure in your shoe without the risk of slipping out, even during the most physical activities. The Xpand Lacing System has been tested to be 4 times stronger than any other clip design.<\/p>",
+              "round_highlight1_image": "shopify:\/\/shop_images\/Amazon_Strengths_V2.jpg",
+              "round_highlight1_video_url": "",
+              "round_highlight2_type": "image",
+              "round_highlight2_title": "Quick-Release Locking System",
+              "round_highlight2_caption": "PATENT-PENDING TECHNOLOGY",
+              "round_highlight2_text": "<p>The Xpand Quick-Release Lock is a one piece design that is simple to install and even easier to use. Made with fiber reinforced resin, the patent-pending Quick-Release Lock is nearly indestructible and holds up to some serious abuse.<\/p>",
+              "round_highlight2_image": "shopify:\/\/shop_images\/Round_Locks_1.jpg",
+              "round_highlight2_video_url": ""
             }
           },
-          "1559669589872": {
-            "type": "spec",
+          "1559675412721": {
+            "type": "review",
             "settings": {
-              "name": "Specs",
-              "flat_description": "",
-              "flat_image": "",
-              "round_description": "",
-              "round_image": "shopify:\/\/shop_images\/flat_specs.jpg"
+              "name": "review"
+            }
+          },
+          "1559675417021": {
+            "type": "installation",
+            "settings": {
+              "name": "installation"
+            }
+          },
+          "1559688483773": {
+            "type": "specs",
+            "settings": {
+              "name": "specs",
+              "flat_title": "In the package",
+              "flat_description": "<p>Every package completes&nbsp;<br>one pair of shoes:&nbsp;<br>2 elastic laces, 4 lace anchors, 4 end clips<\/p>",
+              "flat_image": "shopify:\/\/shop_images\/flat_specs.jpg",
+              "round_title": "In the package",
+              "round_description": "<p>Every package completes&nbsp;<br>one pair of shoes:&nbsp;<br>2 elastic laces, 4 lace anchors, 4 end clips<\/p>",
+              "round_image": "shopify:\/\/shop_images\/Round-Specs.jpg"
             }
           }
         },
         "block_order": [
           "1559669561171",
-          "1559669589872"
+          "1559688483773",
+          "1559675412721",
+          "1559675417021"
         ],
         "settings": {
         }
