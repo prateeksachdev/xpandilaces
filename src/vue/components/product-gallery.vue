@@ -2,7 +2,7 @@
   <div class="columns product-gallery">
     <div class="column thumbnail">
       <a v-for="(image, index) in images" :key="image.id" @click="swipeTo(index)" href="javascript:;">
-        <img :src="image.smLink">
+        <img class="lazyload" :data-src="image.smLink">
       </a>
     </div>
 
