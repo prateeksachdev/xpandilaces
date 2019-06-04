@@ -1,0 +1,57 @@
+<section class="section product-feature">
+  <div class="container">
+      <ul class="columns">
+      {% for block in section.blocks %}
+        <li class="column">
+          <span style="color: {{ section.settings.text_color  }};">{{ forloop.index }}</span>
+          <img data-src="{{ block.settings.icon | img_url: '40x' }}" class="lazyload" alt="{{ block.settings.icon.alt }}" data-src="{{ block.settings.icon | img_url }}"/>
+          <p class="text-mobile" style="color: {{ section.settings.text_color  }};">{{ block.settings.text_mobile }}</p>
+          <p class="text-desktop" style="color: {{ section.settings.text_color  }};">{{ block.settings.text }}</p>
+        </li>
+      {% endfor %}
+      </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Feature",
+  "settings": [
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "text_mobile",
+          "label": "Text (Mobile)"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Mobile Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Feature",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}

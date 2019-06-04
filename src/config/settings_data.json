@@ -459,6 +459,43 @@
           "code_two": "CODE: 6for35",
           "code_three": "CODE: 8for45"
         }
+      },
+      "product-feature": {
+        "type": "product-feature",
+        "blocks": {
+          "1559621981938": {
+            "type": "item",
+            "settings": {
+              "text": "Free <br> Shipping",
+              "text_mobile": "Free Shipping",
+              "icon": "shopify:\/\/shop_images\/mobile-box.png"
+            }
+          },
+          "1559622328595": {
+            "type": "item",
+            "settings": {
+              "text": "Try Xpand for <br>90 days",
+              "text_mobile": "Try Xpand for 90 Days",
+              "icon": "shopify:\/\/shop_images\/mobile-heart.png"
+            }
+          },
+          "1559622395675": {
+            "type": "item",
+            "settings": {
+              "text": "100% Money Back <br> Guarantee",
+              "text_mobile": "100% Satisfaction Guarantee",
+              "icon": "shopify:\/\/shop_images\/mobile-check.png"
+            }
+          }
+        },
+        "block_order": [
+          "1559621981938",
+          "1559622328595",
+          "1559622395675"
+        ],
+        "settings": {
+          "text_color": "#32b3aa"
+        }
       }
     },
     "content_for_index": [

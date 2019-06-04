@@ -71,9 +71,6 @@
         test: store.state
       }
     },
-    mounted () {
-      console.log(this.imageGroups)
-    },
     computed: {
       imageGroups () {
         if (this.rawImageGroupData) {
