@@ -249,6 +249,36 @@
                 <!--End Stamped.io Auto Installation-->
               </div>
             {% endif %}
+
+            {% if block.type == 'installation' %}
+              <div class="container">
+                <div class="videos">
+                  {% if product_prefix == 'flat' and block.settings.flat_video1_url != blank %}
+                    <div class="video">
+                      <iframe src="{{block.settings.flat_video1_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  {% endif %}
+
+                  {% if product_prefix == 'flat' and block.settings.flat_video2_url != blank %}
+                    <div class="video">
+                      <iframe src="{{block.settings.flat_video2_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  {% endif %}
+
+                  {% if product_prefix == 'round' and block.settings.round_video1_url != blank %}
+                    <div class="video">
+                      <iframe src="{{block.settings.round_video1_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  {% endif %}
+
+                  {% if product_prefix == 'round' and block.settings.round_video2_url != blank %}
+                    <div class="video">
+                      <iframe src="{{block.settings.round_video2_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
           </div>
         </transition>
       {% endfor %}
@@ -599,6 +629,34 @@
             "id": "name",
             "type": "text",
             "label": "Name"
+          },
+          {
+            "type": "header",
+            "content": "Flat Lacing System"
+          },
+          {
+            "type": "text",
+            "id": "flat_video1_url",
+            "label": "Video #1 URL"
+          },
+          {
+            "type": "text",
+            "id": "flat_video2_url",
+            "label": "Video #2 URL"
+          },
+          {
+            "type": "header",
+            "content": "Round Lacing System"
+          },
+          {
+            "type": "text",
+            "id": "round_video1_url",
+            "label": "Video #1 URL"
+          },
+          {
+            "type": "text",
+            "id": "round_video2_url",
+            "label": "Video #2 URL"
           }
         ]
       }
