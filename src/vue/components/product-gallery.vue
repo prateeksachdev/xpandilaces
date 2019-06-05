@@ -7,17 +7,14 @@
     </div>
 
     <div class="column banner">
-      <swiper v-if="isReady" v-show="isLoaded" :options="swiperOption" ref="swiper">
+      <swiper v-if="isReady" :options="swiperOption" ref="swiper">
         <swiper-slide v-for="image in images" :key="image.id">
-          <img :src="image.mdLink" @load="setLoaded" :id="image.id">
+          <img :data-src="image.mdLink" @load="setLoaded" :id="image.id" class="swiper-lazy">
+          <div class="swiper-lazy-preloader"></div>
         </swiper-slide>
 
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
-
-      <div class="loading" v-show="!isLoaded">
-        <img :src="loadingGifUrl">
-      </div>
     </div>
   </div>
 </template>
@@ -35,6 +32,8 @@
         isReady: true,
         swiperOption: {
           slidesPerView: 1,
+          preloadImages: false,
+          lazy: true,
           pagination: {
             el: '.swiper-pagination',
             clickable: true
@@ -43,10 +42,13 @@
         }
       }
     },
+    mounted () {
+      let elm = document.getElementById('loading-placeholder')
+      elm.parentNode.removeChild(elm)
+    },
     watch: {
       images (newVal, oldVal) {
         if (newVal[0].id != oldVal[0].id) {
-          this.isLoaded = false
           this.isReady = false
 
           setTimeout(() => {

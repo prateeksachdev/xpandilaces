@@ -1,7 +1,7 @@
 <template>
   <div class="product-swatch">
     <div v-for="(variant, id) in variants" :key="id" class="swatch" :class="{selected: id == variantId}">
-      <a :style="{backgroundImage: `url(${variant.swatchImageUrl})`}" @click="selectVariant(id)" href="javascript:;"></a>
+      <a v-scroll-to="'body'" :data-bg="variant.swatchImageUrl" @click="selectVariant(id)" class="lazyload" href="javascript:;"></a>
     </div>
   </div>
 </template>

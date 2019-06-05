@@ -378,6 +378,12 @@
   .product-gallery {
     margin-bottom: 0px;
 
+    @media screen and (min-width: $tablet) {
+      .swiper-lazy-preloader {
+        top: 200px;
+      }
+    }
+
     .column.thumbnail {
       width: 60px;
       max-width: 60px;
@@ -701,26 +707,26 @@
   }
 
   .fade-enter-active, .fade-leave-active {
-    transition: opacity .3s;
+    transition: opacity .3s linear;
   }
 
   .fade-enter, .fade-leave-to {
     opacity: 0;
   }
 
-  .body-content {
-    padding-top: 30px;
-
-    @media screen and (min-width: $tablet) {
-      padding: 40px 0;
-    }
-
+  .body-content.active {
     &.active {
       display: block;
     }
   }
 
   .about {
+    padding-top: 30px;
+
+    @media screen and (min-width: $tablet) {
+      padding: 40px 0;
+    }
+
     .top-video {
       padding: 0px 10px 40px 10px;
     }
@@ -907,6 +913,10 @@
   .reviews {
     .container {
       padding: 0 10px;
+    }
+
+    #stamped-main-widget {
+      margin-top: 0px;
     }
 
     #stamped-reviews-widget, .stamped-product-reviews-badge {
@@ -1375,6 +1385,11 @@
   }
 
   .installation {
+    padding-top: 30px;
+
+    @media screen and (min-width: $tablet) {
+      padding: 40px 0;
+    }
 
     .videos {
       padding: 0 20px;

@@ -587,16 +587,20 @@
               "round_image": "shopify:\/\/shop_images\/Round-Specs.jpg"
             }
           },
-          "1559675417021": {
-            "type": "installation",
-            "settings": {
-              "name": "installation"
-            }
-          },
           "1559691859431": {
             "type": "reviews",
             "settings": {
               "name": "reviews"
+            }
+          },
+          "1559675417021": {
+            "type": "installation",
+            "settings": {
+              "name": "installation",
+              "flat_video1_url": "https:\/\/www.youtube.com\/watch?v=eMSbyA9wNBo",
+              "flat_video2_url": "https:\/\/www.youtube.com\/watch?v=xp-4EMkwNQQ",
+              "round_video1_url": "https:\/\/www.youtube.com\/watch?v=8hMcup2C-ds",
+              "round_video2_url": ""
             }
           }
         },

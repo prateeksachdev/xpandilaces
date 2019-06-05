@@ -16,13 +16,13 @@
 
     <template #body="{ activeTab }">
       {% for block in section.blocks %}
-        <transition name="fade" mode="in-out">
-          <div v-show="activeTab === 'tab-{{forloop.index}}'" class="body-content {{block.type}}">
+        <transition name="fade">
+          <div v-if="activeTab === 'tab-{{forloop.index}}'" class="body-content {{block.type}}">
             {% if block.type == 'about' %}
               <div class="container">
                 {% if product_prefix == 'flat' and block.settings.flat_top_video_url != blank %}
                   <div class="top-video">
-                    <video autoplay="" loop="loop" muted playsinline>
+                    <video preload="none" autoplay="" loop="loop" muted playsinline>
                       <source src="{{block.settings.flat_top_video_url}}" type="video/mp4">
                     </video>
                   </div>
@@ -30,7 +30,7 @@
 
                 {% if product_prefix == 'round' and block.settings.round_top_video_url != blank %}
                   <div class="top-video">
-                    <video autoplay="" loop="loop" muted playsinline>
+                    <video preload="none" autoplay="" loop="loop" muted playsinline>
                       <source src="{{block.settings.round_top_video_url}}" type="video/mp4">
                     </video>
                   </div>
@@ -41,7 +41,7 @@
                 <div class="videos">
                   <div class="columns">
                     <div class="column">
-                      <video autoplay="" loop="loop" muted playsinline>
+                      <video preload="none" autoplay="" loop="loop" muted playsinline>
                         {% if product_prefix == 'flat' and block.settings.flat_video1_url %}
                           <source src="{{block.settings.flat_video1_url}}" type="video/mp4">
                         {% endif %}
@@ -61,7 +61,7 @@
                     </div>
 
                     <div class="column">
-                      <video autoplay="" loop="loop" muted playsinline>
+                      <video preload="none" autoplay="" loop="loop" muted playsinline>
                         {% if product_prefix == 'flat' and block.settings.flat_video1_url %}
                           <source src="{{block.settings.flat_video2_url}}" type="video/mp4">
                         {% endif %}
@@ -83,7 +83,7 @@
 
                   <div class="columns">
                     <div class="column">
-                      <video autoplay="" loop="loop" muted playsinline{% if product_prefix == 'flat' %} class="v3fix"{% endif %}>
+                      <video preload="none" autoplay="" loop="loop" muted playsinline{% if product_prefix == 'flat' %} class="v3fix"{% endif %}>
                         {% if product_prefix == 'flat' and block.settings.flat_video1_url %}
                           <source src="{{block.settings.flat_video3_url}}" type="video/mp4">
                         {% endif %}
@@ -103,7 +103,7 @@
                     </div>
 
                     <div class="column">
-                      <video autoplay="" loop="loop" muted playsinline>
+                      <video preload="none" autoplay="" loop="loop" muted playsinline>
                         {% if product_prefix == 'flat' and block.settings.flat_video1_url %}
                           <source src="{{block.settings.flat_video4_url}}" type="video/mp4">
                         {% endif %}
@@ -145,11 +145,11 @@
                     <div class="column media">
                       {% if product_prefix == 'flat' %}
                         {% if block.settings.flat_highlight1_type == 'image' and block.settings.flat_highlight1_image %}
-                          <img src="{{block.settings.flat_highlight1_image | img_url: 'master'}}">
+                          <img class="lazyload" data-src="{{block.settings.flat_highlight1_image | img_url: 'master'}}">
                         {% endif %}
 
                         {% if block.settings.flat_highlight1_type == 'video' and block.settings.flat_highlight1_video_url %}
-                          <video autoplay="" loop="loop" muted playsinline>
+                          <video preload="none" autoplay="" loop="loop" muted playsinline>
                             <source src="{{block.settings.flat_highlight1_video_url}}" type="video/mp4">
                           </video>
                         {% endif %}
@@ -157,11 +157,11 @@
 
                       {% if product_prefix == 'round' %}
                         {% if block.settings.round_highlight1_type == 'image' and block.settings.round_highlight1_image %}
-                          <img src="{{block.settings.round_highlight1_image | img_url: 'master'}}">
+                          <img class="lazyload" data-src="{{block.settings.round_highlight1_image | img_url: 'master'}}">
                         {% endif %}
 
                         {% if block.settings.round_highlight1_type == 'video' and block.settings.round_highlight1_video_url %}
-                          <video autoplay="" loop="loop" muted playsinline>
+                          <video preload="none" autoplay="" loop="loop" muted playsinline>
                             <source src="{{block.settings.round_highlight1_video_url}}" type="video/mp4">
                           </video>
                         {% endif %}
@@ -187,11 +187,11 @@
                     <div class="column media">
                       {% if product_prefix == 'flat' %}
                         {% if block.settings.flat_highlight2_type == 'image' and block.settings.flat_highlight2_image %}
-                          <img src="{{block.settings.flat_highlight2_image | img_url: 'master'}}">
+                          <img class="lazyload" data-src="{{block.settings.flat_highlight2_image | img_url: 'master'}}">
                         {% endif %}
 
                         {% if block.settings.flat_highlight2_type == 'video' and block.settings.flat_highlight2_video_url %}
-                          <video autoplay="" loop="loop" muted playsinline>
+                          <video preload="none" autoplay="" loop="loop" muted playsinline>
                             <source src="{{block.settings.flat_highlight2_video_url}}" type="video/mp4">
                           </video>
                         {% endif %}
@@ -199,11 +199,11 @@
 
                       {% if product_prefix == 'round' %}
                         {% if block.settings.round_highlight2_type == 'image' and block.settings.round_highlight2_image %}
-                          <img src="{{block.settings.round_highlight2_image | img_url: 'master'}}">
+                          <img class="lazyload" data-src="{{block.settings.round_highlight2_image | img_url: 'master'}}">
                         {% endif %}
 
                         {% if block.settings.round_highlight2_type == 'video' and block.settings.round_highlight2_video_url %}
-                          <video autoplay="" loop="loop" muted playsinline>
+                          <video preload="none" autoplay="" loop="loop" muted playsinline>
                             <source src="{{block.settings.round_highlight2_video_url}}" type="video/mp4">
                           </video>
                         {% endif %}
@@ -231,11 +231,11 @@
 
                   <div class="column is-8 media">
                     {% if product_prefix == 'flat' %}
-                      <img src="{{block.settings.flat_image | img_url: 'master'}}">
+                      <img class="lazyload" data-src="{{block.settings.flat_image | img_url: 'master'}}">
                     {% endif %}
 
                     {% if product_prefix == 'round' %}
-                      <img src="{{block.settings.round_image | img_url: 'master'}}">
+                      <img class="lazyload" data-src="{{block.settings.round_image | img_url: 'master'}}">
                     {% endif %}
                   </div>
                 </div>
@@ -255,25 +255,25 @@
                 <div class="videos">
                   {% if product_prefix == 'flat' and block.settings.flat_video1_url != blank %}
                     <div class="video">
-                      <iframe src="{{block.settings.flat_video1_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <iframe class="lazyload" data-src="{{block.settings.flat_video1_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                   {% endif %}
 
                   {% if product_prefix == 'flat' and block.settings.flat_video2_url != blank %}
                     <div class="video">
-                      <iframe src="{{block.settings.flat_video2_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <iframe class="lazyload" data-src="{{block.settings.flat_video2_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                   {% endif %}
 
                   {% if product_prefix == 'round' and block.settings.round_video1_url != blank %}
                     <div class="video">
-                      <iframe src="{{block.settings.round_video1_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <iframe class="lazyload" data-src="{{block.settings.round_video1_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                   {% endif %}
 
                   {% if product_prefix == 'round' and block.settings.round_video2_url != blank %}
                     <div class="video">
-                      <iframe src="{{block.settings.round_video2_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <iframe class="lazyload" data-src="{{block.settings.round_video2_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                   {% endif %}
                 </div>
