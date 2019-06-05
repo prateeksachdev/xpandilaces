@@ -1,6 +1,9 @@
 @import "~bulma/sass/utilities/initial-variables.sass";
 @import "../variables.scss";
 
+@import "../sections/stamped-review.scss";
+@import "../sections/faq.scss";
+
 .product {
   background-color: #f1f2f2;
   padding: 0;
