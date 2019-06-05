@@ -39,7 +39,7 @@
                 <h2>{{block.settings.title}}</h2>
 
                 <div class="videos">
-                  <div class="columns is-mobile">
+                  <div class="columns">
                     <div class="column">
                       <video autoplay="" loop="loop" muted playsinline>
                         {% if product_prefix == 'flat' and block.settings.flat_video1_url %}
@@ -81,7 +81,7 @@
                     </div>
                   </div>
 
-                  <div class="columns is-mobile">
+                  <div class="columns">
                     <div class="column">
                       <video autoplay="" loop="loop" muted playsinline{% if product_prefix == 'flat' %} class="v3fix"{% endif %}>
                         {% if product_prefix == 'flat' and block.settings.flat_video1_url %}
@@ -239,6 +239,14 @@
                     {% endif %}
                   </div>
                 </div>
+              </div>
+            {% endif %}
+
+            {% if block.type == 'reviews' %}
+              <div class="container">
+                <!--Start Stamped.io Auto Installation-->
+                <div id="stamped-main-widget" class="stamped-main-widget" data-widget-style="standard" data-photo-summary="false" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}" data-description="{{ product.description | escape }}" data-product-sku="{{product.handle}}">{{ product.metafields.stamped.reviews }}</div>
+                <!--End Stamped.io Auto Installation-->
               </div>
             {% endif %}
           </div>
@@ -573,8 +581,8 @@
         ]
       },
       {
-        "type": "review",
-        "name": "Review",
+        "type": "reviews",
+        "name": "Reviews",
         "settings": [
           {
             "id": "name",

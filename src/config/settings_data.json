@@ -575,18 +575,6 @@
               "round_highlight2_video_url": ""
             }
           },
-          "1559675412721": {
-            "type": "review",
-            "settings": {
-              "name": "review"
-            }
-          },
-          "1559675417021": {
-            "type": "installation",
-            "settings": {
-              "name": "installation"
-            }
-          },
           "1559688483773": {
             "type": "specs",
             "settings": {
@@ -598,12 +586,24 @@
               "round_description": "<p>Every package completes&nbsp;<br>one pair of shoes:&nbsp;<br>2 elastic laces, 4 lace anchors, 4 end clips<\/p>",
               "round_image": "shopify:\/\/shop_images\/Round-Specs.jpg"
             }
+          },
+          "1559675417021": {
+            "type": "installation",
+            "settings": {
+              "name": "installation"
+            }
+          },
+          "1559691859431": {
+            "type": "reviews",
+            "settings": {
+              "name": "reviews"
+            }
           }
         },
         "block_order": [
           "1559669561171",
           "1559688483773",
-          "1559675412721",
+          "1559691859431",
           "1559675417021"
         ],
         "settings": {
