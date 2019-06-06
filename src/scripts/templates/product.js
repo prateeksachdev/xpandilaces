@@ -5,21 +5,20 @@ import 'swiper/dist/css/swiper.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
-Vue.component('stamped-review', require('../../vue/components/stamped-review.vue').default)
-Vue.component('faq-item', require('../../vue/components/faq-item.vue').default)
 Vue.component('product-form', require('../../vue/components/product-form.vue').default)
 Vue.component('product-gallery', require('../../vue/components/product-gallery.vue').default)
 Vue.component('product-swatch', require('../../vue/components/product-swatch.vue').default)
 Vue.component('tab-content', require('../../vue/components/tab-content.vue').default)
+Vue.component('stamped-review', require('../../vue/components/stamped-review.vue').default)
+Vue.component('faq-item', require('../../vue/components/faq-item.vue').default)
 
 import init from "../../vue/init.js";
 
 init()
 
 // Hack around Stamped Review to make it look nicer
-window.addEventListener('DOMContentLoaded', function(){
+function fixReviewStyle ($) {
   var title = $('h1').text();
-
   $(".stamped-header-title").text(title).css('display','block');
   $(".stamped-thumbs-up").prepend("HELPFUL ");
   $(".stamped-thumbs-down").prepend(" NOT HELPFUL ");
@@ -100,4 +99,11 @@ window.addEventListener('DOMContentLoaded', function(){
         return false;
     }
   });
+}
+
+window.addEventListener('load', function() {
+  window.jQuery('body').on('click', '#tab-3', function () {
+    fixReviewStyle(window.jQuery)
+  })
 });
+
