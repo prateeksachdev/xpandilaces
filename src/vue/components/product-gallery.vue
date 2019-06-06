@@ -15,6 +15,10 @@
 
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
+
+      <div class="loading" v-show="!isLoaded">
+        <img :src="loadingGifUrl">
+      </div>
     </div>
   </div>
 </template>
@@ -50,6 +54,7 @@
       images (newVal, oldVal) {
         if (newVal[0].id != oldVal[0].id) {
           this.isReady = false
+          this.isLoaded = false
 
           setTimeout(() => {
             this.isReady = true
