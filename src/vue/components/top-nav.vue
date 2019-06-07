@@ -4,7 +4,7 @@
       <slot name="announcement" v-if="isAnnouncementVisible" :hide="hideAnnouncement"></slot>
     </height-transition>
 
-    <slot name="menu" :showDesktopMega="showDesktopMega" :toggleMobileMega="toggleMobileMega" :toggleSearch="toggleSearch" :showCartDetail="showCartDetail"></slot>
+    <slot name="menu" :showDesktopMega="showDesktopMega" :toggleMobileMega="toggleMobileMega" :toggleSearch="toggleSearch" :showCartDetail="showCartDetail" :vco="vcoCartDetail" :hideCartDetail="hideCartDetail" :isCartDetailVisible="isCartDetailVisible"></slot>
 
     <transition name="fade">
       <slot name="mobile-mega" v-if="isMobileMegaVisible" :toggleMore="toggleMobileMore" :isMoreExpanded="isMobileMoreExpanded"></slot>
@@ -12,10 +12,6 @@
 
     <transition name="fade">
       <slot name="desktop-mega" v-if="isDesktopMegaVisible" :hide="hideDesktopMega"></slot>
-    </transition>
-
-    <transition name="fade">
-      <slot name="cart-detail" v-if="isCartDetailVisible" :vco="vcoCartDetail" :hide="hideCartDetail"></slot>
     </transition>
 
     <transition name="fade">

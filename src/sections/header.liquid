@@ -34,7 +34,7 @@
       </div>
     </template>
 
-    <template #menu="{ showDesktopMega, toggleMobileMega, toggleSearch, showCartDetail }">
+    <template #menu="{ showDesktopMega, toggleMobileMega, toggleSearch, showCartDetail, hideCartDetail, isCartDetailVisible, vco }">
       <div class="row menu">
         <div class="container">
           <div class="navbar-brand">
@@ -92,6 +92,28 @@
               <img src="{{ 'cart.png' | asset_url }}" alt="{{ 'cart.general.title' | t }}">
               <cart-count></cart-count>
             </a>
+
+            <transition name="fade">
+              <div v-if="isCartDetailVisible" class="cart-detail">
+                <cart-drawer v-click-outside="vco" @hide="hideCartDetail">
+                  <template #continue-shopping>
+                    {{ 'cart.general.continue_shopping_link_html' | t }}
+                  </template>
+
+                  <template #empty-msg>
+                    {{ 'layout.general.empty_cart' | t }}
+                  </template>
+
+                  <template #sub-total-text>
+                    {{ 'layout.general.subtotal' | t }}
+                  </template>
+
+                  <template #go-to-cart>
+                    {{ 'layout.general.go_to_cart' | t }}
+                  </template>
+                </cart-drawer>
+              </div>
+            </transition>
           </div>
         </div>
       </div>
@@ -179,86 +201,6 @@
             </a>
           {% endif %}
         {% endfor %}
-      </div>
-    </template>
-
-    <template #cart-detail="{ vco, hide }">
-      <div class="nav-drop row mobile cart-detail">
-        <cart-drawer v-click-outside="vco" @hide="hide">
-          <template #continue-shopping>
-            {{ 'cart.general.continue_shopping_link_html' | t }}
-          </template>
-
-          <template #empty-msg>
-            {{ 'layout.general.empty_cart' | t }}
-          </template>
-
-          <template #sub-total-text>
-            {{ 'layout.general.subtotal' | t }}
-          </template>
-
-          <template #go-to-cart>
-            {{ 'layout.general.go_to_cart' | t }}
-          </template>
-        </cart-drawer>
-
-<!--         <div class="drawer" v-click-outside="vco">
-          {% if cart.item_count > 0 %}
-            <a @click="hide" href="javascript:;" class="continue-shopping">
-              {{ 'cart.general.continue_shopping_link_html' | t }}
-            </a>
-
-            <ul>
-              {% for item in cart.items %}
-                <li class="cart-item">
-                  <a href="{{ item.url}}">
-                    <div class="image">
-                      <img src="{{ item | img_url: '160x' }}" alt="{{ item.title | escape }}">
-                    </div>
-                    <div class="title">
-                      <span>{{ item.product.title }}</span>
-                    </div>
-                    <div class="price">
-                      <span>{{ item.price | money}}</span>
-                    </div>
-                  </a>
-
-                  <div class="quantity">
-                    <div class="field has-addons">
-                      <p class="control">
-                        <a class="button">
-                          <span class="icon-minus"></span>
-                        </a>
-                      </p>
-                      <p class="control">
-                        <input class="input" type="text" size="2" value="{{ item.quantity }}">
-                      </p>
-                      <p class="control">
-                        <a class="button">
-                          <span class="icon-plus"></span>
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              {% endfor %}
-            </ul>
-
-            <div class="foot">
-              <p class="subtotal">
-                <span>{{ 'layout.general.subtotal' | t }}</span>
-                <span class="is-pulled-right">{{ cart.total_price | money }}</span>
-              </p>
-              <p class="text-center">
-                <a class="button" href="/cart">
-                  {{ 'layout.general.go_to_cart' | t }}
-                </a>
-              </p>
-            </div>
-          {% else %}
-            <p class="empty">{{ 'layout.general.empty_cart' | t }}</p>
-          {% endif %}
-        </div> -->
       </div>
     </template>
 

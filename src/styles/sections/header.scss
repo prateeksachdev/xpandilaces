@@ -391,14 +391,19 @@ body {
   }
 }
 
-.navbar > .cart-detail {
+.navbar .cart-detail {
   display: flex;
   justify-content: flex-end;
+  position: absolute;
+  top: 40px;
+
+  @media screen and (min-width: $tablet) {
+    top: 60px;
+  }
 
   .drawer {
     background-color: white;
     border: 1px solid #ccc;
-    border-right: 0px;
     width: 320px;
     max-height: 70vh;
     overflow-y: auto;
