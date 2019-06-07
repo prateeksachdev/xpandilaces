@@ -441,8 +441,11 @@
       }
 
       .loading {
+        display: none;
+
         @media screen and (min-width: $tablet) {
           padding-top: 128px;
+          display: block;
         }
       }
     }
