@@ -87,3 +87,7 @@ input {
 .hidden {
   display: none;
 }
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

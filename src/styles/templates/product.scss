@@ -386,6 +386,7 @@
 
     .column.thumbnail {
       width: 60px;
+      min-width: 60px;
       max-width: 60px;
       display: none;
 
@@ -425,7 +426,18 @@
         }
 
         @media screen and (min-width: $tablet) {
-          height: auto;
+          width: 280px;
+          height: 280px;
+        }
+
+        @media screen and (min-width: 860px) {
+          width: 360px;
+          height: 360px;
+        }
+
+        @media screen and (min-width: 960px) {
+          width: 476px;
+          height: 476px;
         }
       }
 
