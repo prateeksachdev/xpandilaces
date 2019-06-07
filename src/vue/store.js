@@ -4,7 +4,8 @@ var store = {
   debug: true,
   state: {
     message: 'Hello!',
-    cart: {item_count: 0}
+    cart: {item_count: 0},
+    isCartDetailVisible: false
   },
   addToCart (variantId, quantity) {
     return this._addToCart(variantId, quantity).then(this._getCart).then((cart) => {
@@ -53,6 +54,12 @@ var store = {
   clearMessageAction () {
     if (this.debug) console.log('clearMessageAction triggered')
     this.state.message = ''
+  },
+  showCartDetail () {
+    this.state.isCartDetailVisible = true
+  },
+  hideCartDetail () {
+    this.state.isCartDetailVisible = false
   }
 }
 

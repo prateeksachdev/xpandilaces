@@ -166,6 +166,7 @@
         this.isAddingToCart = true
         store.addToCart(variantId, quantity).then(() => {
           this.isAddingToCart = false
+          store.showCartDetail()
         })
       },
 

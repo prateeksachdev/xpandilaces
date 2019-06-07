@@ -88,7 +88,7 @@
               <img src="{{ 'search.png' | asset_url }}" alt="{{ 'general.search.title' | t }}">
             </a>
 
-            <a @mouseenter="showCartDetail" class="navbar-item cart">
+            <a @mouseenter="showCartDetail" @click="showCartDetail" class="navbar-item cart">
               <img src="{{ 'cart.png' | asset_url }}" alt="{{ 'cart.general.title' | t }}">
               <cart-count></cart-count>
             </a>

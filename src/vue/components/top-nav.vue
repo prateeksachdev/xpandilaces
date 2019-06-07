@@ -35,16 +35,20 @@
         isMobileMoreExpanded: false,
         isDesktopMegaVisible: false,
         isSearchVisible: false,
-        isCartDetailVisible: false,
         vcoCartDetail: {
           handler: this.hideCartDetail,
           middleware: this.notCartDetailToggler
-        }
+        },
+        state: store.state
+      }
+    },
+    computed: {
+      isCartDetailVisible () {
+        return this.state.isCartDetailVisible
       }
     },
     mounted () {
       store.setCart(JSON.parse(this.cartJson))
-      console.log(store.state.cart)
 
       if (this.isAnnouncementVisible) {
         const body = document.body
@@ -53,7 +57,7 @@
     },
     methods: {
       toggleMobileMega () {
-        this.isCartDetailVisible = false
+        store.hideCartDetail()
         this.isSearchVisible = false
         this.isMobileMegaVisible = !this.isMobileMegaVisible
       },
@@ -63,12 +67,14 @@
       },
 
       showDesktopMega () {
+        store.hideCartDetail()
         this.isDesktopMegaVisible = true
       },
 
       toggleSearch () {
+        store.hideCartDetail()
+
         this.isMobileMegaVisible = false
-        this.isCartDetailVisible = false
         this.isSearchVisible = !this.isSearchVisible
       },
 
@@ -79,11 +85,11 @@
       showCartDetail () {
         this.isMobileMegaVisible = false
         this.isSearchVisible = false
-        this.isCartDetailVisible = !this.isCartDetailVisible
+        store.showCartDetail()
       },
 
       hideCartDetail () {
-        this.isCartDetailVisible = false
+        store.hideCartDetail()
       },
 
       hideDesktopMega () {
