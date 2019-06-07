@@ -1085,6 +1085,11 @@
         }
       }
       .stamped-content {
+        .stamped-reviews-filter {
+          @media (min-width: $tablet) {
+            margin-top: 60px;
+          }
+        }
         .stamped-tab-container {
           .stamped-tabs {
             .tab-reviews {
@@ -1186,6 +1191,7 @@
           }
         }
         .stamped-reviews {
+
           .stamped-review {
             &:first-child {
               padding-top: 100px;
