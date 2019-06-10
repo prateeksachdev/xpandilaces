@@ -15,10 +15,6 @@
 
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
-
-      <div class="loading" v-show="!isLoaded">
-        <img :src="loadingGifUrl">
-      </div>
     </div>
   </div>
 </template>
