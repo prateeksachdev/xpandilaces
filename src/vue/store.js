@@ -34,7 +34,7 @@ var store = {
   setCart (cart) {
     this.state.cart = cart
   },
-  changeQuantity: debounce(function (lineItemKey, quantity) {
+  changeQuantity: debounce(function (lineItemKey, quantity, triggerRefresh) {
     return window.jQuery.ajax({
       url: '/cart/change.js',
       dataType: 'json',
@@ -44,7 +44,11 @@ var store = {
         quantity: quantity
       }
     }).then(cart => {
-      this.setCart(cart)
+      if (triggerRefresh) {
+        location.reload()
+      } else {
+        this.setCart(cart)
+      }
     })
   }, 500),
   setMessageAction (newValue) {

@@ -6,37 +6,8 @@
       </a>
 
       <ul>
-        <li v-for="item in cart.items" class="cart-item">
-          <a :href="item.url">
-            <div class="image">
-              <img :src="imgURL(item.image, '160x')" :alt="item.title">
-            </div>
-            <div class="title">
-              <span>{{ item.product_title }}</span>
-            </div>
-            <div class="price">
-              <span>{{ item.price | dollar }}</span>
-            </div>
-          </a>
-
-          <div class="quantity">
-            <div class="field has-addons">
-              <p class="control">
-                <a @click="changeQuantity(item, item.quantity - 1)" class="button">
-                  <span class="icon-minus"></span>
-                </a>
-              </p>
-              <p class="control">
-                <input class="input" type="text" size="2" :value="item.quantity" @input="changeQuantity(item, $event.target.value)">
-              </p>
-              <p class="control">
-                <a @click="changeQuantity(item, item.quantity + 1)" class="button">
-                  <span class="icon-plus"></span>
-                </a>
-              </p>
-            </div>
-          </div>
-        </li>
+        <cart-item v-for="item in cart.items" :key="item.key" :item="item">
+        </cart-item>
       </ul>
 
       <div class="foot">
@@ -83,15 +54,6 @@
     methods: {
       hide () {
         this.$emit('hide')
-      },
-
-      imgURL: imgURL,
-
-      changeQuantity (item, quantity) {
-        if (parseInt(quantity) >= 0) {
-          item.quantity = quantity
-          store.changeQuantity(item.key, quantity)
-        }
       }
     }
   }

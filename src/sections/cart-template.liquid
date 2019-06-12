@@ -1,0 +1,56 @@
+<section class="section cart">
+  <div class="container">
+    <h1>{{ 'cart.general.title' | t }}</h1>
+
+    {% if cart.item_count == 0 %}
+      <p class="quote">{{ 'cart.general.continue_browsing_html' | t }}</p>
+      <a href="/collections/all-laces" class="button">{{ 'cart.general.continue_shopping_link_html' | t }}</a>
+    {% else %}
+      <form action="/cart" method="post" id="cart_form">
+        <div id="shappify-qty-cart-msg"></div>
+        <div class="columns">
+          <div class="column is-8">
+            <cart-detail></cart-detail>
+          </div>
+
+          <div class="column is-4 summary">
+            <div class="summary-container">
+              <p class="subtotal">
+                <span>{{ 'layout.general.subtotal' | t }}</span>
+                <span class="is-pulled-right amount">{{ cart.total_price | money }}</span>
+              </p>
+              <p>
+                {{ 'cart.general.orders_processed_in_currency_html' | t: currency: shop.currency }}
+              </p>
+
+              {% if section.settings.message != blank %}
+                {{ section.settings.message }}
+              {% endif %}
+
+              <input type="submit" class="button" id="checkout" name="checkout" value="{{ 'cart.general.checkout' | t }}" />
+
+              <a href="/collections/all-laces">
+                {{ 'cart.general.continue_shopping_link_html' | t }}
+              </a>
+          </div>
+          </div>
+        </div>
+      </form>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+
+{
+  "name": "Cart page",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "message",
+      "label": "Message"
+    }
+  ]
+}
+
+{% endschema %}

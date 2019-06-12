@@ -1,0 +1,211 @@
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "../variables.scss";
+
+.section.cart {
+  h1 {
+    font-family: neuzeit_grotesk_regular;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 50px;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 28px;
+    }
+  }
+
+  ul {
+    padding: 15px 0px;
+  }
+
+  .container {
+    max-width: 300px;
+
+    @media screen and (min-width: $tablet) {
+      max-width: none;
+    }
+  }
+
+  .quote {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    margin: 0 0 40px 0;
+    font-style: italic;
+  }
+
+  a.button {
+    background-color: #008ffd;
+    border: 1px solid #008ffd;
+    color: #fff;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    min-height: 42px;
+    font-size: 16px;
+    width: 100%;
+    text-transform: uppercase;
+
+    @media screen and (min-width: $tablet) {
+      width: 430px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  .cart-item {
+    font-family: "neuzeit_grotesk_light";
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+    a {
+      display: block;
+      width: 100%;
+    }
+
+    .image {
+      width: 100%;
+
+      @media screen and (min-width: $tablet) {
+        width: 205px;
+        float: left;
+      }
+    }
+
+    .title {
+      font-family: neuzeit_grotesk_regular;
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 1.5;
+      letter-spacing: 2px;
+      margin: 20px 0;
+
+      @media screen and (min-width: $tablet) {
+        margin: 0px 0px 20px 220px;
+        font-size: 28px;
+      }
+    }
+
+    .price {
+      color: #333333;
+      font-size: 20px;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+
+      @media screen and (min-width: $tablet) {
+        font-size: 20px;
+        margin-left: 220px;
+      }
+    }
+
+    .quantity {
+      @media screen and (min-width: $tablet) {
+        margin-left: 220px;
+        margin-top: -60px;
+      }
+
+      input {
+        height: 30px;
+        font-size: 15px;
+        width: 40px;
+        text-align: center;
+      }
+
+      a {
+        height: 30px;
+        width: 32px;
+        font-size: 12px;
+        background-color: #f2f2f2;
+        padding: 0px;
+        font-weight: 300;
+      }
+
+      .button {
+        line-height: 30px;
+        min-height: 30px;
+        font-size: 15px;
+        background: #f2f2f2;
+        font-weight: 300;
+        border: #e2e2e2 1px solid;
+        color: #000;
+      }
+    }
+  }
+
+  .summary {
+    border-top: 1px solid #aaaaaa;
+    font-family: "neuzeit_grotesk_light";
+    font-weight: bold;
+    font-size: 13px;
+    padding: 0;
+
+    @media screen and (min-width: $tablet) {
+      border-top: none;
+      padding: 0.75rem;
+    }
+
+    .summary-container {
+      padding: 25px 0px 40px 0px;
+
+      @media screen and (min-width: $tablet) {
+        border-left: 1px solid #cccccc;
+        padding-bottom: 0;
+        padding: 25px 30px 0px 30px;
+      }
+    }
+
+    .subtotal {
+      margin-bottom: 12px;
+
+      .amount {
+        font-weight: bold;
+        font-size: larger;
+        line-height: 1.6em;
+      }
+    }
+
+    p {
+      margin: 0 0 15px;
+      line-height: 1.63em;
+      font-family: 'neuzeit_grotesk_light';
+      font-size: 15px;
+      font-weight: normal
+    }
+
+    input[type="submit"] {
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      height: 40px;
+      width: 260px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #36807c;
+      border-color: #36807c;
+      color: white;
+      display: block;
+      padding: 12px 0;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    a {
+      color: #03857c;
+      display: block;
+      padding: 15px 0;
+      text-align: center;
+      border-top: solid 1px #cccccc;
+      border-bottom: solid 1px #cccccc;
+      margin: 20px 0;
+      font-family: sf_display_regular;
+      font-weight: lighter;
+      font-size: 17px;
+      text-transform: none;
+      letter-spacing: 1px;
+    }
+  }
+}

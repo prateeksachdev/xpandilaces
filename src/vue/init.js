@@ -6,6 +6,7 @@ export default function bootstrap () {
   Vue.use(VueScrollTo)
   Vue.component('height-transition', require('./components/height-transition.vue').default)
   Vue.component('top-nav', require('./components/top-nav.vue').default)
+  Vue.component('cart-item', require('./components/cart-item.vue').default)
   Vue.component('cart-drawer', require('./components/cart-drawer.vue').default)
   Vue.component('cart-count', require('./components/cart-count.vue').default)
 
