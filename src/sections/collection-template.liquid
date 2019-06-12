@@ -1,0 +1,113 @@
+<header class="banner center page_banner dark-overlay-{{ section.settings.image_darken }}">
+  <img data-src="{{ collection.image | img_url: 'master' }}" class="lazyload {{ settings.image_loading_style }}"/>
+    {% if section.settings.display_collection_title %}
+      <div class="caption captionOverlay--true">
+        <h1 class="headline">{{ collection.title }}</h1>
+      </div>
+    {% endif %}
+</header>
+<section class="section collection">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-3">
+        {% for block in section.blocks %}
+          <sidebar-menu>
+            <template #title>
+              {{ linklists[block.settings.linklist].title }}
+            </template>
+            <template #menu>
+            <ul>
+              {% for link in linklists[block.settings.linklist].links %}
+                <li>
+                  <a class="sidebar-item{% if link.active %} active{% endif %}" href="{{ link.url }}">
+                    {{ link.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+            </template>
+          </sidebar-menu>
+        {% endfor %}
+      </div>
+
+      <div class="column is-9 collection-grid">
+        <p class="sale-banner">
+          BUY MORE AND SAVE BIG. 3 for $25 -- <strong>FREE</strong> WORLD WIDE SHIPPING ON <strong>4</strong> OR MORE PACKS! <a href="/pages/buy-in-bulk-sale" target="“_blank”"><span style="color:#d9d9d9; text-decoration:underline;">DETAILS</span></a>
+        </p>
+        {% paginate collection.products by section.settings.pagination_limit %}
+          {% for product in collection.products %}
+            {% assign col_index = forloop.index0 | modulo: 3 %}
+
+            {% if col_index == 0 %}<div class="columns">{% endif %}
+              <div class="column product-item">
+                <a href="{{ product.url | within: collection }}">
+                  <img class="lazyload" data-src="{{product.featured_image | img_url: '300x'}}">
+                  <p class="title">{{product.title}}</p>
+                  <p class="price">{{product.price | money}}</p>
+                  <div class="thumbnail-overlay">
+                    <div class="info">
+                      <p class="title">{{product.title}}</p>
+                      <p class="price">{{product.price | money}}</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              {% if forloop.index == collection.products.length and col_index == 0 %}
+                <div class="column"></div>
+                <div class="column"></div>
+              {% endif %}
+
+              {% if forloop.index == collection.products.length and col_index == 1 %}
+                <div class="column"></div>
+              {% endif %}
+            {% if col_index == 2 or forloop.index == collection.products.length %}</div>{% endif %}
+          {% endfor %}
+
+          {% if paginate.pages > 1 %}
+            <div class="pagination">
+              {{ paginate | default_pagination | replace: '&raquo;', '<span class="icon-right-arrow"></span>' | replace: '&laquo;', '<span class="icon-left-arrow"></span>' }}
+            </div>
+          {% endif %}
+        {% endpaginate %}
+      </div>
+    </div>
+  </div>
+  {% if collection.description != blank %}
+    <div class="container collection-description">
+      {{ collection.description }}
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+
+{
+  "name": "Collection",
+  "settings": [
+    {
+      "type": "range",
+      "id": "pagination_limit",
+      "label": "Products per page",
+      "min": 2,
+      "max": 50,
+      "step": 1,
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sidebar_section",
+      "name": "Sidebar Section",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "linklist",
+          "label": "Menu"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,83 @@
+{%- include 'bold-product' with product, hide_action: 'break', output: 'none' -%}
+{% assign variant_selected = product.selected_or_first_available_variant %}
+{% assign image_identifier = variant_selected.title | remove: ' ' | downcase %}
+{% capture current_url %}{% if social-buttons == 'article' %}{{ shop.url }}{{ article.url }}{% else %}{{ canonical_url }}{% endif %}{% endcapture %}
+
+<section class="section product-simple">
+    <div class="breadcrumb container">
+      {% if collection.previous_product or collection.next_product or section.settings.product_breadcrumb %}
+        {% if collection.previous_product or collection.next_product %}
+          {% if collection.previous_product %}
+            <a href="{{ collection.previous_product }}" title="{{ 'products.general.previous_product_html' | t }}" class="breadcrumb-link"><span class="icon-left-arrow"> {{ 'products.general.previous_product_html' | t }}</span></a>
+          {% endif %}
+
+          {% if collection.previous_product and collection.next_product %}
+            <span class="breadcrumb-divider"> | </span>
+          {% endif %}
+
+          {% if collection.next_product %}
+            <a href="{{collection.next_product}}" title="{{ 'products.general.next_product_html' | t }}" class="breadcrumb-link">{{ 'products.general.next_product_html' | t }} <span class="icon-right-arrow"></span></a>
+          {% endif %}
+        {% endif %} 
+      {% endif %}
+    </div>
+  <div class="container">
+    <div class="columns">
+      <div class="column is-7">
+        <gallery-simple images-json='{{ product.images | json}}'></gallery-simple>
+      </div>
+
+      <div class="column">
+        <h1>{{product.title}}</h1>
+        <p class="money">{{product.price | money}}</p>
+        {{product.description}}
+
+        <cart-control variant-id="{{variant_selected.id}}"></cart-control>
+
+        <hr>
+        {% if section.settings.display_social_buttons %}
+          {% include "social-buttons" with "product" %}
+        {% endif %}
+      </div>
+    </div>
+
+    {% if section.settings.display_related_products %}
+      {% include 'related-products' %}
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Simple",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "display_social_buttons",
+      "label": "Show social media share icons",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "display_related_products",
+      "label": "Show related products",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "related_products_limit",
+      "label": "Limit products",
+      "min": 2,
+      "max": 50,
+      "step": 1,
+      "default": 12
+    }
+  ],
+  "default": {
+    "settings": {
+
+    }
+  }
+}
+
+{% endschema %}

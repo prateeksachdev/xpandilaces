@@ -612,6 +612,36 @@
         ],
         "settings": {
         }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "message": "<p><strong>PayPal\/Amazon users<\/strong>:&nbsp; Coupon code will be entered after redirected back to our website<\/p>"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "blocks": {
+          "1560192724865": {
+            "type": "sidebar_section",
+            "settings": {
+              "linklist": "styles"
+            }
+          },
+          "1560192735877": {
+            "type": "sidebar_section",
+            "settings": {
+              "linklist": "need-help"
+            }
+          }
+        },
+        "block_order": [
+          "1560192724865",
+          "1560192735877"
+        ],
+        "settings": {
+          "pagination_limit": 48
+        }
       }
     },
     "content_for_index": [

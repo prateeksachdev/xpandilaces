@@ -15,6 +15,10 @@ $large-phone: '576px';
 @import "sections/header";
 @import "sections/footer";
 
+body {
+  font-family: 'neuzeit_grotesk_light';
+}
+
 input {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

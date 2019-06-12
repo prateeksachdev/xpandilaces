@@ -1,0 +1,106 @@
+.cart-control {
+  margin-bottom: 10px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 40px;
+  }
+
+  .icon-plus, .icon-minus, input[name="quantity"] {
+    max-width: 33px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    color: #000;
+    line-height: 42px;
+    font-size: 18px;
+    background: #f2f2f2;
+    font-weight: 300;
+    cursor: pointer;
+    height: 42px;
+    width: 25%;
+    text-align: center;
+    background-color: white;
+
+    &:before {
+      font-weight: bold;
+    }
+
+    @media screen and (min-width: $tablet) {
+      background-color: inherit;
+    }
+  }
+
+  input[type=number] {
+    max-width: 43px;
+    font-weight: bold;
+    margin: 0 6px;
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+
+  button {
+    float: right;
+    width: calc(100% - 140px);
+    background-color: #0090fc;
+    border: 1px solid #0090fc;
+    border-radius: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "neuzeitgroteskblack";
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    padding: 9px 20px;
+    height: 41px;
+
+    &:hover, &:focus {
+      color: white
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+
+      path {
+        stroke-dasharray: 19.79 19.79;
+        stroke-dashoffset: 19.79;
+        opacity: 0;
+      }
+    }
+
+    span {
+      animation-duration: 0.8s;
+      animation-name: fadeInDown;
+    }
+
+    &.loading {
+      span {
+        animation-duration: 0.8s;
+        animation-name: zoomOut;
+      }
+
+      .checkmark path {
+        animation: drawCheckmark 0.5s linear alternate forwards;
+      }
+    }
+  }
+}
+
+@keyframes drawCheckmark {
+  from {
+    stroke-dashoffset: 19.79;
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {0%{opacity:0;transform:translate3d(0,-20px,0)}to{opacity:1;transform:none}}.fadeInDown{animation-name:fadeInDown}
+@keyframes zoomOut {0%{opacity:1}50%{opacity:0;transform:scale3d(.3,.3,.3)}to{opacity:0}}.zoomOut{animation-name:zoomOut}

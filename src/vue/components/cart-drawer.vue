@@ -9,7 +9,7 @@
         <li v-for="item in cart.items" class="cart-item">
           <a :href="item.url">
             <div class="image">
-              <img :src="img_url(item.image, '160x')" :alt="item.title">
+              <img :src="imgURL(item.image, '160x')" :alt="item.title">
             </div>
             <div class="title">
               <span>{{ item.product_title }}</span>
@@ -62,6 +62,7 @@
 
 <script>
   import { dollar } from '../filters'
+  import { imgURL } from '../helpers'
   import store from '../store'
 
   export default {
@@ -80,16 +81,11 @@
       }
     },
     methods: {
-      img_url (url, size) {
-        let tmp = url.split('.')
-        let i = tmp.length - 2
-        tmp[i] = tmp[i] + `_${size}`
-        return tmp.join('.')
-      },
-
       hide () {
         this.$emit('hide')
       },
+
+      imgURL: imgURL,
 
       changeQuantity (item, quantity) {
         if (parseInt(quantity) >= 0) {
