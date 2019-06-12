@@ -126,13 +126,17 @@
     methods: {
       images (variantId) {
         let variant = this.variants[variantId]
-        let avatarImage = variant.image
-        let additionalImages = this.imageGroups[variant.groupId] || []
-        if (this.imageGroups['allcolour']) {
-          return [avatarImage].concat(additionalImages).concat(this.imageGroups['allcolour'])
+        let avatarImage = [variant.image]
+        if (!variant.image || !variant.image.id) {
+          avatarImage = []
         }
 
-        return [avatarImage].concat(additionalImages)
+        let additionalImages = this.imageGroups[variant.groupId] || []
+        if (this.imageGroups['allcolour']) {
+          return avatarImage.concat(additionalImages).concat(this.imageGroups['allcolour'])
+        }
+
+        return avatarImage.concat(additionalImages)
       },
 
       setVariant (variantId) {
