@@ -245,6 +245,10 @@
     text-align: center;
     padding: 20px 0;
 
+    .related-items {
+      flex-wrap: wrap;
+    }
+
     .title {
       font-family: neuzeit_grotesk_regular;
       font-size: 36px;

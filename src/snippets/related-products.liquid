@@ -25,10 +25,10 @@
       {% assign limit = section.settings.related_products_limit | plus: 1 %}
       {% assign products_per_row = section.settings.products_per %}
       {% if col and collections[col].all_products_count > 0 %}
-        <div class="columns">
+        <div class="columns related-items">
           {% for product in products limit: limit %}
             {% if product.id != skip_product.id %}
-              <div class="column product-avatar">
+              <div class="column product-avatar is-4">
                 <a href="{{ product.url | within: collection }}">
                 <img src="{{product.featured_image | img_url: '300x'}}">
                 <p class="title">{{product.title}}</p>

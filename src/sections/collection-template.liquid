@@ -1,11 +1,12 @@
-<header class="banner center page_banner dark-overlay-{{ section.settings.image_darken }}">
+<header class="banner center">
   <img data-src="{{ collection.image | img_url: 'master' }}" class="lazyload {{ settings.image_loading_style }}"/>
-    {% if section.settings.display_collection_title %}
-      <div class="caption captionOverlay--true">
-        <h1 class="headline">{{ collection.title }}</h1>
-      </div>
-    {% endif %}
+  {% if section.settings.display_collection_title %}
+    <div class="caption">
+      <h1 class="headline">{{ collection.title }}</h1>
+    </div>
+  {% endif %}
 </header>
+
 <section class="section collection">
   <div class="container">
     <div class="columns">
