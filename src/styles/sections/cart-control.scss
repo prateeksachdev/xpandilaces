@@ -58,6 +58,10 @@
       color: white
     }
 
+    &:disabled {
+      background-color: #0090fc;
+    }
+
     .checkmark {
       position: absolute;
       top: 0;
