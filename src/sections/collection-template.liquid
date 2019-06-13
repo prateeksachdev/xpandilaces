@@ -44,11 +44,11 @@
                 <a href="{{ product.url | within: collection }}">
                   <img class="lazyload" data-src="{{product.featured_image | img_url: '300x'}}">
                   <p class="title">{{product.title}}</p>
-                  <p class="price">{{product.price | money}}</p>
+                  <p class="price">{{product.price_max | money}}</p>
                   <div class="thumbnail-overlay">
                     <div class="info">
                       <p class="title">{{product.title}}</p>
-                      <p class="price">{{product.price | money}}</p>
+                      <p class="price">{{product.price_max | money}}</p>
                     </div>
                   </div>
                 </a>
