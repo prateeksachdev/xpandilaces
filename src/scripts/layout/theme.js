@@ -13,6 +13,7 @@ import '../../styles/theme.scss';
 import '../../styles/theme.scss.liquid';
 
 import {focusHash, bindInPageLinks} from '@shopify/theme-a11y';
+import Vue from 'vue';
 
 // Common a11y fixes
 focusHash();
