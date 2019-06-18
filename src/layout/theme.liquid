@@ -147,6 +147,11 @@
   {% include 'social-meta-tags' %}
 
   {{ content_for_header }}
+
+  {% if template contains 'customer' %}
+    {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+    {{ "customer_area.js" | shopify_asset_url | script_tag }}
+  {% endif %}
 </head>
 
 <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
