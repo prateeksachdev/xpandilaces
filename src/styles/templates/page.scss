@@ -1,0 +1,26 @@
+.page {
+  h1 {
+    font-family: neuzeit_grotesk_regular;
+    font-size: 36px;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: none;
+    line-height: 1.5;
+    color: #333333;
+    display: block;
+    letter-spacing: 2px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 auto 15px;
+    clear: both;
+    font-weight: bold;
+    padding-top: 4px;
+  }
+
+  p {
+    margin: 0 0 15px;
+    font-style: normal;
+    line-height: 1.6em;
+  }
+}
