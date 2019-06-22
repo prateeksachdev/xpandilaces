@@ -1,0 +1,118 @@
+<header class="section search">
+  <div class="container">
+    <div class="columns">
+      <div class="column breadcrumbs">
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="item" class="breadcrumb_link"><span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span></a></span>
+        <span class="breadcrumb-divider">/</span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="/search" itemprop="item" class="breadcrumb_link"><span itemprop="name">{{ 'general.search.title' | t }}</span></a></span>
+        {% if paginate.pages != 0 %}
+          <span class="breadcrumb-divider">/</span> {{ 'general.breadcrumbs.page' | t: current_page: paginate.current_page, pages: paginate.pages }}
+        {% endif %}
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <h1>{{ 'general.search.title' | t }}</h1>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="section search search-content">
+{% paginate search.results by section.settings.pagination_limit %}
+  {% if search.performed %}
+    {% if search.results == empty %}
+      <div class="container empty-result">
+        <p class="quote">{{ 'general.search.no_results_html' | t: terms: search.terms }}</p>
+        <div class="columns">
+          <div class="column">
+            <form action="/search">
+              {% if settings.search_option != 'everything' %}
+                <input type="hidden" name="type" value="product" />
+              {% endif %}
+              <input type="text" name="q" placeholder="{{ 'general.search.placeholder' | t }}" value="{{ search.terms }}" x-webkit-speech autocapitalize="off" autocomplete="off" autocorrect="off" />
+
+              <input type="submit" name="submit" class="action_button" value="{{ 'general.search.submit' | t }}" style="margin-top:0" />
+            </form>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <div class="container results">
+        <div class="columns is-multiline">
+          {% for product in search.results %}
+            <div class="column is-4 product-item">
+              <a href="{{ product.url | within: collection }}">
+                <img class="lazyload" data-src="{{product.featured_image | img_url: '300x'}}">
+                <p class="title">{{product.title}}</p>
+                <p class="price">{{product.price_max | money}}</p>
+                <div class="thumbnail-overlay">
+                  <div class="info">
+                    <p class="title">{{product.title}}</p>
+                    <p class="price">{{product.price_max | money}}</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% if paginate.pages > 1 %}
+        <div class="container collection-pagination">
+          {{ paginate | default_pagination | replace: '&raquo;', '<span class="icon-right-arrow"></span>' | replace: '&laquo;', '<span class="icon-left-arrow"></span>' }}
+        </div>
+      {% endif %}
+    {% endif %}
+
+  {% else %}
+    <div class="container empty-result">
+      <h3>
+        {{ 'general.search.description' | t }}
+      </h3>
+      <div class="columns">
+        <div class="column">
+          <form action="/search">
+            {% if settings.search_option != 'everything' %}
+              <input type="hidden" name="type" value="product" />
+            {% endif %}
+            <input type="text" name="q" placeholder="{{ 'general.search.placeholder' | t }}" value="{{ search.terms }}" x-webkit-speech autocapitalize="off" autocomplete="off" autocorrect="off" />
+
+            <input type="submit" name="submit" class="action_button" value="{{ 'general.search.submit' | t }}" style="margin-top:0" />
+          </form>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endpaginate %}
+</div>
+
+{% schema %}
+
+{
+  "name": "Collection",
+  "settings": [
+    {
+      "type": "range",
+      "id": "pagination_limit",
+      "label": "Products per page",
+      "min": 2,
+      "max": 50,
+      "step": 1,
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sidebar_section",
+      "name": "Sidebar Section",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "linklist",
+          "label": "Menu"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}
