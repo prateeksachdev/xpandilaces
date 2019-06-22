@@ -1,0 +1,351 @@
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "../variables.scss";
+
+.article {
+  padding-top: 80px;
+
+  .container {
+    margin: 0 auto;
+
+    @media screen and (min-width: $tablet) {
+      max-width: 880px;
+    }
+  }
+
+  .article-meta {
+    padding-bottom: 0;
+    margin-bottom: calc(1.5rem - 0.75rem);
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 0;
+    }
+
+    .column {
+      padding-bottom: 0;
+      padding-top: 0;
+
+      @media screen and (min-width: $tablet) {
+        padding: 0.75rem;
+      }
+    }
+  }
+
+  .breadcrumbs {
+    float: left;
+    margin-top: 0px;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 0;
+
+    a {
+      color: #03a196;
+      text-decoration: none;
+    }
+  }
+
+  .article-pagination {
+    text-align: right;
+    margin-top: 0px;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 0;
+
+    a {
+      color: #03a196;
+      text-decoration: none;
+    }
+  }
+
+  .header {
+    h1 {
+      font-family: neuzeit_grotesk_regular;
+      font-size: 17px;
+      font-weight: bold;
+      line-height: 1.5;
+      color: #333333;
+      display: block;
+      letter-spacing: 2px;
+      margin: 0 auto 15px;
+      padding-top: 4px;
+
+      @media screen and (min-width: $tablet) {
+        font-size: 36px;
+      }
+    }
+
+    .date {
+      color: #8c8b8b;
+      margin: 0;
+      line-height: 1.6em;
+      font-size: 13px;
+    }
+  }
+
+  .article-content {
+    ul {
+      padding-left: 40px;
+      list-style: disc outside;
+    }
+
+    ol {
+      list-style: decimal;
+    }
+
+    li {
+      list-style: inherit;
+      margin-bottom: 12px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 32px;
+      font-family: "neuzeitgroteskblack";
+      letter-spacing: 0.1px;
+      line-height: 1.5;
+      color: #333;
+      margin-bottom: 0.75em;
+    }
+
+    h3 {
+      font-family: neuzeit_grotesk_regular;
+      font-size: 28px;
+      font-weight: bold;
+      font-style: normal;
+      text-transform: none;
+      line-height: 1.5;
+      color: #333333;
+      display: block;
+      letter-spacing: 2px;
+      margin: 0 auto 15px 0;
+    }
+
+    h4 {
+      font-family: neuzeit_grotesk_regular;
+      font-size: 17px;
+      font-weight: bold;
+      font-style: normal;
+      text-transform: none;
+      line-height: 1.5;
+      color: #333333;
+      display: block;
+      letter-spacing: 2px;
+      margin: 0 0 0.5em 0;
+      padding: 7px 0;
+
+      @media screen and (min-width: $tablet) {
+        font-size: 25px;
+      }
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    p {
+      line-height: 1.6em;
+      margin: 0 0 15px;
+      font-size: 20px;
+
+      a {
+        color: #03a196;
+      }
+    }
+
+    blockquote {
+      margin: 0 0 20px;
+      padding: 9px 20px 0 19px;
+      border-left: 1px solid #cccccc;
+      font-size: 17px;
+
+      p {
+        font-size: 20px;
+        line-height: 24px;
+        font-style: italic;
+      }
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+
+      @media screen and (min-width: $tablet) {
+        height: 480px;
+      }
+    }
+  }
+
+  .author-share {
+
+    .blog_share {
+      border-top: 1px solid #cccccc;
+      padding-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .social_buttons {
+      text-align: center;
+
+      @media screen and (min-width: $tablet) {
+        text-align: right;
+      }
+    }
+    .share-btn {
+      color: #fff;
+      padding: 10px 10px 8px 10px;
+      border: solid 1px #e2e2e2;
+      display: inline-block;
+      border-radius: 100px;
+      width: 42px;
+      height: 42px;
+
+      [class^="icon-"]:before, [class*=" icon-"]:before {
+        font-family: "turbo";
+        font-style: normal;
+        font-weight: normal;
+        speak: none;
+        display: inline-block;
+        text-decoration: inherit;
+        width: 1em;
+        margin-right: .2em;
+        text-align: center;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1em;
+        margin-left: .15em;
+      }
+
+      .icon-twitter-share:before {
+        content: "\ea96";
+        color: #09AEEC;
+      }
+
+      .icon-facebook-share:before {
+        content: "\ea90";
+        color: #49659D;
+      }
+
+      .icon-pinterest-share:before {
+        content: "\e906";
+        color: #CB1F2A;
+      }
+
+      .icon-gplus-share:before {
+        content: "\e907";
+        color: #CC3A2B;
+      }
+
+      .icon-mail-share:before {
+        content: "\e905";
+        color: #888;
+      }
+    }
+  }
+
+  .additional-posts-title {
+    font-family: neuzeit_grotesk_regular;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: none;
+    line-height: 1.5;
+    color: #333333;
+    display: block;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 28px;
+    }
+  }
+
+  hr {
+    border-color: #aaaaaa;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+
+  .additional-posts {
+    img {
+      width: 100%;
+      margin: 0;
+
+      @media screen and (min-width: $tablet) {
+        margin: 0 0 15px 0;
+      }
+    }
+
+    h5 {
+      padding: 5px 0;
+      font-family: neuzeit_grotesk_regular;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: none;
+      line-height: 1.5;
+      display: block;
+      letter-spacing: 2px;
+
+      @media screen and (min-width: $tablet) {
+        font-size: 23px;
+      }
+
+      a {
+        color: #333333;
+      }
+    }
+
+    .date {
+      color: #8c8b8b;
+      position: relative;
+      display: inline-block;
+      margin-right: 15px;
+      font-size: 13px;
+      color: #8c8b8b;
+    }
+
+    .excerpt {
+      line-height: 1.5;
+      margin: 1em 0 2em;
+      font-size: 15px;
+    }
+
+    .read-more {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      border-radius: 5px;
+      background-color: #008ffd;
+      border: 1px solid #008ffd;
+      color: #fff;
+      margin: 10px 0 25px;
+      font-size: 14px;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      display: inline-block;
+
+      @media screen and (min-width: $tablet) {
+        margin: 25px 0;
+      }
+    }
+  }
+
+  // classed to match the existing blog posts (author used css class to in some post to styled a button)
+  .action_button {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    padding: 5px 30px;
+    font-size: 14px;
+    display: inline-block;
+    margin: 25px 0;
+  }
+
+  .continue-button {
+    border-radius: 5px;
+    background-color: #008ffd;
+    border: 1px solid #008ffd;
+    color: #fff !important;
+  }
+}

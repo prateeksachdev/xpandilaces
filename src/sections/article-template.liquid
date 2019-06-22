@@ -1,0 +1,132 @@
+<article role="article">
+  <div class="section article">
+    <div class="container">
+      <div class="columns article-meta">
+        <div class="column">
+          <div class="breadcrumbs">
+            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="item"><span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span></a></span>
+            &nbsp;<span class="icon-slash">/</span>&nbsp;
+            <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="{{ blog.url }}" title="{{ blog.title | escape }}" itemprop="item"><span itemprop="name">{{ blog.title }}</span></a></span>
+          </div>
+        </div>
+        <div class="column">
+          <div class="article-pagination right">
+            {% if blog.next_article %}
+              {{ 'blogs.article.previous_article_html' | t | link_to: blog.next_article }}
+            {% endif %}
+            {% if blog.previous_article and blog.next_article %}
+              &nbsp;<span class="icon-slash">/</span>&nbsp;
+            {% endif %}
+            {% if blog.previous_article %}
+              {{ 'blogs.article.next_article_html' | t | link_to: blog.previous_article }}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          {% if article.image %}
+            <img class="lazyload"
+                 data-src="{{ article.image | img_url: '700x' }}"
+                 data-srcset="{{ article.image | img_url: '300x' }} 300w,
+                              {{ article.image | img_url: '500x' }} 500w,
+                              {{ article.image | img_url: '700x' }} 700w"
+            />
+          {% endif %}
+
+          <header class="header">
+            <h1>{{ article.title }}</h1>
+            {% capture date %}{{ article.published_at | time_tag: format: 'month_day_year' }}{% endcapture %}
+            <p class="date">{{ date }}</p>
+          </header>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column article-content">
+          {% if article.image and section.settings.banner_enabled == false %}
+            <p>
+              <img  src="{{ article.image | img_url: 'master' }}"
+                    alt="{% if article.image.alt != blank %}{{ article.image.alt }}{% else %}{{ article.title | escape }}{% endif %}"
+                    data-src="{{ article.image | img_url: '2048x', format: 'pjpg' }}"
+                    class="lazyload {{ settings.image_loading_style }}"
+                    style="max-width: {{- article.image.width -}}px"
+                    data-sizes="auto"
+                    data-srcset=" {{ article.image | img_url: '480x', format: 'pjpg' }} 480w,
+                                  {{ article.image | img_url: '765x', format: 'pjpg' }} 765w,
+                                  {{ article.image | img_url: '1400x', format: 'pjpg' }} 1400w,
+                                  {{ article.image | img_url: '2048x', format: 'pjpg' }} 2048w"
+                     />
+            </p>
+          {% endif %}
+
+          {{ article.content }}
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column author-share">
+          <div class="blog_share meta">
+            {% include "social-buttons" with "article" %}
+          </div>
+        </div>
+      </div>
+      <hr />
+      <h3 class="additional-posts-title">{{ 'blogs.article.additional_articles' | t: title: blog.title }}</h3>
+      <div class="columns is-multiline additional-posts">
+        {% assign article_found = false %}
+        {% for a in blog.articles limit: 4 %}
+          {% assign skip_article = false %}
+          {% if article_found == false and forloop.last %}
+            {% assign skip_article = true %}
+          {% endif %}
+          {% if article.id == a.id %}
+            {% assign article_found = true %}
+            {% assign skip_article = true %}
+          {% endif %}
+          {% unless skip_article %}
+            <div class="column">
+              {% if a.image %}
+                <a href="{{ a.url }}" title="{{ a.title | escape }}">
+                  <img  src="{{ a.image | img_url: '100x' }}"
+                        alt="{% if a.image.alt != blank %}{{ a.image.alt }}{% else %}{{ a.title | escape }}{% endif %}"
+                        data-src="{{ a.image | img_url: '1200x', format: 'pjpg' }}"
+                        class="lazyload {{ settings.image_loading_style }}"
+                        sizes="auto"
+                        srcset="{{ a.image | img_url: '480x', format: 'pjpg' }} 480w,
+                                {{ a.image | img_url: '600x', format: 'pjpg' }} 600w,
+                                {{ a.image | img_url: '800x', format: 'pjpg' }} 800w,
+                                {{ a.image | img_url: '1200x', format: 'pjpg' }} 1200w"
+                         />
+                </a>
+              {% endif %}
+              <h5>
+                <a href="{{ a.url }}" title="{{ a.title | escape }}">{{ a.title }}</a>
+              </h5>
+              <span class="date">{{ a.published_at | date: format: "month_day_year" }}</span>
+
+              <div class="excerpt">{{ a.excerpt }}</div>
+              <a href="{{ a.url }}" title="{{ a.title | escape }}" class="read-more">{{ 'blogs.general.continue_reading_html' | t }}</a>
+            </div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</article>
+
+{% schema %}
+
+{
+  "name": "Blog post",
+  "class": "blog-post-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "banner_enabled",
+      "label": "Enable blog post banner image",
+      "info": "The blog post's featured image will be used as a full-width banner",
+      "default": true
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,122 @@
+
+<section class="section blog-content">
+{% paginate blog.articles  by section.settings.blog_posts_per_page %}
+
+  {%- assign blog_title = blog.title -%}
+
+  {% if current_tags %}
+    {% capture blog_title %}{{ blog.title | link_to: blog.url }} &mdash; {{ current_tags.first }}{% endcapture %}
+  {% endif %}
+  <div class="container">
+      <h1>{{ blog_title }}</h1>
+
+      {% if blog.all_tags.size > 0 %}
+        <h2>{{ 'blogs.general.categories' | t }}</h2>
+
+        <ul>
+          {% for tag in blog.all_tags %}
+
+            {% if current_tags contains tag %}
+              <li>{{ tag }}</li>
+            {% else %}
+              <li>{{ tag | link_to_tag: tag }}</li>
+            {% endif %}
+
+          {% endfor %}
+        </ul>
+      {% endif %}
+  </div>
+
+
+  {% comment %}
+
+  Article Previews
+  ====================
+  {% endcomment %}
+  <div class="container">
+    <div class="columns is-multiline">
+      {% for article in blog.articles %}
+      <div class="column is-4 article">
+        {% if article.image %}
+          <a href="{{ article.url }}">
+            <img class="lazyload"
+                 data-src="{{ article.image | img_url: '700x' }}"
+                 data-srcset="{{ article.image | img_url: '300x' }} 300w,
+                              {{ article.image | img_url: '500x' }} 500w,
+                              {{ article.image | img_url: '700x' }} 700w"
+            />
+          </a>
+        {% endif %}
+        <h3>
+          <a href="{{ article.url }}">{{ article.title }}</a>
+        </h3>
+
+        {% capture date %}{{ article.published_at | time_tag: format: 'month_day_year' }}{% endcapture %}
+
+        <p class="date">
+          {{ date }}
+        </p>
+
+        <div class="rte">
+          {% if article.excerpt.size > 0 %}
+            {{ article.excerpt }}
+          {% else %}
+            <p>
+              {{ article.content | strip_html | truncatewords: 100 }}
+            </p>
+          {% endif %}
+        </div>
+
+        {% if blog.comments_enabled? or article.tags.size > 0 %}
+          <ul>
+            {% if blog.comments_enabled? %}
+              <li>
+                <a href="{{ article.url }}#comments">
+                  {{ 'blogs.comments.with_count' | t: count: article.comments_count }}
+                </a>
+              </li>
+            {% endif %}
+
+            {% if article.tags.size > 0 %}
+              {% for tag in article.tags %}
+                <li>
+                  <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+                  {% unless forloop.last %}, {% endunless %}
+                </li>
+              {% endfor %}
+            {% endif %}
+          </ul>
+        {% endif %}
+
+        <a class="read-more" href="{{ article.url }}">{{ 'blogs.general.continue_reading_html' | t }}</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% if paginate.pages > 1 %}
+    {% include 'pagination' %}
+  {% endif %}
+
+{% endpaginate %}
+</section>
+
+{% schema %}
+
+{
+  "name": "Blog",
+  "class": "blog-section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "blog_posts_per_page",
+      "label": "Blog posts per page",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 12
+    }
+  ]
+}
+
+{% endschema %}
