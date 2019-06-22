@@ -28,6 +28,7 @@
 
     .rte {
       margin-bottom: 30px;
+      font-size: 15px;
 
       h2 {
         color: #333333;
@@ -44,6 +45,22 @@
       a {
         color: #03a196;
         text-decoration: none;
+      }
+
+      ol {
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+
+        li {
+          margin-bottom: 12px;
+        }
+      }
+
+      p {
+
       }
     }
 
