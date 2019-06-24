@@ -11,31 +11,33 @@
   - Home page only: only shows on the home page
 {%- endcomment -%}
 <div data-section-id="{{ section.id }}" data-section-type="header">
-  <top-nav cart-json='{{cart | json}}'>
-    <template #announcement="{ hide }">
-      <div class="row announcement">
-        <div class="container has-text-centered">
-          {% if section.settings.shipping_text != blank %}
-            <div class="text-wrap">
-              <img class="announcement-icon lazyload" data-src="{{ 'box.svg' | asset_url }}">
-              {{ section.settings.shipping_text }} {{isAnnouncementVisible}}
-            </div>
-          {% endif %}
-          {% if section.settings.promo_text != blank %}
-          <div class="text-wrap">
-            <span class="announcement-icon">
-              <svg width="16" height="16" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z"/></svg>
-            </span>
-            {{ section.settings.promo_text }}
+  <top-nav cart-json='{{cart | json}}' :is-announcement-enabled="{{section.settings.announcement_bar_enabled}}">
+    {% if section.settings.announcement_bar_enabled %}
+      <template #announcement="{ hide }">
+        <div class="row announcement">
+          <div class="container has-text-centered">
+            {% if section.settings.shipping_text != blank %}
+              <div class="text-wrap">
+                <img class="announcement-icon lazyload" data-src="{{ 'box.svg' | asset_url }}">
+                {{ section.settings.shipping_text }} {{isAnnouncementVisible}}
+              </div>
+            {% endif %}
+            {% if section.settings.promo_text != blank %}
+              <div class="text-wrap">
+                <span class="announcement-icon">
+                  <svg width="16" height="16" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z"/></svg>
+                </span>
+                {{ section.settings.promo_text }}
+              </div>
+            {% endif %}
           </div>
-          {% endif %}
-        </div>
 
-        <a @click="hide" href="javascript:;" class="close">
-          <svg width="12" height="12" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z" fill="#fff"/></svg>
-        </a>
-      </div>
-    </template>
+          <a @click="hide" href="javascript:;" class="close">
+            <svg width="12" height="12" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z" fill="#fff"/></svg>
+          </a>
+        </div>
+      </template>
+    {% endif %}
 
     <template #menu="{ showDesktopMega, toggleMobileMega, toggleSearch, showCartDetail, hideCartDetail, isCartDetailVisible, vco }">
       <div class="row menu">

@@ -26,7 +26,8 @@
   export default {
     name: 'TopNav',
     props: {
-      cartJson: String
+      cartJson: String,
+      isAnnouncementEnabled: Boolean
     },
     data () {
       return {
@@ -50,7 +51,7 @@
     mounted () {
       store.setCart(JSON.parse(this.cartJson))
 
-      if (this.isAnnouncementVisible) {
+      if (this.isAnnouncementEnabled && this.isAnnouncementVisible) {
         const body = document.body
         body.classList.add('announcement-visible')
       }
