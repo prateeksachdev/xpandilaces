@@ -2,41 +2,103 @@
 @import "../variables.scss";
 
 .how-it-work-tab {
-  .container {
-    h1 {
-      text-align: center;
-      color: #008ffd;
-      font-family: neuzeit_grotesk_regular;
-      font-size: 36px;
-      letter-spacing: 2px;
-      font-weight: bold;
-      padding: 60px 0px 60px 0;
+  @media screen and (min-width: $tablet) {
+    .head .container {
+      padding: 0 10px;
     }
+  }
 
-    .tab-container {
+  h1 {
+    text-align: center;
+    color: #008ffd;
+    font-family: neuzeit_grotesk_regular;
+    font-size: 36px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    padding: 60px 0px 60px 0;
+  }
+
+  .tab-container {
+    width: 100%;
+
+    .head {
       width: 100%;
 
-      .head {
+      ul {
         width: 100%;
+        margin: 0;
 
-        ul {
-          width: 100%;
-          margin: 0;
+        li {
+          width: 50%;
+          text-align: center;
+          padding: 0;
+          border-bottom: 1.5px solid #f3f3f3;
+          float:left;
 
-          li {
-            width: 50%;
+          span {
+            display: block;
+            width: 100%;
+            margin: 0;
+            cursor: pointer;
+
+            border-top: 1.5px solid #f3f3f3;
+            float: left;
             text-align: center;
-            padding: 0;
-            border-bottom: 1.5px solid #f3f3f3;
-            float:left;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 0;
+            background: #f8f8f8;
+            height: 44px;
+            border-bottom: 0px;
+            cursor: pointer;
+            font-family: 'neuzeitgroteskblack' !important;
+            letter-spacing: -0.1px;
+            color: #333333;
+          }
+
+          &.active {
+            border-bottom: 1.5px solid #000;
+            position: relative;
+
+            &:before {
+              content: "";
+              position: absolute;
+              bottom: 0px;
+              left: 0;
+              right: 0;
+              margin: 0 auto;
+              width: 0;
+              height: 0;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-bottom: 5px solid #fff;
+            }
+
+            span {
+              color: #fff;
+              background: #000;
+              border-color: #000;
+            }
+          }
+
+          &:last-child {
+            span {
+              margin: 0;
+            }
+          }
+        }
+        @media screen and (min-width: $tablet) {
+          li {
+            border-bottom: 1.5px solid #afafaf;
 
             span {
               display: block;
-              width: 100%;
-              margin: 0;
+              width: calc(100% - 10px);
+              margin: 0 5px 0 0px;
               cursor: pointer;
 
-              border-top: 1.5px solid #f3f3f3;
+              border: 1.5px solid #d7d7d7;
+              border-radius: 5px 5px 0px 0px;
               float: left;
               text-align: center;
               font-size: 20px;
@@ -51,106 +113,69 @@
               color: #333333;
             }
 
-            &.active {
-              border-bottom: 1.5px solid #000;
-
-              span {
-                color: #fff;
-                background: #000;
-                border-color: #000;
-              }
-            }
-
             &:last-child {
               span {
-                margin: 0;
+                width: calc(100%);
               }
             }
-          }
-          @media screen and (min-width: $tablet) {
-            li {
+
+            &.active {
               border-bottom: 1.5px solid #afafaf;
 
-              span { 
-                display: block;
-                width: calc(100% - 5px);
-                margin: 0 5px 0 0px;
-                cursor: pointer;
-
-                border: 1.5px solid #d7d7d7;
-                border-radius: 5px 5px 0px 0px;
-                float: left;
-                text-align: center;
-                font-size: 20px;
-                font-weight: bold;
-                padding: 10px 0;
-                background: #f8f8f8;
-                height: 44px;
-                border-bottom: 0px;
-                cursor: pointer;
-                font-family: 'neuzeitgroteskblack' !important;
-                letter-spacing: -0.1px;
-                color: #333333;
-              }
-
-              &:last-child {
-                span {
-                  margin: 0 0px 0 5px;
-                }
-              }
-
-              &.active {
-                border-bottom: 1.5px solid #afafaf;
-
-                span {
-                  color: #008ffd;
-                  background: #fff;
-                  border-color: #afafaf;
-                  border-bottom: 1.5px solid #fff;
-                  bottom: -1.5px;
-                  position: relative;
-                }
+              span {
+                color: #008ffd;
+                background: #fff;
+                border-color: #afafaf;
+                border-bottom: 1.5px solid #fff;
+                bottom: -1.5px;
+                position: relative;
               }
             }
           }
         }
       }
+    }
 
-      .body {
-        min-height: 300px;
-        border-top: none;
+    .body {
+      min-height: 300px;
+      border-top: none;
 
-        .fade-enter-active, .fade-leave-active {
-          transition: opacity .3s;
+      .fade-enter-active, .fade-leave-active {
+        transition: opacity .3s;
+      }
+      .fade-enter, .fade-leave-to {
+        opacity: 0;
+      }
+
+      .body-content {
+        padding: 100px 0;
+
+        @media screen and (min-width: $tablet) {
+          padding: 60px 0;
         }
-        .fade-enter, .fade-leave-to {
-          opacity: 0;
+
+        &.active {
+          display: block;
         }
 
-        .body-content {
-          padding: 80px 0;
-
-          @media screen and (min-width: $tablet) {
-            padding: 60px 0;
-          }
-
-          &.active {
-            display: block;
-          }
-
-          iframe {
-            width: 100%;
-            height: 220px;
-            top: 0px;
-            left: 0px;
-            margin-bottom: 20px;
-
-            @media screen and (min-width: $tablet) {
-              height: 510px;
-            }
-          }
+        iframe {
+          width: 100%;
+          height: 100%;
+          top: 0px;
+          left: 0px;
+          position: absolute;
         }
       }
+    }
+  }
+
+  .videos {
+    padding: 0 20px;
+
+    .video {
+      position: relative;
+      padding-top: 56.25%;
+      margin-bottom: 30px;
     }
   }
 }

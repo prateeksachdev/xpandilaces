@@ -4,22 +4,38 @@
 
     <tab-content>
       <template #head="{ selectTab, activeTab }">
-        <ul class="columns">
-          {% for block in section.blocks %}
-            <li class="column" :class="{ active: activeTab === 'tab-{{forloop.index}}' }">
-              <span @click="selectTab" id="tab-{{forloop.index}}">{{ block.settings.title }}</span>
-            </li>
-          {% endfor %}
-        </ul>
+        <div class="container">
+          <ul class="columns">
+            {% for block in section.blocks %}
+              <li class="column" :class="{ active: activeTab === 'tab-{{forloop.index}}' }">
+                <span @click="selectTab" id="tab-{{forloop.index}}">{{ block.settings.title }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       </template>
 
       <template #body="{ activeTab }">
         {% for block in section.blocks %}
-        <transition name="fade" mode="in-out">
-          <div v-if="activeTab === 'tab-{{forloop.index}}'" class="body-content">
-            {{ block.settings.content }}
-          </div>
-        </transition>
+          <transition name="fade">
+            <div v-if="activeTab === 'tab-{{forloop.index}}'" class="body-content">
+              <div class="container">
+                <div class="videos">
+                  {% if block.settings.youtube_video1_url %}
+                    <div class="video">
+                      <iframe class="lazyload" data-src="{{block.settings.youtube_video1_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.youtube_video2_url %}
+                    <div class="video">
+                      <iframe class="lazyload" data-src="{{block.settings.youtube_video2_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </transition>
         {% endfor %}
       </template>
     </tab-content>
@@ -38,6 +54,7 @@
         "default": "Installation Guide"
       }
     ],
+    "max_blocks": 2,
     "blocks": [
       {
         "type": "tab",
@@ -49,9 +66,14 @@
             "label": "Tab Title"
           },
           {
-            "id": "content",
-            "type": "html",
-            "label": "Tab Content"
+            "id": "youtube_video1_url",
+            "type": "text",
+            "label": "Youtube Video 1"
+          },
+          {
+            "id": "youtube_video2_url",
+            "type": "text",
+            "label": "Youtube Video 2"
           }
         ]
       }
