@@ -64,12 +64,14 @@ body {
     align-items: center;
     justify-content: center;
     height: 20px;
+    padding: 15px;
 
     &:first-child {
       margin-right: 30px;
     }
 
     @media screen and (min-width: $tablet) {
+      padding: 0;
       height: 30px;
       display: inline-flex;
     }
