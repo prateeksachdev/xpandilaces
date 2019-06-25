@@ -1,0 +1,53 @@
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "../variables.scss";
+
+.page-404 {
+  h1 {
+    font-family: neuzeit_grotesk_regular;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: none;
+    line-height: 1.5;
+    color: #333333;
+    display: block;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 36px;
+    }
+  }
+ 
+  p {
+    margin-bottom: 15px;
+  }
+
+  a {
+    color: #03a196;
+  }
+
+  .column {
+    text-align: center;
+  }
+
+  form {
+    input[type="text"] {
+      display: inline-block;
+      width: 100%;
+      height: 42px;
+      min-height: 42px;
+      padding: 0 10px;
+      margin: 0;
+      line-height: 22px;
+      border: 1px solid #cccccc;
+      outline: none;
+      background: #fff;
+      color: #5f6a7d;
+      font: 13px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin-bottom: 15px;
+      border-radius: 3px;
+      max-width: 340px;
+    }
+  }
+}
