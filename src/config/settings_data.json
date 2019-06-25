@@ -3,6 +3,9 @@
     "color_accent": "#c4cdd5",
     "color_body_text": "#161d25",
     "color_main_bg": "#fff",
+    "btn_color": "#008ffd",
+    "btn_hover_color": "#1a4215",
+    "btn_text_color": "#ffffff",
     "font_heading": "helvetica_n4",
     "font_body": "helvetica_n4",
     "share_image": "",
@@ -503,15 +506,17 @@
           "1559665951963": {
             "type": "tab",
             "settings": {
-              "title": "Test",
-              "content": "test"
+              "title": "Original No-Tie",
+              "youtube_video1_url": "https:\/\/www.youtube.com\/watch?v=eMSbyA9wNBo",
+              "youtube_video2_url": "https:\/\/www.youtube.com\/watch?v=xp-4EMkwNQQ"
             }
           },
           "1559665975847": {
             "type": "tab",
             "settings": {
-              "title": "Test2",
-              "content": "test2"
+              "title": "Quick-Release",
+              "youtube_video1_url": "https:\/\/www.youtube.com\/watch?v=8hMcup2C-ds",
+              "youtube_video2_url": ""
             }
           }
         },
