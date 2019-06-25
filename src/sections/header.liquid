@@ -67,22 +67,18 @@
                   <span class="icon-down-arrow">
                 </a>
               {% endfor %}
+
+              {% for link in linklists[section.settings.secondary_menu].links %}
+                <a class="navbar-item" href="{{ link.url }}">{{ link.title }}</a>
+              {% endfor %}
             </div>
           </div>
 
           <div class="navbar-menu secondary">
             <div class="navbar-start">
-              {% for link in linklists[section.settings.secondary_menu].links %}
-                <a class="navbar-item" href="{{ link.url }}">{{ link.title }}</a>
-              {% endfor %}
-
-              {% if shop.customer_accounts_enabled %}
+              {% if shop.customer_accounts_enabled and customer %}
                 <a class="navbar-item" href="/account">
-                  {% if customer %}
-                    {{ 'layout.customer.my_account' | t }}
-                  {% else %}
-                    {{ 'layout.customer.log_in' | t }}
-                  {% endif %}
+                  {{ 'layout.customer.my_account' | t }}
                 </a>
               {% endif %}
             </div>
@@ -184,10 +180,6 @@
               </li>
               <li>
                 {{ 'layout.customer.log_out' | t | customer_logout_link }}
-              </li>
-            {% else %}
-              <li>
-                {{ 'layout.customer.log_in' | t | customer_login_link }}
               </li>
             {% endif %}
           {% endif %}
