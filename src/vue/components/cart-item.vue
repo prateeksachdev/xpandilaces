@@ -1,6 +1,6 @@
 <template>
   <li class="cart-item">
-    <a :href="item.url">
+    <a :href="productUrl(item.url)">
       <div class="image">
         <img :src="imgURL(item.image, imgSize)" :alt="item.title">
       </div>
@@ -62,6 +62,13 @@
         if (parseInt(quantity) >= 0) {
           item.quantity = quantity
           store.changeQuantity(item.key, quantity, this.triggerRefresh)
+        }
+      },
+      productUrl (url) {
+        if (url) {
+          return url.split('?')[0]
+        } else {
+          return url
         }
       }
     }
