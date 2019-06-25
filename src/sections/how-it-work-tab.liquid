@@ -21,13 +21,13 @@
             <div v-if="activeTab === 'tab-{{forloop.index}}'" class="body-content">
               <div class="container">
                 <div class="videos">
-                  {% if block.settings.youtube_video1_url %}
+                  {% if block.settings.youtube_video1_url != blank %}
                     <div class="video">
                       <iframe class="lazyload" data-src="{{block.settings.youtube_video1_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                   {% endif %}
 
-                  {% if block.settings.youtube_video2_url %}
+                  {% if block.settings.youtube_video2_url != blank %}
                     <div class="video">
                       <iframe class="lazyload" data-src="{{block.settings.youtube_video2_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
