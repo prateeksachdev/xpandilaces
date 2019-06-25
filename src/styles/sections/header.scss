@@ -59,21 +59,34 @@ body {
 .navbar > .announcement {
   background-color: #ffd828;
 
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+    min-height: 40px;
+    align-items: center;
+
+    @media screen and (min-width: $tablet) {
+      min-height: unset;
+    }
+  }
+
   .text-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 20px;
-    padding: 15px;
+    width: 100%;
 
     &:first-child {
       margin-right: 30px;
     }
 
     @media screen and (min-width: $tablet) {
-      padding: 0;
       height: 30px;
       display: inline-flex;
+      width: auto;
     }
   }
 
