@@ -37,25 +37,77 @@
         </div>
       </div>
     {% else %}
-      <div class="container results">
-        <div class="columns is-multiline">
-          {% for product in search.results %}
-            <div class="column is-4 product-item">
-              <a href="{{ product.url | within: collection }}">
-                <img class="lazyload" data-src="{{product.featured_image | img_url: '300x'}}">
-                <p class="title">{{product.title}}</p>
-                <p class="price">{{product.price_max | money}}</p>
-                <div class="thumbnail-overlay">
-                  <div class="info">
-                    <p class="title">{{product.title}}</p>
-                    <p class="price">{{product.price_max | money}}</p>
-                  </div>
+      {% if settings.search_option == 'everything' or search.results.first.price == blank %}
+        <div class="container results">
+          {% for item in search.results %}
+            <div class="columns is-multiline product-row">
+              {% assign featured_image = false %}
+              {% if item.object_type == 'article' and item.image %}
+                {% assign featured_image = true %}
+                <div class="column is-3">
+                  <a href="{{ item.url }}" title="{{ item.title | escape }}">
+                    <img src="{{ item.image | img_url: '600x', scale: 2 }}"  alt="{{ item.title | escape }}" />
+                  </a>
                 </div>
-              </a>
+              {% elsif item.featured_image %}
+                {% assign featured_image = true %}
+                <div class="column is-3 product-row">
+                  <a href="{{ item.url }}" title="{{ item.title | escape }}">
+                    <img src="{{ item.featured_image | img_url: '600x', scale: 2 }}"  alt="{{ item.title | escape }}" />
+                  </a>
+                </div>
+              {% endif %}
+              <div class="column {% if featured_image %} is-9 {% else %} is-12 no-img {% endif %}">
+                <h5 class="title">
+                  <a href="{{ item.url }}" title="{{ item.title | escape }}">{{ item.title }}</a>
+                </h5>
+                {% if item.object_type == 'product' %}
+                  <div class="info">
+                    <span>{{item.price_max | money}}</span>
+                  </div>
+                {% endif %}
+
+                {% if item.object_type == 'article' %}
+                  <div class="blog-meta">
+                    <span>{{ item.published_at | date: format: "month_day_year" }}</span>
+                  </div>
+                {% endif %}
+
+                {% if item.excerpt %}
+                  <div class="excerpt">{{ item.excerpt }}</div>
+                  <p class="read-more">
+                    <a href="{{ item.url }}" title="{{ item.title | escape }}">Read More <span class="icon-right-arrow"></span></a>
+                  </p>
+
+                {% else %}
+                  <div class="excerpt excerpt-product">{{ item.content | strip_html | truncatewords: 40 | highlight: search.terms | replace: 'Description', '' | replace: 'Specs', '' | replace: 'Shipping', '' | replace: 'Size', '' }}</div>
+                {% endif %}
+              </div>
             </div>
+            <hr/>
           {% endfor %}
         </div>
-      </div>
+      {% else %}
+        <div class="container results">
+          <div class="columns is-multiline">
+            {% for product in search.results %}
+              <div class="column is-4 product-item">
+                <a href="{{ product.url | within: collection }}">
+                  <img class="lazyload" data-src="{{product.featured_image | img_url: '300x'}}">
+                  <p class="title">{{product.title}}</p>
+                  <p class="price">{{product.price_max | money}}</p>
+                  <div class="thumbnail-overlay">
+                    <div class="info">
+                      <p class="title">{{product.title}}</p>
+                      <p class="price">{{product.price_max | money}}</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
       {% if paginate.pages > 1 %}
         <div class="container collection-pagination">
           {{ paginate | default_pagination | replace: '&raquo;', '<span class="icon-right-arrow"></span>' | replace: '&laquo;', '<span class="icon-left-arrow"></span>' }}
