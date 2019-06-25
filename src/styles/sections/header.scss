@@ -471,9 +471,11 @@ body {
 
     .image {
       max-width: 60px;
+      min-width: 60px;
       padding-right: 10px;
 
       @media screen and (min-width: $large-phone) {
+        min-width: 100px;
         max-width: 100px;
       }
     }
