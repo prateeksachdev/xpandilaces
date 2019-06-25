@@ -80,6 +80,11 @@
     span {
       animation-duration: 0.8s;
       animation-name: fadeInDown;
+      font-size: 16px;
+
+      @media screen and (min-width: $tablet) {
+        font-size: 18px;
+      }
     }
 
     &.loading {
