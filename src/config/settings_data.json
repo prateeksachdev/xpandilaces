@@ -3,8 +3,8 @@
     "color_accent": "#c4cdd5",
     "color_body_text": "#161d25",
     "color_main_bg": "#fff",
-    "btn_color": "#008ffd",
-    "btn_hover_color": "#1a4215",
+    "btn_color": "#000000",
+    "btn_hover_color": "#ae3333",
     "btn_text_color": "#ffffff",
     "font_heading": "helvetica_n4",
     "font_body": "helvetica_n4",
@@ -171,7 +171,7 @@
       "1558048205172": {
         "type": "stamped-review",
         "settings": {
-          "title": "Loved by Millions",
+          "title": "Loved by All",
           "code_snippet": "<div id=\"stamped-reviews-widget\" data-widget-type=\"visual-gallery\" data-product-ids=\"2009897304175\" data-min-rating=\"3\" data-random=\"true\" data-feed-type=\"carousel\" data-with-photos=\"true\"><\/div>"
         }
       },
@@ -181,19 +181,19 @@
           "1558075392065": {
             "type": "item",
             "settings": {
-              "text": "<p>100% money back<\/p>\n<p>guarantee!<\/p>"
+              "text": "<p>Try Xpand<\/p>\n<p>for 90 days<\/p>"
             }
           },
           "1558075403234": {
             "type": "item",
             "settings": {
-              "text": "<p>Try Xpand<\/p>\n<p>for 90 days<\/p>"
+              "text": "<p>100% money back<\/p>\n<p>guarantee!<\/p>"
             }
           },
           "1558075411721": {
             "type": "item",
             "settings": {
-              "text": "<p>Free worldwide<\/p>\n<p>shipping<\/p>"
+              "text": "<p>Free&nbsp;North America<\/p>\n<p>shipping<\/p>"
             }
           }
         },
@@ -213,7 +213,7 @@
         "settings": {
           "title": "Over 40 Colors",
           "image": "shopify:\/\/shop_images\/Screen_Shot_2018-11-18_at_07.33.20.png",
-          "cta_text": "SHOP NOW",
+          "cta_text": "CHOOSE YOUR COLOR",
           "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
         }
       },
@@ -280,7 +280,7 @@
           "1558155113834"
         ],
         "settings": {
-          "title": "Our Best Sellers",
+          "title": "Popular Colors",
           "link_text": "DISCOVER ALL COLORS",
           "link": "shopify:\/\/pages\/compare-laces"
         }
@@ -342,8 +342,8 @@
       "1558366114449": {
         "type": "newsletter",
         "settings": {
-          "title": "Get 10% Off",
-          "text": "Sign up to receive your promo code and be the first to know about exclusive offers",
+          "title": "Join the Club",
+          "text": "Sign up to be the first to know about exclusive deals and new products",
           "button_text": "SUBMIT",
           "action_url": "\/\/manage.kmail-lists.com\/subscriptions\/subscribe"
         }
@@ -371,9 +371,9 @@
           "1558510609132"
         ],
         "settings": {
-          "title": "LIMITED TIME DEAL",
+          "title": "LIMITED TIME OFFER",
           "text_color": "#ffffff",
-          "background_color": "#36807c"
+          "background_color": "#319691"
         }
       },
       "compare-banner": {
@@ -454,13 +454,13 @@
         "settings": {
           "price_note_desktop": "&#149; one size fits all  &#149; for all shoe types",
           "price_note_mobile": "One Size Fits All - Adults & Kids",
-          "promo_title": "Bundle up for savings.",
+          "promo_title": "HUGE SAVINGS ON BUNDLES",
           "promo_one": "3 FOR $25",
           "promo_two": "6 FOR $35",
           "promo_three": "8 FOR $45",
           "code_one": "",
-          "code_two": "CODE: 6for35",
-          "code_three": "CODE: 8for45"
+          "code_two": "CODE: 6FOR35",
+          "code_three": "CODE: 8FOR45"
         }
       },
       "product-feature": {
@@ -497,7 +497,7 @@
           "1559622395675"
         ],
         "settings": {
-          "text_color": "#32b3aa"
+          "text_color": "#36807c"
         }
       },
       "how-it-work-tab": {
@@ -525,7 +525,7 @@
           "1559665975847"
         ],
         "settings": {
-          "title": "Installation Guide"
+          "title": "How It Works"
         }
       },
       "product-tab": {
@@ -534,7 +534,7 @@
           "1559669561171": {
             "type": "about",
             "settings": {
-              "name": "about",
+              "name": "overview",
               "title": "Get to know the laces",
               "flat_top_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1206\/8416\/files\/XPAND.mp4?16646853987851673823",
               "flat_video1_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Hidden_and_Visible.mp4?4757277608672948829",
@@ -583,7 +583,7 @@
           "1559688483773": {
             "type": "specs",
             "settings": {
-              "name": "specs",
+              "name": "details",
               "flat_title": "In the package",
               "flat_description": "<p>Every package completes&nbsp;<br>one pair of shoes:&nbsp;<br>2 elastic laces, 4 lace anchors, 4 end clips<\/p>",
               "flat_image": "shopify:\/\/shop_images\/flat_specs.jpg",
