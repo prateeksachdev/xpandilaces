@@ -38,7 +38,7 @@
           <div class="column newsletter">
             <h6>{{ block.settings.title }}</h6>
 
-            <form action="{{ block.settings.action_url }}"  target="_blank">
+            <form action="{{ block.settings.action_url }}" method="POST" target="_blank">
               <input type="hidden" name="g" value="NDrWDc">
               <input type="email" name="email" placeholder="{{ 'general.newsletter_form.placeholder' | t }}">
               <button type="submit" class="button">{{ block.settings.button_text }}</button>
