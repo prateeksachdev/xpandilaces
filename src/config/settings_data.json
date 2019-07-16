@@ -25,7 +25,7 @@
     "cart_notes_enable": true,
     "favicon": "",
     "checkout_header_image": "",
-    "checkout_logo_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
@@ -102,7 +102,7 @@
             "type": "newsletter_column",
             "settings": {
               "title": "Sign up & get 10% off",
-              "action_url": "",
+              "action_url": "\/\/manage.kmail-lists.com\/subscriptions\/subscribe",
               "button_text": "submit"
             }
           }
@@ -171,7 +171,7 @@
       "1558048205172": {
         "type": "stamped-review",
         "settings": {
-          "title": "Loved by All",
+          "title": "Over 1 Million Sold",
           "code_snippet": "<div id=\"stamped-reviews-widget\" data-widget-type=\"visual-gallery\" data-product-ids=\"2009897304175\" data-min-rating=\"3\" data-random=\"true\" data-feed-type=\"carousel\" data-with-photos=\"true\"><\/div>"
         }
       },
@@ -384,6 +384,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Xpand_Navigation_Flat-Laces3.png",
               "title": "Original No-Tie Lacing System",
+              "text": "",
               "button_text": "SHOP NOW",
               "link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
             }
@@ -393,6 +394,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Xpand_Navigation_Round_Laces-1_500x_c0668201-8e9b-4568-a40f-4b323c42f3c4.png",
               "title": "Quick-Release Lacing System",
+              "text": "",
               "button_text": "SHOP NOW",
               "link": "shopify:\/\/products\/quick-release-round-lacing-system"
             }
