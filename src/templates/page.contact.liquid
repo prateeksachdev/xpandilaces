@@ -18,18 +18,19 @@
       {% endcomment %}
       <div class="columns">
         <div class="column">
-          <label for="ContactFormName">{{ 'contact.form.name' | t }} <span class="red">*</span></label>
+          <label for="name">{{ 'contact.form.name' | t }} <span class="red">*</span></label>
           <input required type="text"
             name="contact[name]"
-            id="ContactFormName"
+            id="name"
             placeholder="{{ 'contact.form.name' | t }}"
             value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}" class="input">
         </div>
+
         <div class="column">
-          <label for="ContactFormEmail">{{ 'contact.form.email' | t }} <span class="red">*</span></label>
+          <label for="email">{{ 'contact.form.email' | t }} <span class="red">*</span></label>
           <input required type="email"
             name="contact[email]"
-            id="ContactFormEmail"
+            id="email"
             placeholder="{{ 'contact.form.email' | t }}"
             value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
             spellcheck="false"
@@ -37,12 +38,13 @@
             autocapitalize="off" class="input">
         </div>
       </div>
+
       <div class="columns">
         <div class="column">
-          <label for="ContactFormMessage">{{ 'contact.form.message' | t }} <span class="red">*</span></label>
+          <label for="message">{{ 'contact.form.message' | t }} <span class="red">*</span></label>
           <textarea required rows="10"
             name="contact[body]"
-            id="ContactFormMessage"
+            id="message"
             placeholder="{{ 'contact.form.message' | t }}"  class="input">
             {%- if form.body -%}
               {{- form.body -}}
@@ -60,7 +62,6 @@
         value="{% if form[phone] %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
         pattern="[0-9\-]*">
       {% endcomment %}
-      
 
       <input type="submit" class="button" value="{{ 'contact.form.send' | t }}">
 
