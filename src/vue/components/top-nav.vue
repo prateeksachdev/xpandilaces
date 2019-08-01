@@ -1,5 +1,7 @@
 <template>
   <nav id="navbar" :class="{ scrollable: isMobileMegaVisible }" class="navbar is-fixed-top rows" role="navigation">
+    <slot name="cart"></slot>
+
     <height-transition>
       <slot name="announcement" v-if="isAnnouncementVisible" :hide="hideAnnouncement"></slot>
     </height-transition>
@@ -26,7 +28,6 @@
   export default {
     name: 'TopNav',
     props: {
-      cartJson: String,
       isAnnouncementEnabled: Boolean
     },
     data () {
@@ -49,7 +50,8 @@
       }
     },
     mounted () {
-      store.setCart(JSON.parse(this.cartJson))
+      let cartJson = this.$slots.cart[0].children[0].text
+      store.setCart(JSON.parse(cartJson))
 
       if (this.isAnnouncementEnabled && this.isAnnouncementVisible) {
         const body = document.body

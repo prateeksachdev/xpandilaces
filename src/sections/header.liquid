@@ -11,7 +11,13 @@
   - Home page only: only shows on the home page
 {%- endcomment -%}
 <div data-section-id="{{ section.id }}" data-section-type="header">
-  <top-nav cart-json='{{cart | json}}' :is-announcement-enabled="{{section.settings.announcement_bar_enabled}}">
+  <top-nav :is-announcement-enabled="{{section.settings.announcement_bar_enabled}}">
+    <template #cart>
+      <script type="application/json">
+        {{cart | json}}
+      </script>
+    </template>
+
     {% if section.settings.announcement_bar_enabled %}
       <template #announcement="{ hide }">
         <div class="row announcement">
