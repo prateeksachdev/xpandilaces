@@ -1,9 +1,9 @@
 {
   "current": {
     "color_accent": "#c4cdd5",
-    "color_body_text": "#161d25",
-    "color_main_bg": "#fff",
-    "btn_color": "#000000",
+    "color_body_text": "#fafafa",
+    "color_main_bg": "#197bbd",
+    "btn_color": "#197bbd",
     "btn_hover_color": "#ae3333",
     "btn_text_color": "#ffffff",
     "font_heading": "helvetica_n4",
@@ -70,7 +70,7 @@
         "settings": {
           "announcement_bar_enabled": true,
           "shipping_text": "<p><strong>Free Shipping when you order 4 or more<\/strong><\/p>",
-          "promo_text": "<p><strong>3 for $25 |&nbsp;6 for $35&nbsp;WITH&nbsp;PROMO CODE:&nbsp;<\/strong><em>6FOR35<\/em><\/p>",
+          "promo_text": "<p><strong>3 for $25 |&nbsp;6&nbsp;for&nbsp;$40<\/strong>&nbsp;WITH&nbsp;PROMO&nbsp;CODE:&nbsp;<em>6FOR40<\/em><\/p>\n<p><em>&nbsp;<\/em><\/p>",
           "logo": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
           "primary_menu": "new-main-menu-2",
           "secondary_menu": "new-second-menu-2",
@@ -165,8 +165,7 @@
           "1558041238811",
           "1558041246675"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "1558048205172": {
         "type": "stamped-review",
@@ -213,7 +212,7 @@
         "settings": {
           "title": "Over 40 Colors",
           "image": "shopify:\/\/shop_images\/Screen_Shot_2018-11-18_at_07.33.20.png",
-          "cta_text": "CHOOSE YOUR COLOR",
+          "cta_text": "FIND YOUR COLOR",
           "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
         }
       },
@@ -336,8 +335,7 @@
           "1558161234072",
           "1558161287842"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "1558366114449": {
         "type": "newsletter",
@@ -354,15 +352,15 @@
           "1558510583817": {
             "type": "item",
             "settings": {
-              "title": "6 Packs for $35",
-              "text": "CODE: 6FOR35"
+              "title": "6 Packs for $40",
+              "text": "CODE: 6FOR40"
             }
           },
           "1558510609132": {
             "type": "item",
             "settings": {
-              "title": "8 Packs for $45",
-              "text": "CODE: 8FOR45"
+              "title": "8 Packs for $50",
+              "text": "CODE: 8FOR50"
             }
           }
         },
@@ -457,12 +455,12 @@
           "price_note_desktop": "&#149; one size fits all  &#149; for all shoe types",
           "price_note_mobile": "One Size Fits All - Adults & Kids",
           "promo_title": "HUGE SAVINGS ON BUNDLES",
-          "promo_one": "3 FOR $25",
-          "promo_two": "6 FOR $35",
-          "promo_three": "8 FOR $45",
-          "code_one": "",
-          "code_two": "CODE: 6FOR35",
-          "code_three": "CODE: 8FOR45"
+          "promo_one": "3 for $25",
+          "promo_two": "6 FOR $40",
+          "promo_three": "8 FOR $50",
+          "code_one": "AUTO-APPLIED",
+          "code_two": "CODE: 6FOR40",
+          "code_three": "CODE: 8FOR50"
         }
       },
       "product-feature": {
@@ -505,7 +503,7 @@
       "how-it-work-tab": {
         "type": "how-it-work-tab",
         "blocks": {
-          "1559665951963": {
+          "1564074420978": {
             "type": "tab",
             "settings": {
               "title": "Original No-Tie",
@@ -513,7 +511,7 @@
               "youtube_video2_url": "https:\/\/www.youtube.com\/watch?v=xp-4EMkwNQQ"
             }
           },
-          "1559665975847": {
+          "1564162756112": {
             "type": "tab",
             "settings": {
               "title": "Quick-Release",
@@ -523,8 +521,8 @@
           }
         },
         "block_order": [
-          "1559665951963",
-          "1559665975847"
+          "1564074420978",
+          "1564162756112"
         ],
         "settings": {
           "title": "How It Works"
@@ -617,8 +615,7 @@
           "1559691859431",
           "1559675417021"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "cart-template": {
         "type": "cart-template",
@@ -649,15 +646,32 @@
         "settings": {
           "pagination_limit": 48
         }
+      },
+      "yh-CTA-btn": {
+        "type": "yh-CTA-btn",
+        "settings": {
+          "text-box": "This is a CTA headin",
+          "link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+          "linktext": "Buy Now!"
+        }
+      },
+      "text-banner": {
+        "type": "text-banner",
+        "settings": {
+          "title": "Banner",
+          "text": "<p>Bold<\/p>",
+          "cta_text": "Buy Now",
+          "cta_link": "shopify:\/\/products\/quick-release-round-lacing-system"
+        }
       }
     },
     "content_for_index": [
       "1557967708681",
       "1557977971910",
       "1558041214466",
+      "1558131609639",
       "1558048205172",
       "1558075345034",
-      "1558131609639",
       "1558154461671",
       "1558160927845",
       "1558366114449",
@@ -672,18 +686,15 @@
           "blocks": {
             "collection-list-0": {
               "type": "collection",
-              "settings": {
-              }
+              "settings": {}
             },
             "collection-list-1": {
               "type": "collection",
-              "settings": {
-              }
+              "settings": {}
             },
             "collection-list-2": {
               "type": "collection",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
@@ -691,8 +702,7 @@
             "collection-list-1",
             "collection-list-2"
           ],
-          "settings": {
-          }
+          "settings": {}
         },
         "featured-collection": {
           "type": "featured-collection",
@@ -702,8 +712,7 @@
         },
         "featured-product": {
           "type": "featured-product",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "content_for_index": [
