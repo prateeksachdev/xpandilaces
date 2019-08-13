@@ -1,11 +1,48 @@
 <section class="section featured-box">
   <div class="container">
     <div class="columns">
+      {% comment %}Set font size and button width base on how many blocks is enabled through theme editor{% endcomment %}
+      {%- assign blocks_enabled = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.settings.enable_block -%}
+          {%- assign blocks_enabled = blocks_enabled | plus: 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {% if blocks_enabled == 4 %}
+        {% assign font_size = 18 %}
+        {% assign btn_width = 140 %}
+      {% elsif blocks_enabled == 3 %}
+        {% assign font_size = 22 %}
+        {% assign btn_width = 160 %}
+      {% else %}
+        {% assign font_size = 28 %}
+        {% assign btn_width = 180 %}
+      {% endif %}
+
+      {% comment %}Have to use this workaround because vue doesn't parse <style> element{% endcomment %}
+      <component is="style" style="display: none;">
+        @media screen and (min-width: 769px) {
+          .featured-box .item .head h3 {
+            font-size: {{font_size}}px;
+            line-height: {{font_size | plus: 6}}px;
+          }
+
+          .featured-box .item .foot a {
+            width: {{btn_width}}px;
+          }
+        }
+      </component>
+
       {% for block in section.blocks %}
         {% if block.settings.enable_block %}
           <div class="column">
-            <div class="item lazyload" data-bg="{{ block.settings.image | img_url: 'master' }}">
-              <h3>{{ block.settings.title }}</h3>
+            <div class="item">
+              <div class="head">
+                <h3 style="color: {{block.settings.text_color}};">{{ block.settings.title }}</h3>
+              </div>
+
+              <img class="image lazyload" src="{{ block.settings.image | img_url: 'master' }}">
 
               <div class="foot">
                 <a class="button" href="{{ block.settings.link }}">{{ block.settings.link_text }}</a>
@@ -47,6 +84,12 @@
           "type": "url",
           "id": "link",
           "label": "Link"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#333333"
         },
         {
           "type": "text",
