@@ -131,7 +131,7 @@
       "1557977971910": {
         "type": "text-banner",
         "settings": {
-          "title": "NEVER TIE YOUR SHOELACES AGAIN.",
+          "title": "COMFORT. STYLE. PERFORMANCE.",
           "text": "<p><strong>No-Tie Shoelaces - Adults &amp; Kids<br><\/strong><\/p>",
           "cta_text": "SHOP NOW",
           "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
@@ -165,7 +165,8 @@
           "1558041238811",
           "1558041246675"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "1558048205172": {
         "type": "stamped-review",
@@ -335,7 +336,8 @@
           "1558161234072",
           "1558161287842"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "1558366114449": {
         "type": "newsletter",
@@ -615,7 +617,8 @@
           "1559691859431",
           "1559675417021"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "cart-template": {
         "type": "cart-template",
@@ -686,15 +689,18 @@
           "blocks": {
             "collection-list-0": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "collection-list-1": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "collection-list-2": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -702,7 +708,8 @@
             "collection-list-1",
             "collection-list-2"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "featured-collection": {
           "type": "featured-collection",
@@ -712,7 +719,8 @@
         },
         "featured-product": {
           "type": "featured-product",
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "content_for_index": [
