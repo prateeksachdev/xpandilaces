@@ -108,9 +108,13 @@
       background: #0090fc;
       border: none;
       color: #fff;
-      width: 186px;
+      padding: 0 40px;
       font-weight: bold;
       letter-spacing: 1.2px;
+
+      @media screen and (min-width: $tablet) {
+        padding: 0 30px;
+      }
     }
   }
 }

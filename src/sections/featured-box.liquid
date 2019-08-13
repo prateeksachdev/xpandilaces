@@ -11,13 +11,13 @@
 
       {% if blocks_enabled == 4 %}
         {% assign font_size = 18 %}
-        {% assign btn_width = 140 %}
+        {% assign btn_font_size = 12 %}
       {% elsif blocks_enabled == 3 %}
         {% assign font_size = 22 %}
-        {% assign btn_width = 160 %}
+        {% assign btn_font_size = 14 %}
       {% else %}
         {% assign font_size = 28 %}
-        {% assign btn_width = 180 %}
+        {% assign btn_font_size = 16 %}
       {% endif %}
 
       {% comment %}Have to use this workaround because vue doesn't parse <style> element{% endcomment %}
@@ -29,7 +29,7 @@
           }
 
           .featured-box .item .foot a {
-            width: {{btn_width}}px;
+            font-size: {{btn_font_size}}px;
           }
         }
       </component>
