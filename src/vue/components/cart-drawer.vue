@@ -44,9 +44,13 @@
   import { dollar } from '../filters'
   import { imgURL } from '../helpers'
   import store from '../store'
+  import CartItem from './cart-item.vue'
 
   export default {
     name: 'CartDrawer',
+    components: {
+      CartItem
+    },
     filters: {
       dollar
     },
