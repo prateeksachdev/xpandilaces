@@ -133,8 +133,11 @@
         "settings": {
           "title": "COMFORT. STYLE. PERFORMANCE.",
           "text": "<p><strong>No-Tie Shoelaces - Adults &amp; Kids<br><\/strong><\/p>",
-          "cta_text": "SHOP NOW",
-          "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
+          "primary_cta_text": "SHOP NOW",
+          "primary_cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+          "enable_secondary_cta": true,
+          "secondary_cta_text": "HOW IT WORKS",
+          "secondary_cta_link": "shopify:\/\/pages\/install-video"
         }
       },
       "1558041214466": {
@@ -147,6 +150,18 @@
               "image": "shopify:\/\/shop_images\/Flat_Lace_3_1.jpg",
               "title": "Original No-Tie <br>Lacing System",
               "link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+              "text_color": "#333333",
+              "link_text": "SHOP NOW"
+            }
+          },
+          "1565704762914": {
+            "type": "box",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Socks_1.jpg",
+              "title": "No-Show Socks",
+              "link": "http:\/\/socks.xpandlaces.com\/?utm_source=website",
+              "text_color": "#ffffff",
               "link_text": "SHOP NOW"
             }
           },
@@ -157,12 +172,14 @@
               "image": "shopify:\/\/shop_images\/Round_Lace_1.jpg",
               "title": "Quick-Release <br>Lacing System",
               "link": "shopify:\/\/products\/quick-release-round-lacing-system",
+              "text_color": "#333333",
               "link_text": "SHOP NOW"
             }
           }
         },
         "block_order": [
           "1558041238811",
+          "1565704762914",
           "1558041246675"
         ],
         "settings": {
@@ -181,18 +198,21 @@
           "1558075392065": {
             "type": "item",
             "settings": {
+              "image": "shopify:\/\/shop_images\/1_ff839f2e-c102-4c5d-ba49-7b92f7f20728.png",
               "text": "<p>Try Xpand<\/p>\n<p>for 90 days<\/p>"
             }
           },
           "1558075403234": {
             "type": "item",
             "settings": {
+              "image": "shopify:\/\/shop_images\/2_54465150-6eed-466d-8063-dfba76ab35a4.png",
               "text": "<p>100% money back<\/p>\n<p>guarantee!<\/p>"
             }
           },
           "1558075411721": {
             "type": "item",
             "settings": {
+              "image": "shopify:\/\/shop_images\/3_7954e57b-2c49-4596-b9f9-f6c2a0cd821a.png",
               "text": "<p>Free&nbsp;North America<\/p>\n<p>shipping<\/p>"
             }
           }
@@ -350,6 +370,7 @@
       },
       "1558510378449": {
         "type": "bottom-banner",
+        "disabled": true,
         "blocks": {
           "1558510583817": {
             "type": "item",
@@ -663,8 +684,11 @@
         "settings": {
           "title": "Banner",
           "text": "<p>Bold<\/p>",
-          "cta_text": "Buy Now",
-          "cta_link": "shopify:\/\/products\/quick-release-round-lacing-system"
+          "primary_cta_text": "",
+          "primary_cta_link": "",
+          "enable_secondary_cta": false,
+          "secondary_cta_text": "",
+          "secondary_cta_link": ""
         }
       }
     },
