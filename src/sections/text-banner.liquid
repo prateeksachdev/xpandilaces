@@ -8,10 +8,18 @@
       {{ section.settings.text }}
     {% endif %}
 
-    {% if section.settings.cta_text != blank %}
-      <p>
-        <a class="button" href="{{ section.settings.cta_link }}">
-          {{ section.settings.cta_text}}
+    {% if section.settings.primary_cta_text != blank %}
+      <p class="primary-cta">
+        <a class="button" href="{{ section.settings.primary_cta_link }}">
+          {{ section.settings.primary_cta_text}}
+        </a>
+      </p>
+    {% endif %}
+
+    {% if section.settings.enable_secondary_cta %}
+      <p class="secondary-cta">
+        <a class="button" href="{{ section.settings.secondary_cta_link }}">
+          {{ section.settings.secondary_cta_text}}
         </a>
       </p>
     {% endif %}
@@ -34,13 +42,28 @@
       },
       {
         "type": "text",
-        "id": "cta_text",
-        "label": "CTA Text"
+        "id": "primary_cta_text",
+        "label": "Primary CTA Text"
       },
       {
         "type": "url",
-        "id": "cta_link",
-        "label": "CTA Link"
+        "id": "primary_cta_link",
+        "label": "Primary CTA Link"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_secondary_cta",
+        "label": "Enable Secondary CTA"
+      },
+      {
+        "type": "text",
+        "id": "secondary_cta_text",
+        "label": "Secondary CTA Text"
+      },
+      {
+        "type": "url",
+        "id": "secondary_cta_link",
+        "label": "Secondary CTA Link"
       }
     ],
     "presets": [

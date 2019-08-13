@@ -28,13 +28,18 @@
     text-align: center;
     margin-bottom: 20px;
 
+    &.primary-cta {
+      margin-bottom: 0px;
+    }
+
+    &.secondary-cta {
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
+
     @media screen and (min-width: $tablet) {
       font-size: 18px;
       margin-bottom: 30px;
-    }
-
-    &:last-child {
-      margin-bottom: 0px;
     }
   }
 
@@ -122,6 +127,7 @@
 
   .item {
     height: 160px;
+    position: relative;
 
     .number-1, .number-2, .number-3 {
       display: block;
@@ -148,6 +154,13 @@
       line-height: 20px;
       color: white;
       font-family: 'neuzeit_grotesk_regular'
+    }
+
+    img {
+      width: 50px;
+      margin: 0 auto 40px;
+      display: block;
+      float: none;
     }
   }
 

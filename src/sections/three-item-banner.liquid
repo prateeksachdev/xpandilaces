@@ -9,7 +9,7 @@
     {% for block in section.blocks %}
       <swiper-slide>
         <div class="item">
-          <span class="number-{{forloop.index}}"></span>
+          <img src="{{ block.settings.image | img_url: '100x' }}">
           {{ block.settings.text }}
         </div>
       </swiper-slide>
@@ -52,6 +52,11 @@
         "type": "item",
         "name": "Item",
         "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, 
           {
             "type": "richtext",
             "id": "text",
