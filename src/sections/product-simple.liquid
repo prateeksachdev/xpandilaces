@@ -1,4 +1,3 @@
-{%- include 'bold-product' with product, hide_action: 'break', output: 'none' -%}
 {% assign variant_selected = product.selected_or_first_available_variant %}
 {% assign image_identifier = variant_selected.title | remove: ' ' | downcase %}
 {% capture current_url %}{% if social-buttons == 'article' %}{{ shop.url }}{{ article.url }}{% else %}{{ canonical_url }}{% endif %}{% endcapture %}

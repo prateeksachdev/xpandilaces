@@ -4,14 +4,16 @@
       <div class="image">
         <img :src="imgURL(item.image, imgSize)" :alt="item.title">
       </div>
-      <div class="title">
-        <span>{{ item.product_title }}</span>
-        <span v-if="item.variant_title"> - {{ item.variant_title }}</span>
-      </div>
-      <div class="price">
-        <span>{{ item.price | dollar }}</span>
+      <div class="text">
+        <p>{{ item.product_title }}</p>
+        <p v-if="item.variant_title">{{ item.variant_title }}</p>
+        <p class="price">
+          <span class="original-amount" v-if="item.price != item.original_price">{{ item.original_price | dollar }}</span>
+          <span class="amount">{{ item.price | dollar }}</span>
+        </p>
       </div>
     </a>
+
     <div class="quantity">
       <div class="field has-addons">
         <p class="control">
@@ -76,4 +78,74 @@
 </script>
 
 <style lang="scss" scoped>
+@import "../../styles/variables";
+
+.cart-item {
+  font-family: "neuzeit_grotesk_light";
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #cccccc;
+
+  &:last-child {
+    border-bottom: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+
+  a {
+    display: flex;
+    width: 100%;
+  }
+
+  .image {
+    max-width: 100px;
+    min-width: 100px;
+    padding-right: 10px;
+  }
+
+  .text {
+    font-weight: normal;
+    font-size: 14px;;
+    line-height: 1.6em;
+    color: #333333;
+
+    @media screen and (min-width: $large-phone) {
+      font-size: 16px;
+    }
+
+    .price {
+      color: #333333;
+      font-weight: 700;
+      letter-spacing: 1px;
+
+      .original-amount {
+        font-weight: normal;
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .quantity {
+    padding-left: 100px;
+    margin-bottom: 10px;
+
+    input {
+      height: 30px;
+      font-size: 15px;
+      width: 40px;
+      text-align: center;
+    }
+
+    a {
+      height: 30px;
+      width: 32px;
+      font-size: 12px;
+      background-color: #f2f2f2;
+      padding: 0px;
+      font-weight: 300;
+    }
+  }
+}
 </style>

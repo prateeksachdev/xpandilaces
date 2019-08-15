@@ -1,0 +1,50 @@
+{% comment %}
+Helper for Quantity Breaks Now (https://apps.shopify.com/quantity-breaks-now)
+{% endcomment %}
+
+<script type="text/javascript">
+  window.qb = {};
+
+  {% if customer %}
+    window.qb.customer_tags = "{{customer.tags | join: ','}}";
+    window.qb.customer_id = "{{customer.id}}";
+  {% endif %}
+
+  {% if template contains 'product' %}
+    {% unless product.id == blank %}
+      window.qb.product = {
+        id: {{product.id}},
+        price: {{product.price}},
+        variants: {{product.variants | json}}
+      };
+      window.qb.product_collections = []
+      {% for c in product.collections %}
+        window.qb.product_collections.push({{c.id}})
+      {% endfor %}
+    {% endunless %}
+  {% endif %}
+
+  {% if cart %}
+    window.qb.cart = {{cart | json}}
+    window.qb.cart.items = [];
+
+    {% for item in cart.items %}
+      var cart_item = {{item | json}};
+      cart_item["collection_ids"] = [];
+      {% for c in item.product.collections %}
+        cart_item["collection_ids"].push({{c.id}})
+        {% endfor %}
+      window.qb.cart.items.push(cart_item);
+    {% endfor %}
+
+    if (typeof window.qb.cart.items == "object") {
+      for (var i=0; i<window.qb.cart.items.length; i++) {
+        ["sku", "vendor", "url", "image", "handle", "product_type", "product_description"].map(function(a) {
+          delete window.qb.cart.items[i][a]
+        })
+      }
+    }
+  {% endif %}
+</script>
+
+{% include 'quantity-breaks-now-settings' %}
