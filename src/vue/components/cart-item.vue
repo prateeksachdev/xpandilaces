@@ -45,9 +45,6 @@
       item: Object,
       imgSize: {
         default: '160x'
-      },
-      triggerRefresh: {
-        default: false
       }
     },
     filters: {
@@ -63,7 +60,7 @@
       changeQuantity (item, quantity) {
         if (parseInt(quantity) >= 0) {
           item.quantity = quantity
-          store.changeQuantity(item.key, quantity, this.triggerRefresh)
+          store.changeQuantity(item.key, quantity)
         }
       },
       productUrl (url) {

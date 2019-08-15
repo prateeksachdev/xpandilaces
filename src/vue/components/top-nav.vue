@@ -47,6 +47,17 @@
     computed: {
       isCartDetailVisible () {
         return this.state.isCartDetailVisible
+      },
+
+      isNewItemShownInCartDrawer () {
+        return this.state.isNewItemShownInCartDrawer
+      }
+    },
+    watch: {
+      isCartDetailVisible (isVisible) {
+        if (isVisible && !this.isNewItemShownInCartDrawer) {
+          store.showNewItemInCartDrawer(this.$el.querySelector(".drawer"))
+        }
       }
     },
     mounted () {

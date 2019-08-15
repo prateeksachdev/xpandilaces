@@ -101,7 +101,7 @@
             </a>
 
             <transition name="fade">
-              <div v-if="isCartDetailVisible" class="cart-detail">
+              <div v-show="isCartDetailVisible" class="cart-detail">
                 <cart-drawer v-click-outside="vco" @hide="hideCartDetail">
                   <template #continue-shopping>
                     {{ 'cart.general.continue_shopping_link_html' | t }}

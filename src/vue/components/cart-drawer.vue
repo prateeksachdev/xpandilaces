@@ -59,13 +59,12 @@
         return this.state.cart
       }
     },
-    mounted () {
-      setTimeout(() => {
+    methods: {
+      scrollToBottom () {
         var container = this.$el.querySelector(".drawer");
         container.scrollTop = container.scrollHeight;
-      }, 300)
-    },
-    methods: {
+      },
+
       checkout (e) {
         if (this.cart.total_discount > 0) {
           e.preventDefault()
