@@ -103,6 +103,7 @@ var store = {
     })
   },
   setCart (cart) {
+    cart.items = cart.items.reverse()
     this.state.cart = this._applyCartDiscount(cart)
   },
   changeQuantity: debounce(function (lineItemKey, quantity, triggerRefresh) {

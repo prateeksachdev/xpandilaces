@@ -85,7 +85,7 @@
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border-bottom: 1px solid #cccccc;
 
   &:last-child {

@@ -1,38 +1,41 @@
 <template>
-  <div class="drawer">
-    <template v-if="cart.item_count > 0">
-      <a @click="hide" href="javascript:;" class="continue-shopping">
-        <slot name="continue-shopping"></slot>
-      </a>
+  <div>
+    <form @submit="checkout" action="/cart" method="post">
+      <div class="drawer">
+        <template v-if="cart.item_count > 0">
+          <ul>
+            <cart-item v-for="item in cart.items" :key="item.key" :item="item">
+            </cart-item>
+          </ul>
 
-      <form @submit.prevent="checkout()" action="/cart" method="post">
-        <ul>
-          <cart-item v-for="item in cart.items" :key="item.key" :item="item">
-          </cart-item>
-        </ul>
+          <hr v-if="cart.items.length === 1">
+        </template>
 
-        <div class="foot">
-          <p class="subtotal">
-            <span>
-              <slot name="sub-total-text"></slot>
-            </span>
-            <span class="is-pulled-right">
-              <span class="original-amount" v-if="cart.total_price != cart.original_total_price">{{ cart.original_total_price | dollar }}</span>
-              <span>{{ cart.total_price | dollar }}</span>
-            </span>
-          </p>
-          <p class="text-center">
-            <button type="submit" id="checkout" name="checkout" class="button">
-              <slot name="checkout"></slot>
-            </button>
-          </p>
-        </div>
-      </form>
-    </template>
+        <p v-else class="empty">
+          <slot name="empty-msg"></slot>
+        </p>
+      </div>
+      <div class="foot">
+        <p class="subtotal">
+          <span>
+            <slot name="sub-total-text"></slot>
+          </span>
+          <span class="is-pulled-right">
+            <span class="original-amount" v-if="cart.total_price != cart.original_total_price">{{ cart.original_total_price | dollar }}</span>
+            <span>{{ cart.total_price | dollar }}</span>
+          </span>
+        </p>
+        <p class="text-center">
+          <button type="submit" id="checkout" name="checkout" class="button">
+            <slot name="checkout"></slot>
+          </button>
+        </p>
 
-    <p v-else class="empty">
-      <slot name="empty-msg"></slot>
-    </p>
+        <a @click="hide" href="javascript:;" class="continue-shopping">
+          <slot name="continue-shopping"></slot>
+        </a>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -56,8 +59,20 @@
         return this.state.cart
       }
     },
+    mounted () {
+      setTimeout(() => {
+        var container = this.$el.querySelector(".drawer");
+        container.scrollTop = container.scrollHeight;
+      }, 300)
+    },
     methods: {
-      checkout () {
+      checkout (e) {
+        if (this.cart.total_discount > 0) {
+          e.preventDefault()
+        } else {
+          return
+        }
+
         let items = []
         this.cart.items.forEach((item) => {
           items.push({
@@ -95,7 +110,6 @@
           dataType: "json",
           contentType: "application/json; charset=utf-8",
         }).then(response => {
-          console.log(response)
           window.location.href = response.invoice_url
         })
       },
@@ -108,76 +122,4 @@
 </script>
 
 <style lang="scss" scoped>
-@import "../../styles/variables";
-
-.drawer {
-  background-color: white;
-  border: 1px solid #ccc;
-  width: 320px;
-  max-height: 70vh;
-  overflow-y: auto;
-
-  @media screen and (min-width: $large-phone) {
-    width: 360px;
-  }
-}
-
-.empty {
-  font-family: neuzeit_grotesk_regular;
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-  padding: 40px 0px;
-}
-
-.continue-shopping {
-  display: block;
-  color: #333333;
-  font-family: "sf_display_regular";
-  font-size: 13px;
-  padding: 15px 0;
-  text-align: center;
-  border-bottom: 1px solid #cccccc
-}
-
-ul {
-  padding: 15px 20px;
-}
-
-.foot {
-  border-top: 1px solid #aaaaaa;
-  padding: 25px 20px 40px 20px;
-  font-family: "neuzeit_grotesk_light";
-  font-weight: bold;
-  font-size: 13px;
-
-  .subtotal {
-    margin-bottom: 12px;
-
-    span {
-      font-weight: bold;
-
-      &.original-amount {
-        text-decoration: line-through;
-        font-weight: normal;
-      }
-    }
-  }
-
-  .button {
-    font-weight: bold;
-    letter-spacing: 1.2px;
-    height: 40px;
-    width: 260px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #008ffd;
-    border-color: #008ffd;
-    color: white;
-  }
-}
-
-
 </style>

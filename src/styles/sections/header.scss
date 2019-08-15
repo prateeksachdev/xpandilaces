@@ -23,6 +23,14 @@ body {
   }
 }
 
+.announcement-visible .navbar .cart-detail .foot {
+  top: calc(56vh + 80px);
+
+  @media screen and (min-width: $tablet) {
+    top: calc(56vh + 90px);
+  }
+}
+
 .navbar .nav-drop {
   position: absolute;
   top: 40px;
@@ -418,5 +426,93 @@ body {
 
   @media screen and (min-width: $tablet) {
     top: 60px;
+  }
+
+  .drawer {
+    padding-top: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 320px;
+    height: 56vh;
+    overflow-y: auto;
+    border-bottom: none;
+
+    @media screen and (min-width: $large-phone) {
+      width: 360px;
+    }
+
+    hr {
+      margin: 0px 20px;
+      height: 1px;
+      background-color: #ccc;
+    }
+  }
+
+  .empty {
+    font-family: neuzeit_grotesk_regular;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    padding: 40px 0px;
+  }
+
+  .continue-shopping {
+    display: block;
+    color: #333333;
+    font-family: "sf_display_regular";
+    font-size: 13px;
+    padding-top: 15px;
+    text-align: center;
+  }
+
+  ul {
+    padding: 15px 20px;
+  }
+
+  .foot {
+    position: fixed;
+    top: calc(56vh + 40px);
+    border: 1px solid #ccc;
+    padding: 25px 20px 20px 20px;
+    font-family: "neuzeit_grotesk_light";
+    font-weight: bold;
+    font-size: 13px;
+    background-color: white;
+    width: 320px;
+
+    @media screen and (min-width: $tablet) {
+      top: calc(56vh + 60px);
+    }
+
+    @media screen and (min-width: $large-phone) {
+      width: 360px;
+    }
+
+    .subtotal {
+      margin-bottom: 12px;
+
+      span {
+        font-weight: bold;
+
+        &.original-amount {
+          text-decoration: line-through;
+          font-weight: normal;
+        }
+      }
+    }
+
+    .button {
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      height: 40px;
+      width: 260px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #008ffd;
+      border-color: #008ffd;
+      color: white;
+    }
   }
 }
