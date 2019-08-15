@@ -26,7 +26,8 @@
           </span>
         </p>
         <p class="text-center">
-          <button type="submit" id="checkout" name="checkout" class="button">
+          <input type="hidden" name="checkout" value="checkout">
+          <button type="submit" id="checkout" class="button" :class="{'is-loading': isCheckingOut}" :disabled="isCheckingOut">
             <slot name="checkout"></slot>
           </button>
         </p>
@@ -51,7 +52,8 @@
     },
     data: function () {
       return {
-        state: store.state
+        state: store.state,
+        isCheckingOut: false
       }
     },
     computed: {
@@ -60,15 +62,15 @@
       }
     },
     methods: {
-      scrollToBottom () {
-        var container = this.$el.querySelector(".drawer");
-        container.scrollTop = container.scrollHeight;
-      },
-
       checkout (e) {
+        this.isCheckingOut = true
+
         if (this.cart.total_discount > 0) {
           e.preventDefault()
         } else {
+          setTimeout(() => {
+            this.isCheckingOut = false
+          }, 3000)
           return
         }
 
@@ -109,6 +111,9 @@
           dataType: "json",
           contentType: "application/json; charset=utf-8",
         }).then(response => {
+          setTimeout(() => {
+            this.isCheckingOut = false
+          }, 3000)
           window.location.href = response.invoice_url
         })
       },

@@ -61,9 +61,14 @@
       }
     },
     mounted () {
+      // Get initial cart from liquid so we don't have to make
+      // ane extra request
       let cartJson = this.$slots.cart[0].children[0].text
       store.setCart(JSON.parse(cartJson))
 
+      // This CSS class is needed because many elements requires to know
+      // the extra space taken by the annoucement bar in order change
+      // absolute position base on css
       if (this.isAnnouncementEnabled && this.isAnnouncementVisible) {
         const body = document.body
         body.classList.add('announcement-visible')
