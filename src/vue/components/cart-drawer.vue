@@ -1,8 +1,18 @@
 <template>
   <div>
     <form @submit="checkout" action="/cart" method="post">
-      <div class="drawer">
-        <template v-if="cart.item_count > 0">
+      <div class="drawer" :class="{empty: isCartEmpty}">
+        <div v-if="isCartEmpty" class="empty-text">
+          <p>
+            <slot name="empty-msg"></slot>
+          </p>
+
+          <a @click="hide" href="javascript:;" class="continue-shopping">
+            <slot name="continue-shopping"></slot>
+          </a>
+        </div>
+
+        <template v-else>
           <ul>
             <cart-item v-for="item in cart.items" :key="item.key" :item="item">
             </cart-item>
@@ -10,12 +20,9 @@
 
           <hr v-if="cart.items.length === 1">
         </template>
-
-        <p v-else class="empty">
-          <slot name="empty-msg"></slot>
-        </p>
       </div>
-      <div class="foot">
+
+      <div v-if="!isCartEmpty" class="foot">
         <p class="subtotal">
           <span>
             <slot name="sub-total-text"></slot>
@@ -25,7 +32,7 @@
             <span>{{ cart.total_price | dollar }}</span>
           </span>
         </p>
-        <p class="text-center">
+        <p v-if="cart.item_count > 0" class="text-center">
           <input type="hidden" name="checkout" value="checkout">
           <button type="submit" id="checkout" class="button" :class="{'is-loading': isCheckingOut}" :disabled="isCheckingOut">
             <slot name="checkout"></slot>
@@ -63,6 +70,9 @@
     computed: {
       cart () {
         return this.state.cart
+      },
+      isCartEmpty () {
+        return this.cart.items.length === 0
       }
     },
     methods: {

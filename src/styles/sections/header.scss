@@ -428,34 +428,6 @@ body {
     top: 60px;
   }
 
-  .drawer {
-    padding-top: 10px;
-    background-color: white;
-    border: 1px solid #ccc;
-    width: 320px;
-    height: 56vh;
-    overflow-y: auto;
-    border-bottom: none;
-
-    @media screen and (min-width: $large-phone) {
-      width: 360px;
-    }
-
-    hr {
-      margin: 0px 20px;
-      height: 1px;
-      background-color: #ccc;
-    }
-  }
-
-  .empty {
-    font-family: neuzeit_grotesk_regular;
-    font-weight: bold;
-    font-size: 18px;
-    text-align: center;
-    padding: 40px 0px;
-  }
-
   .continue-shopping {
     display: block;
     color: #333333;
@@ -465,8 +437,47 @@ body {
     text-align: center;
   }
 
-  ul {
-    padding: 15px 20px;
+  .drawer {
+    padding-top: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 320px;
+    height: 56vh;
+    overflow-y: auto;
+
+    @media screen and (min-width: $large-phone) {
+      width: 360px;
+    }
+
+    &.empty {
+      height: auto;
+    }
+
+    hr {
+      margin: 0px 20px;
+      height: 1px;
+      background-color: #ccc;
+    }
+
+    .empty-text {
+      font-family: neuzeit_grotesk_regular;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+
+      p {
+        padding: 40px 0px;
+      }
+    }
+
+    .continue-shopping {
+      border-top: 1px solid #ccc;
+      padding-bottom: 15px;
+    }
+
+    ul {
+      padding: 15px 20px;
+    }
   }
 
   .foot {
@@ -479,6 +490,7 @@ body {
     font-size: 13px;
     background-color: white;
     width: 320px;
+    border-top: none;
 
     @media screen and (min-width: $tablet) {
       top: calc(56vh + 60px);
