@@ -9,12 +9,14 @@ import 'lazysizes/plugins/bgset/ls.bgset';
 import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import 'lazysizes/plugins/respimg/ls.respimg';
 
-import 'swiper/dist/css/swiper.css';
-import '../../styles/theme.scss';
-
 import {focusHash, bindInPageLinks} from '@shopify/theme-a11y';
 
+// Import global vendor
 import Vue from 'vue';
+import 'swiper/dist/css/swiper.css';
+import { swiper, swiperSlide } from 'vue-awesome-swiper';
+
+import '../../styles/theme.scss';
 
 // Common a11y fixes
 focusHash();

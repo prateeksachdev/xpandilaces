@@ -13,25 +13,30 @@
 </template>
 
 <script>
-  export default {
-    name: 'SidebarMenu',
-    data: function () {
-      return {
-        isVisible: false,
-      }
-    },
-    mounted() {
-      console.log(window.innerWidth);
-      if (window.innerWidth > 576) {
-        this.isVisible = true;
-      }
-    },
-    methods: {
-      toggleVisiblity () {
-        this.isVisible = !this.isVisible
-      }
+import HeightTransition from './height-transition.vue'
+
+export default {
+  name: 'SidebarMenu',
+  components: {
+    HeightTransition
+  },
+  data: function () {
+    return {
+      isVisible: false,
+    }
+  },
+  mounted() {
+    console.log(window.innerWidth);
+    if (window.innerWidth > 576) {
+      this.isVisible = true;
+    }
+  },
+  methods: {
+    toggleVisiblity () {
+      this.isVisible = !this.isVisible
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -13,19 +13,24 @@
 </template>
 
 <script>
-  export default {
-    name: 'FaqItem',
-    data: function () {
-      return {
-        isVisible: false,
-      }
-    },
-    methods: {
-      toggleVisiblity () {
-        this.isVisible = !this.isVisible
-      }
+import HeightTransition from './height-transition.vue'
+
+export default {
+  name: 'FaqItem',
+  components: {
+    HeightTransition
+  },
+  data: function () {
+    return {
+      isVisible: false,
+    }
+  },
+  methods: {
+    toggleVisiblity () {
+      this.isVisible = !this.isVisible
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>

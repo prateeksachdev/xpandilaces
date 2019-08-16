@@ -20,56 +20,62 @@
 </template>
 
 <script>
-  export default {
-    name: 'ProductGallery',
-    props: {
-      images: Array,
-      loadingGifUrl: String
-    },
-    data () {
-      return {
-        isLoaded: false,
-        isReady: true,
-        swiperOption: {
-          slidesPerView: 1,
-          preloadImages: false,
-          lazy: true,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-          },
-          loop: true
-        }
-      }
-    },
-    mounted () {
-      let elm = document.getElementById('loading-placeholder')
-      elm.parentNode.removeChild(elm)
-    },
-    watch: {
-      images (newVal, oldVal) {
-        if (newVal[0].id != oldVal[0].id) {
-          this.isReady = false
-          this.isLoaded = false
+import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
-          setTimeout(() => {
-            this.isReady = true
-          })
-        }
+export default {
+  name: 'ProductGallery',
+  components: {
+    swiper,
+    swiperSlide
+  },
+  props: {
+    images: Array,
+    loadingGifUrl: String
+  },
+  data () {
+    return {
+      isLoaded: false,
+      isReady: true,
+      swiperOption: {
+        slidesPerView: 1,
+        preloadImages: false,
+        lazy: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        loop: true
       }
-    },
-    methods: {
-      swipeTo (index) {
-        this.$refs.swiper.swiper.slideTo(index + 1)
-      },
+    }
+  },
+  mounted () {
+    let elm = document.getElementById('loading-placeholder')
+    elm.parentNode.removeChild(elm)
+  },
+  watch: {
+    images (newVal, oldVal) {
+      if (newVal[0].id != oldVal[0].id) {
+        this.isReady = false
+        this.isLoaded = false
 
-      setLoaded (e) {
-        if (e.target.id === this.images[0].id) {
-          this.isLoaded = true
-        }
+        setTimeout(() => {
+          this.isReady = true
+        })
+      }
+    }
+  },
+  methods: {
+    swipeTo (index) {
+      this.$refs.swiper.swiper.slideTo(index + 1)
+    },
+
+    setLoaded (e) {
+      if (e.target.id === this.images[0].id) {
+        this.isLoaded = true
       }
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>

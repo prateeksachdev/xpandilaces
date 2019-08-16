@@ -1,21 +1,18 @@
 import '../../styles/templates/product.scss'
 
-import Vue from 'vue'
-import 'swiper/dist/css/swiper.css'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
+import ProductForm from '../../vue/components/product-form.vue'
+import TabContent from '../../vue/components/tab-content.vue'
+import StampedReview from '../../vue/components/stamped-review.vue'
+import FaqItem from '../../vue/components/faq-item.vue'
 
-Vue.use(VueAwesomeSwiper, /* { default global options } */)
-Vue.component('cart-control', require('../../vue/components/cart-control.vue').default)
-Vue.component('product-form', require('../../vue/components/product-form.vue').default)
-Vue.component('product-gallery', require('../../vue/components/product-gallery.vue').default)
-Vue.component('product-swatch', require('../../vue/components/product-swatch.vue').default)
-Vue.component('tab-content', require('../../vue/components/tab-content.vue').default)
-Vue.component('stamped-review', require('../../vue/components/stamped-review.vue').default)
-Vue.component('faq-item', require('../../vue/components/faq-item.vue').default)
+import init from '../../vue/init.js'
 
-import init from "../../vue/init.js";
-
-init()
+init({
+  ProductForm,
+  TabContent,
+  StampedReview,
+  FaqItem
+})
 
 // Hack around Stamped Review to make it look nicer
 function fixReviewStyle ($) {

@@ -1,13 +1,11 @@
 import '../../styles/templates/product.full-width-images.scss'
 
-import Vue from 'vue'
-import 'swiper/dist/css/swiper.css'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
+import CartControl from '../../vue/components/cart-control.vue'
+import GallerySimple from '../../vue/components/gallery-simple.vue'
 
-Vue.use(VueAwesomeSwiper, /* { default global options } */)
-Vue.component('cart-control', require('../../vue/components/cart-control.vue').default)
-Vue.component('gallery-simple', require('../../vue/components/gallery-simple.vue').default)
+import init from '../../vue/init.js'
 
-import init from "../../vue/init.js";
-
-init()
+init({
+  CartControl,
+  GallerySimple
+})

@@ -1,9 +1,11 @@
 import '../../styles/templates/page.compare.scss'
 
-import Vue from 'vue'
-import init from "../../vue/init.js";
+import StampedReview from '../../vue/components/stamped-review.vue'
+import FaqItem from '../../vue/components/faq-item.vue'
 
-Vue.component('stamped-review', require('../../vue/components/stamped-review.vue').default)
-Vue.component('faq-item', require('../../vue/components/faq-item.vue').default)
+import init from "../../vue/init.js"
 
-init()
+init({
+  StampedReview,
+  FaqItem
+})

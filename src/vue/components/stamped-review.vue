@@ -27,7 +27,6 @@
         this.show = true
 
         var id = setInterval(() => {
-          console.log('check')
           if (window.jQuery('.stamped-visual-gallery-media-block').length > 0) {
             clearInterval(id)
             this.isLoadingReview = false
