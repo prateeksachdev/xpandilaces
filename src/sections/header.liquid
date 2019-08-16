@@ -45,19 +45,30 @@
       </template>
     {% endif %}
 
-    <template #menu="{ showDesktopMega, toggleMobileMega, toggleSearch, showCartDetail, hideCartDetail, isCartDetailVisible, vco }">
+    <template #primary-menu="{ toggleMobileMenu, showDesktopMega, toggleMobileMega, toggleSearch, showCartDetail, hideCartDetail, isCartDetailVisible, isMobileMenuVisible, vco }">
       <div class="row menu">
         <div class="container">
           <div class="navbar-left">
-            <a role="button" class="navbar-burger burger">
+            <a @click="toggleMobileMenu" role="button" class="navbar-burger burger" :class="{ 'is-active': isMobileMenuVisible }">
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
             </a>
+
+            <div class="navbar-menu">
+              <a @mouseenter="showDesktopMega" class="navbar-item" href="{{ link.url }}">
+                {{section.settings.desktop_cta_text}}
+                <span class="icon-down-arrow">
+              </a>
+
+              {% for link in linklists[section.settings.primary_menu].links %}
+                <a class="navbar-item" href="{{ link.url }}">{{ link.title }}</a>
+              {% endfor %}
+            </div>
           </div>
 
           <div class="navbar-brand">
-            <a class="navbar-item logo" href="{{ shop.url }}">
+            <a @click="toggleMobileMenu" class="navbar-item logo" href="{{ shop.url }}">
               <img
                 srcset="{{ section.settings.logo | img_url: '200x' }} 200w,
                         {{ section.settings.logo | img_url: '100x' }} 100w,
@@ -68,36 +79,18 @@
             </a>
           </div>
 
-          <div class="navbar-menu primary">
-            <div class="navbar-start">
-              {% for link in linklists[section.settings.primary_menu].links %}
-                <a @mouseenter="showDesktopMega" class="navbar-item" href="{{ link.url }}">
-                  {{ link.title }}
-                  <span class="icon-down-arrow">
-                </a>
-              {% endfor %}
+          <div class="navbar-right">
+            <a class="navbar-item mobile-cta" href="javascript:;" @click="toggleMobileMega">
+              {{section.settings.mobile_cta_text}}
+              <span class="icon-down-arrow">
+            </a>
 
+            <div class="navbar-menu">
               {% for link in linklists[section.settings.secondary_menu].links %}
                 <a class="navbar-item" href="{{ link.url }}">{{ link.title }}</a>
               {% endfor %}
             </div>
-          </div>
 
-          <div class="navbar-menu secondary">
-            <div class="navbar-start">
-              {% if shop.customer_accounts_enabled and customer %}
-                <a class="navbar-item" href="/account">
-                  {{ 'layout.customer.my_account' | t }}
-                </a>
-              {% endif %}
-            </div>
-          </div>
-
-          <div class="navbar-right">
-            <a class="navbar-item mobile-cta" href="javascript:;" @click="toggleMobileMega">
-              SHOP
-              <span class="icon-down-arrow">
-            </a>
             <a @click="toggleSearch" class="navbar-item search">
               <img src="{{ 'search.png' | asset_url }}" alt="{{ 'general.search.title' | t }}">
             </a>
@@ -133,12 +126,22 @@
       </div>
     </template>
 
+    <template #mobile-menu>
+      <div class="nav-drop mobile-menu mobile">
+        <div class="navbar-menu is-active">
+          {% for link in linklists[section.settings.mobile_menu].links %}
+            <a class="navbar-item" href="{{ link.url }}">{{ link.title }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </template>
+
     <template #mobile-mega="{ toggleMore, isMoreExpanded }">
       <div class="nav-drop row mega-drop mobile">
         <div class="columns is-mobile">
           {% for block in section.blocks %}
             {% if block.settings.enable_block %}
-              <div class="column">
+              <div class="column is-half">
                 <a href="{{ block.settings.link }}" class="item">
                   <img class="lazyload" data-src="{{ block.settings.image | img_url: '400x' }}">
                   <h3>{{ block.settings.name }}</h3>
@@ -148,55 +151,6 @@
             {% endif %}
           {% endfor %}
         </div>
-
-        <ul class="menu">
-          {% for link in linklists[section.settings.secondary_menu].links %}
-            <li>
-              <a href="{{ link.url }}">
-                {{ link.title }}
-              </a>
-            </li>
-          {% endfor %}
-
-          <li>
-            {% assign link = linklists[section.settings.mobile_menu].links.first %}
-            <a href="{{ link.url }}">
-              {{ link.title }}
-            </a>
-          </li>
-
-          <li>
-            <a @click="toggleMore" href="javascript:;">
-              More
-              <span class="icon-down-arrow">
-            </a>
-
-            <height-transition>
-              <ul v-if="isMoreExpanded" class="more">
-                {% for link in linklists[section.settings.mobile_menu].links %}
-                  {% unless forloop.first %}
-                    <li>
-                      <a href="{{ link.url }}">
-                        {{ link.title }}
-                      </a>
-                    </li>
-                  {% endunless %}
-                {% endfor %}
-              </ul>
-            </height-transition>
-          </li>
-
-          {% if shop.customer_accounts_enabled %}
-            {% if customer %}
-              <li>
-                <a href="/account">{{ customer.name }}</a>
-              </li>
-              <li>
-                {{ 'layout.customer.log_out' | t | customer_logout_link }}
-              </li>
-            {% endif %}
-          {% endif %}
-        </ul>
       </div>
     </template>
 
@@ -263,6 +217,18 @@
         "type": "image_picker",
         "id": "logo",
         "label": "Logo image"
+      },
+      {
+        "type": "text",
+        "id": "mobile_cta_text",
+        "label": "Mobile CTA Text",
+        "default": "SHOP"
+      },
+      {
+        "type": "text",
+        "id": "desktop_cta_text",
+        "label": "Desktop CTA Text",
+        "default": "SHOP"
       },
       {
         "type": "link_list",

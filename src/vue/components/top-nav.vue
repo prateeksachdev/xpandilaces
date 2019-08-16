@@ -6,7 +6,11 @@
       <slot name="announcement" v-if="isAnnouncementVisible" :hide="hideAnnouncement"></slot>
     </height-transition>
 
-    <slot name="menu" :showDesktopMega="showDesktopMega" :toggleMobileMega="toggleMobileMega" :toggleSearch="toggleSearch" :showCartDetail="showCartDetail" :vco="vcoCartDetail" :hideCartDetail="hideCartDetail" :isCartDetailVisible="isCartDetailVisible"></slot>
+    <slot name="primary-menu" :toggleMobileMenu="toggleMobileMenu" :isMobileMenuVisible="isMobileMenuVisible" :showDesktopMega="showDesktopMega" :toggleMobileMega="toggleMobileMega" :toggleSearch="toggleSearch" :showCartDetail="showCartDetail" :vco="vcoCartDetail" :hideCartDetail="hideCartDetail" :isCartDetailVisible="isCartDetailVisible"></slot>
+
+    <transition name="fade">
+      <slot name="mobile-menu" v-if="isMobileMenuVisible"></slot>
+    </transition>
 
     <transition name="fade">
       <slot name="mobile-mega" v-if="isMobileMegaVisible" :toggleMore="toggleMobileMore" :isMoreExpanded="isMobileMoreExpanded"></slot>
@@ -41,6 +45,7 @@
         isMobileMoreExpanded: false,
         isDesktopMegaVisible: false,
         isSearchVisible: false,
+        isMobileMenuVisible: false,
         vcoCartDetail: {
           handler: this.hideCartDetail,
           middleware: this.notCartDetailToggler
@@ -87,6 +92,10 @@
 
       toggleMobileMore () {
         this.isMobileMoreExpanded = !this.isMobileMoreExpanded
+      },
+
+      toggleMobileMenu () {
+        this.isMobileMenuVisible = !this.isMobileMenuVisible
       },
 
       showDesktopMega () {
