@@ -17,7 +17,7 @@ module.exports = {
         alias: {
           jquery: path.resolve('./node_modules/jquery'),
           'lodash-es': path.resolve('./node_modules/lodash-es'),
-          vue: 'vue/dist/vue'
+          vue: 'vue/dist/vue.min'
         },
       }
     },
