@@ -3,7 +3,7 @@ import discount from './discount'
 
 var store = {
   state: {
-    cart: {item_count: 0},
+    cart: { items: [], item_count: 0 },
     isCartDetailVisible: false,
     isNewItemShownInCartDrawer: true
   },
