@@ -1,8 +1,6 @@
 import '../../styles/templates/cart.scss'
 
-import Vue from 'vue'
-import init from "../../vue/init.js";
+import init from "../../vue/init.js"
+import CartDetail from '../../vue/components/cart-detail.vue'
 
-Vue.component('cart-detail', require('../../vue/components/cart-detail.vue').default)
-
-init()
+init({ CartDetail })

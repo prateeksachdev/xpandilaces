@@ -4,16 +4,27 @@ import vClickOutside from 'v-click-outside'
 
 import TopNav from './components/top-nav.vue'
 import HeightTransition from './components/height-transition.vue'
+import CartDrawer from './components/cart-drawer.vue'
+import CartCount from './components/cart-count.vue'
 
-export default function bootstrap () {
+export default function init (pageComponents) {
   Vue.use(VueScrollTo)
-  Vue.component('height-transition', HeightTransition)
-  Vue.component('top-nav', TopNav)
-  Vue.component('cart-drawer', require('./components/cart-drawer.vue').default)
-  Vue.component('cart-count', require('./components/cart-count.vue').default)
+
+  if (!pageComponents) {
+    pageComponents = {}
+  }
+
+  let layoutComponents = {
+    HeightTransition,
+    TopNav,
+    CartDrawer,
+    CartCount
+  }
+  let components = Object.assign(layoutComponents, pageComponents)
 
   new Vue({
     el: '#app',
+    components: components,
     directives: {
       clickOutside: vClickOutside.directive
     },

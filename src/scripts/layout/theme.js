@@ -9,10 +9,11 @@ import 'lazysizes/plugins/bgset/ls.bgset';
 import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import 'lazysizes/plugins/respimg/ls.respimg';
 
+import 'swiper/dist/css/swiper.css';
 import '../../styles/theme.scss';
-import '../../styles/theme.scss.liquid';
 
 import {focusHash, bindInPageLinks} from '@shopify/theme-a11y';
+
 import Vue from 'vue';
 
 // Common a11y fixes

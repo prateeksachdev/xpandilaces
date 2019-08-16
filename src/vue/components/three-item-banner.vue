@@ -15,13 +15,13 @@
 </template>
 
 <script>
-  import Vue from 'vue'
-  import 'swiper/dist/css/swiper.css'
-  import VueAwesomeSwiper from 'vue-awesome-swiper'
-  Vue.use(VueAwesomeSwiper)
+  import { swiper } from 'vue-awesome-swiper'
 
   export default {
     name: 'ThreeItemBanner',
+    components: {
+      swiper
+    },
     data: function () {
       return {
         swiperOption: {

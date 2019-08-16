@@ -23,10 +23,14 @@
 </template>
 
 <script>
+  import HeightTransition from './height-transition.vue'
   import store from '../store'
 
   export default {
     name: 'TopNav',
+    components: {
+      HeightTransition
+    },
     props: {
       isAnnouncementEnabled: Boolean
     },

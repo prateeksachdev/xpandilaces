@@ -10,8 +10,13 @@
 </template>
 
 <script>
+  import { swiper } from 'vue-awesome-swiper'
+
   export default {
     name: 'IconSwiper',
+    components: {
+      swiper
+    },
     data: function () {
       return {
         swiperOption: {
