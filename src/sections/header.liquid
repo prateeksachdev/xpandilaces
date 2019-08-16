@@ -48,6 +48,14 @@
     <template #menu="{ showDesktopMega, toggleMobileMega, toggleSearch, showCartDetail, hideCartDetail, isCartDetailVisible, vco }">
       <div class="row menu">
         <div class="container">
+          <div class="navbar-left">
+            <a role="button" class="navbar-burger burger">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
           <div class="navbar-brand">
             <a class="navbar-item logo" href="{{ shop.url }}">
               <img
@@ -57,11 +65,6 @@
                 src="{{ section.settings.logo | img_url: '100x' }}"
                 alt="{{ shop.name | escape }}"
               >
-            </a>
-
-            <a class="navbar-item mobile" href="javascript:;" @click="toggleMobileMega">
-              SHOP
-              <span class="icon-down-arrow">
             </a>
           </div>
 
@@ -90,7 +93,11 @@
             </div>
           </div>
 
-          <div class="navbar-icons">
+          <div class="navbar-right">
+            <a class="navbar-item mobile-cta" href="javascript:;" @click="toggleMobileMega">
+              SHOP
+              <span class="icon-down-arrow">
+            </a>
             <a @click="toggleSearch" class="navbar-item search">
               <img src="{{ 'search.png' | asset_url }}" alt="{{ 'general.search.title' | t }}">
             </a>

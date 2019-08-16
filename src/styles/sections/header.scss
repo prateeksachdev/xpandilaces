@@ -155,8 +155,15 @@ body {
     }
   }
 
+  .navbar-left {
+    width: 36%;
+  }
+
   .navbar-brand {
     min-height: 40px;
+    width: 28%;
+    display: flex;
+    justify-content: center;
 
     img {
       height: 20px;
@@ -173,11 +180,17 @@ body {
     font-size: 17px;
   }
 
+  .navbar-burger {
+    max-height: 40px;
+    margin-left: 0px;
+  }
+
   .navbar-menu {
     margin-left: 60px;
   }
 
-  .navbar-icons {
+  .navbar-right {
+    width: 36%;
     flex-grow: 1;
     display: flex;
     flex-shrink: 0;
@@ -189,12 +202,34 @@ body {
     }
 
     .navbar-item.search {
+      display: none;
+
       img {
         padding: 3px;
       }
 
       @media screen and (min-width: $tablet) {
         display: none;
+      }
+    }
+
+    .navbar-item.mobile-cta {
+      align-items: center;
+      font-family: 'neuzeitgroteskblack';
+      display: flex;
+      border-bottom: none;
+      background-color: #0090fc;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: white;
+      padding: 12px 12px 8px 12px;
+
+      @media screen and (min-width: $tablet) {
+        display: none;
+      }
+
+      &:hover {
+        background-color: #0090fc;
       }
     }
 
@@ -241,25 +276,6 @@ body {
       font-size: 12px;
       line-height: 13px;
       margin-left: 6px;
-    }
-  }
-
-  .navbar-item.mobile {
-    display: flex;
-    width: 100px;
-    margin-left: 60px;
-    border-bottom: none;
-    background-color: #0090fc;
-    font-size: 14px;
-    letter-spacing: 1px;
-    color: white;
-
-    @media screen and (min-width: $tablet) {
-      display: none;
-    }
-
-    &:hover {
-      background-color: #0090fc;
     }
   }
 
