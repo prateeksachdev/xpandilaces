@@ -8,30 +8,34 @@
 </template>
 
 <script>
-  import { dollar } from '../filters'
-  import store from '../store'
+import { dollar } from '../filters'
+import store from '../store'
+import CartItem from './cart-item.vue'
 
-  export default {
-    name: 'CartDetail',
-    filters: {
-      dollar
-    },
-    data: function () {
-      return {
-        state: store.state
-      }
-    },
-    computed: {
-      cart () {
-        return this.state.cart
-      }
-    },
-    methods: {
-      refresh () {
-        location.reload()
-      }
+export default {
+  name: 'CartDetail',
+  components: {
+    CartItem
+  },
+  filters: {
+    dollar
+  },
+  data: function () {
+    return {
+      state: store.state
+    }
+  },
+  computed: {
+    cart () {
+      return this.state.cart
+    }
+  },
+  methods: {
+    refresh () {
+      location.reload()
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>

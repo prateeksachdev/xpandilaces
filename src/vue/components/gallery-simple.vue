@@ -18,46 +18,51 @@
 </template>
 
 <script>
-  import { imgURL } from '../helpers'
+import { imgURL } from '../helpers'
+import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
-  export default {
-    name: 'GallerySimple',
-    props: {
-      imagesJson: String
-    },
-    data () {
-      return {
-        swiperOption: {
-          slidesPerView: 1,
-          preloadImages: false,
-          lazy: true,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-          },
-          loop: true
-        }
-      }
-    },
-    computed: {
-      images (json) {
-        if (json) {
-          return JSON.parse(this.imagesJson)
-        }
-
-        return []
-      }
-    },
-    mounted () {
-      console.log(this.images)
-    },
-    methods: {
-      imgURL: imgURL,
-      swipeTo (index) {
-        this.$refs.swiper.swiper.slideTo(index + 1)
+export default {
+  name: 'GallerySimple',
+  components: {
+    swiper,
+    swiperSlide
+  },
+  props: {
+    imagesJson: String
+  },
+  data () {
+    return {
+      swiperOption: {
+        slidesPerView: 1,
+        preloadImages: false,
+        lazy: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        loop: true
       }
     }
+  },
+  computed: {
+    images (json) {
+      if (json) {
+        return JSON.parse(this.imagesJson)
+      }
+
+      return []
+    }
+  },
+  mounted () {
+    console.log(this.images)
+  },
+  methods: {
+    imgURL: imgURL,
+    swipeTo (index) {
+      this.$refs.swiper.swiper.slideTo(index + 1)
+    }
   }
+}
 </script>
 
 <style lang="scss" scoped>
