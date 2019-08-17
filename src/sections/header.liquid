@@ -68,7 +68,7 @@
           </div>
 
           <div class="navbar-brand">
-            <a @click="toggleMobileMenu" class="navbar-item logo" href="{{ shop.url }}">
+            <a class="navbar-item logo" href="{{ shop.url }}">
               <img
                 srcset="{{ section.settings.logo | img_url: '200x' }} 200w,
                         {{ section.settings.logo | img_url: '100x' }} 100w,
@@ -136,7 +136,7 @@
       </div>
     </template>
 
-    <template #mobile-mega="{ toggleMore, isMoreExpanded }">
+    <template #mobile-mega>
       <div class="nav-drop row mega-drop mobile">
         <div class="columns is-mobile">
           {% for block in section.blocks %}
