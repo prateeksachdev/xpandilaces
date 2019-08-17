@@ -72,9 +72,11 @@
           "shipping_text": "<p><strong>Free Shipping when you order 4 or more<\/strong><\/p>",
           "promo_text": "<p><strong>Any 3 Packs for $25 |&nbsp;6&nbsp;for&nbsp;$40<\/strong>&nbsp;WITH CODE:&nbsp;<em>6FOR40<\/em><\/p>\n<p><em>&nbsp;<\/em><\/p>",
           "logo": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
-          "primary_menu": "new-main-menu-2",
-          "secondary_menu": "new-second-menu-2",
-          "mobile_menu": "new-mobile-menu-2"
+          "mobile_cta_text": "SHOP",
+          "desktop_cta_text": "SHOP",
+          "primary_menu": "primary-desktop-menu",
+          "secondary_menu": "secondary-desktop-menu",
+          "mobile_menu": "mobile-menu"
         }
       },
       "footer": {
@@ -135,9 +137,13 @@
           "text": "<p><strong>No-Tie Shoelaces - Adults &amp; Kids<br><\/strong><\/p>",
           "primary_cta_text": "SHOP NOW",
           "primary_cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+          "primary_cta_text_color": "",
+          "primary_cta_bg_color": "",
           "enable_secondary_cta": true,
           "secondary_cta_text": "HOW IT WORKS",
-          "secondary_cta_link": "shopify:\/\/pages\/install-video"
+          "secondary_cta_link": "shopify:\/\/pages\/install-video",
+          "secondary_cta_text_color": "",
+          "secondary_cta_bg_color": ""
         }
       },
       "1558041214466": {
@@ -686,9 +692,13 @@
           "text": "<p>Bold<\/p>",
           "primary_cta_text": "",
           "primary_cta_link": "",
+          "primary_cta_text_color": "",
+          "primary_cta_bg_color": "",
           "enable_secondary_cta": false,
           "secondary_cta_text": "",
-          "secondary_cta_link": ""
+          "secondary_cta_link": "",
+          "secondary_cta_text_color": "",
+          "secondary_cta_bg_color": ""
         }
       }
     },
