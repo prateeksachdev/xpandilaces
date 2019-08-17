@@ -13,7 +13,7 @@
     </transition>
 
     <transition name="fade">
-      <slot name="mobile-mega" v-if="isMobileMegaVisible" :toggleMore="toggleMobileMore" :isMoreExpanded="isMobileMoreExpanded"></slot>
+      <slot name="mobile-mega" v-if="isMobileMegaVisible"></slot>
     </transition>
 
     <transition name="fade">
@@ -42,7 +42,6 @@
       return {
         isAnnouncementVisible: localStorage.getItem('navbar.isAnnouncementVisible') != 'false',
         isMobileMegaVisible: false,
-        isMobileMoreExpanded: false,
         isDesktopMegaVisible: false,
         isSearchVisible: false,
         isMobileMenuVisible: false,
@@ -86,15 +85,13 @@
     methods: {
       toggleMobileMega () {
         store.hideCartDetail()
+        this.isMobileMenuVisible = false
         this.isSearchVisible = false
         this.isMobileMegaVisible = !this.isMobileMegaVisible
       },
 
-      toggleMobileMore () {
-        this.isMobileMoreExpanded = !this.isMobileMoreExpanded
-      },
-
       toggleMobileMenu () {
+        this.isMobileMegaVisible = false
         this.isMobileMenuVisible = !this.isMobileMenuVisible
       },
 

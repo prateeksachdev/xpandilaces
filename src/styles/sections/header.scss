@@ -40,6 +40,10 @@ body {
   }
 }
 
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
 .navbar {
   overflow-y: visible;
   background: none;
@@ -56,7 +60,7 @@ body {
   }
 
   .fade-enter-active, .fade-leave-active {
-    transition: opacity .3s linear;
+    transition: opacity 0.3s linear;
   }
 
   .fade-enter, .fade-leave-to {
@@ -157,14 +161,14 @@ body {
 
   .navbar-menu {
     font-family: "neuzeitgroteskblack";
-    font-size: 17px;
+    font-size: 16px;
 
     @media screen and (min-width: $tablet) {
       font-size: 14px;
     }
 
     @media screen and (min-width: $desktop) {
-      font-size: 17px;
+      font-size: 16px;
     }
   }
 
@@ -175,6 +179,11 @@ body {
 
     @media screen and (min-width: $tablet) {
       justify-content: flex-end;
+    }
+
+    .navbar-burger {
+      max-height: 40px;
+      margin-left: 0px;
     }
   }
 
@@ -191,11 +200,14 @@ body {
         height: auto;
       }
     }
-  }
 
-  .navbar-burger {
-    max-height: 40px;
-    margin-left: 0px;
+    .navbar-item.logo {
+      padding-top: 8px;
+
+      &:hover {
+        border-bottom: 1px solid transparent;
+      }
+    }
   }
 
   .navbar-right {
@@ -205,6 +217,16 @@ body {
 
     .navbar-menu {
       justify-content: flex-end;
+    }
+
+    .navbar-item {
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+      @media screen and (min-width: $tablet) {
+        padding-top: 12px;
+        padding-bottom: 8px;
+      }
     }
 
     .navbar-item.mobile-cta {
@@ -241,17 +263,7 @@ body {
 
     .navbar-item.cart {
       &:hover {
-        border-bottom: 1px solid white;
-      }
-    }
-
-    .navbar-item {
-      padding-top: 5px;
-      padding-bottom: 5px;
-
-      @media screen and (min-width: $tablet) {
-        padding-top: 12px;
-        padding-bottom: 8px;
+        border-bottom: 1px solid transparent;
       }
 
       .cart-count {
@@ -290,98 +302,54 @@ body {
       margin-left: 6px;
     }
   }
-
-  .navbar-item.logo {
-    padding-top: 8px;
-
-    &:hover {
-      border-bottom: 1px solid transparent;
-    }
-  }
 }
 
 .navbar > .mobile-menu {
   width: 100%;
+  border-top: 1px solid #ccc;
 }
 
 .navbar > .mega-drop.mobile {
   background-color: white;
-  opacity: 0.95;
   border-top: 1px solid #ccc;
 
   @media screen and (min-width: $tablet) {
     display: none;
   }
 
-  &.fade-enter, &.fade-leave-to {
-    opacity: 0;
-  }
-
   .columns {
     padding: 0 10px;
     flex-wrap: wrap;
     justify-content: center;
-
-    .item {
-      display: block;
-      padding: 9px 15px;
-      text-align: center;
-      color: #606060;
-
-      img {
-        max-width: 70%;
-      }
-
-      h3 {
-        margin-top: 10px;
-        font-size: 16px;
-        font-family: "neuzeit_grotesk_regular";
-        font-weight: normal;
-
-        @media screen and (min-width: $large-phone) {
-          font-size: 22px;
-          font-weight: bold;
-          margin-top: 20px;
-        }
-      }
-
-      p {
-        font-size: 16px;
-        font-family: "neuzeit_grotesk_regular";
-        font-weight: normal;
-      }
-    }
   }
 
-  .menu {
-    font-family: "neuzeitgroteskblack";
-    font-size: 15px;
-    letter-spacing: 1px;
+  .item {
+    display: block;
+    padding: 9px 15px;
+    text-align: center;
+    color: #606060;
 
-    li {
-      text-align: center;
-      border-bottom: 1px solid #efefef;
+    img {
+      max-width: 70%;
     }
 
-    a {
-      color: #606060;
-      padding: 9px 15px;
-      display: block;
+    h3 {
+      margin-top: 10px;
+      font-size: 16px;
+      font-family: "neuzeit_grotesk_regular";
+      font-weight: normal;
 
-      &:hover {
-        color: #008ffd;
+      @media screen and (min-width: $large-phone) {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 20px;
       }
     }
 
-    .icon-down-arrow {
-      font-size: 12px;
-      position: absolute;
-      padding-top: 3px;
-      padding-left: 5px;
-    }
-
-    .more li {
-      background-color: #e5e5e5;
+    p {
+      font-size: 16px;
+      font-family: "neuzeit_grotesk_regular";
+      font-weight: normal;
     }
   }
 }
