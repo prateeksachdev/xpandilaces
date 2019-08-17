@@ -158,7 +158,7 @@
       <div @mouseleave="hide" class="nav-drop row mega-drop desktop">
         {% for block in section.blocks %}
           {% if block.settings.enable_block %}
-            <a href="{{ block.settings.link }}" class="item">
+            <a href="{{ block.settings.link }}" class="item" {%- if section.settings.mega_item_desktop_spacing -%}style="padding: 0 {{section.settings.mega_item_desktop_spacing}}px;"{%- endif -%}>
               <img class="lazyload" data-src="{{ block.settings.image | img_url: 'x200' }}">
               <h3>{{ block.settings.name }}</h3>
               {{ block.settings.caption }}
@@ -211,7 +211,7 @@
       },
       {
         "type": "header",
-        "content": "Header"
+        "content": "Navbar"
       },
       {
         "type": "image_picker",
@@ -244,9 +244,23 @@
         "type": "link_list",
         "id": "mobile_menu",
         "label": "Mobile Menu"
+      },
+      {
+        "type": "header",
+        "content": "Mega Drop"
+      },
+      {
+        "type": "range",
+        "id": "mega_item_desktop_spacing",
+        "min": 10,
+        "max": 100,
+        "step": 5,
+        "unit": "px",
+        "label": "Desktop Mega Item Spacing",
+        "default": 40
       }
     ],
-    "max_blocks": 4,
+    "max_blocks": 6,
     "blocks": [
       {
         "type": "mega_item",
