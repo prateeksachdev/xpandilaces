@@ -76,7 +76,8 @@
           "desktop_cta_text": "SHOP",
           "primary_menu": "primary-desktop-menu",
           "secondary_menu": "secondary-desktop-menu",
-          "mobile_menu": "mobile-menu"
+          "mobile_menu": "mobile-menu",
+          "mega_item_desktop_spacing": 40
         }
       },
       "footer": {
@@ -164,7 +165,7 @@
             "type": "box",
             "settings": {
               "enable_block": true,
-              "image": "shopify:\/\/shop_images\/Socks_1.jpg",
+              "image": "shopify:\/\/shop_images\/Socks_1_89977a18-62ce-4908-8089-51f3c4c3d558.jpg",
               "title": "No-Show Socks",
               "link": "http:\/\/socks.xpandlaces.com\/?utm_source=website",
               "text_color": "#ffffff",
@@ -204,21 +205,21 @@
           "1558075392065": {
             "type": "item",
             "settings": {
-              "image": "shopify:\/\/shop_images\/1_ff839f2e-c102-4c5d-ba49-7b92f7f20728.png",
+              "image": "shopify:\/\/shop_images\/1_3x_3bf48797-d112-47e6-864c-dccaafa0c1e0.png",
               "text": "<p>Try Xpand<\/p>\n<p>for 90 days<\/p>"
             }
           },
           "1558075403234": {
             "type": "item",
             "settings": {
-              "image": "shopify:\/\/shop_images\/2_54465150-6eed-466d-8063-dfba76ab35a4.png",
+              "image": "shopify:\/\/shop_images\/2_3x_dc8021bd-8f1b-4d89-9887-d6b43cc1f922.png",
               "text": "<p>100% money back<\/p>\n<p>guarantee!<\/p>"
             }
           },
           "1558075411721": {
             "type": "item",
             "settings": {
-              "image": "shopify:\/\/shop_images\/3_7954e57b-2c49-4596-b9f9-f6c2a0cd821a.png",
+              "image": "shopify:\/\/shop_images\/3_3x_56dd57bc-acf1-4673-b49e-adf4de10a7f8.png",
               "text": "<p>Free&nbsp;North America<\/p>\n<p>shipping<\/p>"
             }
           }
@@ -238,8 +239,8 @@
         "type": "image-with-text",
         "settings": {
           "title": "Over 40 Colors",
-          "image": "shopify:\/\/shop_images\/Screen_Shot_2018-11-18_at_07.33.20.png",
-          "cta_text": "FIND YOUR COLOR",
+          "image": "shopify:\/\/shop_images\/Color_Line_3x_20c85dda-02a2-4d55-a894-a43c54858457.png",
+          "cta_text": "PICK MY COLOR",
           "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
         }
       },
@@ -307,7 +308,7 @@
         ],
         "settings": {
           "title": "Popular Colors",
-          "link_text": "DISCOVER ALL COLORS",
+          "link_text": "CHOOSE YOUR SYSTEM",
           "link": "shopify:\/\/pages\/compare-laces"
         }
       },
