@@ -102,7 +102,7 @@
 
             <transition name="fade">
               <div v-show="isCartDetailVisible" class="cart-detail">
-                <cart-drawer v-click-outside="vco" @hide="hideCartDetail" saving-text-template="{{settings.cart_saving_text}}">
+                <cart-drawer v-click-outside="vco" @hide="hideCartDetail" saving-text-template="{{settings.cart_saving_text}}" checkout-text-color="{{settings.cart_checkout_text_color}}" checkout-bg-color="{{settings.cart_checkout_bg_color}}">
                   <template #continue-shopping>
                     {{ 'cart.general.continue_shopping_link_html' | t }}
                   </template>

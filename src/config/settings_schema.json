@@ -8,69 +8,6 @@
     "theme_support_url": "https://github.com/Shopify/starter-theme/issues"
   },
   {
-    "name": "Colors",
-    "settings": [
-      {
-        "type": "color",
-        "id": "color_accent",
-        "label": "Accent",
-        "default": "#c4cdd5",
-        "info": "Buttons and special ornaments"
-      },
-      {
-        "type": "color",
-        "id": "color_body_text",
-        "label": "Text",
-        "default": "#161d25"
-      },
-      {
-        "type": "color",
-        "id": "color_main_bg",
-        "label": "Background",
-        "default": "#fff"
-      },
-      {
-        "type": "header",
-        "content": "Buttons"
-      },
-      {
-        "type": "color",
-        "id": "btn_color",
-        "label": "Buttons",
-        "default": "#000000"
-      },
-      {
-        "type": "color",
-        "id": "btn_hover_color",
-        "label": "Buttons hover",
-        "default": "#AE3333"
-      },
-      {
-        "type": "color",
-        "id": "btn_text_color",
-        "label": "Button label",
-        "default": "#FFFFFF"
-      }
-    ]
-  },
-  {
-    "name": "Typography",
-    "settings": [
-      {
-        "type": "font_picker",
-        "id": "font_heading",
-        "default": "helvetica_n4",
-        "label": "Headings"
-      },
-      {
-        "type": "font_picker",
-        "id": "font_body",
-        "default": "helvetica_n4",
-        "label": "Body text"
-      }
-    ]
-  },
-  {
     "name": "Social media",
     "settings": [
       {
@@ -181,17 +118,23 @@
     "name": "Cart",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "cart_notes_enable",
-        "label": "Enable cart notes",
-        "default": true
-      },
-      {
         "type": "text",
         "id": "cart_saving_text",
         "label": "Cart saving text",
         "default": "You saved {{savingPercentage}} ({{savingAmount}})",
         "info": "Use {{savingPercentage}} and {{savingAmount}} to add in the actual saved in percentage or amount"
+      },
+      {
+        "type": "color",
+        "id": "cart_checkout_text_color",
+        "label": "Checkout Text Color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "cart_checkout_bg_color",
+        "label": "Checkout Background Color",
+        "default": "#008ffd"
       }
     ]
   },

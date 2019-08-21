@@ -29,7 +29,7 @@
 
     {% if section.settings.link_text != blank %}
       <p class="link-button">
-        <a class="button" href="{{ section.settings.link }}">
+        <a class="button" href="{{ section.settings.link }}" style="{%- if section.settings.link_bg_color -%}background-color: {{section.settings.link_bg_color}};border-color: {{section.settings.link_bg_color}};{%- endif -%}{%- if section.settings.link_text_color -%}color: {{section.settings.link_text_color}};{%- endif -%}">
           {{ section.settings.link_text}}
         </a>
       </p>
@@ -55,6 +55,18 @@
       "type": "url",
       "id": "link",
       "label": "Link"
+    },
+    {
+      "type": "color",
+      "id": "link_text_color",
+      "label": "Link Text Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "link_bg_color",
+      "label": "Link Background Color",
+      "default": "#ff085a"
     }
   ],
   "max_blocks": 8,

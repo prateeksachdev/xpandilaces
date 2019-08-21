@@ -37,7 +37,7 @@
         </p>
         <p v-if="cart.item_count > 0" class="text-center">
           <input type="hidden" name="checkout" value="checkout">
-          <button type="submit" id="checkout" class="button" :class="{'is-loading': isCheckingOut}" :disabled="isCheckingOut">
+          <button type="submit" id="checkout" class="button" :class="{'is-loading': isCheckingOut}" :disabled="isCheckingOut" :style="checkoutBtnStyleObject">
             <slot name="checkout"></slot>
           </button>
         </p>
@@ -70,6 +70,10 @@
     filters: {
       dollar
     },
+    props: {
+      checkoutTextColor: String,
+      checkoutBgColor: String
+    },
     data: function () {
       return {
         state: store.state,
@@ -99,6 +103,18 @@
       },
       savingText () {
         return this.savingTextTemplate.replace('{{savingPercentage}}', `${this.savingPercentage}%`).replace('{{savingAmount}}', dollar(this.savingAmount))
+      },
+      checkoutBtnStyleObject () {
+        let obj = {}
+        if (this.checkoutTextColor) {
+          obj.color = this.checkoutTextColor
+        }
+
+        if (this.checkoutBgColor) {
+          obj.backgroundColor = this.checkoutBgColor
+        }
+
+        return obj
       }
     },
     methods: {

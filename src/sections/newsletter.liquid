@@ -13,7 +13,7 @@
         <input type="hidden" name="g" value="NDrWDc">
         <input type="email" name="email" placeholder="{{ 'general.newsletter_form.placeholder' | t }}">
 
-        <button type="submit" class="button" name="subscribe">
+        <button type="submit" class="button" name="subscribe" style="{%- if section.settings.button_bg_color -%}background-color: {{section.settings.button_bg_color}};border-color: {{section.settings.button_bg_color}};{%- endif -%}{%- if section.settings.button_text_color -%}color: {{section.settings.button_text_color}};{%- endif -%}">
           {{ section.settings.button_text }}
         </button>
       </form>
@@ -46,6 +46,18 @@
         "id": "action_url",
         "label": "Newsletter URL",
         "default": "//manage.kmail-lists.com/subscriptions/subscribe"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button Text Color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "button_bg_color",
+        "label": "Button Background Color",
+        "default": "#008ffd"
       }
     ],
     "presets": [

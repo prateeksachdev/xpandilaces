@@ -19,7 +19,7 @@
   <template #cta>
     {% if section.settings.cta_text != blank %}
       <p class="cta">
-        <a class="button" href="{{ section.settings.cta_link }}">
+        <a class="button" href="{{ section.settings.cta_link }}" style="{%- if section.settings.cta_bg_color -%}background-color: {{section.settings.cta_bg_color}};border-color: {{section.settings.cta_bg_color}};{%- endif -%}{%- if section.settings.cta_text_color -%}color: {{section.settings.cta_text_color}};{%- endif -%}">
           {{ section.settings.cta_text}}
         </a>
       </p>
@@ -45,6 +45,18 @@
         "type": "url",
         "id": "cta_link",
         "label": "CTA Link"
+      },
+      {
+        "type": "color",
+        "id": "cta_text_color",
+        "label": "CTA Text Color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "cta_bg_color",
+        "label": "CTA Background Color",
+        "default": "#ff085a"
       }
     ],
     "max_blocks": 3,
