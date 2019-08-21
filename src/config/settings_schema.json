@@ -121,7 +121,7 @@
         "type": "text",
         "id": "cart_saving_text",
         "label": "Cart saving text",
-        "default": "You saved {{savingPercentage}} ({{savingAmount}})",
+        "default": "You saved {{savingPercentage}}",
         "info": "Use {{savingPercentage}} and {{savingAmount}} to add in the actual saved in percentage or amount"
       },
       {
