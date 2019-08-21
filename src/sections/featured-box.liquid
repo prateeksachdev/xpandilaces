@@ -39,13 +39,13 @@
           <div class="column">
             <div class="item">
               <div class="head">
-                <h3 style="color: {{block.settings.text_color}};">{{ block.settings.title }}</h3>
+                <h3 style="color: {{block.settings.title_color}};">{{ block.settings.title }}</h3>
               </div>
 
               <img class="image lazyload" src="{{ block.settings.image | img_url: 'master' }}">
 
               <div class="foot">
-                <a class="button" href="{{ block.settings.link }}">{{ block.settings.link_text }}</a>
+                <a class="button" href="{{ block.settings.link }}" style="{%- if block.settings.link_bg_color -%}background-color: {{block.settings.link_bg_color}};border-color: {{block.settings.link_bg_color}};{%- endif -%}{%- if block.settings.link_text_color -%}color: {{block.settings.link_text_color}};{%- endif -%}">{{ block.settings.link_text }}</a>
               </div>
             </div>
           </div>
@@ -81,20 +81,32 @@
           "label": "Title"
         },
         {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#333333"
+        },
+        {
           "type": "url",
           "id": "link",
           "label": "Link"
         },
         {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text Color",
-          "default": "#333333"
-        },
-        {
           "type": "text",
           "id": "link_text",
           "label": "Link Text"
+        },
+        {
+          "type": "color",
+          "id": "link_text_color",
+          "label": "Link Text Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "link_bg_color",
+          "label": "Link Background Color",
+          "default": "#0090fc"
         }
       ]
     }
