@@ -28,7 +28,7 @@
         <slot name="promo"></slot>
       </div>
 
-      <cart-control :variant-id="variantId"></cart-control>
+      <cart-control :variant-id="variantId" :atc-text-color="atcTextColor" :atc-bg-color="atcBgColor"></cart-control>
 
       <div class="promo desktop">
         <slot name="promo"></slot>
@@ -57,7 +57,9 @@ export default {
     rawImageGroupData: String,
     rawVariantsData: String,
     defaultVariantId: String,
-    loadingGifUrl: String
+    loadingGifUrl: String,
+    atcTextColor: String,
+    atcBgColor: String
   },
   data: function () {
     return {

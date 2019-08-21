@@ -112,6 +112,7 @@
 
         if (this.checkoutBgColor) {
           obj.backgroundColor = this.checkoutBgColor
+          obj.borderColor = this.checkoutBgColor
         }
 
         return obj
