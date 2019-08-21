@@ -32,6 +32,9 @@
             <span>{{ cart.total_price | dollar }}</span>
           </span>
         </p>
+        <p v-if="savingAmount > 0" class="saving">
+          <span>{{ savingText }}</span>
+        </p>
         <p v-if="cart.item_count > 0" class="text-center">
           <input type="hidden" name="checkout" value="checkout">
           <button type="submit" id="checkout" class="button" :class="{'is-loading': isCheckingOut}" :disabled="isCheckingOut">
@@ -55,6 +58,12 @@
 
   export default {
     name: 'CartDrawer',
+    props: {
+      savingTextTemplate: {
+        type: String,
+        default: 'You saved {{savingPercentage}} ({{savingAmount}})'
+      }
+    },
     components: {
       CartItem
     },
@@ -73,6 +82,23 @@
       },
       isCartEmpty () {
         return this.cart.items.length === 0
+      },
+      savingAmount () {
+        if (this.state.cart) {
+          return this.cart.original_total_price - this.cart.total_price
+        }
+
+        return 0
+      },
+      savingPercentage () {
+        if (this.savingAmount > 0) {
+          return Math.ceil(this.savingAmount / this.cart.original_total_price * 100)
+        }
+
+        return 0
+      },
+      savingText () {
+        return this.savingTextTemplate.replace('{{savingPercentage}}', `${this.savingPercentage}%`).replace('{{savingAmount}}', dollar(this.savingAmount))
       }
     },
     methods: {

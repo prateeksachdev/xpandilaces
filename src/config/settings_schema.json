@@ -185,6 +185,13 @@
         "id": "cart_notes_enable",
         "label": "Enable cart notes",
         "default": true
+      },
+      {
+        "type": "text",
+        "id": "cart_saving_text",
+        "label": "Cart saving text",
+        "default": "You saved {{savingPercentage}} ({{savingAmount}})",
+        "info": "Use {{savingPercentage}} and {{savingAmount}} to add in the actual saved in percentage or amount"
       }
     ]
   },
