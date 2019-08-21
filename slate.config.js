@@ -44,7 +44,12 @@ module.exports = {
         // make sure to include the plugin!
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin()
-      ]
+      ],
+      optimization: {
+        splitChunks: {
+          minSize: 9999999
+        }
+      }
     }
   ])
 };
