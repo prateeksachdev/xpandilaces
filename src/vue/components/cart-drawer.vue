@@ -32,7 +32,7 @@
             <span>{{ cart.total_price | dollar }}</span>
           </span>
         </p>
-        <p v-if="savingAmount > 0" class="saving">
+        <p v-if="savingAmount > 0 && savingText" class="saving">
           <span>{{ savingText }}</span>
         </p>
         <p v-if="cart.item_count > 0" class="text-center">
@@ -58,12 +58,6 @@
 
   export default {
     name: 'CartDrawer',
-    props: {
-      savingTextTemplate: {
-        type: String,
-        default: 'You saved {{savingPercentage}} ({{savingAmount}})'
-      }
-    },
     components: {
       CartItem
     },
@@ -72,7 +66,11 @@
     },
     props: {
       checkoutTextColor: String,
-      checkoutBgColor: String
+      checkoutBgColor: String,
+      savingTextTemplate: {
+        type: String,
+        default: 'You saved {{savingPercentage}} ({{savingAmount}})'
+      }
     },
     data: function () {
       return {
@@ -102,7 +100,11 @@
         return 0
       },
       savingText () {
-        return this.savingTextTemplate.replace('{{savingPercentage}}', `${this.savingPercentage}%`).replace('{{savingAmount}}', dollar(this.savingAmount))
+        if (this.savingTextTemplate) {
+          return this.savingTextTemplate.replace('{{savingPercentage}}', `${this.savingPercentage}%`).replace('{{savingAmount}}', dollar(this.savingAmount))
+        }
+
+        return ''
       },
       checkoutBtnStyleObject () {
         let obj = {}
