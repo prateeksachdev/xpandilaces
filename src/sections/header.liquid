@@ -20,7 +20,7 @@
 
     {% if section.settings.announcement_bar_enabled %}
       <template #announcement="{ hide }">
-        <div class="row announcement">
+        <div class="row announcement" style="{%- if section.settings.ab_bg_color -%}background-color: {{section.settings.ab_bg_color}};{%- endif -%}{%- if section.settings.ab_text_color -%}color: {{section.settings.ab_text_color}};{%- endif -%}">
           <div class="container has-text-centered">
             {% if section.settings.shipping_text != blank %}
               <div class="text-wrap">
@@ -208,6 +208,18 @@
         "type": "richtext",
         "id": "promo_text",
         "label": "Promo Text"
+      },
+      {
+        "type": "color",
+        "id": "ab_text_color",
+        "label": "Text Color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "ab_bg_color",
+        "label": "Background Color",
+        "default": "#ffd828"
       },
       {
         "type": "header",

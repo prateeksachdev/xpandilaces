@@ -1,4 +1,4 @@
-<three-item-banner>
+<three-item-banner style="{%- if section.settings.bg_color -%}background-color: {{section.settings.bg_color}};{%- endif -%}">
   <template #title>
     {% if section.settings.title != blank %}
       <h2>{{ section.settings.title }}</h2>
@@ -35,6 +35,11 @@
         "type": "text",
         "id": "title",
         "label": "Title"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color"
       },
       {
         "type": "text",
