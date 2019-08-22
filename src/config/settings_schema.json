@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Starter theme",
+    "theme_name": "Xpand",
     "theme_version": "1.0.0",
-    "theme_author": "Shopify",
+    "theme_author": "Shipmates",
     "theme_documentation_url": "https://github.com/Shopify/starter-theme",
-    "theme_support_url": "https://github.com/Shopify/starter-theme/issues"
+    "theme_support_url": "https://shipmates.co"
   },
   {
     "name": "Social media",
