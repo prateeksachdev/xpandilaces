@@ -53,11 +53,19 @@
           <p>{{section.settings.promo_three}}</p>
         </div>
 
-        <div class="code">
-          <p>{{section.settings.code_one}}</p>
-          <p>{{section.settings.code_two}}</p>
-          <p>{{section.settings.code_three}}</p>
-        </div>
+          <div class="code">
+            {%- if section.settings.code_one != blank -%}
+              <p>{{section.settings.code_one}}</p>
+            {%- endif -%}
+
+            {%- if section.settings.code_two != blank -%}
+              <p>{{section.settings.code_two}}</p>
+            {%- endif -%}
+
+            {%- if section.settings.code_three != blank -%}
+              <p>{{section.settings.code_three}}</p>
+            {%- endif -%}
+          </div>
       </template>
 
       <template #shoes-types-desktop>
@@ -135,19 +143,19 @@
         "label": "Title"
       },
       {
-        "type": "text",
+        "type": "richtext",
         "id": "promo_one",
         "label": "Promo 1",
         "default": "3 FOR $25"
       },
       {
-        "type": "text",
+        "type": "richtext",
         "id": "promo_two",
         "label": "Promo 2",
         "default": "6 FOR $35"
       },
       {
-        "type": "text",
+        "type": "richtext",
         "id": "promo_three",
         "label": "Promo 3",
         "default": "8 FOR $45"
