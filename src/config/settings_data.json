@@ -1,13 +1,5 @@
 {
   "current": {
-    "color_accent": "#c4cdd5",
-    "color_body_text": "#fafafa",
-    "color_main_bg": "#197bbd",
-    "btn_color": "#197bbd",
-    "btn_hover_color": "#ae3333",
-    "btn_text_color": "#ffffff",
-    "font_heading": "helvetica_n4",
-    "font_body": "helvetica_n4",
     "share_image": "",
     "social_sharing_blog": true,
     "share_facebook": true,
@@ -22,7 +14,9 @@
     "social_youtube_link": "",
     "social_vimeo_link": "",
     "search_option": "products",
-    "cart_notes_enable": true,
+    "cart_saving_text": "You saved {{savingPercentage}}",
+    "cart_checkout_text_color": "#fff",
+    "cart_checkout_bg_color": "#008ffd",
     "favicon": "",
     "checkout_header_image": "",
     "checkout_logo_image": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
@@ -38,6 +32,15 @@
     "checkout_accent_color": "#197bbd",
     "checkout_button_color": "#197bbd",
     "checkout_error_color": "#e32c2b",
+    "color_accent": "#c4cdd5",
+    "color_body_text": "#fafafa",
+    "color_main_bg": "#197bbd",
+    "btn_color": "#197bbd",
+    "btn_hover_color": "#ae3333",
+    "btn_text_color": "#ffffff",
+    "font_heading": "helvetica_n4",
+    "font_body": "helvetica_n4",
+    "cart_notes_enable": true,
     "sections": {
       "header": {
         "type": "header",
@@ -70,7 +73,7 @@
         "settings": {
           "announcement_bar_enabled": true,
           "shipping_text": "<p><strong>Free Shipping when you order 4 or more<\/strong><\/p>",
-          "promo_text": "<p><strong>Any 3 Packs for $25 |&nbsp;6&nbsp;for&nbsp;$40<\/strong>&nbsp;WITH CODE:&nbsp;<em>6FOR40<\/em><\/p>\n<p><em>&nbsp;<\/em><\/p>",
+          "promo_text": "<p>Any 3 Packs for $25 |&nbsp;6&nbsp;for&nbsp;$40<\/p>",
           "logo": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
           "mobile_cta_text": "SHOP",
           "desktop_cta_text": "SHOP",
@@ -138,13 +141,13 @@
           "text": "<p><strong>No-Tie Shoelaces - Adults &amp; Kids<br><\/strong><\/p>",
           "primary_cta_text": "SHOP NOW",
           "primary_cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
-          "primary_cta_text_color": "",
-          "primary_cta_bg_color": "",
+          "primary_cta_text_color": "#ffffff",
+          "primary_cta_bg_color": "#008ffd",
           "enable_secondary_cta": true,
           "secondary_cta_text": "HOW IT WORKS",
           "secondary_cta_link": "shopify:\/\/pages\/install-video",
-          "secondary_cta_text_color": "",
-          "secondary_cta_bg_color": ""
+          "secondary_cta_text_color": "#ffffff",
+          "secondary_cta_bg_color": "#b9b9b9"
         }
       },
       "1558041214466": {
@@ -156,9 +159,11 @@
               "enable_block": true,
               "image": "shopify:\/\/shop_images\/Flat_Lace_3_1.jpg",
               "title": "Original No-Tie <br>Lacing System",
+              "title_color": "#333333",
               "link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
-              "text_color": "#333333",
-              "link_text": "SHOP NOW"
+              "link_text": "SHOP NOW",
+              "link_text_color": "#fff",
+              "link_bg_color": "#0090fc"
             }
           },
           "1565704762914": {
@@ -167,9 +172,11 @@
               "enable_block": true,
               "image": "shopify:\/\/shop_images\/Socks_1_89977a18-62ce-4908-8089-51f3c4c3d558.jpg",
               "title": "No-Show Socks",
+              "title_color": "#ffffff",
               "link": "http:\/\/socks.xpandlaces.com\/?utm_source=website",
-              "text_color": "#ffffff",
-              "link_text": "SHOP NOW"
+              "link_text": "SHOP NOW",
+              "link_text_color": "#fff",
+              "link_bg_color": "#0090fc"
             }
           },
           "1558041246675": {
@@ -178,9 +185,11 @@
               "enable_block": true,
               "image": "shopify:\/\/shop_images\/Round_Lace_1.jpg",
               "title": "Quick-Release <br>Lacing System",
+              "title_color": "#333333",
               "link": "shopify:\/\/products\/quick-release-round-lacing-system",
-              "text_color": "#333333",
-              "link_text": "SHOP NOW"
+              "link_text": "SHOP NOW",
+              "link_text_color": "#fff",
+              "link_bg_color": "#0090fc"
             }
           }
         },
@@ -231,8 +240,10 @@
         ],
         "settings": {
           "title": "Satisfaction Guaranteed",
-          "cta_text": "SHOP NOW",
-          "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
+          "cta_text": "FAQ",
+          "cta_link": "shopify:\/\/pages\/faqs",
+          "cta_text_color": "#000000",
+          "cta_bg_color": "#ffe100"
         }
       },
       "1558131609639": {
@@ -241,7 +252,9 @@
           "title": "Over 40 Colors",
           "image": "shopify:\/\/shop_images\/Color_Line_3x_20c85dda-02a2-4d55-a894-a43c54858457.png",
           "cta_text": "PICK MY COLOR",
-          "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
+          "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+          "cta_text_color": "#fff",
+          "cta_bg_color": "#008ffd"
         }
       },
       "1558154461671": {
@@ -309,7 +322,9 @@
         "settings": {
           "title": "Popular Colors",
           "link_text": "CHOOSE YOUR SYSTEM",
-          "link": "shopify:\/\/pages\/compare-laces"
+          "link": "shopify:\/\/pages\/compare-laces",
+          "link_text_color": "#fff",
+          "link_bg_color": "#008ffd"
         }
       },
       "1558160927845": {
@@ -372,25 +387,26 @@
           "title": "Join the Club",
           "text": "Sign up to be the first to know about exclusive deals and new products",
           "button_text": "SUBMIT",
-          "action_url": "\/\/manage.kmail-lists.com\/subscriptions\/subscribe"
+          "action_url": "\/\/manage.kmail-lists.com\/subscriptions\/subscribe",
+          "button_text_color": "#fff",
+          "button_bg_color": "#008ffd"
         }
       },
       "1558510378449": {
         "type": "bottom-banner",
-        "disabled": true,
         "blocks": {
           "1558510583817": {
             "type": "item",
             "settings": {
               "title": "6 Packs for $40",
-              "text": "CODE: 6FOR40"
+              "text": ""
             }
           },
           "1558510609132": {
             "type": "item",
             "settings": {
               "title": "8 Packs for $50",
-              "text": "CODE: 8FOR50"
+              "text": ""
             }
           }
         },
@@ -484,13 +500,15 @@
         "settings": {
           "price_note_desktop": "&#149; one size fits all  &#149; for all shoe types",
           "price_note_mobile": "One Size Fits All - Adults & Kids",
+          "atc_text_color": "#fff",
+          "atc_bg_color": "#008ffd",
           "promo_title": "HUGE SAVINGS ON BUNDLES",
           "promo_one": "3 for $25",
           "promo_two": "6 FOR $40",
           "promo_three": "8 FOR $50",
           "code_one": "",
-          "code_two": "CODE: 6FOR40",
-          "code_three": "CODE: 8FOR50"
+          "code_two": "",
+          "code_three": ""
         }
       },
       "product-feature": {
