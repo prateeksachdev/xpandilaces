@@ -13,7 +13,7 @@
     "social_tumblr_link": "",
     "social_youtube_link": "",
     "social_vimeo_link": "",
-    "search_option": "products",
+    "search_option": "everything",
     "cart_saving_text": "You saved {{savingPercentage}}",
     "cart_checkout_text_color": "#fff",
     "cart_checkout_bg_color": "#008ffd",
@@ -73,7 +73,9 @@
         "settings": {
           "announcement_bar_enabled": true,
           "shipping_text": "<p><strong>Free Shipping when you order 4 or more<\/strong><\/p>",
-          "promo_text": "<p>Any 3 Packs for $25 |&nbsp;6&nbsp;for&nbsp;$40<\/p>",
+          "promo_text": "<p><strong>Any 3 for $25 | Any 6&nbsp;for&nbsp;$40 <br><\/strong><\/p>",
+          "ab_text_color": "#000",
+          "ab_bg_color": "#ffe100",
           "logo": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
           "mobile_cta_text": "SHOP",
           "desktop_cta_text": "SHOP",
@@ -128,8 +130,8 @@
         "type": "hero-banner",
         "settings": {
           "type": "video",
-          "image": "",
-          "image_mobile": "",
+          "image": "shopify:\/\/shop_images\/Update_9c4900f0-cbdc-4e88-b59d-92a7128d10dd.jpg",
+          "image_mobile": "shopify:\/\/shop_images\/Update2_42b7efab-a51a-402a-881f-608c085d94f2.jpg",
           "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1206\/8416\/files\/VERSION_3_-_Lifestyle_Compressed.mp4?15232893892029590591",
           "video_poster": "shopify:\/\/shop_images\/Thumbnail_4a2105de-5f94-456a-9b87-8e111f89d346.jpg"
         }
@@ -147,7 +149,7 @@
           "secondary_cta_text": "HOW IT WORKS",
           "secondary_cta_link": "shopify:\/\/pages\/install-video",
           "secondary_cta_text_color": "#ffffff",
-          "secondary_cta_bg_color": "#b9b9b9"
+          "secondary_cta_bg_color": "#a6b4be"
         }
       },
       "1558041214466": {
@@ -161,7 +163,7 @@
               "title": "Original No-Tie <br>Lacing System",
               "title_color": "#333333",
               "link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
-              "link_text": "SHOP NOW",
+              "link_text": "SHOP LACES",
               "link_text_color": "#fff",
               "link_bg_color": "#0090fc"
             }
@@ -171,10 +173,10 @@
             "settings": {
               "enable_block": true,
               "image": "shopify:\/\/shop_images\/Socks_1_89977a18-62ce-4908-8089-51f3c4c3d558.jpg",
-              "title": "No-Show Socks",
+              "title": "",
               "title_color": "#ffffff",
               "link": "http:\/\/socks.xpandlaces.com\/?utm_source=website",
-              "link_text": "SHOP NOW",
+              "link_text": "SHOP SOCKS",
               "link_text_color": "#fff",
               "link_bg_color": "#0090fc"
             }
@@ -187,7 +189,7 @@
               "title": "Quick-Release <br>Lacing System",
               "title_color": "#333333",
               "link": "shopify:\/\/products\/quick-release-round-lacing-system",
-              "link_text": "SHOP NOW",
+              "link_text": "SHOP LACES",
               "link_text_color": "#fff",
               "link_bg_color": "#0090fc"
             }
@@ -198,8 +200,7 @@
           "1565704762914",
           "1558041246675"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "1558048205172": {
         "type": "stamped-review",
@@ -214,21 +215,21 @@
           "1558075392065": {
             "type": "item",
             "settings": {
-              "image": "shopify:\/\/shop_images\/1_3x_3bf48797-d112-47e6-864c-dccaafa0c1e0.png",
+              "image": "shopify:\/\/shop_images\/icons-01.png",
               "text": "<p>Try Xpand<\/p>\n<p>for 90 days<\/p>"
             }
           },
           "1558075403234": {
             "type": "item",
             "settings": {
-              "image": "shopify:\/\/shop_images\/2_3x_dc8021bd-8f1b-4d89-9887-d6b43cc1f922.png",
+              "image": "shopify:\/\/shop_images\/icons-02.png",
               "text": "<p>100% money back<\/p>\n<p>guarantee!<\/p>"
             }
           },
           "1558075411721": {
             "type": "item",
             "settings": {
-              "image": "shopify:\/\/shop_images\/3_3x_56dd57bc-acf1-4673-b49e-adf4de10a7f8.png",
+              "image": "shopify:\/\/shop_images\/icons-03.png",
               "text": "<p>Free&nbsp;North America<\/p>\n<p>shipping<\/p>"
             }
           }
@@ -240,10 +241,11 @@
         ],
         "settings": {
           "title": "Satisfaction Guaranteed",
-          "cta_text": "FAQ",
-          "cta_link": "shopify:\/\/pages\/faqs",
-          "cta_text_color": "#000000",
-          "cta_bg_color": "#ffe100"
+          "bg_color": "#42aca7",
+          "cta_text": "SHOP NOW",
+          "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+          "cta_text_color": "#ffffff",
+          "cta_bg_color": "#008ffd"
         }
       },
       "1558131609639": {
@@ -251,7 +253,7 @@
         "settings": {
           "title": "Over 40 Colors",
           "image": "shopify:\/\/shop_images\/Color_Line_3x_20c85dda-02a2-4d55-a894-a43c54858457.png",
-          "cta_text": "PICK MY COLOR",
+          "cta_text": "SEE ALL COLORS",
           "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
           "cta_text_color": "#fff",
           "cta_bg_color": "#008ffd"
@@ -378,8 +380,7 @@
           "1558161234072",
           "1558161287842"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "1558366114449": {
         "type": "newsletter",
@@ -398,15 +399,15 @@
           "1558510583817": {
             "type": "item",
             "settings": {
-              "title": "6 Packs for $40",
-              "text": ""
+              "title": "",
+              "text": "6 Packs for $40"
             }
           },
           "1558510609132": {
             "type": "item",
             "settings": {
-              "title": "8 Packs for $50",
-              "text": ""
+              "title": "",
+              "text": "8 Packs for $50"
             }
           }
         },
@@ -455,39 +456,47 @@
       "stamped-review": {
         "type": "stamped-review",
         "settings": {
-          "title": "Loved by All",
+          "title": "Customer Reviews",
           "code_snippet": "<div id=\"stamped-reviews-widget\" data-widget-type=\"visual-gallery\" data-product-ids=\"2009897304175\" data-min-rating=\"3\" data-random=\"true\" data-feed-type=\"carousel\" data-with-photos=\"true\"><\/div>"
         }
       },
       "faq": {
         "type": "faq",
         "blocks": {
-          "1559077626568": {
-            "type": "faq",
-            "settings": {
-              "question": "Are Xpand Laces adjustable?",
-              "answer": "Yes! Finding the perfect fit is easy with Xpand Laces. We recommend testing the length before you trim the laces. Always set the initial adjustment on the loose side, so that you can always tighten them up if needed."
-            }
-          },
           "1559077706831": {
             "type": "faq",
             "settings": {
-              "question": "Will Xpand Laces fit kids shoes or boots and high-tops?",
-              "answer": "Absolutely. Xpand Laces are designed to stretch and trimmed to fit, which makes them perfect for all types of shoes - from kids shoes to adult boots."
+              "question": "Will Xpand Laces work on my shoes or boots?",
+              "answer": "Xpand Lacing System works on all types of shoes - from kids shoes, adults sneakers, Timberlands to  high-top boots."
+            }
+          },
+          "1559077626568": {
+            "type": "faq",
+            "settings": {
+              "question": "Are the Xpand Laces adjustable?",
+              "answer": "Yes! Finding the perfect fit is easy with Xpand Laces. We recommend trying out the length before you trim the laces. Always set the initial adjustment on the loose side, so that you can always tighten them up if needed."
             }
           },
           "1559077723984": {
             "type": "faq",
             "settings": {
-              "question": "What are the lengths of the Xpand Laces?",
+              "question": "How long are the laces?",
               "answer": "Xpand Laces are 52 inches long, and can stretch out to over twice that length, which makes them long enough for all types of shoes or boots."
+            }
+          },
+          "1567013650619": {
+            "type": "faq",
+            "settings": {
+              "question": "What is your return and exchange policy?",
+              "answer": "Xpand offers a 90 day satisfaction guarantee. If you are not 100% satisfied for any reason, we will refund your order. No questions asked!"
             }
           }
         },
         "block_order": [
-          "1559077626568",
           "1559077706831",
-          "1559077723984"
+          "1559077626568",
+          "1559077723984",
+          "1567013650619"
         ],
         "settings": {
           "title": "Frequently Asked Questions",
@@ -503,9 +512,9 @@
           "atc_text_color": "#fff",
           "atc_bg_color": "#008ffd",
           "promo_title": "HUGE SAVINGS ON BUNDLES",
-          "promo_one": "3 for $25",
-          "promo_two": "6 FOR $40",
-          "promo_three": "8 FOR $50",
+          "promo_one": "<p>3 FOR $25<\/p>",
+          "promo_two": "<p>6 FOR $40<\/p>",
+          "promo_three": "<p>8 FOR $50<\/p>",
           "code_one": "",
           "code_two": "",
           "code_three": ""
@@ -590,19 +599,19 @@
               "flat_video2_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Slip_On.mp4?4757277608672948829",
               "flat_video2_text": "SLIP ON & GO",
               "flat_video3_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Install_and_Adjust.mp4?4757277608672948829",
-              "flat_video3_text": "EASY TO INSTALL",
+              "flat_video3_text": "EASY TO USE",
               "flat_video4_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Less_Pain.mp4?4757277608672948829",
-              "flat_video4_text": "LAY FLAT",
+              "flat_video4_text": "ULTIMATE COMFORT",
               "flat_highlight1_type": "video",
-              "flat_highlight1_title": "Zero-Memory Elastic Laces",
+              "flat_highlight1_title": "Long-Lasting Elastic Laces",
               "flat_highlight1_caption": "PERFORMANCE & DURABILITY",
-              "flat_highlight1_text": "<p>Xpand Laces are made with zero-memory elastic rubber, which ensure a consistent comfortable fit throughout your day and during your workouts. Xpand Laces can work with any type of shoes or boots as you simply trim off the excess ends.<\/p>",
+              "flat_highlight1_text": "<p>Xpand Laces are made with zero-memory elastic rubber, which ensure a consistent comfortable fit throughout your day and during your workouts. Xpand Laces work on all types of shoes and boots as you simply trim off the excess ends.<\/p>",
               "flat_highlight1_image": "",
               "flat_highlight1_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Horizontal_Sretch.mp4?4757277608672948829",
               "flat_highlight2_type": "image",
               "flat_highlight2_title": "Lace Anchor Clips",
               "flat_highlight2_caption": "PATENTED TECHNOLOGY",
-              "flat_highlight2_text": "<p>Our patented Lace Anchors secure your laces in place through any vigorous activities, while maintaining an unbelievably comfortable fit. The Lace Anchors are manufactured with fiber reinforced resin, which provides amazing strength and prevents any breakage or warping.<\/p>",
+              "flat_highlight2_text": "<p>Our patented Lace Anchors secure your laces in place through any intense activities, while maintaining an amazing comfortable fit.<\/p>",
               "flat_highlight2_image": "shopify:\/\/shop_images\/Flat_Lace_Specs.jpg",
               "flat_highlight2_video_url": "",
               "round_top_video_url": "",
@@ -617,13 +626,13 @@
               "round_highlight1_type": "image",
               "round_highlight1_title": "Guaranteed Not to Slip",
               "round_highlight1_caption": "PERFORMANCE & DURABILITY",
-              "round_highlight1_text": "<p>The Xpand Lock holds over 30 lbs (16.5kg) of pressure, ensuring that your feet are secure in your shoe without the risk of slipping out, even during the most physical activities. The Xpand Lacing System has been tested to be 4 times stronger than any other clip design.<\/p>",
+              "round_highlight1_text": "<p>The Xpand Lock holds over 30 pounds (16.5 kg) of pressure, ensuring that your feet are secure in your shoe, even during physical activities. The Xpand Lacing System has been tested to be 4 times stronger than any other clip design.<\/p>",
               "round_highlight1_image": "shopify:\/\/shop_images\/Amazon_Strengths_V2.jpg",
               "round_highlight1_video_url": "",
               "round_highlight2_type": "image",
               "round_highlight2_title": "Quick-Release Locking System",
               "round_highlight2_caption": "PATENT-PENDING TECHNOLOGY",
-              "round_highlight2_text": "<p>The Xpand Quick-Release Lock is a one piece design that is simple to install and even easier to use. Made with fiber reinforced resin, the patent-pending Quick-Release Lock is nearly indestructible and holds up to some serious abuse.<\/p>",
+              "round_highlight2_text": "<p>The Xpand Quick-Release Lock is a one piece design that is simple to install and even easier to use. Made with fiber reinforced resin, the patent-pending Quick-Release Lock is nearly indestructible.<\/p>",
               "round_highlight2_image": "shopify:\/\/shop_images\/Round_Locks_1.jpg",
               "round_highlight2_video_url": ""
             }
@@ -633,10 +642,10 @@
             "settings": {
               "name": "details",
               "flat_title": "In the package",
-              "flat_description": "<p>Every package completes&nbsp;<br>one pair of shoes:&nbsp;<br>2 elastic laces, 4 lace anchors, 4 end clips<\/p>",
+              "flat_description": "<p><strong>Each pack completes one pair of shoes<\/strong><\/p>\n<p>-<br>2 elastic laces, 4 Lace Anchors, 4 End Clips<\/p>",
               "flat_image": "shopify:\/\/shop_images\/flat_specs.jpg",
               "round_title": "In the package",
-              "round_description": "<p>Every package completes&nbsp;<br>one pair of shoes:&nbsp;<br>2 elastic laces, 4 lace anchors, 4 end clips<\/p>",
+              "round_description": "<p><strong>Each pack completes one pair of shoes<\/strong><\/p>\n<p>-<br>2 elastic laces, 2 Locking Anchors, 2 End Clips<\/p>",
               "round_image": "shopify:\/\/shop_images\/Round-Specs.jpg"
             }
           },
@@ -663,8 +672,7 @@
           "1559691859431",
           "1559675417021"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "cart-template": {
         "type": "cart-template",
@@ -742,18 +750,15 @@
           "blocks": {
             "collection-list-0": {
               "type": "collection",
-              "settings": {
-              }
+              "settings": {}
             },
             "collection-list-1": {
               "type": "collection",
-              "settings": {
-              }
+              "settings": {}
             },
             "collection-list-2": {
               "type": "collection",
-              "settings": {
-              }
+              "settings": {}
             }
           },
           "block_order": [
@@ -761,8 +766,7 @@
             "collection-list-1",
             "collection-list-2"
           ],
-          "settings": {
-          }
+          "settings": {}
         },
         "featured-collection": {
           "type": "featured-collection",
@@ -772,8 +776,7 @@
         },
         "featured-product": {
           "type": "featured-product",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "content_for_index": [
