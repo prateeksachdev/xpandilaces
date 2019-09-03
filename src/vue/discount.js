@@ -1,14 +1,43 @@
 export default {
   applyToCart (cart) {
     let discountGroups = window.qb.datastore.discount_groups
-    let groups = this._groupCartItemByProduct(cart)
+    let itemGroups = this._extractItemByDiscountGroup(cart, discountGroups)
 
-    for (let productId in groups) {
-      let group = groups[productId]
-      this._applyProductDiscount(cart, productId, group, discountGroups)
+    for (let index in itemGroups) {
+      let itemGroup = itemGroups[index]
+      let discountGroup = discountGroups[index]
+      this._applyProductDiscount(cart, itemGroup, discountGroup)
     }
 
     return cart
+  },
+
+  _extractItemByDiscountGroup (cart, discountGroups) {
+    let groups = {}
+    for (let item of cart.items) {
+      let groupIndex = this._findMatchingDiscountGroup(item.product_id, discountGroups)
+      if (groupIndex === -1) { continue }
+
+      if (groups[groupIndex]) {
+        groups[groupIndex].items.push(item)
+        groups[groupIndex].quantity += item.quantity
+      } else {
+        groups[groupIndex] = { items: [item], quantity: item.quantity }
+      }
+    }
+
+    return groups
+  },
+
+  _findMatchingDiscountGroup(productId, discountGroups) {
+    for (let [index, group] of discountGroups.entries()) {
+      let productIds = group.products.map((product) => { return product.shopify_product_id })
+      if (productIds.includes(productId.toString())) {
+        return index
+      }
+    }
+
+    return -1
   },
 
   _groupCartItemByProduct (cart) {
@@ -25,21 +54,15 @@ export default {
     return groups
   },
 
-  _applyProductDiscount (cart, productId, itemGroup, discountGroups) {
-    let overallBestDiscountTier = { discount_amount: 0 }
-    for (let discountGroup of discountGroups) {
-      let bestDiscountTier = this._findBestDiscountTier(productId, itemGroup, discountGroup)
+  _applyProductDiscount (cart, itemGroup, discountGroup) {
+    let bestDiscountTier = this._findBestDiscountTier(itemGroup, discountGroup)
 
-      if (bestDiscountTier && (bestDiscountTier.discount_amount > overallBestDiscountTier.discount_amount)) {
-        overallBestDiscountTier = bestDiscountTier
-      }
-    }
-    if (overallBestDiscountTier.discount_amount === 0) {
+    if (bestDiscountTier.discount_amount === 0) {
       return
     }
 
     for (let item of itemGroup.items) {
-      item.price = item.original_price - overallBestDiscountTier.discount_amount
+      item.price = item.original_price - bestDiscountTier.discount_amount
       item.line_price = item.price * item.quantity
       cart.total_discount = cart.total_discount - item.total_discount
       item.total_discount = item.original_line_price - item.line_price
@@ -48,16 +71,8 @@ export default {
     }
   },
 
-  _findBestDiscountTier (productId, itemGroup, discountGroup) {
+  _findBestDiscountTier (itemGroup, discountGroup) {
     if (!discountGroup.discount_tiers || discountGroup.discount_tiers.length === 0) {
-      return
-    }
-
-    let productIds = discountGroup.products.map(product => {
-      return product.shopify_product_id
-    })
-
-    if (productIds.indexOf(productId.toString()) === -1) {
       return
     }
 
