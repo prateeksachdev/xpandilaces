@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @submit="checkout" action="/cart" method="post">
+    <form @submit.prevent="checkout" action="/cart" method="post">
       <div class="drawer" :class="{empty: isCartEmpty}">
         <div v-if="isCartEmpty" class="empty-text">
           <p>
@@ -85,6 +85,12 @@
       isCartEmpty () {
         return this.cart.items.length === 0
       },
+      checkoutUrl () {
+        return this.state.checkoutUrl
+      },
+      isCheckoutReady () {
+        return this.state.isCheckoutReady
+      },
       savingAmount () {
         if (this.state.cart) {
           return this.cart.original_total_price - this.cart.total_price
@@ -120,61 +126,22 @@
         return obj
       }
     },
+    watch: {
+      isCheckoutReady (newVal, oldVal) {
+        if (newVal && (newVal != oldVal) && this.isCheckingOut) {
+          this.checkout()
+        }
+      }
+    },
     methods: {
-      checkout (e) {
+      checkout () {
         this.isCheckingOut = true
+        if (!this.isCheckoutReady) { return }
 
-        if (this.cart.total_discount > 0) {
-          e.preventDefault()
-        } else {
-          setTimeout(() => {
-            this.isCheckingOut = false
-          }, 3000)
-          return
-        }
-
-        let items = []
-        this.cart.items.forEach((item) => {
-          items.push({
-            "title": item.title,
-            "variant_id": item.variant_id,
-            "product_id": item.product_id,
-            "image": item.featured_image.url,
-            "quantity": item.quantity,
-            "grams": item.grams,
-            "requires_shipping": item.requires_shipping,
-            "price": item.original_price / 100,
-            "properties": [],
-            "applied_discount": {
-              "discount_amount": item.original_price - item.price,
-              "original_line_price": item.original_line_price,
-              "total_discount_amount": item.total_discount,
-              "value_type": "fixed_amount",
-              "description": "Discount",
-              "title": "Discount",
-              "value": (item.original_price - item.price) / 100,
-              "amount": item.total_discount / 100
-            }
-          })
-        })
-
-        let data = {
-          line_items: JSON.stringify(items),
-          order_notes: ""
-        }
-
-        window.jQuery.ajax({
-          method: "POST",
-          url: "https://quantity-breaks-now.herokuapp.com/get_checkout_url?shopify_domain=xpandlaces.myshopify.com",
-          data: JSON.stringify(data),
-          dataType: "json",
-          contentType: "application/json; charset=utf-8",
-        }).then(response => {
-          setTimeout(() => {
-            this.isCheckingOut = false
-          }, 3000)
-          window.location.href = response.invoice_url
-        })
+        window.location.href = this.checkoutUrl
+        setTimeout(() => {
+          this.isCheckingOut = false
+        }, 5000)
       },
 
       hide () {
