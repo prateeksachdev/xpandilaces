@@ -498,14 +498,13 @@
           display: inline-block;
           font-size: 20px;
           font-family: "neuzeitgroteskblack";
-          line-height: 1.2;
 
           &.text-mobile {
             display: none;
           }
 
           &.text-desktop {
-            display: block;
+            display: inline-block;
           }
         }
       }
@@ -517,7 +516,8 @@
         width: 30px;
 
         @media screen and (min-width: $tablet) {
-          display: none;
+          display: inline-block;
+          margin: 0 10px 3px 10px;
         }
       }
     }
