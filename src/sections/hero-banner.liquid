@@ -9,6 +9,55 @@
 {% if section.settings.type == 'image' and section.settings.image %}
   <section class="hero">
     <img src="{{ section.settings.image | img_url: 'master' }}">
+    <div class="desktop">
+      <div class="container">
+        <div class="content" style="text-align: {{section.settings.overlay_position}}">
+          <h1>{{ section.settings.title }}</h1>
+          <p class="title-caption">{{ section.settings.title_caption }}</p>
+
+          {% if section.settings.primary_cta_text != blank %}
+            <p class="primary-cta">
+              <a class="button" href="{{ section.settings.primary_cta_link }}" style="{%- if section.settings.primary_cta_bg_color -%}background-color: {{section.settings.primary_cta_bg_color}};border-color: {{section.settings.primary_cta_bg_color}};{%- endif -%}{%- if section.settings.primary_cta_text_color -%}color: {{section.settings.primary_cta_text_color}};{%- endif -%}">
+                {{ section.settings.primary_cta_text}}
+              </a>
+            </p>
+          {% endif %}
+
+          {% if section.settings.enable_secondary_cta %}
+            <p class="secondary-cta">
+              <a class="button" href="{{ section.settings.secondary_cta_link }}" style="{%- if section.settings.secondary_cta_bg_color -%}background-color: {{section.settings.secondary_cta_bg_color}};border-color: {{section.settings.secondary_cta_bg_color}};{%- endif -%}{%- if section.settings.secondary_cta_text_color -%}color: {{section.settings.secondary_cta_text_color}};{%- endif -%}">
+                {{ section.settings.secondary_cta_text}}
+              </a>
+            </p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile">
+      <div class="container">
+        <div class="content">
+          <h1>{{ section.settings.title }}</h1>
+          <p class="title-caption">{{ section.settings.title_caption }}</p>
+
+          {% if section.settings.primary_cta_text != blank %}
+            <p class="primary-cta">
+              <a class="button" href="{{ section.settings.primary_cta_link }}" style="{%- if section.settings.primary_cta_bg_color -%}background-color: {{section.settings.primary_cta_bg_color}};border-color: {{section.settings.primary_cta_bg_color}};{%- endif -%}{%- if section.settings.primary_cta_text_color -%}color: {{section.settings.primary_cta_text_color}};{%- endif -%}">
+                {{ section.settings.primary_cta_text}}
+              </a>
+            </p>
+          {% endif %}
+
+          {% if section.settings.enable_secondary_cta %}
+            <p class="secondary-cta">
+              <a class="button" href="{{ section.settings.secondary_cta_link }}" style="{%- if section.settings.secondary_cta_bg_color -%}background-color: {{section.settings.secondary_cta_bg_color}};border-color: {{section.settings.secondary_cta_bg_color}};{%- endif -%}{%- if section.settings.secondary_cta_text_color -%}color: {{section.settings.secondary_cta_text_color}};{%- endif -%}">
+                {{ section.settings.secondary_cta_text}}
+              </a>
+            </p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
   </section>
 {% endif %}
 
@@ -53,6 +102,80 @@
         "type": "image_picker",
         "id": "video_poster",
         "label": "Video Poster"
+      },
+      {
+       "type": "header",
+       "content": "Image Overlay"
+      },
+      {
+        "type": "select",
+        "id": "overlay_position",
+        "label": "Position",
+        "options": [
+          { "value": "left", "label": "Left" },
+          { "value": "center", "label": "Center" },
+          { "value": "right", "label": "Right" }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "title_caption",
+        "label": "Title Caption"
+      },
+      {
+        "type": "text",
+        "id": "primary_cta_text",
+        "label": "Primary CTA Text"
+      },
+      {
+        "type": "url",
+        "id": "primary_cta_link",
+        "label": "Primary CTA Link"
+      },
+      {
+        "type": "color",
+        "id": "primary_cta_text_color",
+        "label": "Primary CTA Text Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "primary_cta_bg_color",
+        "label": "Primary CTA Background Color",
+        "default": "#008FFD"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_secondary_cta",
+        "label": "Enable Secondary CTA"
+      },
+      {
+        "type": "text",
+        "id": "secondary_cta_text",
+        "label": "Secondary CTA Text"
+      },
+      {
+        "type": "url",
+        "id": "secondary_cta_link",
+        "label": "Secondary CTA Link"
+      },
+      {
+        "type": "color",
+        "id": "secondary_cta_text_color",
+        "label": "Secondary CTA Text Color"
+        "default": "#FFFFFF",
+      },
+      {
+        "type": "color",
+        "id": "secondary_cta_bg_color",
+        "label": "Secondary CTA Background Color",
+        "default": "#A6B4BE"
       }
     ],
     "presets": [
