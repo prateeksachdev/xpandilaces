@@ -6,7 +6,15 @@
 section.hero {
   position: relative;
 
-  .mobile {
+  .img-desktop {
+    display: none;
+
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
+  }
+
+  .mobile, .img-mobile {
     @media screen and (min-width: $tablet) {
       display: none;
     }

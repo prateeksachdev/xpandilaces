@@ -8,7 +8,9 @@
 
 {% if section.settings.type == 'image' and section.settings.image %}
   <section class="hero">
-    <img src="{{ section.settings.image | img_url: 'master' }}">
+    <img class="img-desktop" src="{{ section.settings.image | img_url: 'master' }}">
+    <img class="img-mobile" src="{{ section.settings.image_mobile | img_url: 'master' }}">
+
     <div class="desktop">
       <div class="container">
         <div class="content" style="text-align: {{section.settings.overlay_position}}">
