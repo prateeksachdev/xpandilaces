@@ -1,0 +1,74 @@
+{
+  "name": {{name | json}},
+  "type": {{page.template_suffix | json}},
+  "title": {{page.title | json}},
+  {% if page.template_suffix == 'ptab-overview' %}
+    "heading": {{page.metafields['custom']['heading'] | json}},
+    {% if page.metafields['custom']['top_media_file'] %}
+      "top_media": {
+        "type": {{page.metafields['custom']['top_media_type'] | json}},
+        "file_url": {{page.metafields['custom']['top_media_file'] | json}}
+      },
+    {% endif %}
+
+    "showcases": [
+      {% for file in page.metafields['custom']['showcase_media_files'] %}
+        {
+          "text": {{page.metafields['custom']['showcase_texts'][forloop.index0] | json}},
+          "media": {
+            "type": {{page.metafields['custom']['showcase_media_types'][forloop.index0] | json}},
+            "file_url": {{file | json}}
+          }
+        }
+        {%- unless forloop.last -%},{%- endunless -%}
+      {% endfor %}
+    ],
+
+    "highlights": [
+      {% for file in page.metafields['custom']['highlight_media_files'] %}
+        {
+          "heading": {{page.metafields['custom']['highlight_headings'][forloop.index0] | json}},
+          "subheading": {{page.metafields['custom']['highlight_subheadings'][forloop.index0] | json}},
+          "content": {{page.metafields['custom']['highlight_contents'][forloop.index0] | json}},
+          "media": {
+            "type": {{page.metafields['custom']['highlight_media_types'][forloop.index0] | json}},
+            "file_url": {{file | json}}
+          }
+        }
+        {%- unless forloop.last -%},{%- endunless -%}
+      {% endfor %}
+    ]
+
+  {% endif %}
+
+  {% if page.template_suffix == 'ptab-details' %}
+    "highlights": [
+      {% for file in page.metafields['custom']['feature_media_files'] %}
+        {
+          "heading": {{page.metafields['custom']['feature_headings'][forloop.index0] | json}},
+          "subheading": {{page.metafields['custom']['feature_subheadings'][forloop.index0] | json}},
+          "content": {{page.metafields['custom']['feature_contents'][forloop.index0] | json}},
+          "media": {
+            "type": {{page.metafields['custom']['feature_media_types'][forloop.index0] | json}},
+            "file_url": {{file | json}}
+          }
+        }
+        {%- unless forloop.last -%},{%- endunless -%}
+      {% endfor %}
+    ]
+  {% endif %}
+
+  {% if page.template_suffix == 'ptab-reviews' %}
+    "stamped_image_url": {{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26' | json}},
+    "stamped_reviews": {{product.metafields.stamped.reviews | json}}
+  {% endif %}
+
+  {% if page.template_suffix == 'ptab-installation' %}
+    "youtube_urls": [
+      {% for url in page.metafields['custom']['yt_videos'] %}
+        {{url | json}}
+        {%- unless forloop.last -%},{%- endunless -%}
+      {% endfor %}
+    ]
+  {% endif %}
+}

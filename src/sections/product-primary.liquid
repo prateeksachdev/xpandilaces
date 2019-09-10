@@ -1,0 +1,45 @@
+{% assign variant_selected = product.selected_or_first_available_variant %}
+
+<pp-page
+  default-variant-id="{{variant_selected.id}}"
+  loading-gif-url="{{ 'loader.gif' | asset_url }}"
+  atc-text-color="{{section.settings.atc_text_color}}"
+  atc-bg-color="{{section.settings.tac_bg_color}}"
+  highlight-text-color="{{ section.settings.highlight_text_color }}"
+>
+  <template #product>
+    <script type="application/json">
+      {%- include 'pp-json', product: product -%}
+    </script>
+  </template>
+</pp-page>
+
+{% schema %}
+  {
+    "name": "Product",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Hero"
+      },
+      {
+        "type": "color",
+        "id": "atc_text_color",
+        "label": "Add to cart Text Color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "atc_bg_color",
+        "label": "Add to cart Background Color",
+        "default": "#008ffd"
+      },
+      {
+        "type": "color",
+        "id": "highlight_text_color",
+        "label": "Highlight Text Color",
+        "default": "#008ffd"
+      }
+    ]
+  }
+{% endschema %}

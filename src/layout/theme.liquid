@@ -7,7 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="{{ settings.color_accent }}">
-  <meta name="robots" content="index,follow">
+
+  {% if page.template_suffix contains 'ptab' %}
+    <meta name="robots" content="noindex">
+  {% else %}
+    <meta name="robots" content="index,follow">
+  {% endif %}
+
   <meta name="google-site-verification" content="1GuKV9Ynhy01MON2gGSP-rmAXmClHgt956WgfNd9BEY" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 

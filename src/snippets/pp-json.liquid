@@ -1,0 +1,117 @@
+{
+  "id": {{product.id | json}},
+  "title": {{product.title | json}},
+  "url": {{shop.url | append: product.url | json}},
+  "handle": {{product.handle | json}},
+  "description": {{product.description | json}},
+  "stamped_badge": {{product.metafields.stamped.badge | json}},
+  "price_note": {{product.metafields['custom']['price_note'] | json}},
+  "title_caption": {{product.metafields['custom']['title_caption'] | json}},
+  "promo_title": {{product.metafields['custom']['promo_title'] | json}},
+  "promo_texts": {{product.metafields['custom']['promo_texts'] | json}},
+  {% if product.metafields['custom']['reviews_code'] %}
+    "reviews": {
+      "heading": {{product.metafields['custom']['reviews_heading'] | json}},
+      "code": {{product.metafields['custom']['reviews_code'] | json}}
+    },
+  {% endif %}
+
+  {% if product.metafields['custom']['faq_link_text'] %}
+    "faq": {
+      "heading": {{product.metafields['custom']['faq_heading'] | json}},
+      "link_text": {{product.metafields['custom']['faq_link_text'] | json}},
+      "link": {{pages[product.metafields['custom']['faq_link']].url | json}},
+      "items": [
+        {% for question in product.metafields['custom']['faq_questions'] %}
+          {
+            "question": {{question | json}},
+            "answer": {{product.metafields['custom']['faq_answers'][forloop.index0] | json}}
+          }
+          {%- unless forloop.last -%},{%- endunless -%}
+        {% endfor %}
+      ]
+    },
+  {% endif %}
+
+  "options": {
+    {% for option in product.options_with_values %}
+      {{option.name | json}}: {{option.values | json}}
+      {%- unless forloop.last -%},{%- endunless -%}
+    {% endfor %}
+  },
+  "price": {{product.price | json}},
+
+  {% if product.featured_image %}
+    "avatar": {
+      "id": {{product.featured_image.id | json}},
+      "alt": {{product.featured_image.alt | json}},
+      "urls": {
+        "sm": {{product.featured_image | img_url: '80x' | json}},
+        "md": {{product.featured_image | img_url: '600x' | json}}
+      }
+    },
+  {% endif %}
+
+  "features": [
+    {% for text in product.metafields['custom']['feature_texts'] %}
+      {
+        "text": {{text | json}},
+        "icon_url": {{product.metafields['custom']['feature_icons'][forloop.index0] | json}}
+      }
+      {%- unless forloop.last -%},{%- endunless -%}
+    {% endfor %}
+  ],
+
+  "highlights": [
+    {% for text in product.metafields['custom']['highlight_texts'] %}
+      {
+        "text": {{text | json}},
+        "text_desktop": {{product.metafields['custom']['highlight_texts_desktop'][forloop.index0] | json}},
+        "icon_url": {{product.metafields['custom']['highlight_icons'][forloop.index0] | json}}
+      }
+      {%- unless forloop.last -%},{%- endunless -%}
+    {% endfor %}
+  ],
+
+  "tabs": [
+    {% for name in product.metafields['custom']['tab_names'] %}
+      {% assign page_handle = product.metafields['custom']['tab_page_handles'][forloop.index0] %}
+      {% assign page = pages[page_handle] %}
+      {%- include 'ptab-json', page: page -%}
+      {%- unless forloop.last -%},{%- endunless -%}
+    {% endfor %}
+  ],
+
+  "variants": [
+    {% for variant in product.variants %}
+      {
+        "id": {{variant.id | json}},
+        "sku": {{variant.sku | json}},
+        "available": {{variant.available | json}},
+        "price": {{variant.price | json}},
+        "title": {{variant.title | json}},
+        "option1": {{variant.option1 | json}},
+        "option2": {{variant.option2 | json}},
+        "option3": {{variant.option3 | json}},
+        "swatch_image_url": {{variant.metafields['custom']['swatch_image'] | json}},
+        {% if variant.image %}
+          "avatar": {
+            "id": {{variant.image.id | json}},
+            "alt": {{variant.image.alt | json}},
+            "urls": {
+              "sm": {{variant.image | img_url: '80x' | json}},
+              "md": {{variant.image | img_url: '600x' | json}}
+            }
+          },
+        {% endif %}
+        "image_urls": [
+          {% for image_url in variant.metafields['custom']['images'] %}
+            {{image_url | json}}
+            {%- unless forloop.last -%},{%- endunless -%}
+          {% endfor %}
+        ]
+      }
+      {%- unless forloop.last -%},{%- endunless -%}
+    {% endfor %}
+  ]
+}
