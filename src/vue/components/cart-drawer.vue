@@ -1,15 +1,15 @@
 <template>
   <div>
     <form @submit.prevent="checkout" action="/cart" method="post">
-      <div class="head">
+      <div v-if="!isCartEmpty" class="head">
         <div class="progress-wrap text-center">
-          <transition name="fade">
+          <transition name="fadeup">
             <div v-if="isFlashing" class="text-wrapper">
               <p>{{flashMsg}}</p>
             </div>
           </transition>
 
-          <transition name="fade">
+          <transition name="fadeup">
             <div v-if="!isFlashing" class="text-wrapper">
               <p v-if="primaryDiscountHint" v-html="primaryDiscountHint.text"></p>
               <p v-else v-html="noDiscountHintText"></p>
@@ -20,8 +20,8 @@
         </div>
       </div>
 
-      <div class="drawer" :class="{empty: isCartEmpty}">
-        <div v-if="isCartEmpty" class="empty-text">
+      <div v-if="isCartEmpty" class="empty-cart">
+        <div class="empty-text">
           <p>
             <slot name="empty-msg"></slot>
           </p>
@@ -30,17 +30,17 @@
             <slot name="continue-shopping"></slot>
           </a>
         </div>
+      </div>
 
-        <template v-else>
-          <div class="line-items">
-            <ul>
-              <cart-item v-for="item in cart.items" :key="item.key" :item="item">
-              </cart-item>
-            </ul>
-          </div>
+      <div v-if="!isCartEmpty" class="drawer">
+        <div class="line-items">
+          <ul>
+            <cart-item v-for="item in cart.items" :key="item.key" :item="item">
+            </cart-item>
+          </ul>
+        </div>
 
-          <hr v-if="cart.items.length === 1">
-        </template>
+        <hr v-if="cart.items.length === 1">
       </div>
 
       <div v-if="!isCartEmpty" class="foot">
