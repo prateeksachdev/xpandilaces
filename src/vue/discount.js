@@ -9,7 +9,55 @@ export default {
       this._applyProductDiscount(cart, itemGroup, discountGroup)
     }
 
+    cart.discount_hints = this._extraDiscountHints(discountGroups, itemGroups)
     return cart
+  },
+
+  _extraDiscountHints (discountGroups, itemGroups) {
+    let hints = {}
+    let quantity, discountGroup, closestTier, appliedTier, maxTier
+
+    for (let index in itemGroups) {
+      quantity = itemGroups[index].quantity
+      discountGroup = discountGroups[index]
+      closestTier = this._findClosestDiscountTier(discountGroup, quantity)
+      appliedTier = this._findBestDiscountTier(itemGroups[index], discountGroups[index])
+      maxTier = this._findMaxDiscountTier(discountGroup)
+
+      if (!closestTier) { return {} }
+
+      hints[index] = {
+        original_price: itemGroups[index].items[0].original_price,
+        current_quantity: itemGroups[index].quantity,
+        applied_tier: appliedTier,
+        closest_tier: closestTier,
+        max_tier: maxTier,
+        additional_quantity_needed: closestTier.min_line_item_quantity - quantity,
+        hint_template: discountGroup.description
+      }
+    }
+
+    return hints
+  },
+
+  _findClosestDiscountTier(discountGroup, quantity) {
+    for (let tier of discountGroup.discount_tiers) {
+      if (tier.min_line_item_quantity > quantity) {
+        return tier
+      }
+    }
+  },
+
+  _findMaxDiscountTier(discountGroup) {
+    let maxTier = discountGroup.discount_tiers[0]
+
+    for (let tier of discountGroup.discount_tiers) {
+      if (tier.min_line_item_quantity > maxTier.min_line_item_quantity) {
+        maxTier = tier
+      }
+    }
+
+    return maxTier
   },
 
   _extractItemByDiscountGroup (cart, discountGroups) {

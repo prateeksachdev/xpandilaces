@@ -102,7 +102,19 @@
 
             <transition name="fade">
               <div v-show="isCartDetailVisible" class="cart-detail">
-                <cart-drawer v-click-outside="vco" @hide="hideCartDetail" saving-text-template="{{settings.cart_saving_text}}" checkout-text-color="{{settings.cart_checkout_text_color}}" checkout-bg-color="{{settings.cart_checkout_bg_color}}">
+                <cart-drawer
+                  v-click-outside="vco"
+                  @hide="hideCartDetail"
+                  :is-visible="isCartDetailVisible"
+                  saving-text-template="{{settings.cart_saving_text}}"
+                  free-shipping-hint-template="{{settings.cart_free_shipping_hint_text}}"
+                  free-shipping-item-count="{{settings.cart_free_shipping_item_count}}"
+                  free-shipping-applied-text="{{settings.cart_free_shipping_applied_text}}"
+                  no-discount-hint-text="{{settings.cart_no_discount_hint_text}}"
+                  discount-applied-template="{{settings.cart_discount_applied_text}}"
+                  checkout-text-color="{{settings.cart_checkout_text_color}}"
+                  checkout-bg-color="{{settings.cart_checkout_bg_color}}"
+                >
                   <template #continue-shopping>
                     {{ 'cart.general.continue_shopping_link_html' | t }}
                   </template>

@@ -125,6 +125,51 @@
         "info": "Use {{savingPercentage}} and {{savingAmount}} to add in the actual saved in percentage or amount"
       },
       {
+        "type": "text",
+        "id": "cart_discount_hint_group",
+        "label": "Discount group for hint",
+        "default": "Laces",
+        "info": "Must be the Group Name of a discount group in the Quantity Break Now app"
+      },
+      {
+        "type": "text",
+        "id": "cart_discount_applied_text",
+        "label": "Discount applied text",
+        "default": "Congrats, you just received {{discountPercentage}}% off!",
+        "info": "This message is displayed when a new tier of discount is applied"
+      },
+      {
+        "type": "text",
+        "id": "cart_free_shipping_hint_text",
+        "label": "Free shipping hint text",
+        "default": "You are {{quantity}} pack away from free shipping!",
+        "info": "Use {{quantity}} to add in the additoinal quantity needed for free shpiping"
+      },
+      {
+        "type": "text",
+        "id": "cart_free_shipping_applied_text",
+        "label": "Free shipping applied text",
+        "default": "Congrats, you just received free shipping!",
+        "info": "This message is displayed when free shipping is applied"
+      },
+      {
+        "type": "range",
+        "id": "cart_free_shipping_item_count",
+        "label": "Free shipping item count",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "default": 4,
+        "info": "This setting is for displaying the free shipping hint only, will not effect actual shipping fee"
+      },
+      {
+        "type": "text",
+        "id": "cart_no_discount_hint_text",
+        "label": "No hint text",
+        "default": "You’re all set.<br>Continue to shop or proceed to checkout!",
+        "info": "Text to display when there is no discount hint"
+      },
+      {
         "type": "color",
         "id": "cart_checkout_text_color",
         "label": "Checkout Text Color",
