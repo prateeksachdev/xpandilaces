@@ -1,6 +1,25 @@
 <template>
   <div>
     <form @submit.prevent="checkout" action="/cart" method="post">
+      <div class="head">
+        <div class="progress-wrap text-center">
+          <transition name="fade">
+            <div v-if="isFlashing" class="text-wrapper">
+              <p>{{flashMsg}}</p>
+            </div>
+          </transition>
+
+          <transition name="fade">
+            <div v-if="!isFlashing" class="text-wrapper">
+              <p v-if="primaryDiscountHint" v-html="primaryDiscountHint.text"></p>
+              <p v-else v-html="noDiscountHintText"></p>
+            </div>
+          </transition>
+
+          <progress class="progress is-small" :value="progress" max="100"></progress>
+        </div>
+      </div>
+
       <div class="drawer" :class="{empty: isCartEmpty}">
         <div v-if="isCartEmpty" class="empty-text">
           <p>
@@ -13,27 +32,12 @@
         </div>
 
         <template v-else>
-          <div class="progress-bar text-center">
-            <transition name="fade">
-              <div v-if="isFlashing">
-                <p>{{flashMsg}}</p>
-              </div>
-            </transition>
-
-            <transition name="fade">
-              <div v-if="!isFlashing">
-                <p v-if="primaryDiscountHint" v-html="primaryDiscountHint.text"></p>
-                <p v-else v-html="noDiscountHintText"></p>
-              </div>
-            </transition>
-
-            <progress class="progress is-small" :value="progress" max="100"></progress>
+          <div class="line-items">
+            <ul>
+              <cart-item v-for="item in cart.items" :key="item.key" :item="item">
+              </cart-item>
+            </ul>
           </div>
-
-          <ul>
-            <cart-item v-for="item in cart.items" :key="item.key" :item="item">
-            </cart-item>
-          </ul>
 
           <hr v-if="cart.items.length === 1">
         </template>
@@ -254,7 +258,6 @@
         if (!newHint.applied_tier) { return }
         if (newHint.applied_tier.discount_amount == 0) { return }
 
-        console.log(newHint)
         if (!oldHint.applied_tier || (newHint.applied_tier.discount_amount > oldHint.applied_tier.discount_amount)) {
           let discountPercentage = Math.ceil(newHint.applied_tier.discount_amount / newHint.original_price * 100)
           let msg = this.discountAppliedTemplate.replace('{{discountPercentage}}', discountPercentage)

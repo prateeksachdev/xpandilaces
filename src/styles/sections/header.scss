@@ -24,10 +24,10 @@ body {
 }
 
 .announcement-visible .navbar .cart-detail .foot {
-  top: calc(56vh + 80px);
+  top: calc(42vh + 80px + 56px);
 
   @media screen and (min-width: $tablet) {
-    top: calc(56vh + 90px);
+    top: calc(42vh + 90px + 56px);
   }
 }
 
@@ -444,13 +444,39 @@ body {
     top: 60px;
   }
 
-  .progress-bar {
-    padding: 10px 20px 15px 20px;
-    border-bottom: 1px solid #ccc;
+  .head {
+    position: absolute;
+    top: 0px;
+  }
+
+  .progress-wrap {
+    padding: 0px 20px 10px 20px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    position: fixed;
+    width: 320px;
+    background-color: white;
+    z-index: 1;
+    height: 56px;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $large-phone) {
+      width: 360px;
+    }
+
+    .text-wrapper {
+      width: 100%;
+    }
 
     p {
       line-height: 1;
-      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    progress {
+      height: 0.5rem
     }
 
     .progress::-webkit-progress-value {
@@ -475,12 +501,12 @@ body {
   }
 
   .drawer {
-    padding-top: 10px;
     background-color: white;
     border: 1px solid #ccc;
     width: 320px;
-    height: 56vh;
+    height: 42vh;
     overflow-y: auto;
+    margin-top: 56px;
 
     @media screen and (min-width: $large-phone) {
       width: 360px;
@@ -519,7 +545,7 @@ body {
 
   .foot {
     position: fixed;
-    top: calc(56vh + 40px);
+    top: calc(42vh + 40px + 56px);
     border: 1px solid #ccc;
     padding: 25px 20px 20px 20px;
     font-family: "neuzeit_grotesk_light";
@@ -530,7 +556,7 @@ body {
     border-top: none;
 
     @media screen and (min-width: $tablet) {
-      top: calc(56vh + 60px);
+      top: calc(42vh + 60px + 56px);
     }
 
     @media screen and (min-width: $large-phone) {
