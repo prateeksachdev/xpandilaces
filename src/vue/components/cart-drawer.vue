@@ -267,6 +267,8 @@
     },
     methods: {
       flash (msg) {
+        if (!this.isVisible) { return }
+
         this.flashMsg = msg
         this.isFlashing = true
         setTimeout(() => {
