@@ -4,19 +4,21 @@
       <div v-if="!isCartEmpty" class="head">
         <div class="progress-wrap text-center">
           <transition name="fadeup">
-            <div v-if="isFlashing" class="text-wrapper">
+            <div v-if="isFlashing" class="text-wrapper" :style="{color: discountHintColor}">
               <p>{{flashMsg}}</p>
             </div>
           </transition>
 
           <transition name="fadeup">
-            <div v-if="!isFlashing" class="text-wrapper">
+            <div v-if="!isFlashing" class="text-wrapper" :style="{color: discountHintColor}">
               <p v-if="primaryDiscountHint" v-html="primaryDiscountHint.text"></p>
               <p v-else v-html="noDiscountHintText"></p>
             </div>
           </transition>
 
-          <progress class="progress is-small" :value="progress" max="100"></progress>
+          <div class="progress-frame">
+            <div class="progress-fill" :style="{width: progress + '%', backgroundColor: progressBarColor}"></div>
+          </div>
         </div>
       </div>
 
@@ -94,6 +96,14 @@
         default: 'Congrats, you just received free shipping!'
       },
       discountAppliedTemplate: String,
+      discountHintColor: {
+        type: String,
+        default: '#4a4a4a'
+      },
+      progressBarColor: {
+        type: String,
+        default: '#4a4a4a'
+      },
       freeShippingItemCount: {
         type: Number,
         default: 4

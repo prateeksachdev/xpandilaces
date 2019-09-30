@@ -118,11 +118,8 @@
     "name": "Cart",
     "settings": [
       {
-        "type": "text",
-        "id": "cart_saving_text",
-        "label": "Cart saving text",
-        "default": "You saved {{savingPercentage}}",
-        "info": "Use {{savingPercentage}} and {{savingAmount}} to add in the actual saved in percentage or amount"
+        "type": "header",
+        "content": "Drawer Head"
       },
       {
         "type": "text",
@@ -168,6 +165,29 @@
         "label": "No hint text",
         "default": "You’re all set.<br>Continue to shop or proceed to checkout!",
         "info": "Text to display when there is no discount hint"
+      },
+      {
+        "type": "color",
+        "id": "cart_progress_bar_color",
+        "label": "Progress bar color",
+        "default": "#4a4a4a"
+      },
+      {
+        "type": "color",
+        "id": "cart_discount_hint_color",
+        "label": "Discount hint text color",
+        "default": "#4a4a4a"
+      },
+      {
+        "type": "header",
+        "content": "Drawer Foot"
+      },
+      {
+        "type": "text",
+        "id": "cart_saving_text",
+        "label": "Cart saving text",
+        "default": "You saved {{savingPercentage}}",
+        "info": "Use {{savingPercentage}} and {{savingAmount}} to add in the actual saved in percentage or amount"
       },
       {
         "type": "color",
