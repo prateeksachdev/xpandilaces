@@ -14,6 +14,14 @@
     "social_youtube_link": "",
     "social_vimeo_link": "",
     "search_option": "everything",
+    "cart_discount_hint_group": "Laces",
+    "cart_discount_applied_text": "Congrats, you just received {{discountPercentage}}% off!",
+    "cart_free_shipping_hint_text": "You are {{quantity}} pack away from free shipping!",
+    "cart_free_shipping_applied_text": "Congrats, you just received free shipping!",
+    "cart_free_shipping_item_count": 4,
+    "cart_no_discount_hint_text": "You’re all set.<br>Continue to shop or proceed to checkout!",
+    "cart_progress_bar_color": "#c30606",
+    "cart_discount_hint_color": "#4a4a4a",
     "cart_saving_text": "You saved {{savingPercentage}}",
     "cart_checkout_text_color": "#fff",
     "cart_checkout_bg_color": "#008ffd",
@@ -128,12 +136,59 @@
       },
       "1557967708681": {
         "type": "hero-banner",
+        "blocks": {
+          "1568179774402": {
+            "type": "slide",
+            "settings": {
+              "type": "video",
+              "image": "",
+              "image_mobile": "",
+              "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1206\/8416\/files\/VERSION_3_-_Lifestyle_Compressed.mp4?15232893892029590591",
+              "video_poster": "shopify:\/\/shop_images\/Thumbnail_4a2105de-5f94-456a-9b87-8e111f89d346.jpg",
+              "mobile_link": "",
+              "overlay_position": "left",
+              "title": "",
+              "title_caption": "",
+              "primary_cta_text": "",
+              "primary_cta_link": "",
+              "primary_cta_text_color": "#ffffff",
+              "primary_cta_bg_color": "#008ffd",
+              "enable_secondary_cta": false,
+              "secondary_cta_text": "",
+              "secondary_cta_link": "",
+              "secondary_cta_text_color": "#ffffff",
+              "secondary_cta_bg_color": "#a6b4be"
+            }
+          },
+          "1568310045717": {
+            "type": "slide",
+            "settings": {
+              "type": "image",
+              "image": "shopify:\/\/shop_images\/Canada_Web-min_1.png",
+              "image_mobile": "shopify:\/\/shop_images\/Canada-Mobile_2.png",
+              "video_url": "",
+              "video_poster": "",
+              "mobile_link": "",
+              "overlay_position": "left",
+              "title": "Test",
+              "title_caption": "",
+              "primary_cta_text": "SHOP NOW",
+              "primary_cta_link": "",
+              "primary_cta_text_color": "#ffffff",
+              "primary_cta_bg_color": "#008ffd",
+              "enable_secondary_cta": false,
+              "secondary_cta_text": "",
+              "secondary_cta_link": "",
+              "secondary_cta_text_color": "#ffffff",
+              "secondary_cta_bg_color": "#a6b4be"
+            }
+          }
+        },
+        "block_order": [
+          "1568179774402",
+          "1568310045717"
+        ],
         "settings": {
-          "type": "video",
-          "image": "shopify:\/\/shop_images\/Update_9c4900f0-cbdc-4e88-b59d-92a7128d10dd.jpg",
-          "image_mobile": "shopify:\/\/shop_images\/Update2_42b7efab-a51a-402a-881f-608c085d94f2.jpg",
-          "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1206\/8416\/files\/VERSION_3_-_Lifestyle_Compressed.mp4?15232893892029590591",
-          "video_poster": "shopify:\/\/shop_images\/Thumbnail_4a2105de-5f94-456a-9b87-8e111f89d346.jpg"
         }
       },
       "1557977971910": {
@@ -200,7 +255,8 @@
           "1565704762914",
           "1558041246675"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "1558048205172": {
         "type": "stamped-review",
@@ -380,7 +436,8 @@
           "1558161234072",
           "1558161287842"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "1558366114449": {
         "type": "newsletter",
@@ -672,7 +729,8 @@
           "1559691859431",
           "1559675417021"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "cart-template": {
         "type": "cart-template",
@@ -750,15 +808,18 @@
           "blocks": {
             "collection-list-0": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "collection-list-1": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "collection-list-2": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -766,7 +827,8 @@
             "collection-list-1",
             "collection-list-2"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "featured-collection": {
           "type": "featured-collection",
@@ -776,7 +838,8 @@
         },
         "featured-product": {
           "type": "featured-product",
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "content_for_index": [
