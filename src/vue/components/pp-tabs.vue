@@ -47,7 +47,6 @@ export default {
   },
   computed: {
     contentTabs () {
-      console.log(this.tabs)
       return this.tabs.filter((tab) => {
         return !this._isEmptyReview(tab)
       })

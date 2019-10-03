@@ -141,7 +141,7 @@
     display: none;
 
     @media screen and (min-width: $tablet) {
-      display: inline-block;
+      display: unset;
     }
   }
 
@@ -382,10 +382,12 @@
 
       .selected-swatch-text.desktop {
         margin-top: 20px;
+        display: inline-block;
       }
 
       .selected-size-text.desktop {
         margin-top: 26px;
+        display: inline-block;
       }
 
       .size-option {
@@ -591,6 +593,11 @@
         @media screen and (min-width: 960px) {
           width: 476px;
           height: 476px;
+        }
+
+        @media screen and (min-width: 1172px) {
+          width: 560px;
+          height: 560px;
         }
       }
 

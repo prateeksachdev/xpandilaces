@@ -19,9 +19,9 @@
     "cart_free_shipping_hint_text": "You are {{quantity}} pack away from free shipping!",
     "cart_free_shipping_applied_text": "Congrats, you just received free shipping!",
     "cart_free_shipping_item_count": 4,
-    "cart_no_discount_hint_text": "You’re all set.<br>Continue to shop or proceed to checkout!",
-    "cart_progress_bar_color": "#c30606",
-    "cart_discount_hint_color": "#4a4a4a",
+    "cart_no_discount_hint_text": "You’re all set!<br>Continue to shop or proceed to checkout!",
+    "cart_progress_bar_color": "#1ec865",
+    "cart_discount_hint_color": "#24726e",
     "cart_saving_text": "You saved {{savingPercentage}}",
     "cart_checkout_text_color": "#fff",
     "cart_checkout_bg_color": "#008ffd",
@@ -81,7 +81,7 @@
         "settings": {
           "announcement_bar_enabled": true,
           "shipping_text": "<p><strong>Free Shipping when you order 4 or more<\/strong><\/p>",
-          "promo_text": "<p><strong>Any 3 for $25 | Any 6&nbsp;for&nbsp;$40 <br><\/strong><\/p>",
+          "promo_text": "<p><strong>Any 3 for $25 | 6&nbsp;for&nbsp;$40 <br><\/strong><\/p>",
           "ab_text_color": "#000",
           "ab_bg_color": "#ffe100",
           "logo": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
@@ -159,34 +159,10 @@
               "secondary_cta_text_color": "#ffffff",
               "secondary_cta_bg_color": "#a6b4be"
             }
-          },
-          "1568310045717": {
-            "type": "slide",
-            "settings": {
-              "type": "image",
-              "image": "shopify:\/\/shop_images\/Canada_Web-min_1.png",
-              "image_mobile": "shopify:\/\/shop_images\/Canada-Mobile_2.png",
-              "video_url": "",
-              "video_poster": "",
-              "mobile_link": "",
-              "overlay_position": "left",
-              "title": "Test",
-              "title_caption": "",
-              "primary_cta_text": "SHOP NOW",
-              "primary_cta_link": "",
-              "primary_cta_text_color": "#ffffff",
-              "primary_cta_bg_color": "#008ffd",
-              "enable_secondary_cta": false,
-              "secondary_cta_text": "",
-              "secondary_cta_link": "",
-              "secondary_cta_text_color": "#ffffff",
-              "secondary_cta_bg_color": "#a6b4be"
-            }
           }
         },
         "block_order": [
-          "1568179774402",
-          "1568310045717"
+          "1568179774402"
         ],
         "settings": {
         }
@@ -569,7 +545,7 @@
           "atc_text_color": "#fff",
           "atc_bg_color": "#008ffd",
           "promo_title": "HUGE SAVINGS ON BUNDLES",
-          "promo_one": "<p>3 FOR $25<\/p>",
+          "promo_one": "<p>ANY 3 FOR $25<\/p>",
           "promo_two": "<p>6 FOR $40<\/p>",
           "promo_three": "<p>8 FOR $50<\/p>",
           "code_one": "",
@@ -785,10 +761,45 @@
           "secondary_cta_text_color": "",
           "secondary_cta_bg_color": ""
         }
+      },
+      "1569936449790": {
+        "type": "hero-banner",
+        "disabled": true,
+        "blocks": {
+          "1569936456045": {
+            "type": "slide",
+            "settings": {
+              "type": "image",
+              "image": "shopify:\/\/shop_images\/Update_9c4900f0-cbdc-4e88-b59d-92a7128d10dd.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/Update2_42b7efab-a51a-402a-881f-608c085d94f2.jpg",
+              "video_url": "",
+              "video_poster": "",
+              "mobile_link": "",
+              "overlay_position": "left",
+              "title": "NEVER TIE YOUR SHOELACES <br>AGAIN",
+              "title_caption": "No-Tie Shoelaces - Adults & Kids",
+              "primary_cta_text": "SHOP NOW",
+              "primary_cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+              "primary_cta_text_color": "#ffffff",
+              "primary_cta_bg_color": "#008ffd",
+              "enable_secondary_cta": true,
+              "secondary_cta_text": "HOW IT WORKS",
+              "secondary_cta_link": "shopify:\/\/pages\/install-video",
+              "secondary_cta_text_color": "#ffffff",
+              "secondary_cta_bg_color": "#a6b4be"
+            }
+          }
+        },
+        "block_order": [
+          "1569936456045"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
       "1557967708681",
+      "1569936449790",
       "1557977971910",
       "1558041214466",
       "1558131609639",

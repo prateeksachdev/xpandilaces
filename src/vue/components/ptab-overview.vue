@@ -17,11 +17,11 @@
                 <source :src="showcase.media.file_url" type="video/mp4">
               </video>
 
-              <img v-if="showcase.media.type === 'Image'" :src="showcase.media.file_url" class="lazyload">
+              <img v-if="showcase.media.type === 'Image'" :data-src="cdnURL(showcase.media.file_url, 'w_1200')" class="lazyload">
             </div>
             
             <div class="content">
-              <img class="icon lazyload" :src="showcase.icon_url">
+              <img class="icon lazyload" :data-src="showcase.icon_url">
               <h3 v-html="showcase.title"></h3>
               <div class="divider"></div>
               <p>{{showcase.text}}</p>
@@ -54,6 +54,8 @@
 </template>
 
 <script>
+import { cdnURL } from '../filters'
+
 export default {
   name: 'PtabOverview',
   props: {
@@ -61,6 +63,8 @@ export default {
     product: Object
   },
   methods: {
+    cdnURL: cdnURL,
+
     chunk (array, size) {
       const chunkedArr = []
       let index = 0

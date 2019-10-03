@@ -6,7 +6,7 @@
       <p v-html="detail.text"></p>
       
       <div class="img-wrap">
-        <img :src="detail.image_url" class="lazyload">
+        <img :data-src="detail.image_url" class="lazyload">
       </div>
     </div>
   </div>

@@ -11,3 +11,7 @@ export function dollar (cents) {
 export function noSpace (str) {
   return str.replace(/\s/g, '');
 }
+
+export function cdnURL(url, options) {
+  return `//images.accentuate.io?c_options=${options}&shop=xpandlaces.myshopify.com&image=${url}`
+}

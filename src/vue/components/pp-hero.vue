@@ -20,7 +20,7 @@
         <div class="desktop">
           <div v-if="product.social_banner" class="social-impact">
             <span>{{product.social_banner.left}}</span>
-            <img :src="product.social_banner.middle">
+            <img :data-src="cdnURL(product.social_banner.middle, 'w_60')" class="lazyload">
             <span>{{product.social_banner.right}}</span>
           </div>
 
@@ -31,7 +31,7 @@
           <div v-if="product.stamped_badge" v-html="product.stamped_badge" class="stamped-product-reviews-badge stamped-main-badge" :data-id="product.id" :data-product-sku="product.handle"></div>
           <div v-if="product.social_banner" class="social-impact">
             <span>{{product.social_banner.left}}</span>
-            <img :src="product.social_banner.middle">
+            <img :data-src="cdnURL(product.social_banner.middle, 'w_60')" class="lazyload">
             <span>{{product.social_banner.right}}</span>
           </div>
         </div>        
@@ -108,7 +108,7 @@ import store from '../store'
 import PpGallery from './pp-gallery.vue'
 import PpSwatch from './pp-swatch.vue'
 import CartControl from './cart-control.vue'
-import { dollar, noSpace } from '../filters'
+import { dollar, noSpace, cdnURL } from '../filters'
 
 export default {
   name: 'PpHero',
@@ -212,7 +212,7 @@ export default {
         const color = variant[colorKey]
 
         if (!swatchImages[color]) {
-          swatchImages[color] = variant.swatch_image_url
+          swatchImages[color] = cdnURL(variant.swatch_image_url, 'w_80')
         }
       }
 
@@ -244,12 +244,14 @@ export default {
     }
   },
   methods: {
+    cdnURL: cdnURL,
+
     _images(variant) {
       return variant.image_urls.map((url) => {
         return {
           id: url,
-          smLink: url,
-          mdLink: url
+          smLink: cdnURL(url, 'w_240'),
+          mdLink: cdnURL(url, 'w_800')
         }
       })
     },
