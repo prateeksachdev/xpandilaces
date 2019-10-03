@@ -3,7 +3,7 @@
     <div class="head">
       <div class="container">
         <ul class="columns is-mobile">
-          <li v-for="tab in tabs" @click="selectTab" :id="tabId(tab.name)" class="column" :class="{ active: activeTab === tabId(tab.name) }">
+          <li v-for="tab in contentTabs" @click="selectTab" :key="tab.name" :id="tabId(tab.name)" class="column" :class="{ active: activeTab === tabId(tab.name) }">
             {{ tab.name }}
           </li>
         </ul>
@@ -11,7 +11,7 @@
     </div>
 
     <div class="body">
-      <div v-for="tab in tabs" class="body-content" :class="tab.type">
+      <div v-for="tab in contentTabs" :key="tab.name" class="body-content" :class="tab.type">
         <transition name="fade">
           <component v-if="activeTab === tabId(tab.name)" :is="tab.type" :tab="tab" :product="product"></component>
         </transition>
@@ -45,6 +45,14 @@ export default {
       activeTab: this.tabId(this.tabs[0].name)
     }
   },
+  computed: {
+    contentTabs () {
+      console.log(this.tabs)
+      return this.tabs.filter((tab) => {
+        return !this._isEmptyReview(tab)
+      })
+    }
+  },
   methods: {
     selectTab (event) {
       this.activeTab = event.target.id;
@@ -52,6 +60,10 @@ export default {
 
     tabId (name) {
       return `tab-${name}`
+    },
+
+    _isEmptyReview (tab) {
+      return tab.type === 'ptab-reviews' && !tab.stamped_reviews
     }
   }
 }
