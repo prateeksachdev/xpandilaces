@@ -11,12 +11,21 @@
 
       <div class="videos">
         <div v-for="chunk in chunk(tab.showcases, 2)" :key="chunk[0].text" class="columns">
-          <div v-for="showcase in chunk" class="column">
-            <video v-if="showcase.media.type === 'Video'" preload="none" autoplay="" loop="loop" muted playsinline>
-              <source :src="showcase.media.file_url" type="video/mp4">
-            </video>
+          <div v-for="showcase in chunk" :key="showcase.title" class="column">
+            <div class="wrap">
+              <video v-if="showcase.media.type === 'Video'" preload="none" autoplay="" loop="loop" muted playsinline>
+                <source :src="showcase.media.file_url" type="video/mp4">
+              </video>
 
-            <p>{{showcase.text}}</p>
+              <img v-if="showcase.media.type === 'Image'" :src="showcase.media.file_url" class="lazyload">
+            </div>
+            
+            <div class="content">
+              <img class="icon lazyload" :src="showcase.icon_url">
+              <h3 v-html="showcase.title"></h3>
+              <div class="divider"></div>
+              <p>{{showcase.text}}</p>
+            </div>
           </div>
         </div>
       </div>

@@ -14,7 +14,9 @@
     "showcases": [
       {% for file in page.metafields['custom']['showcase_media_files'] %}
         {
+          "title": {{page.metafields['custom']['showcase_titles'][forloop.index0] | json}},
           "text": {{page.metafields['custom']['showcase_texts'][forloop.index0] | json}},
+          "icon_url": {{page.metafields['custom']['showcase_icons'][forloop.index0] | json}},
           "media": {
             "type": {{page.metafields['custom']['showcase_media_types'][forloop.index0] | json}},
             "file_url": {{file | json}}
@@ -52,6 +54,16 @@
             "type": {{page.metafields['custom']['feature_media_types'][forloop.index0] | json}},
             "file_url": {{file | json}}
           }
+        }
+        {%- unless forloop.last -%},{%- endunless -%}
+      {% endfor %}
+    ],
+    "details": [
+      {% for img in page.metafields['custom']['detail_images'] %}
+        {
+          "title": {{page.metafields['custom']['detail_titles'][forloop.index0] | json}},
+          "text": {{page.metafields['custom']['detail_texts'][forloop.index0] | json}},
+          "image_url": {{img | json}}
         }
         {%- unless forloop.last -%},{%- endunless -%}
       {% endfor %}

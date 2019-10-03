@@ -15,6 +15,16 @@
         </video>
       </div>
     </div>
+
+    <div v-for="detail in tab.details" :key="detail.title" class="detail">
+      <h3>{{detail.title}}</h3>
+      <div class="divider"></div>
+      <p>{{detail.text}}</p>
+      
+      <div class="img-wrap">
+        <img :src="detail.image_url" class="lazyload" alt="">
+      </div>
+    </div>
   </div>
 </template>
 

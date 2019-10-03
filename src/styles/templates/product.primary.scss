@@ -842,10 +842,10 @@
     }
 
     h2 {
-      font-size: 28px;
-      color: #008ffd;
+      font-size: 30px;
+      padding: 0 40px;
       text-align: center;
-      letter-spacing: 0.1px;
+      line-height: 1;
       font-family: "neuzeitgroteskblack";
       margin-bottom: 30px;
     }
@@ -861,55 +861,63 @@
     }
 
     .videos .column {
-      height: 430px;
-      position: relative;
-      overflow: hidden;
       padding: 0px;
-      margin: 10px;
 
-      @media screen and (min-width: $tablet) {
-        height: 530px;
+      @media screen and (min-width: $large-phone) {
+        margin: 10px;
       }
 
-      video {
-        position: absolute;
-        bottom: -80px;
+      .content {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .icon {
+        margin: -10px;
+        width: 60px;
+        height: auto;
 
         @media screen and (min-width: $large-phone) {
-          bottom: -70px;
+          display: none;
         }
+      }
 
-        &.v3fix {
-          bottom: -200px;
+      h3 {
+        margin: 0px;
+        padding: 0 40px;
+        text-align: center;
+        font-size: 40px;
+        font-family: 'neuzeitgroteskblack';
+        line-height: 1;
 
-          @media screen and (min-width: 460px) {
-            bottom: -360px;
-          }
+        @media screen and (min-width: $large-phone) {
+          color: #0f8cfa;
+          font-size: 30px;
+        }
+      }
 
-          @media screen and (min-width: $large-phone) {
-            bottom: -70px;
-          }
+      .divider {
+        margin: 10px auto;
+        width: 60px;
+        border-bottom: 1px solid #c3c3c3;
 
-          @media screen and (min-width: $tablet) {
-            bottom: -130px;
-          }
-
-          @media screen and (min-width: $desktop) {
-            bottom: -280px;
-          }
+        @media screen and (min-width: $large-phone) {
+          display: none;
         }
       }
 
       p {
-        position: absolute;
-        bottom: 0px;
         width: 100%;
         text-align: center;
-        padding: 10px 30px 40px 30px;
-        font-weight: bold;
-        font-size: 16px;
-        font-family: "neuzeit_grotesk_regular";
+        padding: 10px 10px 30px 10px;
+        font-size: 15px;
+        font-family: "UniversLTStd";
         color: black;
+        line-height: 1.2;
+
+        @media screen and (min-width: $large-phone) {
+          font-size: 16px;
+        }
       }
     }
 
@@ -993,13 +1001,24 @@
       }
     }
 
+    .detail {
+      padding: 30px 0;
+      margin: 0 20px;
+      border-bottom: 1px solid #c3c3c3;
+    }
+
     h3 {
-      font-family: neuzeit_grotesk_regular;
-      font-size: 28px;
-      font-weight: bold;
-      color: #333333;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
+      font-family: 'neuzeitgroteskblack';
+      font-size: 30px;
+      margin: 0;
+      text-align: center;
+      line-height: 1;
+    }
+
+    .divider {
+      margin: 10px auto;
+      width: 60px;
+      border-bottom: 1px solid #c3c3c3;
     }
 
     p {
@@ -1008,11 +1027,13 @@
       font-size: 15px;
     }
 
+    .img-wrap {
+      padding: 20px 80px 0px 80px;
+    }
+
     img {
-      max-width: 420px;
       margin: 0 auto;
       display: block;
-      width: 100%;
 
       @media screen and (min-width: $tablet) {
         max-width: none;
