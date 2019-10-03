@@ -13,6 +13,14 @@
   "title_caption": {{product.metafields['custom']['title_caption'] | json}},
   "promo_title": {{product.metafields['custom']['promo_title'] | json}},
   "promo_texts": {{product.metafields['custom']['promo_texts'] | json}},
+  {% if product.metafields['custom']['social_banner_left'] %}
+    "social_banner": {
+      "left": {{product.metafields['custom']['social_banner_left'] | json}},
+      "middle": {{product.metafields['custom']['social_banner_middle'] | json}},
+      "right": {{product.metafields['custom']['social_banner_right'] | json}}
+    },
+  {% endif %}
+
   {% if product.metafields['custom']['reviews_code'] %}
     "reviews": {
       "heading": {{product.metafields['custom']['reviews_heading'] | json}},

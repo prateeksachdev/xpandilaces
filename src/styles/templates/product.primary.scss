@@ -301,12 +301,17 @@
         font-size: 15px;
         font-family: 'UniversLTStd';
         font-weight: bold;
-        line-height: 32px;
+        line-height: 1;
         text-align: center;
-        padding-top: 3px;
+        padding: 8px 0px;
         border-top: 2px solid #c3c3c3;
         border-bottom: 2px solid #c3c3c3;
         margin-bottom: 6px;
+
+        img {
+          padding: 0 6px;
+          max-height: 15px;
+        }
       }
 
       .price-note {
@@ -725,7 +730,8 @@
 }
 
 .product-tab {
-  padding-top: 40px;
+  padding-top: 30px;
+  border-bottom: 1px solid #c3c3c3;
 
   .columns {
     margin: 0px;
@@ -743,7 +749,7 @@
       cursor: pointer;
       background-color: #e7e7e7;
       border: none;
-      padding: 10px 6px;
+      padding: 12px 6px 8px 6px;
       font-family: "Univers-Cn";
       font-size: 14px;
       display: flex;
@@ -778,6 +784,11 @@
     }
   }
 
+  .body {
+    min-height: 300px;
+    padding-bottom: 40px;
+  }
+
   .fade-enter-active, .fade-leave-active {
     transition: opacity .3s linear;
   }
@@ -795,10 +806,6 @@
   .ptab-overview {
     & > div {
       padding-top: 30px;
-
-      @media screen and (min-width: $tablet) {
-        padding: 40px 0;
-      }
     }
 
     .top-video {
@@ -815,8 +822,6 @@
     }
 
     .videos {
-      padding-bottom: 90px;
-
       .columns {
         @media screen and (min-width: $large-phone) {
           display: flex;
@@ -873,7 +878,7 @@
       p {
         width: 100%;
         text-align: center;
-        padding: 10px 10px 30px 10px;
+        padding: 10px 10px 0px 10px;
         font-size: 15px;
         font-family: "UniversLTStd";
         color: black;

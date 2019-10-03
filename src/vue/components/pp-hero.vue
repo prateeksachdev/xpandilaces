@@ -18,9 +18,10 @@
         <p class="subheading">{{product.subheading}}</p>
 
         <div class="desktop">
-          <div class="social-impact">
-            <span>One Pair Purchased</span>
-            <span>One Pair Donated</span>
+          <div v-if="product.social_banner" class="social-impact">
+            <span>{{product.social_banner.left}}</span>
+            <img :src="product.social_banner.middle">
+            <span>{{product.social_banner.right}}</span>
           </div>
 
           <div v-if="product.stamped_badge" v-html="product.stamped_badge" class="stamped-product-reviews-badge stamped-main-badge" :data-id="product.id" :data-product-sku="product.handle"></div>
@@ -28,9 +29,10 @@
 
         <div class="mobile">
           <div v-if="product.stamped_badge" v-html="product.stamped_badge" class="stamped-product-reviews-badge stamped-main-badge" :data-id="product.id" :data-product-sku="product.handle"></div>
-          <div class="social-impact">
-            <span>One Pair Purchased</span>
-            <span>One Pair Donated</span>
+          <div v-if="product.social_banner" class="social-impact">
+            <span>{{product.social_banner.left}}</span>
+            <img :src="product.social_banner.middle">
+            <span>{{product.social_banner.right}}</span>
           </div>
         </div>        
       </div>
