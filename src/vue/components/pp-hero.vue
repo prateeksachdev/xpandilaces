@@ -62,7 +62,7 @@
           
           <div v-for="(size, index) in sizes" :key="index" class="size-option">
             <input type="radio" :id="size" :value="size" v-model="selectedSize">
-            <label :for="size">{{size}}</label>
+            <label :for="size" :class="{selected: selectedSize === size}">{{size}}</label>
           </div>
 
           <div class="option-text">
@@ -136,7 +136,14 @@ export default {
   },
   watch: {
     product () {
-      this.selectedColor = this.colors[0]
+      if (this.variant) {
+        this.selectedColor = this.variant[this.variantColorKey]
+        if (this.variantSizeKey) {
+          this.selectedSize = this.variant[this.variantSizeKey]
+        }
+      } else {
+        this.selectedColor = this.colors[0]
+      }
     },
 
     selectedColor () {

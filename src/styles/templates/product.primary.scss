@@ -401,6 +401,11 @@
           font-size: 25px;
           text-align: center;
           margin-right: 6px;
+
+          &.selected {
+            border-color: #0090fc;
+            color: #0090fc;
+          }
         }
       }
     }
