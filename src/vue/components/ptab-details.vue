@@ -19,11 +19,43 @@
     <div v-for="detail in tab.details" :key="detail.title" class="detail">
       <h3>{{detail.title}}</h3>
       <div class="divider"></div>
-      <p>{{detail.text}}</p>
+      <p v-html="detail.text"></p>
       
       <div class="img-wrap">
         <img :src="detail.image_url" class="lazyload" alt="">
       </div>
+    </div>
+
+    <div v-if="tab.size.reference_name" class="size-chart">
+      <h3>SIZE CHART</h3>
+
+      <table class="table">
+        <tbody>
+          <tr>
+            <td rowspan="9" class="gender">Women</td>
+            <td class="size-name">{{tab.size.reference_name}}</td>
+            <td class="size-name">{{tab.size.matching_name}}</td>
+          </tr>
+          <tr v-for="size in tab.size.women_sizes" :key="size.reference_size">
+            <td>{{size.reference_size}}</td>
+            <td>{{size.matching_size}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <tbody>
+          <tr>
+            <td rowspan="9" class="gender">Men</td>
+            <td class="size-name">{{tab.size.reference_name}}</td>
+            <td class="size-name">{{tab.size.matching_name}}</td>
+          </tr>
+          <tr v-for="size in tab.size.men_sizes" :key="size.reference_size">
+            <td>{{size.reference_size}}</td>
+            <td>{{size.matching_size}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>

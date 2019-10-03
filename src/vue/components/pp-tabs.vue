@@ -25,6 +25,7 @@ import PtabOverview from './ptab-overview.vue'
 import PtabDetails from './ptab-details.vue'
 import PtabReviews from './ptab-reviews.vue'
 import PtabInstallation from './ptab-installation.vue'
+import PtabSocialImpact from './ptab-social-impact.vue'
 
 export default {
   name: 'PpTabs',
@@ -32,7 +33,8 @@ export default {
     PtabOverview,
     PtabDetails,
     PtabReviews,
-    PtabInstallation
+    PtabInstallation,
+    PtabSocialImpact
   },
   props: {
     tabs: Array,

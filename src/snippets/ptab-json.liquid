@@ -67,11 +67,46 @@
         }
         {%- unless forloop.last -%},{%- endunless -%}
       {% endfor %}
+    ],
+    "size": {
+      "reference_name": {{page.metafields['custom']['reference_size_name'] | json}},
+      "matching_name": {{page.metafields['custom']['matching_size_name'] | json}},
+      "women_sizes": [
+        {% for reference_size in page.metafields['custom']['women_reference_sizes'] %}
+          {
+            "reference_size": {{reference_size | json}},
+            "matching_size": {{page.metafields['custom']['women_matching_sizes'][forloop.index0] | json}}
+          }
+          {%- unless forloop.last -%},{%- endunless -%}
+        {% endfor %}
+      ],
+      "men_sizes": [
+        {% for reference_size in page.metafields['custom']['men_reference_sizes'] %}
+          {
+            "reference_size": {{reference_size | json}},
+            "matching_size": {{page.metafields['custom']['men_matching_sizes'][forloop.index0] | json}}
+          }
+          {%- unless forloop.last -%},{%- endunless -%}
+        {% endfor %}
+      ]
+    }
+  {% endif %}
+
+  {% if page.template_suffix == 'ptab-social-impact' %}
+    "details": [
+      {% for img in page.metafields['custom']['detail_images'] %}
+        {
+          "title": {{page.metafields['custom']['detail_titles'][forloop.index0] | json}},
+          "text": {{page.metafields['custom']['detail_texts'][forloop.index0] | json}},
+          "image_url": {{img | json}}
+        }
+        {%- unless forloop.last -%},{%- endunless -%}
+      {% endfor %}
     ]
   {% endif %}
 
   {% if page.template_suffix == 'ptab-reviews' %}
-    "stamped_image_url": {{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26' | json}},
+    "stamped_image_url": {{ product.featured_image | product_img_url: "large" | replace: '?', '%3F' | replace: '&','%26' | json}},
     "stamped_reviews": {{product.metafields.stamped.reviews | json}}
   {% endif %}
 
