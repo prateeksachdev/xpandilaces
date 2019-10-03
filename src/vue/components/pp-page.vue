@@ -16,7 +16,7 @@
       </div>
     </section>
 
-    <section v-if="product.highlights.length > 0" class="section product-feature">
+    <section v-if="product.highlights.length > 0" class="section product-highlights">
       <div class="container">
         <pp-highlights :highlights="product.highlights" :text-color="highlightTextColor"></pp-highlights>
       </div>

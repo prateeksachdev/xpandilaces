@@ -1,26 +1,21 @@
 <template>
   <div class="product-swatch">
-    <div v-for="(variant, id) in variants" :key="id" class="swatch" :class="{selected: id == variantId}">
-      <a v-scroll-to="'body'" :data-bg="variant.swatch_image_url" @click="selectVariant(id)" class="lazyload" href="javascript:;"></a>
+    <div v-for="(imageUrl, color) in images" :key="color" class="swatch" :class="{selected: color == value}">
+      <a v-scroll-to="'body'" :data-bg="imageUrl" @click="selectColor(color)" class="lazyload" href="javascript:;"></a>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'ProductSwatch',
+    name: 'PpSwatch',
     props: {
-      variants: Object,
-      variantId: String
-    },
-    data () {
-      return {
-
-      }
+      images: Object,
+      value: String
     },
     methods: {
-      selectVariant (variantId) {
-        this.$emit('selected', variantId)
+      selectColor (color) {
+        this.$emit('input', color)
       }
     }
   }

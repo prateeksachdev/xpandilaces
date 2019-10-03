@@ -1,6 +1,6 @@
 <template>
-  <ul class="columns is-mobile">
-    <li v-for="highlight in highlights" class="column">
+  <ul class="columns is-mobile is-gapless">
+    <li v-for="highlight in highlights" :key="highlight.text" class="column">
       <div class="img-wrap">
         <img :data-src="highlight.icon_url" class="lazyload"/>
       </div>

@@ -35,7 +35,7 @@ export default {
   data () {
     return {
       isLoaded: false,
-      isReady: true,
+      isReady: false,
       swiperOption: {
         slidesPerView: 1,
         preloadImages: false,

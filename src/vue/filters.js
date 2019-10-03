@@ -7,3 +7,7 @@ export function dollar (cents) {
     return `$ ${str}`
   }
 }
+
+export function noSpace (str) {
+  return str.replace(/\s/g, '');
+}
