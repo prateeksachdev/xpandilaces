@@ -734,20 +734,8 @@
   .head {
     width: 100%;
 
-    .container {
-      @media screen and (min-width: $tablet) {
-        padding: 0 10px;
-      }
-    }
-
     .columns {
       margin: 0px;
-    }
-
-    ul {
-      @media screen and (min-width: $tablet) {
-        border-bottom: 2px solid #afafaf;
-      }
     }
 
     li {
@@ -761,41 +749,14 @@
       font-family: "neuzeit_grotesk_regular";
       font-size: 17px;
 
-      @media screen and (min-width: $tablet) {
-        position: relative;
-        bottom: -2px;
-        color: #bdbdbd;
-        font-weight: bold;
-        background: #f8f8f8;
-        height: 43px;
-        border: 2px solid #d7d7d7;
-        border-radius: 5px 5px 0px 0px;
-        font-family: "neuzeitgroteskblack";
-        border-bottom: 0px;
-      }
-
       &:not(:last-child) {
         border-right: 1px solid #d7d7d7;
-
-        @media screen and (min-width: $tablet) {
-          margin-right: 13px;
-          border-right: 2px solid #d7d7d7;
-        }
       }
 
       &.active {
         position: relative;
         background-color: #0090fc;
         color: #fff;
-
-        @media screen and (min-width: $tablet) {
-          height: 45px;
-          border-bottom: 0px;
-          margin-bottom: 0px;
-          color: #008ffd;
-          background: #fff;
-          border-color: #afafaf;
-        }
 
         &:before {
           content: "";

@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div class="highlights">
+    <div v-if="tab.highlights.length > 0" class="highlights">
       <div class="container">
         <div v-for="highlight in tab.highlights" :key="highlight.heading" class="columns">
           <div class="column text">
