@@ -72,11 +72,33 @@
               "caption": "<p>Lacing System<\/p>",
               "link": "shopify:\/\/products\/quick-release-round-lacing-system"
             }
+          },
+          "1570145402376": {
+            "type": "mega_item",
+            "settings": {
+              "enable_block": false,
+              "image": "shopify:\/\/shop_images\/Cushion_Sock_-_Black_3x_a2945754-73f3-477f-84a7-88f026423bab.png",
+              "name": "Cushioned",
+              "caption": "<p>No-show Socks<\/p>",
+              "link": "shopify:\/\/products\/cushioned-no-show-socks"
+            }
+          },
+          "1570148911026": {
+            "type": "mega_item",
+            "settings": {
+              "enable_block": false,
+              "image": "shopify:\/\/shop_images\/No_Show_-_Grey_3x_22eba2fa-69c6-40f8-b702-623b72c80fba.png",
+              "name": "Lightweight",
+              "caption": "<p>No-show Socks<\/p>",
+              "link": "shopify:\/\/products\/lightweight-no-show-socks"
+            }
           }
         },
         "block_order": [
           "1557712947539",
-          "1557713608141"
+          "1557713608141",
+          "1570145402376",
+          "1570148911026"
         ],
         "settings": {
           "announcement_bar_enabled": true,
