@@ -382,12 +382,20 @@
 
       .selected-swatch-text.desktop {
         margin-top: 20px;
-        display: inline-block;
+        display: none;
+
+        @media screen and (min-width: $tablet) {
+          display: inline-block;
+        }
       }
 
       .selected-size-text.desktop {
         margin-top: 26px;
-        display: inline-block;
+        display: none;
+
+        @media screen and (min-width: $tablet) {
+          display: inline-block;
+        }
       }
 
       .size-option {
@@ -625,7 +633,7 @@
   .product-swatch {
     .swatch {
       border: white 3px solid;
-      margin: 0px 24px 4px 0;
+      margin: 0px 12px 4px 0;
       width: 34px;
       height: 34px;
       border-radius: 50%;
