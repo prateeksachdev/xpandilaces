@@ -1,133 +1,8 @@
 @import "~bulma/sass/utilities/initial-variables.sass";
 @import "../variables.scss";
+@import "../sections/cart-control";
 @import "../sections/stamped-review.scss";
 @import "../sections/faq.scss";
-
-.cart-control {
-  background-color: white;
-  padding: 20px 20px 0px 20px;
-  border-bottom: 2px solid #c3c3c3;
-
-  @media screen and (min-width: $tablet) {
-    margin-bottom: 20px;
-    background-color: unset;
-    border: none;
-    padding: 0;
-  }
-
-  .icon-plus, .icon-minus, input[name="quantity"] {
-    max-width: 33px;
-    border: 1px solid #000;
-    border-radius: 0px;
-    color: #000;
-    line-height: 32px;
-    font-size: 18px;
-    background: #f2f2f2;
-    font-weight: 300;
-    cursor: pointer;
-    height: 32px;
-    width: 25%;
-    text-align: center;
-    background-color: white;
-
-    &:before {
-      font-weight: bold;
-    }
-
-    @media screen and (min-width: $tablet) {
-      background-color: inherit;
-    }
-  }
-
-  form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  input[type=number] {
-    max-width: 43px;
-    font-weight: bold;
-    margin: 0 6px;
-  }
-
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-  }
-
-  button {
-    width: 100%;
-    margin-left: 10px;
-    background-color: #0090fc;
-    border: 1px solid #0090fc;
-    border-radius: 12px;
-    color: #fff;
-    text-transform: uppercase;
-    font-family: "neuzeitgroteskblack";
-    font-weight: bold;
-    padding: 9px 20px;
-    height: 48px;
-
-    &:hover, &:focus {
-      color: white
-    }
-
-    &:disabled {
-      background-color: #0090fc;
-    }
-
-    .checkmark {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      margin: auto;
-
-      path {
-        stroke-dasharray: 19.79 19.79;
-        stroke-dashoffset: 19.79;
-        opacity: 0;
-      }
-    }
-
-    span {
-      animation-duration: 0.8s;
-      animation-name: fadeInDown;
-      font-size: 22px;
-
-      @media screen and (min-width: $tablet) {
-        font-size: 18px;
-      }
-    }
-
-    &.loading {
-      span {
-        animation-duration: 0.8s;
-        animation-name: zoomOut;
-      }
-
-      .checkmark path {
-        animation: drawCheckmark 0.5s linear alternate forwards;
-      }
-    }
-  }
-}
-
-@keyframes drawCheckmark {
-  from {
-    stroke-dashoffset: 19.79;
-    opacity: 1;
-  }
-  to {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInDown {0%{opacity:0;transform:translate3d(0,-20px,0)}to{opacity:1;transform:none}}.fadeInDown{animation-name:fadeInDown}
-@keyframes zoomOut {0%{opacity:1}50%{opacity:0;transform:scale3d(.3,.3,.3)}to{opacity:0}}.zoomOut{animation-name:zoomOut}
 
 .product {
   background-color: #f1f2f2;
@@ -330,10 +205,13 @@
     .options {
       padding-bottom: 6px;
       border-bottom: 2px solid #c3c3c3;
+      margin-bottom: 20px;
 
       @media screen and (min-width: $tablet) {
         border: none;
         margin-top: 16px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
       }
 
       .column.size {
@@ -345,7 +223,7 @@
       }
 
       .wrap {
-        padding-left: 10px;
+        padding-left: 6px;
 
         @media screen and (min-width: $tablet) {
           padding-left: 0px;
@@ -356,7 +234,7 @@
         text-transform: uppercase;
         font-family: 'Univers-BoldCn';
         font-size: 15px;
-        letter-spacing: 1.5px;
+        letter-spacing: 0.5px;
         font-weight: bold;
         margin-bottom: 10px;
       }
@@ -378,7 +256,7 @@
 
       .selected-swatch-text.mobile {
         float: right;
-        margin-right: 10px;
+        margin-right: 6px;
       }
 
       .selected-swatch-text.desktop {
@@ -407,13 +285,11 @@
         }
 
         label {
-          padding-top: 2px;
           display: inline-block;
           font-family: 'neuzeitgroteskblack';
           border: 1px solid black;
           width: 52px;
           height: 32px;
-          line-height: 32px;
           font-size: 25px;
           text-align: center;
           margin-right: 6px;
@@ -989,7 +865,7 @@
     .detail {
       padding: 30px 0;
       margin: 0 20px;
-      border-bottom: 1px solid #c3c3c3;
+      border-top: 1px solid #c3c3c3;
       text-align: center;
 
       @media screen and (min-width: $tablet) {

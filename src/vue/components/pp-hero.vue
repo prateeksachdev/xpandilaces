@@ -250,7 +250,7 @@ export default {
       return variant.image_urls.map((url) => {
         return {
           id: url,
-          smLink: cdnURL(url, 'w_240'),
+          smLink: cdnURL(url, 'w_120'),
           mdLink: cdnURL(url, 'w_800')
         }
       })

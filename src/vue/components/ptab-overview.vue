@@ -17,7 +17,7 @@
                 <source :src="showcase.media.file_url" type="video/mp4">
               </video>
 
-              <img v-if="showcase.media.type === 'Image'" :data-src="cdnURL(showcase.media.file_url, 'w_1200')" class="lazyload">
+              <img v-if="showcase.media.type === 'Image'" :data-src="cdnURL(showcase.media.file_url, 'w_800')" class="lazyload">
             </div>
             
             <div class="content">

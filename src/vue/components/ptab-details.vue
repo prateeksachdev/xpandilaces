@@ -16,16 +16,6 @@
       </div>
     </div>
 
-    <div v-for="detail in tab.details" :key="detail.title" class="detail">
-      <h3>{{detail.title}}</h3>
-      <div class="divider"></div>
-      <p v-html="detail.text"></p>
-      
-      <div class="img-wrap">
-        <img :data-src="detail.image_url" class="lazyload">
-      </div>
-    </div>
-
     <div v-if="tab.size.reference_name" class="size-chart">
       <h3>SIZE CHART</h3>
 
@@ -56,6 +46,16 @@
           </tr>
         </tbody>
       </table>
+    </div>
+    
+    <div v-for="detail in tab.details" :key="detail.title" class="detail">
+      <h3>{{detail.title}}</h3>
+      <div class="divider"></div>
+      <p v-html="detail.text"></p>
+      
+      <div class="img-wrap">
+        <img :data-src="detail.image_url" class="lazyload">
+      </div>
     </div>
   </div>
 </template>
