@@ -6,8 +6,8 @@
   "url": {{shop.url | append: product.url | json}},
   "handle": {{product.handle | json}},
   "description": {{product.description | json}},
-  {% comment %} "stamped_badge": {{product.metafields.stamped.badge | json}}, {% endcomment %}
-  "stamped_badge": "\u003cspan class=\"stamped-badge\" data-rating=\"4.9\" data-lang=\"\"\u003e\u003cspan class=\"stamped-starrating stamped-badge-starrating\"\u003e\u003ci class=\"stamped-fa stamped-fa-star\"\u003e\u003c\/i\u003e\u003ci class=\"stamped-fa stamped-fa-star\"\u003e\u003c\/i\u003e\u003ci class=\"stamped-fa stamped-fa-star\"\u003e\u003c\/i\u003e\u003ci class=\"stamped-fa stamped-fa-star\"\u003e\u003c\/i\u003e\u003ci class=\"stamped-fa stamped-fa-star\"\u003e\u003c\/i\u003e\u003c\/span\u003e\u003cspan class=\"stamped-badge-caption\" data-reviews=\"870\" data-rating=\"4.9\"  aria-label=\"870 reviews\"\u003e870\u003c\/span\u003e\u003c\/span\u003e",
+  "stamped_badge": {{product.metafields.stamped.badge | json}},
+  {% comment %} "stamped_badge": "\u003cspan class=\"stamped-badge\" data-rating=\"4.9\" data-lang=\"\"\u003e\u003cspan class=\"stamped-starrating stamped-badge-starrating\"\u003e\u003ci class=\"stamped-fa stamped-fa-star\"\u003e\u003c\/i\u003e\u003ci class=\"stamped-fa stamped-fa-star\"\u003e\u003c\/i\u003e\u003ci class=\"stamped-fa stamped-fa-star\"\u003e\u003c\/i\u003e\u003ci class=\"stamped-fa stamped-fa-star\"\u003e\u003c\/i\u003e\u003ci class=\"stamped-fa stamped-fa-star\"\u003e\u003c\/i\u003e\u003c\/span\u003e\u003cspan class=\"stamped-badge-caption\" data-reviews=\"870\" data-rating=\"4.9\"  aria-label=\"870 reviews\"\u003e870\u003c\/span\u003e\u003c\/span\u003e", {% endcomment %}
   "price_note": {{product.metafields['custom']['price_note'] | json}},
   "size_note": {{product.metafields['custom']['size_note'] | json}},
   "title_caption": {{product.metafields['custom']['title_caption'] | json}},

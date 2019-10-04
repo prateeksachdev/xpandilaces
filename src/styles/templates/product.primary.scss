@@ -333,6 +333,7 @@
 
       @media screen and (min-width: $tablet) {
         border: none;
+        margin-top: 16px;
       }
 
       .column.size {
@@ -431,7 +432,6 @@
 
       @media screen and (min-width: $tablet) {
         padding-left: 0px;
-        margin-bottom: 16px;
       }
     }
 
@@ -854,6 +854,7 @@
       .content {
         margin-top: 20px;
         text-align: center;
+        padding-bottom: 30px;
       }
 
       .icon {
