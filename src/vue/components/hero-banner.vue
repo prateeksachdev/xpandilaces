@@ -30,6 +30,27 @@
                 </div>
               </div>
             </div>
+
+            <div class="mobile">
+              <div class="container">
+                <div class="content">
+                  <h1 v-html="block.title"></h1>
+                  <p class="title-caption">{{ block.title_caption }}</p>
+
+                  <p v-if="block.primary_cta_text" class="primary-cta">
+                    <a class="button" :href="block.primary_cta_link" :style="{color: block.primary_cta_text_color, backgroundColor: block.primary_cta_bg_color, borderColor: block.primary_cta_bg_color}">
+                      {{ block.primary_cta_text }}
+                    </a>
+                  </p>
+
+                  <p v-if="block.enable_secondary_cta" class="secondary-cta">
+                    <a class="button" :href="block.secondary_cta_link" :style="{color: block.secondary_cta_text_color, backgroundColor: block.secondary_cta_bg_color, borderColor: block.secondary_cta_bg_color}">
+                      {{ block.secondary_cta_text }}
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div v-if="block.type === 'video'" class="item">
