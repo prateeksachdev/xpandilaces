@@ -1,11 +1,7 @@
 {% assign variant_selected = product.selected_or_first_available_variant %}
 {% assign image_identifier = variant_selected.title | remove: ' ' | downcase %}
 
-<section class="section product">
-  <script type="application/json">
-    {%- include 'pp-json', product: product -%}
-  </script>
-  
+<section class="section product">  
   <div class="container">
     {% capture imageGroupData %}
       {% for image in product.images %}

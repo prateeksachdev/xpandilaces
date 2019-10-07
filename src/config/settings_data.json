@@ -102,8 +102,8 @@
         ],
         "settings": {
           "announcement_bar_enabled": true,
-          "shipping_text": "<p><strong>Free Shipping when you order 4 or more<\/strong><\/p>",
-          "promo_text": "<p><strong>Any 3 for $25 | 6&nbsp;for&nbsp;$40 <br><\/strong><\/p>",
+          "shipping_text": "<p><strong>Free Shipping when you order 4 or more<br><\/strong><\/p>",
+          "promo_text": "<p><strong>ANY 3 FOR $25 | 6 FOR $40 <br><\/strong><\/p>",
           "ab_text_color": "#000",
           "ab_bg_color": "#ffe100",
           "logo": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
@@ -228,7 +228,7 @@
               "image": "shopify:\/\/shop_images\/Socks_1_89977a18-62ce-4908-8089-51f3c4c3d558.jpg",
               "title": "",
               "title_color": "#ffffff",
-              "link": "http:\/\/socks.xpandlaces.com\/?utm_source=website",
+              "link": "shopify:\/\/products\/lightweight-no-show-socks",
               "link_text": "SHOP SOCKS",
               "link_text_color": "#fff",
               "link_bg_color": "#0090fc"

@@ -311,11 +311,16 @@
       @media screen and (min-width: $tablet) {
         padding-left: 0px;
       }
+
+      .stamped-starrating .stamped-fa {
+        margin-right: 6px;
+      }
     }
 
     .stamped-product-reviews-badge .stamped-badge-caption {
       font-family: 'UniversLTStd';
-      margin-left: 15px;
+      margin-left: 10px;
+      font-size: 15px;
 
       @media screen and (min-width: $tablet) {
         display: inline-block !important;
