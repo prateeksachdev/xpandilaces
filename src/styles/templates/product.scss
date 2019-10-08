@@ -678,6 +678,26 @@
           bottom: -70px;
         }
 
+        &.round-v3fix {
+          bottom: -100px;
+          
+          @media screen and (min-width: $large-phone) {
+            bottom: -70px;
+          }
+
+          @media screen and (min-width: $tablet) {
+            bottom: -120px;
+          }
+
+          @media screen and (min-width: $desktop) {
+            bottom: -140px;
+          }
+
+          @media screen and (min-width: 1172px) {
+            bottom: -180px;
+          }
+        }
+
         &.v3fix {
           bottom: -200px;
 

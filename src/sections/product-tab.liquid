@@ -83,7 +83,7 @@
 
                   <div class="columns">
                     <div class="column">
-                      <video preload="none" autoplay="" loop="loop" muted playsinline{% if product_prefix == 'flat' %} class="v3fix"{% endif %}>
+                      <video preload="none" autoplay="" loop="loop" muted playsinline{% if product_prefix == 'flat' %} class="v3fix"{% endif %}{% if product_prefix == 'round' %} class="round-v3fix"{% endif %}>
                         {% if product_prefix == 'flat' and block.settings.flat_video1_url %}
                           <source src="{{block.settings.flat_video3_url}}" type="video/mp4">
                         {% endif %}
