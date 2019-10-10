@@ -1,4 +1,4 @@
-<icon-swiper>
+<icon-swiper heading="{{ section.settings.heading }}">
   <template #slides>
     {% for block in section.blocks %}
       <swiper-slide>
@@ -14,6 +14,14 @@
 {% schema %}
   {
     "name": "Icon Swiper",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "As Featured On"
+      }
+    ],
     "max_blocks": 12,
     "blocks": [
       {

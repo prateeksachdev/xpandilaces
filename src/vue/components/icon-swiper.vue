@@ -1,6 +1,8 @@
 <template>
   <section class="section icon-swiper">
     <div class="container">
+      <h2 v-if="heading">{{ heading }}</h2>
+
       <swiper :options="swiperOption">
         <slot name="slides"></slot>
         <div class="swiper-pagination" slot="pagination"></div>
@@ -16,6 +18,9 @@
     name: 'IconSwiper',
     components: {
       swiper
+    },
+    props: {
+      heading: String
     },
     data: function () {
       return {
