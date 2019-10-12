@@ -23,6 +23,10 @@ section.hero {
   .item {
     position: relative;
 
+    video, img {
+      width: 100%;
+    }
+
     a.img-link {
       border: none;
       background: none;
