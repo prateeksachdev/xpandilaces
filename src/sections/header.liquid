@@ -45,7 +45,7 @@
       </template>
     {% endif %}
 
-    <template #primary-menu="{ toggleMobileMenu, showDesktopMega, toggleMobileMega, toggleSearch, showCartDetail, hideCartDetail, isCartDetailVisible, isMobileMenuVisible, vco }">
+    <template #primary-menu="{ toggleMobileMenu, showDesktopMega, toggleMobileMega, toggleSearch, showCartDetail, hideCartDetail, isCartDetailVisible, isMobileMenuVisible, vcoCartDetail }">
       <div class="row menu">
         <div class="container">
           <div class="navbar-left">
@@ -103,7 +103,7 @@
             <transition name="fade">
               <div v-show="isCartDetailVisible" class="cart-detail">
                 <cart-drawer
-                  v-click-outside="vco"
+                  v-click-outside="vcoCartDetail"
                   @hide="hideCartDetail"
                   :is-visible="isCartDetailVisible"
                   saving-text-template="{{settings.cart_saving_text}}"
@@ -150,8 +150,8 @@
       </div>
     </template>
 
-    <template #mobile-mega>
-      <div class="nav-drop row mega-drop mobile">
+    <template #mobile-mega="{ isMobileMegaVisible, hideMobileMega }">
+      <div v-if="isMobileMegaVisible" v-click-outside="hideMobileMega" class="nav-drop row mega-drop mobile">
         <div class="columns is-mobile">
           {% for block in section.blocks %}
             {% if block.settings.enable_block %}

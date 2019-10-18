@@ -6,14 +6,14 @@
       <slot name="announcement" v-if="isAnnouncementVisible" :hide="hideAnnouncement"></slot>
     </height-transition>
 
-    <slot name="primary-menu" :toggleMobileMenu="toggleMobileMenu" :isMobileMenuVisible="isMobileMenuVisible" :showDesktopMega="showDesktopMega" :toggleMobileMega="toggleMobileMega" :toggleSearch="toggleSearch" :showCartDetail="showCartDetail" :vco="vcoCartDetail" :hideCartDetail="hideCartDetail" :isCartDetailVisible="isCartDetailVisible"></slot>
+    <slot name="primary-menu" :toggleMobileMenu="toggleMobileMenu" :isMobileMenuVisible="isMobileMenuVisible" :showDesktopMega="showDesktopMega" :toggleMobileMega="toggleMobileMega" :toggleSearch="toggleSearch" :showCartDetail="showCartDetail" :vcoCartDetail="vcoCartDetail" :hideCartDetail="hideCartDetail" :isCartDetailVisible="isCartDetailVisible"></slot>
 
     <transition name="fade">
       <slot name="mobile-menu" v-if="isMobileMenuVisible"></slot>
     </transition>
 
     <transition name="fade">
-      <slot name="mobile-mega" v-if="isMobileMegaVisible"></slot>
+      <slot name="mobile-mega" :isMobileMegaVisible="isMobileMegaVisible" :hideMobileMega="hideMobileMega"></slot>
     </transition>
 
     <transition name="fade">
@@ -93,6 +93,11 @@
       toggleMobileMenu () {
         this.isMobileMegaVisible = false
         this.isMobileMenuVisible = !this.isMobileMenuVisible
+      },
+
+      hideMobileMega () {
+        console.log('test')
+        this.isMobileMegaVisible = false
       },
 
       showDesktopMega () {
