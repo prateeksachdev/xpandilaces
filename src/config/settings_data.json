@@ -16,8 +16,8 @@
     "search_option": "everything",
     "cart_discount_hint_group": "Laces",
     "cart_discount_applied_text": "Congrats, you just received {{discountPercentage}}% off!",
-    "cart_free_shipping_hint_text": "You are {{quantity}} pack away from free shipping!",
-    "cart_free_shipping_applied_text": "Congrats, you just received free shipping!",
+    "cart_free_shipping_hint_text": "You are {{quantity}} pack away from free shipping & 1 free pair of socks!",
+    "cart_free_shipping_applied_text": "Congrats, you just received free shipping & 1 free pair of socks!",
     "cart_free_shipping_item_count": 4,
     "cart_no_discount_hint_text": "You’re all set!<br>Continue to shop or proceed to checkout!",
     "cart_progress_bar_color": "#1ec865",
@@ -76,7 +76,7 @@
           "1570145402376": {
             "type": "mega_item",
             "settings": {
-              "enable_block": false,
+              "enable_block": true,
               "image": "shopify:\/\/shop_images\/Cushion_Sock_-_Black_3x_a2945754-73f3-477f-84a7-88f026423bab.png",
               "name": "Cushioned",
               "caption": "<p>No-show Socks<\/p>",
@@ -86,7 +86,7 @@
           "1570148911026": {
             "type": "mega_item",
             "settings": {
-              "enable_block": false,
+              "enable_block": true,
               "image": "shopify:\/\/shop_images\/No_Show_-_Grey_3x_22eba2fa-69c6-40f8-b702-623b72c80fba.png",
               "name": "Lightweight",
               "caption": "<p>No-show Socks<\/p>",
@@ -103,7 +103,7 @@
         "settings": {
           "announcement_bar_enabled": true,
           "shipping_text": "<p><strong>Free Shipping when you order 4 or more<br><\/strong><\/p>",
-          "promo_text": "<p><strong>ANY 3 FOR $25 | 6 FOR $40 <br><\/strong><\/p>",
+          "promo_text": "<p><strong>Any 3 for $25 | 6 for $35<br><\/strong><\/p>",
           "ab_text_color": "#000",
           "ab_bg_color": "#ffe100",
           "logo": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
@@ -169,15 +169,15 @@
               "video_poster": "shopify:\/\/shop_images\/Thumbnail_4a2105de-5f94-456a-9b87-8e111f89d346.jpg",
               "mobile_link": "",
               "overlay_position": "left",
-              "title": "",
+              "title": "NEVER TIE YOUR <br> SHOELACES AGAIN.",
               "title_caption": "",
-              "primary_cta_text": "",
-              "primary_cta_link": "",
+              "primary_cta_text": "SHOP NOW",
+              "primary_cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
               "primary_cta_text_color": "#ffffff",
               "primary_cta_bg_color": "#008ffd",
               "enable_secondary_cta": false,
-              "secondary_cta_text": "",
-              "secondary_cta_link": "",
+              "secondary_cta_text": "HOW IT WORKS",
+              "secondary_cta_link": "shopify:\/\/pages\/install-video",
               "secondary_cta_text_color": "#ffffff",
               "secondary_cta_bg_color": "#a6b4be"
             }
@@ -221,19 +221,6 @@
               "link_bg_color": "#0090fc"
             }
           },
-          "1565704762914": {
-            "type": "box",
-            "settings": {
-              "enable_block": true,
-              "image": "shopify:\/\/shop_images\/Socks_1_89977a18-62ce-4908-8089-51f3c4c3d558.jpg",
-              "title": "",
-              "title_color": "#ffffff",
-              "link": "shopify:\/\/products\/lightweight-no-show-socks",
-              "link_text": "SHOP SOCKS",
-              "link_text_color": "#fff",
-              "link_bg_color": "#0090fc"
-            }
-          },
           "1558041246675": {
             "type": "box",
             "settings": {
@@ -246,12 +233,25 @@
               "link_text_color": "#fff",
               "link_bg_color": "#0090fc"
             }
+          },
+          "1565704762914": {
+            "type": "box",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Socks_1_89977a18-62ce-4908-8089-51f3c4c3d558.jpg",
+              "title": "No-Show Socks",
+              "title_color": "#000000",
+              "link": "shopify:\/\/products\/lightweight-no-show-socks",
+              "link_text": "SHOP SOCKS",
+              "link_text_color": "#ffffff",
+              "link_bg_color": "#0090fc"
+            }
           }
         },
         "block_order": [
           "1558041238811",
-          "1565704762914",
-          "1558041246675"
+          "1558041246675",
+          "1565704762914"
         ],
         "settings": {
         }
@@ -294,7 +294,7 @@
           "1558075411721"
         ],
         "settings": {
-          "title": "Satisfaction Guaranteed",
+          "title": "100% Satisfaction Guarantee",
           "bg_color": "#42aca7",
           "cta_text": "SHOP NOW",
           "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
@@ -322,7 +322,7 @@
               "enable_block": true,
               "product": "no-tie-original-elastic-lacing-system",
               "variant_id": "19252571471983",
-              "image": "shopify:\/\/shop_images\/DSC04721_21212101-435f-4891-933f-4c6cadb343d0.jpg",
+              "image": "shopify:\/\/shop_images\/Black_Pop_colors.jpg",
               "title": "ORIGINAL NO-TIE LACING SYSTEM",
               "caption": "<p>BLACK<\/p>",
               "font_color": "#ffffff",
@@ -333,12 +333,12 @@
             "type": "product",
             "settings": {
               "enable_block": true,
-              "product": "quick-release-round-lacing-system",
-              "variant_id": "19252727840879",
-              "image": "shopify:\/\/shop_images\/DSC04722_a8f4e321-d0f4-425d-9b54-214518df7453.jpg",
-              "title": "QUICK-RELEASE LACING SYSTEM",
+              "product": "no-tie-original-elastic-lacing-system",
+              "variant_id": "19252660273263",
+              "image": "shopify:\/\/shop_images\/White_Pop.jpg",
+              "title": "ORIGINAL NO-TIE LACING SYSTEM",
               "caption": "<p>WHITE<\/p>",
-              "font_color": "#000000",
+              "font_color": "#ffffff",
               "link_text": "view product"
             }
           },
@@ -348,7 +348,7 @@
               "enable_block": true,
               "product": "no-tie-original-elastic-lacing-system",
               "variant_id": "19252660764783",
-              "image": "shopify:\/\/shop_images\/DSC04725_b5e62389-4265-4a55-a713-2efb0b0d6df5.jpg",
+              "image": "shopify:\/\/shop_images\/Red_Pop_colors.jpg",
               "title": "ORIGINAL NO-TIE LACING SYSTEM",
               "caption": "<p>RED<\/p>",
               "font_color": "#000000",
@@ -361,7 +361,7 @@
               "enable_block": true,
               "product": "quick-release-round-lacing-system",
               "variant_id": "19252728004719",
-              "image": "shopify:\/\/shop_images\/DSC04724_9e906acd-f65e-4ed3-9cae-4e69af786244.jpg",
+              "image": "shopify:\/\/shop_images\/Blue_Pop_colors.jpg",
               "title": "QUICK-RELEASE LACING SYSTEM",
               "caption": "<p>TRUE BLUE<\/p>",
               "font_color": "#ffffff",
@@ -376,7 +376,7 @@
           "1558155113834"
         ],
         "settings": {
-          "title": "Popular Colors",
+          "title": "Best-Sellers",
           "link_text": "CHOOSE YOUR SYSTEM",
           "link": "shopify:\/\/pages\/compare-laces",
           "link_text_color": "#fff",
@@ -391,7 +391,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Ellen_1_3f85b3d6-3179-4276-91eb-023d6f292629.png",
               "link": "https:\/\/twitter.com\/TheEllenShow\/status\/994695612812611584",
-              "text": "<p>As featured by<\/p>\n<p>Ellen DeGeneres<\/p>"
+              "text": "<p>Ellen DeGeneres<\/p>"
             }
           },
           "1558161066843": {
@@ -399,7 +399,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/today_show_010ba4e0-504a-4bcd-94d4-dcbd3802eaff.png",
               "link": "https:\/\/www.today.com\/home\/10-must-have-products-make-even-busiest-mornings-easy-t137729",
-              "text": "<p>As seen on<\/p>\n<p>The Today Show<\/p>"
+              "text": "<p>The Today Show<\/p>"
             }
           },
           "1558161144526": {
@@ -407,7 +407,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/50777438-90041a00-12d6-11e9-9e68-d06f82c61f25_3166b84a-248d-4ded-8be7-dd934af86662.png",
               "link": "https:\/\/www.cbc.ca\/news\/business\/shoelace-shoes-fitness-fashion-health-foot-health-podiatry-christmas-gifts-1.4949031",
-              "text": "<p>As seen on<\/p>\n<p>CBC National<\/p>"
+              "text": "<p>CBC National<\/p>"
             }
           },
           "1558161234072": {
@@ -423,7 +423,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Breakfast_Television_logo_1_4a1b4307-72f7-4522-af5f-335ff11828d4.png",
               "link": "https:\/\/www.bttoronto.ca\/videos\/the-6-dad-is-in-the-house\/",
-              "text": "<p>Featured on<\/p>\n<p>Breakfast Television<\/p>"
+              "text": "<p>Breakfast Television<\/p>"
             }
           }
         },
@@ -435,6 +435,7 @@
           "1558161287842"
         ],
         "settings": {
+          "heading": "As Featured On"
         }
       },
       "1558366114449": {
@@ -455,14 +456,14 @@
             "type": "item",
             "settings": {
               "title": "",
-              "text": "6 Packs for $40"
+              "text": "6 Packs for $35"
             }
           },
           "1558510609132": {
             "type": "item",
             "settings": {
               "title": "",
-              "text": "8 Packs for $50"
+              "text": "8 Packs for $45"
             }
           }
         },
@@ -568,8 +569,8 @@
           "atc_bg_color": "#008ffd",
           "promo_title": "HUGE SAVINGS ON BUNDLES",
           "promo_one": "<p>ANY 3 FOR $25<\/p>",
-          "promo_two": "<p>6 FOR $40<\/p>",
-          "promo_three": "<p>8 FOR $50<\/p>",
+          "promo_two": "<p>6 FOR $35<\/p>",
+          "promo_three": "<p>8 FOR $45<\/p>",
           "code_one": "",
           "code_two": "",
           "code_three": ""
@@ -798,7 +799,7 @@
               "video_poster": "",
               "mobile_link": "",
               "overlay_position": "left",
-              "title": "NEVER TIE YOUR SHOELACES <br>AGAIN",
+              "title": "NEVER TIE YOUR <br> SHOELACES AGAIN",
               "title_caption": "No-Tie Shoelaces - Adults & Kids",
               "primary_cta_text": "SHOP NOW",
               "primary_cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
@@ -817,6 +818,44 @@
         ],
         "settings": {
         }
+      },
+      "1570986531952": {
+        "type": "featured-box",
+        "disabled": true,
+        "blocks": {
+          "1570986538907": {
+            "type": "box",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/2_-_Grey_Logo.png",
+              "title": "Lightweight No-Show Socks",
+              "title_color": "#333333",
+              "link": "shopify:\/\/products\/lightweight-no-show-socks",
+              "link_text": "SHOP SOCKS",
+              "link_text_color": "#fff",
+              "link_bg_color": "#0090fc"
+            }
+          },
+          "1570986658266": {
+            "type": "box",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Cushioned_-_White.png",
+              "title": "Cushioned No-Show Socks",
+              "title_color": "#333333",
+              "link": "shopify:\/\/products\/cushioned-no-show-socks",
+              "link_text": "Shop Socks",
+              "link_text_color": "#fff",
+              "link_bg_color": "#0090fc"
+            }
+          }
+        },
+        "block_order": [
+          "1570986538907",
+          "1570986658266"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
@@ -824,10 +863,11 @@
       "1569936449790",
       "1557977971910",
       "1558041214466",
+      "1570986531952",
       "1558131609639",
       "1558048205172",
-      "1558075345034",
       "1558154461671",
+      "1558075345034",
       "1558160927845",
       "1558366114449",
       "1558510378449"
