@@ -15,7 +15,9 @@
               <p v-else v-html="noDiscountHintText"></p>
             </div>
           </transition>
-
+			<div id="free-product-hints">
+			<p id="cm-hints" :style="{color: discountHintColor}"></p>
+			</div>
           <div class="progress-frame">
             <div class="progress-fill" :style="{width: progress + '%', backgroundColor: progressBarColor}"></div>
           </div>
@@ -39,6 +41,9 @@
           <ul>
             <cart-item v-for="item in cart.items" :key="item.key" :item="item">
             </cart-item>
+			<div v-if="state.freeProductAdded === false && state.isFreeProductAdded === false" id="addFreeProduct" @click="selectFreeProduct()">
+				<span>Select your free product</span>
+			</div>
           </ul>
         </div>
 
@@ -78,6 +83,11 @@
   import { imgURL } from '../helpers'
   import store from '../store'
   import CartItem from './cart-item.vue'
+	let customDatastore = window.cartSettings.discoutsSettings;
+	let freeShipping = window.cartSettings.freeShipping;
+
+	
+
 
   export default {
     name: 'CartDrawer',
@@ -93,7 +103,7 @@
       checkoutBgColor: String,
       freeShippingAppliedText: {
         type: String,
-        default: 'Congrats, you just received free shipping!'
+        default: freeShipping.messages.success
       },
       discountAppliedTemplate: String,
       discountHintColor: {
@@ -103,10 +113,10 @@
       progressBarColor: {
         type: String,
         default: '#4a4a4a'
-      },
+      },//here set the free shipping after n products
       freeShippingItemCount: {
         type: Number,
-        default: 4
+        default: Number(freeShipping.messages.minProductsCount)
       },
       savingTextTemplate: {
         type: String,
@@ -114,7 +124,7 @@
       },
       freeShippingHintTemplate: {
         type: String,
-        default: 'You are {{quantity}} pack away from free shipping!'
+        default: freeShipping.messages.upcoming
       },
       discountGroupForHint: {
         type: String,
@@ -163,7 +173,7 @@
         }
 
         let all = Object.assign(this.cart.discount_hints || {}, freeShippingDiscount)
-        let discountGroups = window.qb.datastore.discount_groups
+        let discountGroups = customDatastore
         let key = this.keyOfDiscount(discountGroups, this.discountGroupForHint)
 
         // We only want to use free shipping and the specified discount group for hint
@@ -299,7 +309,9 @@
       hide () {
         this.$emit('hide')
       },
-
+	selectFreeProduct () {
+		store.selectFreeProduct()
+	},
       keyOfDiscount (discountGroups, title) {
         for (var i = 0; i < discountGroups.length; i++) {
           if (discountGroups[0].title.toLowerCase() === title.toLowerCase()) {

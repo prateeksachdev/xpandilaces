@@ -1,0 +1,354 @@
+{% assign freeProducts = "" %}
+{% assign validProductsForFreeProduct = "" %}
+{% assign productsForDiscount = "" %}
+
+
+
+
+{%- paginate collections.all.products by 5000 -%}
+{% for product in collections.all.products %}
+{% assign proHandle = product.handle %}
+{% capture proObject %}{ id: null, shopify_product_id: "{{ product.id }}" },{% endcapture %}
+
+{% if product.tags contains "free-product" %}
+{% assign freeProducts = freeProducts|append:'"'|append:proHandle|append:'"'|append:',' %}
+{% endif %}
+
+{% if product.tags contains "valid-for-free-product" %}
+{% assign validProductsForFreeProduct = validProductsForFreeProduct|append:'"'|append:proHandle|append:'"'|append:',' %}
+{% endif %}
+
+{% if product.tags contains "discount-active" %}
+{% assign productsForDiscount = productsForDiscount|append:proObject %}
+{% endif %}
+
+{% endfor %}
+{%- endpaginate -%}
+
+{% assign freeProducts = "["|append:freeProducts|append:"]" %}
+{% assign freeProducts = freeProducts|replace:",]","]" %}
+
+{% assign validProductsForFreeProduct = "["|append:validProductsForFreeProduct|append:"]" %}
+{% assign validProductsForFreeProduct = validProductsForFreeProduct|replace:",]","]" %}
+
+{% assign productsForDiscount = "["|append:productsForDiscount|append:"]"|strip %}
+{% assign productsForDiscount = productsForDiscount|replace:"},]","}]" %}
+
+<div class="freeProducts-modal">
+<h3>Congrats!! Now you can add one free product to the cart.</h3>
+{% assign freeProductsArray = freeProducts|replace:'[',''|replace:']',''| split: '"'|join:''|split:"," %}
+<div class="free-product-listing">
+	{% for slug in freeProductsArray %}
+		{% assign product1 = all_products[slug] %}
+		<div class="free-pro-item">
+          <div class="cm-left-col">
+            <img src="{{ product1.featured_image.src | img_url:small }}" class="cm-img" alt="{{ product1.title }}">
+          </div>
+          <div class="cm-right-col">
+            <h3><a href="/products/{{ product1.handle }}">{{ product1.title }}</a></h3>
+            <div class="cm-price">
+              <span class="cm-val">${{ product1.price }}</span>
+              <span class="">Free</span>
+            </div>
+            {% assign prefix = product1.type | split: ' ' | first | downcase | append: '-' %}
+            <div class="swatch-listing">
+              {% for variant in product1.variants %}
+              {% assign swatch_filename = variant.title | downcase | replace: ' ', '-' | prepend: prefix | append: '.png' %}
+			
+              <div class="swatch-item" data-varid="{{ variant.id }}" style="background-color:{{ variant.title }}; background-image:url({{swatch_filename | asset_img_url: '40x' }})">{{ variant.title }}</div>
+              {% endfor %}
+            </div>
+          </div>
+		</div>
+	{% endfor %}
+	<span id="close-free-modal">X</span>
+</div>
+</div>
+
+{% capture discountTiers %}[{% if settings.tier_1_line_qnty > 0 and settings.tier_1_dis_amount %}{
+  type: "MinimumLineItemQuantityTier",
+  min_cart_value: null,
+  discount_amount: {{ settings.tier_1_dis_amount|replace:'.','' }},
+  discount_percent: null,
+  min_line_item_value: null,
+  min_cart_quantity: null,
+  min_line_item_quantity: {{ settings.tier_1_line_qnty }},
+  discount_type: "fixed_amount",
+  min_selected_products_quantity: null,
+  min_selected_products_value: null
+},{% endif %}{% if settings.tier_2_line_qnty > 0 and settings.tier_2_dis_amount %}{
+  type: "MinimumLineItemQuantityTier",
+  min_cart_value: null,
+  discount_amount: {{ settings.tier_2_dis_amount|replace:'.','' }},
+  discount_percent: null,
+  min_line_item_value: null,
+  min_cart_quantity: null,
+  min_line_item_quantity: {{ settings.tier_2_line_qnty }},
+  discount_type: "fixed_amount",
+  min_selected_products_quantity: null,
+  min_selected_products_value: null
+},{% endif %}{% if settings.tier_3_line_qnty > 0 and settings.tier_3_dis_amount %}{
+  type: "MinimumLineItemQuantityTier",
+  min_cart_value: null,
+  discount_amount: {{ settings.tier_3_dis_amount|replace:'.','' }},
+  discount_percent: null,
+  min_line_item_value: null,
+  min_cart_quantity: null,
+  min_line_item_quantity: {{ settings.tier_3_line_qnty }},
+  discount_type: "fixed_amount",
+  min_selected_products_quantity: null,
+  min_selected_products_value: null
+},{% endif %}{% if settings.tier_4_line_qnty > 0 and settings.tier_4_dis_amount %}{
+  type: "MinimumLineItemQuantityTier",
+  min_cart_value: null,
+  discount_amount: {{ settings.tier_4_dis_amount|replace:'.','' }},
+  discount_percent: null,
+  min_line_item_value: null,
+  min_cart_quantity: null,
+  min_line_item_quantity: {{ settings.tier_4_line_qnty }},
+  discount_type: "fixed_amount",
+  min_selected_products_quantity: null,
+  min_selected_products_value: null
+}{% endif %}]{% endcapture %}
+
+
+<style>
+  .freeProducts-modal {
+    position: fixed;
+    height: 80vh;
+    width: 600px;
+    background: #ffff;
+    border: 1px solid #ccc;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 99;
+    padding: 20px;
+    text-align: center;
+    display: none;
+  }
+
+  .openFreeProductModal:after {
+    position: fixed;
+    content: "";
+    background: rgba(0,0,0,0.3);
+    height: 100%;
+    width: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    z-index: 98;
+  }
+
+  .openFreeProductModal .freeProducts-modal {
+    display: block;
+  }
+
+  div#free-product-hints {
+    width: 100%;
+  }
+
+  .freeProducts-modal {
+    overflow: auto;
+    width: 370px;
+    max-height:500px;
+  }
+
+  .free-pro-item {
+    display: flex;
+    padding: 22px 0;
+  }
+  
+  .free-pro-item + .free-pro-item {
+    border-top:  1px solid #CCCCCC;
+  }
+
+  .cm-left-col {
+    width: 95px;
+  }
+
+  .cm-right-col {
+    width: calc(100% - 95px);
+    padding-left: 15px;
+    text-align: left;
+  }
+
+  .freeProducts-modal h3,.freeProducts-modal {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .swatch-item {
+    height: 21px;
+    width: 21px;
+    font-size: 0;
+    background: red;
+    margin: 5px;
+    cursor: pointer;
+  }
+
+  .swatch-listing {
+    display: flex;
+    flex-flow: wrap;
+  }
+
+  .cm-price {
+    margin: 5px 0 10px;
+  }
+
+  .cm-price span.cm-val {
+    text-decoration: line-through;
+    margin-right: 5px;
+  }
+
+  span#close-free-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0;
+    height: 30px;
+    width: 30px;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  span#close-free-modal:after,span#close-free-modal:before {
+    transform: rotate(45deg);
+    position: absolute;
+    height: 20px;
+    width: 1px;
+    background: #000;
+    top: 50%;
+    left: 50%;
+    content: "";
+    margin-top: -10px;
+  }
+
+  span#close-free-modal:after {
+    transform: rotate(-45deg);
+  }
+
+  .freeProducts-modal h3 a {
+    color: inherit;
+  }
+
+  div#addFreeProduct {
+    background: #eee;
+    border: 1px solid #ccc;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.2;
+    padding: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+div#addFreeProduct:hover {
+    background: #ccc;
+}
+
+div#addFreeProduct {
+    background: #eee;
+    border: 1px solid #ccc;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.2;
+    padding: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+div#addFreeProduct:hover {
+    background: #ccc;
+}
+
+span#editFreeProduct {
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 2px;
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+span#editFreeProduct:hover {
+    background: #ccc;
+}
+
+span.free-amount {
+    text-decoration: line-through;
+    margin-right: 5px;
+}
+
+</style>
+
+<script type="text/javascript">
+  {% assign shouldProductsForFreeProduct = "" %}
+  {% if settings.offer_applied_product_1.size > 2 %}
+  {% assign shouldProductsForFreeProduct = shouldProductsForFreeProduct|append:"'"|append:settings.offer_applied_product_1|append:"'" %}
+  {% if settings.offer_applied_product_2.size > 2 or settings.offer_applied_product_3.size > 2 or settings.offer_applied_product_4.size > 2 %}
+  {% assign shouldProductsForFreeProduct = shouldProductsForFreeProduct|append:"," %}
+  {% endif %}
+  {% endif %}
+  
+  {% if settings.offer_applied_product_2.size > 2 %}
+  {% assign shouldProductsForFreeProduct = shouldProductsForFreeProduct|append:"'"|append:settings.offer_applied_product_2|append:"'" %}
+  {% if settings.offer_applied_product_3.size > 2 or settings.offer_applied_product_4.size > 2 %}
+  {% assign shouldProductsForFreeProduct = shouldProductsForFreeProduct|append:"," %}
+  {% endif %}
+  {% endif %}
+  
+  {% if settings.offer_applied_product_3.size > 2 %}
+  {% assign shouldProductsForFreeProduct = shouldProductsForFreeProduct|append:"'"|append:settings.offer_applied_product_3|append:"'" %}
+  {% if settings.offer_applied_product_4.size > 2 %}
+  {% assign shouldProductsForFreeProduct = shouldProductsForFreeProduct|append:"," %}
+  {% endif %}
+  {% endif %}
+  
+  {% if settings.offer_applied_product_4.size > 2 %}
+  {% assign shouldProductsForFreeProduct = shouldProductsForFreeProduct|append:"'"|append:settings.offer_applied_product_4|append:"'" %}
+  {% endif %}
+  
+	window.cartSettings = {
+		freeProduct :{
+          products:{{ freeProducts }},
+			messages:{
+              upcoming:"{{ settings.cart_free_product_hint_text }}",
+              success:"{{ settings.cart_free_product_applied_text }}"
+			},
+          shouldProducts:{{ validProductsForFreeProduct }},
+          minProductsCount:{{ settings.cart_free_product_item_count }},
+          active:{{ settings.enable_free_product }}
+		},
+		freeShipping :{
+			messages:{
+				upcoming:'You are {% raw %}{{quantity}}{% endraw %} pack away from free shipping!',
+				success:'Congrats, you just received free shipping!'
+			},
+			minProductsCount:4
+		},
+		discoutsSettings: [
+			{
+			type: "ProductDiscount",
+            products: {{productsForDiscount}},
+			discount_tiers: {{ discountTiers|strip|replace:',]',']' }},
+			discount_enabled: true,
+			order_tag: null,
+              title: "{{ settings.cart_discount_hint_group }}",
+			discount_tier_type: "MinimumLineItemQuantityTier",
+			show_discount_table: false,
+			description:"You are {% raw %}{{quantity}}{% endraw %} pack away from {% raw %}{{discountPercentage}}{% endraw %}% off",
+			discount_type: "fixed_amount",
+			show_discounted_price: true,
+			show_discount_value: true
+			}
+		]
+	}
+</script>

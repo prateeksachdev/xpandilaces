@@ -85,7 +85,10 @@
   </noscript>
   <!-- End of Taboola Pixel Code -->
 
+	<!--- cart Settings --->
+	
   <!-- start BKPlatform -->
+
   <script type="text/javascript">
   {% if customer %}
   var BKCustomer = {
@@ -151,7 +154,8 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-525LHL5"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-
+<h1>App Starts here 7</h1>
+{% include 'cart-settings' %}
   <div id="app">
     {% section 'header' %}
 
@@ -159,7 +163,5 @@
 
     {% section 'footer' %}
   </div>
-
-  {% include 'quantity-breaks-now' %}
 </body>
 </html>

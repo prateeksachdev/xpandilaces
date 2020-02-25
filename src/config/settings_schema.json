@@ -5,7 +5,8 @@
     "theme_version": "1.0.0",
     "theme_author": "Shipmates",
     "theme_documentation_url": "https://github.com/Shopify/starter-theme",
-    "theme_support_url": "https://shipmates.co"
+    "theme_support_url": "https://shipmates.co",
+    "theme_packaged_with": "@shopify/slate-tools@1.0.0-beta.18"
   },
   {
     "name": "Social media",
@@ -160,11 +161,104 @@
         "info": "This setting is for displaying the free shipping hint only, will not effect actual shipping fee"
       },
       {
+        "type": "checkbox",
+        "id": "enable_free_product",
+        "label": "Activate Free Product Offer",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "cart_free_product_item_count",
+        "label": "Free Product item count",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "default": 4,
+        "info": "This setting is for displaying the free Product hint."
+      },
+      {
+        "type": "text",
+        "id": "cart_free_product_hint_text",
+        "label": "Free Product hint text",
+        "default": "You are {{quantity}} pack away to get a free product!",
+        "info": "Use {{quantity}} to add in the additoinal quantity needed for free product"
+      },
+      {
+        "type": "text",
+        "id": "cart_free_product_applied_text",
+        "label": "Free Product applied text",
+        "default": "Congrats, you just received free product!",
+        "info": "This message is displayed when free product is applied"
+      },
+      {
         "type": "text",
         "id": "cart_no_discount_hint_text",
         "label": "No hint text",
         "default": "You’re all set.<br>Continue to shop or proceed to checkout!",
         "info": "Text to display when there is no discount hint"
+      },
+      {
+        "type": "header",
+        "content": "Discount Tiers"
+      },
+      {
+        "type": "range",
+        "id": "tier_1_line_qnty",
+        "label": "Tier 1 Line Item Quantity",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "default": 3
+      },
+      {
+        "type": "text",
+        "id": "tier_1_dis_amount",
+        "label": "Tier 1 Discount Amount",
+        "default": "1.66"
+      },
+      {
+        "type": "range",
+        "id": "tier_2_line_qnty",
+        "label": "Tier 2 Line Item Quantity",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "default": 6
+      },
+      {
+        "type": "text",
+        "id": "tier_2_dis_amount",
+        "label": "Tier 2 Discount Amount",
+        "default": "4.16"
+      },
+      {
+        "type": "range",
+        "id": "tier_3_line_qnty",
+        "label": "Tier 3 Line Item Quantity",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "default": 8
+      },
+      {
+        "type": "text",
+        "id": "tier_3_dis_amount",
+        "label": "Tier 3 Discount Amount",
+        "default": "4.37"
+      },
+      {
+        "type": "range",
+        "id": "tier_4_line_qnty",
+        "label": "Tier 4 Line Item Quantity",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "default": 8
+      },
+      {
+        "type": "text",
+        "id": "tier_4_dis_amount",
+        "label": "Tier 4 Discount Amount"
       },
       {
         "type": "color",

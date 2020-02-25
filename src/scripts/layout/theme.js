@@ -29,4 +29,3 @@ if (window.navigator.cookieEnabled) {
     'supports-cookies',
   );
 }
-
