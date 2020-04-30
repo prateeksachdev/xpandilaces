@@ -23,13 +23,15 @@
                 <div class="videos">
                   {% if block.settings.youtube_video1_url != blank %}
                     <div class="video">
-                      <iframe class="lazyload" data-src="{{block.settings.youtube_video1_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      {% comment %}<div class="video-item" id="video-id-1-{{ forloop.index }}" data-src="{{block.settings.youtube_video1_url | replace: 'watch?v=', 'embed/' | replace:'https://www.youtube.com/embed/',''}}"></div>{% endcomment %}
+                      <iframe src="{{block.settings.youtube_video1_url | replace: 'watch?v=', 'embed/'}}?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video-id-1-{{forloop.index}}"></iframe>
                     </div>
                   {% endif %}
 
                   {% if block.settings.youtube_video2_url != blank %}
                     <div class="video">
-                      <iframe class="lazyload" data-src="{{block.settings.youtube_video2_url | replace: 'watch?v=', 'embed/'}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      {% comment %}<div class="video-item" id="video-id-2-{{ forloop.index }}" data-src="{{block.settings.youtube_video2_url | replace: 'watch?v=', 'embed/'}}"></div>{% endcomment %}
+                      <iframe src="{{block.settings.youtube_video2_url | replace: 'watch?v=', 'embed/'}}?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video-id-2-{{forloop.index}}"></iframe>
                     </div>
                   {% endif %}
                 </div>

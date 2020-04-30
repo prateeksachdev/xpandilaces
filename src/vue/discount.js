@@ -1,9 +1,12 @@
 let customDatastore = window.cartSettings.discoutsSettings;
+let discountOnRestProductsIsOff = window.discountOnRestProductsIsOff;
+let bestDiscountTierLineItemQTY = 0;
 export default {
   applyToCart(cart) {
     let discountGroups = customDatastore;
     let itemGroups = this._extractItemByDiscountGroup(cart, discountGroups);
     console.log("itemGroups", itemGroups);
+    window.itemGroups = itemGroups;
     for (let index in itemGroups) {
       let itemGroup = itemGroups[index];
       let discountGroup = discountGroups[index];
@@ -13,7 +16,31 @@ export default {
     cart.discount_hints = this._extraDiscountHints(discountGroups, itemGroups);
     this.setDiscountForFreeItem(cart);
     console.log("updated Cart", cart);
+    window.currentItems = cart.items;
+    let recommendedProList = document.querySelectorAll(".cm-rec-pro-item");
+    if (recommendedProList.length > 0) {
+      let cartHandles = [];
+      window.currentItems.forEach(function (item, index) {
+        let cartHandle = item.handle;
+        cartHandles.push(cartHandle);
+      });
 
+      let proIndex = 0;
+      (function showAllRecommendedProducts() {
+        recommendedProList[proIndex].style.display = "flex";
+        proIndex++;
+        if (proIndex < recommendedProList.length) {
+          showAllRecommendedProducts();
+        }
+      })();
+
+      window.recommendedProducts.forEach(function (recItem, index) {
+        let recItemHandle = recItem.url.replace("/products/", "");
+        if (cartHandles.indexOf(recItemHandle) > -1) {
+          recommendedProList[index].style.display = "none";
+        }
+      });
+    }
     return cart;
   },
 
@@ -43,11 +70,14 @@ export default {
         max_tier: maxTier,
         additional_quantity_needed:
           closestTier.min_line_item_quantity - quantity,
-        hint_template: discountGroup.description
+        hint_template: discountGroup.description,
       };
     }
 
     return hints;
+
+    window.closestTier = closestTier;
+    window.appliedTier = appliedTier;
   },
 
   _findClosestDiscountTier(discountGroup, quantity) {
@@ -94,7 +124,7 @@ export default {
 
   _findMatchingDiscountGroup(productId, discountGroups) {
     for (let [index, group] of discountGroups.entries()) {
-      let productIds = group.products.map(product => {
+      let productIds = group.products.map((product) => {
         return product.shopify_product_id;
       });
       if (productIds.includes(productId.toString())) {
@@ -122,17 +152,50 @@ export default {
   _applyProductDiscount(cart, itemGroup, discountGroup) {
     let bestDiscountTier = this._findBestDiscountTier(itemGroup, discountGroup);
     console.log("bestDiscountTier", bestDiscountTier);
+    bestDiscountTierLineItemQTY = bestDiscountTier.min_line_item_quantity;
+    console.log("bestDiscountTierLineItemQTY", bestDiscountTierLineItemQTY);
     if (bestDiscountTier.discount_amount === 0) {
       return;
     }
 
+		/*for (let item of itemGroup.items) {
+		  if (item.properties && item.properties.productType == "free") {
+			console.log("discount & free pros are same");
+		  } else {
+			item.price = item.original_price - bestDiscountTier.discount_amount;
+			item.line_price = item.price * item.quantity;
+			cart.total_discount = cart.total_discount - item.total_discount;
+			item.total_discount = item.original_line_price - item.line_price;
+			cart.total_discount = cart.total_discount + item.total_discount;
+			cart.total_price = cart.original_total_price - cart.total_discount;
+		  }
+		}*/
+
     for (let item of itemGroup.items) {
-      item.price = item.original_price - bestDiscountTier.discount_amount;
-      item.line_price = item.price * item.quantity;
-      cart.total_discount = cart.total_discount - item.total_discount;
-      item.total_discount = item.original_line_price - item.line_price;
-      cart.total_discount = cart.total_discount + item.total_discount;
-      cart.total_price = cart.original_total_price - cart.total_discount;
+      if (item.properties && item.properties.productType == "free") {
+        console.log("discount & free pros are same");
+      } else {
+        item.price = item.original_price - bestDiscountTier.discount_amount;
+        item.line_price = item.price * item.quantity;
+        cart.total_discount = cart.total_discount - item.total_discount;
+        item.total_discount = item.original_line_price - item.line_price;
+        cart.total_discount = cart.total_discount + item.total_discount;
+        cart.total_price = cart.original_total_price - cart.total_discount;
+        localStorage.setItem('show-discount', "false");
+        if (
+          discountOnRestProductsIsOff &&
+          bestDiscountTierLineItemQTY < itemGroup.quantity
+        ) {
+          let restQTY = itemGroup.quantity - bestDiscountTierLineItemQTY;
+          let extraAmountOnTotal = restQTY * bestDiscountTier.discount_amount;
+          item.price = item.price + extraAmountOnTotal / item.quantity;
+          item.line_price = item.price * item.quantity;
+          cart.total_discount =
+            cart.total_discount - restQTY * bestDiscountTier.discount_amount;
+          cart.total_price = cart.original_total_price - cart.total_discount;
+          localStorage.setItem('show-discount', "true");
+        }
+      }
     }
   },
 
@@ -145,25 +208,34 @@ export default {
     }
 
     let best = { discount_amount: 0 };
+    let exactTarget = false;
     for (let tier of discountGroup.discount_tiers) {
       if (
-        itemGroup.quantity >= tier.min_line_item_quantity &&
+        itemGroup.quantity >= tier.min_line_item_quantity && // hit line >=
         tier.discount_amount > best.discount_amount
       ) {
         best = tier;
       }
-    }
 
+      if (
+        itemGroup.quantity == tier.min_line_item_quantity &&
+        tier.discount_amount > best.discount_amount
+      ) {
+        exactTarget = true;
+      }
+    }
+    window.exactTarget = exactTarget;
+    console.log("exactTarget", exactTarget);
     return best;
   },
 
   /*===== set Discount on free product ===*/
   setDiscountForFreeItem(cart) {
     let isFreeProductAdded = cart.items.some(
-      item => item.properties && item.properties.productType == "free" // free product id
+      (item) => item.properties && item.properties.productType == "free" // free product id
     );
     if (isFreeProductAdded) {
-      cart.items.forEach(function(item, index) {
+      cart.items.forEach(function (item, index) {
         if (item.properties && item.properties.productType == "free") {
           cart.items[index].discounts = [{}];
           cart.items[index].discounts[0].amount = item.price;
@@ -179,5 +251,11 @@ export default {
         }
       });
     }
-  }
+  },
+
+  addNewDiscountMethod(cart) {
+    let itemInAction = window.itemInAction;
+    if (discountOnRestProductsIsOff) {
+    }
+  },
 };

@@ -1,2 +1,150 @@
+
+
 {% section 'how-it-work-tab' %}
 {% section 'faq' %}
+
+<script>
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  /*var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('video-id-1-1', {
+      videoId: 'eMSbyA9wNBo',
+      events: {
+        'onReady': onPlayerReady
+      }
+    });
+  }
+
+  function onPlayerReady(event) {
+    console.log('player.getDuration()--',player.getDuration());
+    setInterval(function() {
+      if(player) {
+        var duration = player.getDuration();
+        var current  = player.getCurrentTime();
+        if( current > 10 &&(duration - current) <= 1) {
+          stopVideo();
+        }
+      }
+    }, 1000);
+  }
+
+  function stopVideo() {
+    player.seekTo(0,true);
+    player.stopVideo();
+  }*/
+
+  var playerInfoList = [{
+    id: 'video-id-1-1',
+    videoId: 'eMSbyA9wNBo'
+  }, {
+    id: 'video-id-2-1',
+    videoId: 'xp-4EMkwNQQ'
+  }, {
+    id: 'video-id-1-2',
+    videoId: '8hMcup2C-ds'
+  }];
+
+  var players = new Array();
+  
+  function onYouTubeIframeAPIReady() {
+    if (typeof playerInfoList === 'undefined') return;
+    for (var i = 0; i < playerInfoList.length; i++) {
+      var curplayer = createPlayer(playerInfoList[i]);
+      players[i] = curplayer;
+    }
+  }
+
+  
+
+  function createPlayer(playerInfo) {
+    return new YT.Player(playerInfo.id, {
+      videoId: playerInfo.videoId
+    });
+  }
+  /*function onPlayerReady(event) {
+    players.forEach(function (el) {
+      console.log('player.getDuration()--',el.getDuration());
+      setInterval(function() {
+        var duration = el.getDuration();
+        var current  = el.getCurrentTime();
+        if( current > 10 &&(duration - current) <= 1) {
+          el.stopVideo();
+        }
+      }, 1000);
+
+    });
+  }*/
+  
+  
+  window.addEventListener('load',function(){
+    players.forEach(function (el) {
+      console.log('player.getDuration()--',el.getDuration());
+      setInterval(function() {
+        var duration = el.getDuration();
+        var current  = el.getCurrentTime();
+        if( current > 10 &&(duration - current) <= 1) {
+          el.stopVideo();
+        }
+      }, 1000);
+
+    });
+  })
+  
+  
+  
+</script>
+<script>
+  $(document).on('click','.tab-container li.column.active',function(){
+    setTimeout(function(){
+      console.log('Tab Clicked');
+      var playerInfoList = [{
+        id: 'video-id-1-1',
+        videoId: 'eMSbyA9wNBo'
+      }, {
+        id: 'video-id-2-1',
+        videoId: 'xp-4EMkwNQQ'
+      }, {
+        id: 'video-id-1-2',
+        videoId: '8hMcup2C-ds'
+      }];
+
+      var players = new Array();
+
+      function onYouTubeIframeAPIReady() {
+        if (typeof playerInfoList === 'undefined') return;
+        for (var i = 0; i < playerInfoList.length; i++) {
+          var curplayer = createPlayer(playerInfoList[i]);
+          players[i] = curplayer;
+        }
+      }
+
+      function createPlayer(playerInfo) {
+        return new YT.Player(playerInfo.id, {
+          videoId: playerInfo.videoId
+        });
+      }
+
+      document.body.addEventListener('click',function(){
+        players.forEach(function (el) {
+          console.log(el.getDuration());
+        });
+      })
+
+      setTimeout(function(){
+        players.forEach(function (el) {
+          console.log('player.getDuration()--',el.getDuration());
+          setInterval(function() {
+            var duration = el.getDuration();
+            var current  = el.getCurrentTime();
+            if( current > 10 &&(duration - current) <= 1) {
+              el.stopVideo();
+            }
+          }, 1000);
+        });
+      },1500)
+    },1000)
+  })
+</script>

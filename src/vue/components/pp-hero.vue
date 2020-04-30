@@ -61,11 +61,14 @@
             <span class="mobile">({{product.size_note}})</span>
             <span class="desktop size-note">{{product.size_note}}</span>
           </div>
-          
-          <div v-for="(size, index) in sizes" :key="index" class="size-option">
-            <input type="radio" :id="size" :value="size" v-model="selectedSize">
-            <label :for="size" :class="{selected: selectedSize === size}">{{size}}</label>
-          </div>
+		  <span class="cm-option-label">Size:<span class="selected-size">{{selectedSize}}</span></span>
+          <div class="size-option-listing">
+			<div v-for="(size, index) in sizes" :key="index" class="size-option">
+				<input type="radio" :id="size" :value="size" v-model="selectedSize">
+				<label :for="size" :class="{selected: selectedSize === size}">{{size}}</label>
+			</div>
+		  </div>
+		
 
           <div class="option-text">
             <span class="desktop selected-size-text">Size: {{selectedSize}}</span>

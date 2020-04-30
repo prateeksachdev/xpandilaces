@@ -142,6 +142,7 @@
   {% include 'social-meta-tags' %}
 
   {{ content_for_header }}
+{%- render 'bold-common' -%}
 
   {% if template contains 'customer' %}
     {{ "shopify_common.js" | shopify_asset_url | script_tag }}
@@ -149,12 +150,12 @@
   {% endif %}
 </head>
 
-<body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
+<body id="{{ page_title | handle }}" data-proid="{{ product.id }}" data-template="{{ template.name }}"class="template-{{ template.name | handle }} {% if product.tags contains "product-type-belt" %} product-type-belt{% endif %}">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-525LHL5"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-<h1>App Starts here 7</h1>
+<h1>App Starts here git version</h1>
 {% include 'cart-settings' %}
   <div id="app">
     {% section 'header' %}
@@ -163,5 +164,145 @@
 
     {% section 'footer' %}
   </div>
-</body>
+  {% if product.tags contains "product-type-belt" %}
+  <script>
+    $(document).click(function(e){
+      $('span.cm-option-label').removeClass('clicked');
+      $('.size-option-listing').slideUp(450);
+    });
+    $(document).on('click','span.cm-option-label',function(e){
+      e.stopPropagation();
+      $(this).toggleClass('clicked');
+      $(this).next('.size-option-listing').slideToggle(450);
+    });
+  </script>
+  {% endif %}
+{% render 'quantity-breaks-now', customer: customer, template: template, product: product, cart: cart %}
+  
+  
+    <style>
+  @media (max-width:480px) {
+  .swatch:last-child {margin-right: 0 !important;}
+
+  .product .column.controls .options .selected-swatch-text.mobile {
+    font-size: 13px;
+  }
+
+  .product .column.controls .price {
+    font-size: 13px;
+  }
+
+  .product .product-swatch .swatch {
+    margin-right: 5px;
+  }
+}
+      
+      .videos .columns .column .wrap {
+        max-height: 830px;
+        overflow: hidden;
+      }
+      .navbar >.menu .navbar-right .navbar-item.cart .cart-count {
+        width: auto;
+        display: block;
+        background: transparent;
+        border-radius: 100%;
+        height: 20px;
+        display: block;
+        min-width: 20px;
+        font-size: 15px;
+        text-align: center;
+        line-height: 20px;
+        right: 0px;
+        bottom: 13px;
+        padding: 0 5px;
+        z-index: 9;
+      }
+
+      .navbar>.menu .navbar-right .navbar-item.cart .cart-count:after {
+        background: #008ffd;
+        position: absolute;
+        padding-top: 100%;
+        content: "";
+        display: block;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        border-radius: 100%;
+        transform: translate(-50%,-50%);
+        z-index: -1;
+        min-height:20px;
+      }
+      
+      div#alert-bar {
+        background: #008ffd;
+        color: #fff;
+        z-index: 99;
+        width: 100%;
+        text-align: center;
+        font-family: Helvetica Neue,Helvetica,Arial,"sans-serif";
+        margin-bottom: 0;
+        letter-spacing: 0;
+        font-size: 12px;
+        line-height: 16px;
+        padding: 7px 5%;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      div#alert-bar a {
+/*         color: #fff;
+        margin-left: 10px; */
+        text-decoration: underline;
+      }
+      
+
+      .alert-box-active {
+        padding-top: 30px;
+      }
+
+      .alert-box-active .navbar.is-fixed-top {
+        top: 30px;
+      }
+      
+      body.template-product[data-proid="2185685598319"] .shoes-types,
+      body.template-product[data-proid="4411078738031"] .shoes-types {
+      	display: none;
+      }
+
+      body.template-product[data-proid="2185685598319"] div#shopify-section-product-tab,
+      body.template-product[data-proid="4411078738031"] div#shopify-section-product-tab {
+      	display: none;
+      }
+      
+      #alert-bar * {
+       	color:inherit; 
+      }
+      
+      @media (max-width:767px) {
+        .navbar >.menu .navbar-right .navbar-item.cart .cart-count {
+          width: auto;
+          display: block;
+          background: transparent;
+          border-radius: 100%;
+          height: 20px;
+          display: block;
+          min-width: 20px;
+          font-size: 15px;
+          text-align: center;
+          line-height: 20px;
+          right: 0px;
+          bottom: 6px;
+          padding: 0 5px;
+          z-index: 9;
+        } 
+
+        div#alert-bar {
+          font-size: 11px;
+        }
+      }
+      
+</style>
+
+        </body>
 </html>

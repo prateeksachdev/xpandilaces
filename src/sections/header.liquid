@@ -10,14 +10,19 @@
   Theme Store optional settings
   - Home page only: only shows on the home page
 {%- endcomment -%}
-<div data-section-id="{{ section.id }}" data-section-type="header">
+<div data-section-id="{{ section.id }}" data-section-type="header" class="{% if section.settings.show_alert_bar and template.name == "index" %}alert-box-active{% endif %}">
+  {% if section.settings.show_alert_bar and template.name == "index" %}
+    <div id="alert-bar" style="background: {{ section.settings.alert_bg_color }}; color:{{ section.settings.alert_text_color }};">
+      <div class="cm-inner-alert-box">{{ section.settings.alert_text }}</div>
+    </div>
+    {% endif %}
   <top-nav :is-announcement-enabled="{{section.settings.announcement_bar_enabled}}">
     <template #cart>
       <script type="application/json">
         {{cart | json}}
       </script>
     </template>
-
+    
     {% if section.settings.announcement_bar_enabled %}
       <template #announcement="{ hide }">
         <div class="row announcement" style="{%- if section.settings.ab_bg_color -%}background-color: {{section.settings.ab_bg_color}};{%- endif -%}{%- if section.settings.ab_text_color -%}color: {{section.settings.ab_text_color}};{%- endif -%}">
@@ -96,7 +101,7 @@
             </a>
 
             <a @mouseenter="showCartDetail" @click="showCartDetail" class="navbar-item cart">
-              <img src="{{ 'cart.png' | asset_url }}" alt="{{ 'cart.general.title' | t }}">
+              <img src="{{ 'cart-2.png' | asset_url }}" alt="{{ 'cart.general.title' | t }}">
               <cart-count></cart-count>
             </a>
 
@@ -165,6 +170,7 @@
             {% endif %}
           {% endfor %}
         </div>
+		<span class="close-mega-menu" @click="hideMobileMega"></span>
       </div>
     </template>
 
@@ -234,6 +240,33 @@
         "id": "ab_bg_color",
         "label": "Background Color",
         "default": "#ffd828"
+      },
+      {
+        "type": "header",
+        "content": "Alert Bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_alert_bar",
+        "label": "Show Alert Bar",
+        "default": true
+      },
+      {
+        "type": "richtext",
+        "id": "alert_text",
+        "label": "Alert Text"
+      },
+      {
+        "type": "color",
+        "id": "alert_text_color",
+        "label": "Text Color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "alert_bg_color",
+        "label": "Background Color",
+        "default": "#008ffd"
       },
       {
         "type": "header",

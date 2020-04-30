@@ -49,10 +49,12 @@ var store = {
     checkoutUrl: "/checkout",
     isCheckoutReady: true,
     freeProductAdded: null,
-    isFreeProductAdded: false
+    isFreeProductAdded: false,
+	freeProductShouldAdd: false,
+	currentProCount:1
   },
-
   addToCart(variantId, quantity) {
+    document.body.classList.add("loader-on");
     this.state.isCheckoutReady = false;
     this.state.checkoutUrl = "/checkout";
 
@@ -63,7 +65,6 @@ var store = {
         this.checkFreeProduct(cart);
       });
   },
-
   _addToCart(variantId, quantity) {
     return window.jQuery.ajax({
       url: "/cart/add.js",
@@ -157,6 +158,9 @@ var store = {
           });
       } else {
         console.log("keep going");
+        if (relProCount > minItemsCount) {
+          this.state.freeProductAdded = false;
+        }
         showFreeProHints(relProCount, false);
         return this.setCart(cart);
       }
@@ -178,8 +182,8 @@ var store = {
       }
     });
   },
-
   editFreeProduct() {
+    document.body.classList.add("loader-on");
     return this.openFreeProductModal().then(varId => {
       console.log("edit varId--", varId);
       if (varId == "notadded") {
@@ -196,7 +200,9 @@ var store = {
                   cartSettings.freeProduct.minProductsCount,
                   true,
                   true
-                );
+				);
+				//this.isAddingToCart = false
+                this.showCartDetail();
                 return this.setCart(cart);
               });
           }
@@ -204,7 +210,6 @@ var store = {
       }
     });
   },
-
   addFreeProductOnEdit(varId, setQnt) {
     return window.jQuery.ajax({
       url: "/cart/add.js",
@@ -267,6 +272,7 @@ var store = {
           .then(this._getCart)
           .then(cart => {
             showFreeProHints(cartSettings.freeProduct.minProductsCount, true);
+            this.showCartDetail();
             return this.setCart(cart);
           });
       }
@@ -291,7 +297,6 @@ var store = {
       }
     });
   },
-
   _getCart() {
     return window.jQuery.ajax({
       url: "/cart.js",
@@ -312,13 +317,14 @@ var store = {
     this.state.isCheckoutReady = true;
 
     this.state.isFreeProductAdded = isFreeProductAdded;
+    document.body.classList.remove("loader-on");
     return this.state.cart;
   },
 
   changeQuantity: debounce(function(lineItemKey, quantity) {
     this.state.isCheckoutReady = false;
     this.state.checkoutUrl = "/checkout";
-
+    document.body.classList.add("loader-on");
     return window.jQuery
       .ajax({
         url: "/cart/change.js",
@@ -344,7 +350,7 @@ var store = {
 
   showNewItemInCartDrawer(el) {
     setTimeout(() => {
-      el.scrollTop = el.scrollHeight;
+      //el.scrollTop = el.scrollHeight;
       this.state.isNewItemShownInCartDrawer = true;
     }, 300);
   }

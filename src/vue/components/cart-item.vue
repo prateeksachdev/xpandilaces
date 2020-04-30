@@ -80,6 +80,7 @@ export default {
   methods: {
     imgURL: imgURL,
     changeQuantity(item, quantity) {
+      document.body.classList.add("loader-on");
       if (parseInt(quantity) >= 0) {
         item.quantity = quantity;
         store.changeQuantity(item.key, quantity);

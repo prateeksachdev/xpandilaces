@@ -29,7 +29,6 @@
           <p>
             <slot name="empty-msg"></slot>
           </p>
-
           <a @click="hide" href="javascript:;" class="continue-shopping">
             <slot name="continue-shopping"></slot>
           </a>
@@ -48,7 +47,25 @@
         </div>
 
         <hr v-if="cart.items.length === 1">
+		<div v-if="recommendedProducts.length > 0" class="cm-recommended-products-wrapper">
+			<h3 :style="{backgroundColor:recommendedProductsTitle.bgColor, color:recommendedProductsTitle.color }">{{ recommendedProductsTitle.text }}</h3>
+			<div class="recommended-products-listing">
+				<div class="cm-rec-pro-item" v-for="item in recommendedProducts">
+					<div class="cm-rec-pro-img">
+						<img :src="item.image" :alt="item.title">
+					</div>
+					<div class="cm-rec-pro-info">
+						<h3><a :href="item.url">{{ item.title }}</a></h3>
+						<h6>{{ item.type }}</h6>
+						<span class="cm-crnt-price">{{ item.price }}</span>
+						<a :href="item.url" class="cm-btn">Pick your color</a>
+					</div>
+				</div>
+			</div>
+		</div>
       </div>
+
+		
 
       <div v-if="!isCartEmpty" class="foot">
         <p class="subtotal">
@@ -87,7 +104,7 @@
 	let freeShipping = window.cartSettings.freeShipping;
 
 	
-
+	
 
   export default {
     name: 'CartDrawer',
@@ -141,7 +158,9 @@
         isCheckingOut: false,
         freeShippingDiscountIndex: 99,
         isFlashing: false,
-        flashMsg: undefined
+        flashMsg: undefined,
+		recommendedProductsTitle:window.recommendedProductsTitle,
+		recommendedProducts :window.recommendedProducts
       }
     },
     computed: {
@@ -257,7 +276,13 @@
         }
 
         return obj
-      }
+      },
+	  recommendedProducts(){
+		  return this.recommendedProducts;
+	  },
+	  recommendedProductsTitle() {
+		  return this.recommendedProductsTitle;
+	  }
     },
     watch: {
       isCheckoutReady (newVal, oldVal) {

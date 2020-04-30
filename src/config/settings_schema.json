@@ -1,311 +1,354 @@
 [
-  {
-    "name": "theme_info",
-    "theme_name": "Xpand",
-    "theme_version": "1.0.0",
-    "theme_author": "Shipmates",
-    "theme_documentation_url": "https://github.com/Shopify/starter-theme",
-    "theme_support_url": "https://shipmates.co",
-    "theme_packaged_with": "@shopify/slate-tools@1.0.0-beta.18"
-  },
-  {
-    "name": "Social media",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Social sharing image"
-      },
-      {
-        "type": "image_picker",
-        "id": "share_image",
-        "label": "Image",
-        "info": "Shown when sharing a link on social media. [Learn more](https://help.shopify.com/manual/using-themes/troubleshooting/showing-social-media-thumbnail-images/) about image thumbnails."
-      },
-      {
-        "type": "header",
-        "content": "Social sharing options"
-      },
-      {
-        "type": "checkbox",
-        "id": "social_sharing_blog",
-        "label": "Enable sharing for blog articles",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "share_facebook",
-        "label": "Share on Facebook",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "share_twitter",
-        "label": "Tweet on Twitter",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "share_pinterest",
-        "label": "Pin on Pinterest",
-        "default": true
-      },
-      {
-        "type": "header",
-        "content": "Sharing links"
-      },
-      {
-        "type": "text",
-        "id": "social_twitter_link",
-        "label": "Twitter link"
-      },
-      {
-        "type": "text",
-        "id": "social_facebook_link",
-        "label": "Facebook link"
-      },
-      {
-        "type": "text",
-        "id": "social_pinterest_link",
-        "label": "Pinterest link"
-      },
-      {
-        "type": "text",
-        "id": "social_instagram_link",
-        "label": "Instagram link"
-      },
-      {
-        "type": "text",
-        "id": "social_snapchat_link",
-        "label": "Snapchat link"
-      },
-      {
-        "type": "text",
-        "id": "social_tumblr_link",
-        "label": "Tumblr link"
-      },
-      {
-        "type": "text",
-        "id": "social_youtube_link",
-        "label": "Youtube link"
-      },
-      {
-        "type": "text",
-        "id": "social_vimeo_link",
-        "label": "Vimeo link"
-      }
-    ]
-  },
-  {
-    "name": "Search",
-    "settings": [
-      {
-        "type": "select",
-        "id": "search_option",
-        "label": "Search results",
-        "options": [
-          {
-            "value": "products",
-            "label": "Products"
-          },
-          {
-            "value": "everything",
-            "label": "Everything"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Cart",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Drawer Head"
-      },
-      {
-        "type": "text",
-        "id": "cart_discount_hint_group",
-        "label": "Discount group for hint",
-        "default": "Laces",
-        "info": "Must be the Group Name of a discount group in the Quantity Break Now app"
-      },
-      {
-        "type": "text",
-        "id": "cart_discount_applied_text",
-        "label": "Discount applied text",
-        "default": "Congrats, you just received {{discountPercentage}}% off!",
-        "info": "This message is displayed when a new tier of discount is applied"
-      },
-      {
-        "type": "text",
-        "id": "cart_free_shipping_hint_text",
-        "label": "Free shipping hint text",
-        "default": "You are {{quantity}} pack away from free shipping!",
-        "info": "Use {{quantity}} to add in the additoinal quantity needed for free shpiping"
-      },
-      {
-        "type": "text",
-        "id": "cart_free_shipping_applied_text",
-        "label": "Free shipping applied text",
-        "default": "Congrats, you just received free shipping!",
-        "info": "This message is displayed when free shipping is applied"
-      },
-      {
-        "type": "range",
-        "id": "cart_free_shipping_item_count",
-        "label": "Free shipping item count",
-        "min": 0,
-        "max": 20,
-        "step": 1,
-        "default": 4,
-        "info": "This setting is for displaying the free shipping hint only, will not effect actual shipping fee"
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_free_product",
-        "label": "Activate Free Product Offer",
-        "default": true
-      },
-      {
-        "type": "range",
-        "id": "cart_free_product_item_count",
-        "label": "Free Product item count",
-        "min": 0,
-        "max": 20,
-        "step": 1,
-        "default": 4,
-        "info": "This setting is for displaying the free Product hint."
-      },
-      {
-        "type": "text",
-        "id": "cart_free_product_hint_text",
-        "label": "Free Product hint text",
-        "default": "You are {{quantity}} pack away to get a free product!",
-        "info": "Use {{quantity}} to add in the additoinal quantity needed for free product"
-      },
-      {
-        "type": "text",
-        "id": "cart_free_product_applied_text",
-        "label": "Free Product applied text",
-        "default": "Congrats, you just received free product!",
-        "info": "This message is displayed when free product is applied"
-      },
-      {
-        "type": "text",
-        "id": "cart_no_discount_hint_text",
-        "label": "No hint text",
-        "default": "You’re all set.<br>Continue to shop or proceed to checkout!",
-        "info": "Text to display when there is no discount hint"
-      },
-      {
-        "type": "header",
-        "content": "Discount Tiers"
-      },
-      {
-        "type": "range",
-        "id": "tier_1_line_qnty",
-        "label": "Tier 1 Line Item Quantity",
-        "min": 0,
-        "max": 20,
-        "step": 1,
-        "default": 3
-      },
-      {
-        "type": "text",
-        "id": "tier_1_dis_amount",
-        "label": "Tier 1 Discount Amount",
-        "default": "1.66"
-      },
-      {
-        "type": "range",
-        "id": "tier_2_line_qnty",
-        "label": "Tier 2 Line Item Quantity",
-        "min": 0,
-        "max": 20,
-        "step": 1,
-        "default": 6
-      },
-      {
-        "type": "text",
-        "id": "tier_2_dis_amount",
-        "label": "Tier 2 Discount Amount",
-        "default": "4.16"
-      },
-      {
-        "type": "range",
-        "id": "tier_3_line_qnty",
-        "label": "Tier 3 Line Item Quantity",
-        "min": 0,
-        "max": 20,
-        "step": 1,
-        "default": 8
-      },
-      {
-        "type": "text",
-        "id": "tier_3_dis_amount",
-        "label": "Tier 3 Discount Amount",
-        "default": "4.37"
-      },
-      {
-        "type": "range",
-        "id": "tier_4_line_qnty",
-        "label": "Tier 4 Line Item Quantity",
-        "min": 0,
-        "max": 20,
-        "step": 1,
-        "default": 8
-      },
-      {
-        "type": "text",
-        "id": "tier_4_dis_amount",
-        "label": "Tier 4 Discount Amount"
-      },
-      {
-        "type": "color",
-        "id": "cart_progress_bar_color",
-        "label": "Progress bar color",
-        "default": "#4a4a4a"
-      },
-      {
-        "type": "color",
-        "id": "cart_discount_hint_color",
-        "label": "Discount hint text color",
-        "default": "#4a4a4a"
-      },
-      {
-        "type": "header",
-        "content": "Drawer Foot"
-      },
-      {
-        "type": "text",
-        "id": "cart_saving_text",
-        "label": "Cart saving text",
-        "default": "You saved {{savingPercentage}}",
-        "info": "Use {{savingPercentage}} and {{savingAmount}} to add in the actual saved in percentage or amount"
-      },
-      {
-        "type": "color",
-        "id": "cart_checkout_text_color",
-        "label": "Checkout Text Color",
-        "default": "#fff"
-      },
-      {
-        "type": "color",
-        "id": "cart_checkout_bg_color",
-        "label": "Checkout Background Color",
-        "default": "#008ffd"
-      }
-    ]
-  },
-  {
-    "name": "Favicon",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "favicon",
-        "label": "Favicon image",
-        "info": "Will be scaled down to 32 x 32px"
-      }
-    ]
-  }
-]
+	{
+	  "name": "theme_info",
+	  "theme_name": "Xpand",
+	  "theme_version": "1.0.0",
+	  "theme_author": "Shipmates",
+	  "theme_documentation_url": "https:\/\/github.com\/Shopify\/starter-theme",
+	  "theme_support_url": "https:\/\/shipmates.co",
+	  "theme_packaged_with": "@shopify\/slate-tools@1.0.0-beta.18"
+	},
+	{
+	  "name": "Social media",
+	  "settings": [
+		{
+		  "type": "header",
+		  "content": "Social sharing image"
+		},
+		{
+		  "type": "image_picker",
+		  "id": "share_image",
+		  "label": "Image",
+		  "info": "Shown when sharing a link on social media. [Learn more](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/showing-social-media-thumbnail-images\/) about image thumbnails."
+		},
+		{
+		  "type": "header",
+		  "content": "Social sharing options"
+		},
+		{
+		  "type": "checkbox",
+		  "id": "social_sharing_blog",
+		  "label": "Enable sharing for blog articles",
+		  "default": true
+		},
+		{
+		  "type": "checkbox",
+		  "id": "share_facebook",
+		  "label": "Share on Facebook",
+		  "default": true
+		},
+		{
+		  "type": "checkbox",
+		  "id": "share_twitter",
+		  "label": "Tweet on Twitter",
+		  "default": true
+		},
+		{
+		  "type": "checkbox",
+		  "id": "share_pinterest",
+		  "label": "Pin on Pinterest",
+		  "default": true
+		},
+		{
+		  "type": "header",
+		  "content": "Sharing links"
+		},
+		{
+		  "type": "text",
+		  "id": "social_twitter_link",
+		  "label": "Twitter link"
+		},
+		{
+		  "type": "text",
+		  "id": "social_facebook_link",
+		  "label": "Facebook link"
+		},
+		{
+		  "type": "text",
+		  "id": "social_pinterest_link",
+		  "label": "Pinterest link"
+		},
+		{
+		  "type": "text",
+		  "id": "social_instagram_link",
+		  "label": "Instagram link"
+		},
+		{
+		  "type": "text",
+		  "id": "social_snapchat_link",
+		  "label": "Snapchat link"
+		},
+		{
+		  "type": "text",
+		  "id": "social_tumblr_link",
+		  "label": "Tumblr link"
+		},
+		{
+		  "type": "text",
+		  "id": "social_youtube_link",
+		  "label": "Youtube link"
+		},
+		{
+		  "type": "text",
+		  "id": "social_vimeo_link",
+		  "label": "Vimeo link"
+		}
+	  ]
+	},
+	{
+	  "name": "Search",
+	  "settings": [
+		{
+		  "type": "select",
+		  "id": "search_option",
+		  "label": "Search results",
+		  "options": [
+			{
+			  "value": "products",
+			  "label": "Products"
+			},
+			{
+			  "value": "everything",
+			  "label": "Everything"
+			}
+		  ]
+		}
+	  ]
+	},
+	{
+	  "name": "Cart",
+	  "settings": [
+		{
+		  "type": "header",
+		  "content": "Drawer Head"
+		},
+		{
+		  "type": "text",
+		  "id": "cart_discount_hint_group",
+		  "label": "Discount group for hint",
+		  "default": "Laces",
+		  "info": "Must be the Group Name of a discount group in the Quantity Break Now app"
+		},
+		{
+		  "type": "text",
+		  "id": "cart_discount_applied_text",
+		  "label": "Discount applied text",
+		  "default": "Congrats, you just received {{discountPercentage}}% off!",
+		  "info": "This message is displayed when a new tier of discount is applied"
+		},
+		{
+		  "type": "text",
+		  "id": "cart_free_shipping_hint_text",
+		  "label": "Free shipping hint text",
+		  "default": "You are {{quantity}} pack away from free shipping!",
+		  "info": "Use {{quantity}} to add in the additoinal quantity needed for free shpiping"
+		},
+		{
+		  "type": "text",
+		  "id": "cart_free_shipping_applied_text",
+		  "label": "Free shipping applied text",
+		  "default": "Congrats, you just received free shipping!",
+		  "info": "This message is displayed when free shipping is applied"
+		},
+		{
+		  "type": "range",
+		  "id": "cart_free_shipping_item_count",
+		  "label": "Free shipping item count",
+		  "min": 0,
+		  "max": 20,
+		  "step": 1,
+		  "default": 4,
+		  "info": "This setting is for displaying the free shipping hint only, will not effect actual shipping fee"
+		},
+		{
+		  "type": "checkbox",
+		  "id": "deactivate_discount_product",
+		  "label": "Deactivate Discount on Rest Products",
+		  "default": false
+		},
+		{
+		  "type": "checkbox",
+		  "id": "enable_free_product",
+		  "label": "Activate Free Product Offer",
+		  "default": true
+		},
+		{
+		  "type": "range",
+		  "id": "cart_free_product_item_count",
+		  "label": "Free Product item count",
+		  "min": 0,
+		  "max": 20,
+		  "step": 1,
+		  "default": 4,
+		  "info": "This setting is for displaying the free Product hint."
+		},
+		{
+		  "type": "text",
+		  "id": "cart_free_product_hint_text",
+		  "label": "Free Product hint text",
+		  "default": "You are {{quantity}} pack away to get a free product!",
+		  "info": "Use {{quantity}} to add in the additoinal quantity needed for free product"
+		},
+		{
+		  "type": "text",
+		  "id": "cart_free_product_applied_text",
+		  "label": "Free Product applied text",
+		  "default": "Congrats, you just received free product!",
+		  "info": "This message is displayed when free product is applied"
+		},
+		{
+		  "type": "text",
+		  "id": "cart_no_discount_hint_text",
+		  "label": "No hint text",
+		  "default": "You’re all set.<br>Continue to shop or proceed to checkout!",
+		  "info": "Text to display when there is no discount hint"
+		},
+		{
+		  "type": "header",
+		  "content": "Discount Tiers"
+		},
+		{
+		  "type": "range",
+		  "id": "tier_1_line_qnty",
+		  "label": "Tier 1 Line Item Quantity",
+		  "min": 0,
+		  "max": 20,
+		  "step": 1,
+		  "default": 3
+		},
+		{
+		  "type": "text",
+		  "id": "tier_1_dis_amount",
+		  "label": "Tier 1 Discount Amount",
+		  "default": "1.66"
+		},
+		{
+		  "type": "range",
+		  "id": "tier_2_line_qnty",
+		  "label": "Tier 2 Line Item Quantity",
+		  "min": 0,
+		  "max": 20,
+		  "step": 1,
+		  "default": 6
+		},
+		{
+		  "type": "text",
+		  "id": "tier_2_dis_amount",
+		  "label": "Tier 2 Discount Amount",
+		  "default": "4.16"
+		},
+		{
+		  "type": "range",
+		  "id": "tier_3_line_qnty",
+		  "label": "Tier 3 Line Item Quantity",
+		  "min": 0,
+		  "max": 20,
+		  "step": 1,
+		  "default": 8
+		},
+		{
+		  "type": "text",
+		  "id": "tier_3_dis_amount",
+		  "label": "Tier 3 Discount Amount",
+		  "default": "4.37"
+		},
+		{
+		  "type": "range",
+		  "id": "tier_4_line_qnty",
+		  "label": "Tier 4 Line Item Quantity",
+		  "min": 0,
+		  "max": 20,
+		  "step": 1,
+		  "default": 8
+		},
+		{
+		  "type": "text",
+		  "id": "tier_4_dis_amount",
+		  "label": "Tier 4 Discount Amount"
+		},
+		{
+		  "type": "color",
+		  "id": "cart_progress_bar_color",
+		  "label": "Progress bar color",
+		  "default": "#4a4a4a"
+		},
+		{
+		  "type": "color",
+		  "id": "cart_discount_hint_color",
+		  "label": "Discount hint text color",
+		  "default": "#4a4a4a"
+		},
+		{
+		  "type": "header",
+		  "content": "Drawer Foot"
+		},
+		{
+		  "type": "text",
+		  "id": "cart_saving_text",
+		  "label": "Cart saving text",
+		  "default": "You saved {{savingPercentage}}",
+		  "info": "Use {{savingPercentage}} and {{savingAmount}} to add in the actual saved in percentage or amount"
+		},
+		{
+		  "type": "color",
+		  "id": "cart_checkout_text_color",
+		  "label": "Checkout Text Color",
+		  "default": "#fff"
+		},
+		{
+		  "type": "color",
+		  "id": "cart_checkout_bg_color",
+		  "label": "Checkout Background Color",
+		  "default": "#008ffd"
+		},
+		{
+		  "type": "header",
+		  "content": "Recommended Products"
+		},
+		{
+		  "type": "text",
+		  "id": "recommended_title",
+		  "label": "Title",
+		  "default": "Recommended Title"
+		},
+		{
+		  "type": "color",
+		  "id": "recommended_title_bg_color",
+		  "label": "Background Color",
+		  "default": "#0090fc"
+		},
+		{
+		  "type": "color",
+		  "id": "recommended_title_txt_color",
+		  "label": "Text Color",
+		  "default": "#fff"
+		},
+		{
+		  "type": "product",
+		  "id": "recommended_product_one",
+		  "label": "Recommended Product 1"
+		},
+		{
+		  "type": "product",
+		  "id": "recommended_product_two",
+		  "label": "Recommended Product 2"
+		},
+		{
+		  "type": "product",
+		  "id": "recommended_product_three",
+		  "label": "Recommended Product 3"
+		}
+	  ]
+	},
+	{
+	  "name": "Favicon",
+	  "settings": [
+		{
+		  "type": "image_picker",
+		  "id": "favicon",
+		  "label": "Favicon image",
+		  "info": "Will be scaled down to 32 x 32px"
+		}
+	  ]
+	}
+  ]
