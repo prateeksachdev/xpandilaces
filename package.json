@@ -65,8 +65,8 @@
     "@shopify/slate-tools/**/braces": "^3.0.2",
     "@shopify/slate-tools/**/react-dev-utils": "5.0.2",
     "@shopify/slate-tools/**/tunnel-agent": "^0.6.0",
-    "@shopify/slate-tools/**/ssri": "^8.0.1"
-
+    "@shopify/slate-tools/**/ssri": "^8.0.1",
+    "hosted-git-info": "^3.0.8"
   },
   "scripts": {
     "start": "slate-tools start",
