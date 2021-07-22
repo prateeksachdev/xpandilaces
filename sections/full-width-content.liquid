@@ -1,0 +1,29 @@
+<div class="cm_full_width_content_section">
+  <div class="cm_full_width_inner_content">
+	<div class="container">
+      <div class="cm_full_width_content">
+        {{ section.settings.full_content }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Full Width Content",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "full_content",
+        "label": "Text",
+        "default": "<p>Default <em>richtext</em> <a href=\"https://example.com/\">content</a></p>"
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

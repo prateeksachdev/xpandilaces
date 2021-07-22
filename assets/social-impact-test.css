@@ -1,0 +1,544 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+body#social-impact {
+    font-size: 0;
+}
+
+body#social-impact > div {
+    font-size: 16px;
+}
+.cm_banner_area {
+  height: 380px;
+  background-size: cover;
+  background-position: center;
+  font-family: "Josefin Sans";
+  font-size: 72px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 1;
+}
+
+.banner_content {
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.banner_content > h1 {
+  font-weight: bold;
+}
+
+.cm_banner_area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cm_full_width_content_section {
+  height: 313px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cm_full_width_content {
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  max-width: 610px;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 34px;
+  color: #000;
+}
+
+.three_column_icons_group {
+  background: rgba(241,242,242,1);
+  padding: 40px 0;
+}
+
+.cm_listing_header > h1 {
+  font-family: "Josefin Sans";
+  font-size: 48px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-align: center;
+}
+
+.cm_col_listing_wrapper > div.cm-block-item {
+  width: 33.33%;
+  float: left;
+  text-align: center;
+}
+
+.cm_col_listing_wrapper {
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.cm-block-image img {
+  width: 150px;
+}
+
+h3.cm-block-title {
+  font-family: "Josefin Sans";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  margin: 10px 0;
+}
+
+.cm-block-item-inner {
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.cm_social_impact_page .container {
+  max-width: 970px;
+  padding:0 20px;
+}
+
+.cm-block-content {
+  font-family: "PT Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+}
+
+.cm-block-button > a {
+  font-family: "PT Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  background: rgba(253,214,0,1);
+  box-shadow: none;
+  text-shadow: none;
+  color: #000000;
+  display: block;
+  line-height: 40px;
+  width: 210px;
+  margin: 0 auto;
+}
+
+.cm-block-button {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.cm_col_listing_wrapper .cm_col_listing_wrapper {
+  margin-top: 40px;
+}
+
+.cm-block-content a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.cm-block-button > a {
+  font-weight: bold;
+  font-family: Josefin Sans;
+}
+
+.cm_col_listing_wrapper > div.cm-block-item {
+  padding: 0 15px;
+}
+
+.cm-block-item-inner {
+  max-width: 350px;
+}
+
+.cm-block-button > a:hover {
+  background: rgba(228,184,0,1);
+}
+
+.cm-youtube-video {
+  max-width: 790px;
+  text-align: center;
+  margin: 40px auto 30px;
+}
+
+.cm-youtube-video iframe {
+  height: 446px;
+}
+
+.cm-youtube-video-section h3 {
+  font-weight: bold;
+  line-height: 35px;
+  font-family: "Josefin Sans";
+  font-size: 22px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  width: 550px;
+  margin: 0 auto;
+}
+
+.cm_counter_section {
+  background: rgba(138,210,236,1);
+  padding: 50px 0;
+  text-align: center;
+}
+
+.cm_counter_list_title > h1 {
+  color: rgb(30, 30, 30);
+  font-family: "Josefin Sans";
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.2;
+  max-width: 400px;
+  margin: 50px auto 30px;
+}
+
+.cm-counter-content-listing-inner {
+  display: flex;
+}
+
+.cm-counter-content-listing-inner > .cm-counter-col {
+  width: 33.33%;
+  padding: 0 15px;
+}
+
+h2.cm_counter_val {
+  color: rgb(255, 255, 255);
+  font-family: "Josefin Sans";
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 20px;
+}
+
+h3.cm_counter_title {
+  color: rgb(30, 30, 30);
+  font-family: "PT Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+}
+
+.cm-counter-col-inner {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.cm_counter_bottom_title > h3 {
+  font-family: "Josefin Sans";
+  font-size: 28px;
+  color: rgb(30, 30, 30);
+  font-weight: bold;
+}
+
+.cm_counter_bottom_title {
+  margin: 40px 0 0;
+}
+
+.cm_full_width_image_section > img {
+  width: 100%;
+}
+
+.cm_section_header {
+  padding: 90px 0;
+  text-align: center;
+}
+
+.cm_header > h1 {
+  color: rgb(24, 120, 251);
+  font-family: "Josefin Sans";
+  font-size: 50px;
+  font-weight: bolder;
+  line-height: 58px;
+}
+
+.cm_section_header_content {
+  color: rgb(30, 30, 30);
+  font-family: "PT Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  max-width: 690px;
+  margin: 20px auto 0;
+}
+
+.cm_pdp_section {
+  background: rgba(167,217,239,1);
+  width: 100%;
+  height: 460px;
+  position: relative;
+}
+
+.cm_pdp_section_col_listing {
+  display: flex;
+  align-items: center;
+}
+
+.cm_pdp_img_col {
+  width: 50%;
+}
+
+.cm_pdp_section_col_listing > div {
+  width: 50%;
+  text-align: center;
+}
+
+.cm_pdp_des {
+  font-family: "PT Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  max-width: 380px;
+  line-height: 29px;
+  margin: 0 auto;
+}
+
+.cm_pdp_btn > a {
+  width: 360px;
+  height: 50px;
+  background: rgba(246,76,36,1);
+  display: block;
+  margin: 50px auto 0;
+  line-height: 50px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: Josefin Sans;
+}
+
+.cm_pdp_btn > a:hover {
+  background: rgba(221,52,23,1);
+  box-shadow: none;
+  color: #ffffff;
+}
+
+.cm_pdp_section.left-aligned-false {
+  background: #f27d47;
+}
+
+.cm_pdp_section.left-aligned-false .cm_pdp_btn > a {
+  background: rgba(255,219,27,1);
+  color: #000000;
+  height: 41px;
+  line-height: 41px;
+}
+
+.cm_pdp_section.left-aligned-false  .cm_pdp_des {
+  color: #fff;
+}
+
+.cm_pdp_section.left-aligned-false .cm_pdp_section_col_listing {
+  flex-direction: row-reverse;
+}
+
+.cm_pdp_section.left-aligned-false .cm_pdp_btn > a:hover {
+  background: rgba(230,188,17,1);
+  box-shadow: none;
+  color: #000000;
+}
+
+.cm_bottom_content_section {
+  text-align: center;
+  padding: 60px 0;
+  border-bottom: 1px solid #000;
+}
+
+.cm_bottom_content p > strong {
+  font-family: "Josefin Sans";
+  font-weight: 700;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 34px;
+  display: block;
+  margin: 0 0 20px;
+}
+
+.cm_bottom_content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cm_bottom_content {
+  font-family: "PT Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  color: #000;
+}
+
+.cm_header > h1 > span:first-child {
+  display: block;
+}
+
+.cm_header > h1 > span:first-child + span {
+  margin-right: 20px;
+  color: rgb(246, 76, 36);
+}
+
+.cm_header > h1 > span:first-child + span + span {
+  color: rgb(253, 214, 0);
+}
+
+.cm_counter_section {
+  background-image: url('https://cdn.shopify.com/s/files/1/1206/8416/files/shoes.png?v=1591946749');
+  background-repeat: no-repeat;
+  background-position: 85% 0;
+}
+
+
+@media (max-width:767px) {
+  .cm_col_listing_wrapper > div.cm-block-item {
+    width: 100%;
+  }
+
+  .cm_col_listing_wrapper > div.cm-block-item + div {
+    margin-top: 60px;
+  }
+
+  .cm_section_header {
+    padding: 40px 0;
+  }
+  
+  .cm_header > h1 > span:first-child + span {
+    margin-right: 10px;
+  }
+
+  .cm_pdp_img_col {
+    margin-bottom: 15px;
+  }
+
+  .cm_header > h1 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .cm_counter_list_title > h1 {
+    margin: 0 0 20px;
+    max-width: none;
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  h2.cm_counter_val {
+    font-size: 40px;
+    margin: 0 0 10px;
+  }
+
+  h3.cm_counter_title {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .cm_listing_header > h1 {
+    font-size: 40px;
+    line-height: 1;
+  }
+
+  .banner_content > h1 {
+    font-size: 40px;
+  }
+
+  .cm_banner_area {
+    height: 300px;
+  }
+
+  .cm_full_width_content_section {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .cm_full_width_content {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .cm_pdp_section {
+    height: auto;
+    padding: 0 0 40px;
+  }
+
+  .cm_pdp_section_col_listing {
+    display: block;
+  }
+
+  .cm_pdp_section_col_listing > div {
+    width: 100%;
+  }
+
+  .cm_pdp_des {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .cm_pdp_btn > a {
+    margin-top: 30px;
+    width: auto;
+    display: inline-block;
+    padding: 10px 10px;
+    white-space: normal;
+    height: auto !important;
+    line-height: 1.2 !important;
+  }
+
+  .cm-youtube-video-section h3 {
+    width: auto;
+  }
+
+  .cm-counter-content-listing-inner > .cm-counter-col {
+    width: 100%;
+  }
+
+  .cm-counter-content-listing-inner {
+    display: block;
+  }
+
+  .cm-counter-content-listing-inner > .cm-counter-col + div {
+    margin-top: 40px;
+  }
+
+  .cm-block-button > a {
+    width: auto;
+    max-width: 250px;
+  }
+
+  .cm-youtube-video iframe {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .cm-youtube-video-section > div {
+    position: relative;
+    padding-top: 56%;
+  } 
+
+  .cm_counter_section {
+    padding-top: 210px;
+    background-position: center top;
+  }
+}
+
+@media (max-width:600px) {
+  .cm_listing_header > h1 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .cm-youtube-video-section h3 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .cm_counter_list_title > h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  h2.cm_counter_val {
+    color: #000;
+  }
+
+  .cm_section_header_content {
+    font-size: 18px;
+    color: #000;
+  }
+
+  .cm_pdp_des {color: #000;} 
+}

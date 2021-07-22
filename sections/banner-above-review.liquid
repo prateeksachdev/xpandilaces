@@ -1,0 +1,73 @@
+<div class="banner-above-review-section">
+  <div class="container">
+    <div class="banner-wrapper-above-review">
+      <a href="{{ section.settings.banner_link }}">
+        <div class="banner-image-above-review desktop-img">
+          <img src="{{ section.settings.bg_image|img_url:'master' }}" alt="Banner Image"/>
+        </div>
+        
+        <div class="banner-image-above-review mobile-img">
+          <img src="{{ section.settings.bg_image_for_img|img_url:'master' }}" alt="Banner Image"/>
+        </div>
+        
+      </a>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Banner Above Review",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Banner Image"
+      },
+	  {
+        "type": "image_picker",
+        "id": "bg_image_for_img",
+        "label": "Banner Image for Mobile"
+      },
+	  {
+        "type": "url",
+        "id": "banner_link",
+        "label": "Banner Link"
+      }
+	],
+	"presets": [
+      {
+        "name": "Banner Above Review",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .banner-image-above-review {
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .banner-above-review-section {
+    padding: 30px 0;
+  }
+
+  .banner-above-review-section .container {
+    max-width: calc(100% - 30px);
+    width: 1210px;
+  }
+
+  .banner-wrapper-above-review {
+    padding-top: 27%;
+    position: relative;
+    min-height: 250px;
+  }
+</style>

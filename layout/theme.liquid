@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html class="no-js supports-no-cookies" lang="{{ shop.locale }}">
+<head>
+  <meta name="p:domain_verify" content="2a5124afd415bf157b94755eb8d06104"/>
+  <meta name="p:domain_verify" content="2a5124afd415bf157b94755eb8d06104"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_accent }}">
+  <meta name="facebook-domain-verification" content="iuxdi01zvk0tsoepuc9qrzxxqrpoox" />
+  {% if page.template_suffix contains 'ptab' or page.handle == 'social-impact'  or product.handle == 'free-shipping-product' %}
+    <meta name="robots" content="noindex">
+  {% else %}
+    <meta name="robots" content="index,follow">
+  {% endif %}
+
+  <meta name="google-site-verification" content="1GuKV9Ynhy01MON2gGSP-rmAXmClHgt956WgfNd9BEY" />
+  
+
+  <!-- Track JS -->
+
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({ 
+      token: "3a2a7bc009d84b74aa47cb57ea8c0ea1"
+      // for more configuration options, see https://docs.trackjs.com
+    });
+
+    TrackJS.track('Xpand Discount Error');
+
+  </script>
+
+  
+  
+  <script>
+    // Google Tag Manager
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                                                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                        })(window,document,'script','dataLayer','GTM-525LHL5');
+    ga('require','GTM-NPXJWT9');
+    ga('create', 'UA-76986372-1', 'auto', {allowLinker: true});
+    ga('require', 'displayfeatures');
+
+    // hide additional properties
+    var eles = document.querySelectorAll('.product__description__property');
+    eles.forEach(function(item){
+      item.style.display = 'none';
+    })
+
+    var cartNav = document.querySelectorAll('li.breadcrumb__item')[0];
+    cartNav.style.display = 'none';
+  </script>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+  <!-- Begin Anti-flicker snippet (recommended) -->
+  <style>.async-hide { opacity: 0 !important} </style>
+  <script>
+    (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+    h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+    (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+    })(window,document.documentElement,'async-hide','dataLayer',4000,
+    {'GTM-NPXJWT9':true});
+  </script>
+  <!-- End Anti-flicker snippet -->
+
+  <link rel="canonical" href="{{ canonical_url }}">
+  {% if settings.favicon != nil %}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ settings.favicon | img_url: '32x32' }}">
+  {% else %}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.png' | asset_url }}">
+  {% endif %}
+
+  <!-- Optimization: Preload Fonts -->
+  <link rel="preload" href="{{ 'neuzeitgroteskblack.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="{{ 'neuzeit-grotesk-light-webfont.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="{{ 'neuzeit_grotesk_regular-webfont.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="{{ 'turbo.woff' | asset_url }}" as="font" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" href="{{ 'UniversLTStd-Cn.otf' | asset_url }}" as="font" type="font/otf" crossorigin="anonymous">
+  <link rel="preload" href="{{ 'UniversLTStd-BoldCn.otf' | asset_url }}" as="font" type="font/otf" crossorigin="anonymous">
+  <link rel="preload" href="{{ 'UniversLTStd.otf' | asset_url }}" as="font" type="font/otf" crossorigin="anonymous">
+  <link rel="preload" href="{{ 'UniversLTStd-Bold.otf' | asset_url }}" as="font" type="font/otf" crossorigin="anonymous">
+
+  <!-- Begin Theme Scripts -->
+  {% include 'script-tags', layout: 'theme' %}
+  <!-- End Theme Scripts -->
+
+  <script src='//cdn.freshmarketer.com/233649/808396.js' async></script>
+
+  <!-- Pinterest Pixel Base Code -->
+  <script type="text/javascript">
+    !function(e){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(
+      Array.prototype.slice.call(arguments))};var
+      n=window.pintrk;n.queue=[],n.version="3.0";var
+      t=document.createElement("script");t.async=!0,t.src=e;var
+      r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+    pintrk('load', '2614687646635');
+    pintrk('page');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?tid=2614687646635&noscript=1" />
+  </noscript>
+  <!-- End Pinterest Pixel Base Code -->
+
+  <!-- Taboola Pixel Code -->
+  <script type='text/javascript'>
+    window._tfa = window._tfa || [];
+    window._tfa.push({notify: 'event', name: 'page_view', id: 1184199});
+    !function (t, f, a, x) {
+           if (!document.getElementById(x)) {
+              t.async = 1;t.src = a;t.id=x;f.parentNode.insertBefore(t, f);
+           }
+    }(document.createElement('script'),
+    document.getElementsByTagName('script')[0],
+    '//cdn.taboola.com/libtrc/unip/1184199/tfa.js',
+    'tb_tfa_script');
+  </script>
+  <noscript>
+    <img src='//trc.taboola.com/1184199/log/3/unip?en=page_view'
+        width='0' height='0' style='display:none'/>
+  </noscript>
+  <!-- End of Taboola Pixel Code -->
+
+	<!--- cart Settings --->
+	
+  <!-- start BKPlatform -->
+
+  <script type="text/javascript">
+  {% if customer %}
+  var BKCustomer = {
+      id: {{ customer.id }}
+  };
+  {% endif %}
+
+  if(typeof Shopify === 'undefined') {
+      Shopify = {};
+  }
+
+  if (!Shopify.shop) {
+    Shopify.shop = 'xpandlaces.myshopify.com';
+  }
+  var bkRawUrl = function(){return window.location.href}();
+  (function (doc, scriptPath) {
+      var sc, node, today=new Date(),dd=today.getDate(),mm=today.getMonth()+1,yyyy=today.getFullYear();if(dd<10)dd='0'+dd;if(mm<10)mm='0'+mm;today=yyyy+mm+dd;
+      // Load base script tag
+      sc = doc.createElement("script");
+      sc.type = "text/javascript";
+      sc.async = !0;
+      sc.src = scriptPath + '?' + today;
+      node = doc.getElementsByTagName("script")[0];
+      node.parentNode.insertBefore(sc, node);
+  })(document, 'https://sdk.beeketing.com/js/beeketing.js');
+  </script>
+  <!-- end BKPlatform -->
+  <style>
+    .cm-featured-listing {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    .cm-featured-item {
+      padding: 0 20px;
+    }
+
+    .cm-feature-list-title h2 {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      color: #333;
+      font-family: neuzeitgroteskblack;
+      margin: 0;
+    }
+
+    .cm-title h3 {
+      font-weight: 700;
+      font-size: 20px;
+      color: #000;
+      margin: 10px 0 10px;
+    }
+
+    .cm-title p {
+      line-height: 1.5;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    section.cm-featured-banner-area {
+      background: #fff;
+      padding: 40px 0;
+/*       font-family: Lato, sans-serif; */
+    }
+    
+    @media (max-width:767px){
+      .cm-feature-list-title h2 {
+        font-size: 26px;
+        padding: 0 20px;
+        line-height: 1.25;
+      }
+
+      .cm-featured-listing {
+        display: block;
+        padding-top: 0;
+      }
+
+      .cm-featured-item {
+        padding: 20px;
+        max-width: 350px;
+        margin: 0 auto;
+      } 
+    }
+  </style>
+  <style>@font-face{font-display:swap;font-family:'neuzeit_grotesk_light';src:url('{{ "neuzeit-grotesk-light-webfont.eot" | asset_url }}');src:url('{{ "neuzeit-grotesk-light-webfont.eot?#iefix" | asset_url }}') format('embedded-opentype'),url('{{ "neuzeit-grotesk-light-webfont.woff2" | asset_url }}') format('woff2'),url('{{ "neuzeit-grotesk-light-webfont.woff" | asset_url }}') format('woff'),url('{{ "neuzeit-grotesk-light-webfont.ttf" | asset_url }}') format('truetype'),url('{{ "neuzeit-grotesk-light-webfont.svg#neuzeit_grotesklight" | asset_url }}') format('svg');font-weight:400;font-style:normal}@font-face{font-display:swap;font-family:'neuzeit_grotesk_regular';src:url('{{ "neuzeit_grotesk_regular-webfont.eot" | asset_url }}');src:url('{{ "neuzeit_grotesk_regular-webfont.eot?#iefix" | asset_url }}') format('embedded-opentype'),url('{{ "neuzeit_grotesk_regular-webfont.woff2" | asset_url }}') format('woff2'),url('{{ "neuzeit_grotesk_regular-webfont.woff" | asset_url }}') format('woff'),url('{{ "neuzeit_grotesk_regular-webfont.ttf" | asset_url }}') format('truetype'),url('{{ "neuzeit_grotesk_regular-webfont.svg#neuzeit_groteskregular" | asset_url }}') format('svg');font-weight:400;font-style:normal}@font-face{font-display:swap;font-family:'neuzeitgroteskblack';src:url('{{ "neuzeitgroteskblack.eot" | asset_url }}');src:url('{{ "neuzeitgroteskblack.eot?#iefix" | asset_url }}') format('embedded-opentype'),url('{{ "neuzeitgroteskblack.woff2" | asset_url }}') format('woff2'),url('{{ "neuzeitgroteskblack.woff" | asset_url }}') format('woff'),url('{{ "neuzeitgroteskblack.ttf" | asset_url }}') format('truetype'),url('{{ "neuzeitgroteskblack.svg#neuzeitgroteskblack" | asset_url }}') format('svg');font-weight:400;font-style:normal}@font-face{font-display:swap;font-family:'sf_display_regular';src:url('{{ "sfcompactdisplay-regular-webfont.woff" | asset_url }}') format('woff'),url('{{ "sfcompactdisplay-regular-webfont.ttf" | asset_url }}') format('truetype');font-weight:400;font-style:normal}@font-face{font-display:swap;font-family:'Univers-Cn';src:url('{{ "UniversLTStd-Cn.eot?#iefix" | asset_url }}') format('embedded-opentype'),url('{{ "UniversLTStd-Cn.otf" | asset_url }}') format('opentype'),url('{{ "UniversLTStd-Cn.woff" | asset_url }}') format('woff'),url('{{ "UniversLTStd-Cn.ttf" | asset_url }}') format('truetype'),url('{{ "UniversLTStd-Cn.svg#UniversLTStd-Cn" | asset_url }}') format('svg');font-weight:400;font-style:normal}@font-face{font-display:swap;font-family:'Univers-BoldCn';src:url('{{ "UniversLTStd-BoldCn.otf" | asset_url }}') format('opentype'),url('{{ "UniversLTStd-BoldCn.woff" | asset_url }}') format('woff');font-weight:400;font-style:normal}@font-face{font-display:swap;font-family:'UniversLTStd';src:url('{{ "UniversLTStd.otf" | asset_url }}') format('opentype'),url('{{ "UniversLTStd.woff" | asset_url }}') format('woff');font-weight:400;font-style:normal}@font-face{font-display:swap;font-family:'UniversLTStd';src:url('{{ "UniversLTStd-Bold.otf" | asset_url }}') format('opentype'),url('{{ "UniversLTStd-Bold.woff" | asset_url }}') format('woff');font-weight:bold;font-style:normal}@font-face{font-display:swap;font-family:'turbo';src:url('{{ "turbo.eot" | asset_url }}');src:url('{{ "turbo.eot" | asset_url }}') format('embedded-opentype'),url('{{ "turbo.woff" | asset_url }}') format('woff'),url('{{ "turbo.ttf" | asset_url }}') format('truetype'),url('{{ "turbo.svg" | asset_url }}') format('svg');font-weight:400;font-style:normal}[class^="icon-"]:before,[class*=" icon-"]:before{font-family:"turbo";font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.15em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-down-arrow:before{content:"\e904"}.icon-search:before{content:"\e913"}</style>
+  {% include 'style-tags', layout: 'theme' %}
+
+  {%- capture seo_title -%}
+    {{ page_title }}
+    {%- if current_tags -%}
+      {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {%- endif -%}
+    {%- if current_page != 1 -%}
+      &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {%- endif -%}
+    {%- assign escaped_page_title = page_title | escape -%}
+    {%- unless escaped_page_title contains shop.name -%}
+      &ndash; {{ shop.name }}
+    {%- endunless -%}
+  {%- endcapture -%}
+  <title>{{ seo_title | strip }}</title>
+
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+
+  {% include 'social-meta-tags' %}
+
+  {{ content_for_header }}
+{%- render 'bold-common' -%}
+
+  {% if template contains 'customer' %}
+    {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+    {{ "customer_area.js" | shopify_asset_url | script_tag }}
+  {% endif %}
+  <script>
+    $(window).on('load',function(){
+      $('.how-it-work-tab iframe').attr('data-hj-allow-iframe','');
+      if(window.location.pathname == '/pages/install-video'){
+        setInterval(function(){
+          $('.how-it-work-tab iframe').attr('data-hj-allow-iframe','');
+          console.log('added')
+        },1000)
+
+      }
+    })
+  </script>
+</head>
+
+<body id="{{ page_title | handle }}" data-proid="{{ product.id }}" data-template="{{ template.name }}"class="template-{{ template.name | handle }} {% if product.tags contains "product-type-belt" %} product-type-belt{% endif %}">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-525LHL5"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+{% include 'cart-settings' %}
+  <div id="app">
+    {% section 'header' %}
+
+    {{ content_for_layout }}
+
+    {% section 'footer' %}
+  </div>
+  {% if product.tags contains "product-type-belt" %}
+  <script>
+    $(document).click(function(e){
+      $('span.cm-option-label').removeClass('clicked');
+      $('.size-option-listing').slideUp(450);
+    });
+    $(document).on('click','span.cm-option-label',function(e){
+      e.stopPropagation();
+      $(this).toggleClass('clicked');
+      $(this).next('.size-option-listing').slideToggle(450);
+    });
+    
+    $('.cart-control button span.belt-default').text('Add to Cart');
+    $(document).ready(function(){
+      $('.cart-control button span.belt-default').text('Add to Cart');
+      if(window.location.pathname == '/products/urban-belt') {
+      $('body').addClass('urban-belt');
+    }
+    });
+
+    $(window).load(function(){
+      $('.cart-control button span.belt-default').text('Add to Cart');
+      if(window.location.pathname == '/products/urban-belt') {
+      $('body').addClass('urban-belt');
+    }
+    });
+
+    if(window.location.pathname == '/products/urban-belt') {
+      $('body').addClass('urban-belt');
+    }
+
+  </script>
+  {% endif %}
+{% render 'quantity-breaks-now', customer: customer, template: template, product: product, cart: cart %}
+  
+  
+  <style>
+    @media screen and (min-width: 769px) {
+      .product .column.controls .price {
+        font-size: 16px;
+      }
+      
+      .cm-featured-item {
+        width: 33.33%;
+      }
+    }
+    
+
+    @media (max-width: 767px){
+      .product .column.controls .price {
+        font-size: 16px !important;
+      }
+      
+      .template-product .product .column.controls .price:before {
+        margin: 0 !important;
+      }
+    }
+    @media (max-width:480px) {
+      .swatch:last-child {margin-right: 0 !important;}
+
+      .product .column.controls .options .selected-swatch-text.mobile {
+        font-size: 13px;
+      }
+
+      .product .column.controls .price {
+        font-size: 13px;
+      }
+
+      .product .product-swatch .swatch {
+        margin-right: 5px;
+      }
+      
+      .product-type-belt.urban-belt .body-content.ptab-overview .wrap > img {
+        position: static !important;
+        object-fit: none;
+        max-height: none;
+        max-width: 100%;
+        width: 100% !important;
+        display: block;
+        transform: none;
+      }
+
+    }
+
+    .videos .columns .column .wrap {
+      max-height: 830px;
+      overflow: hidden;
+    }
+    .navbar >.menu .navbar-right .navbar-item.cart .cart-count {
+      width: auto;
+      display: block;
+      background: transparent;
+      border-radius: 100%;
+      height: 20px;
+      display: block;
+      min-width: 20px;
+      font-size: 15px;
+      text-align: center;
+      line-height: 20px;
+      right: 0px;
+      bottom: 13px;
+      padding: 0 5px;
+      z-index: 9;
+    }
+
+    .navbar>.menu .navbar-right .navbar-item.cart .cart-count:after {
+      background: #008ffd;
+      position: absolute;
+      padding-top: 100%;
+      content: "";
+      display: block;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      border-radius: 100%;
+      transform: translate(-50%,-50%);
+      z-index: -1;
+      min-height:20px;
+    }
+
+    div#alert-bar {
+      background: #008ffd;
+      color: #fff;
+      z-index: 99;
+      width: 100%;
+      text-align: center;
+      font-family: Helvetica Neue,Helvetica,Arial,"sans-serif";
+      margin-bottom: 0;
+      letter-spacing: 0;
+      font-size: 12px;
+      line-height: 16px;
+      padding: 7px 5%;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    div#alert-bar a {
+      /*         color: #fff;
+      margin-left: 10px; */
+      text-decoration: underline;
+    }
+
+
+    .alert-box-active {
+      padding-top: 30px;
+    }
+
+    .alert-box-active .navbar.is-fixed-top {
+      top: 30px;
+    }
+
+    body.template-product[data-proid="2185685598319"] .shoes-types,
+    body.template-product[data-proid="4411078738031"] .shoes-types {
+      display: none;
+    }
+
+    body.template-product[data-proid="2185685598319"] div#shopify-section-product-tab,
+    body.template-product[data-proid="4411078738031"] div#shopify-section-product-tab {
+      display: none;
+    }
+
+    #alert-bar * {
+      color:inherit; 
+    }
+
+    @media (max-width:767px) {
+      .navbar >.menu .navbar-right .navbar-item.cart .cart-count {
+        width: auto;
+        display: block;
+        background: transparent;
+        border-radius: 100%;
+        height: 20px;
+        display: block;
+        min-width: 20px;
+        font-size: 15px;
+        text-align: center;
+        line-height: 20px;
+        right: 0px;
+        bottom: 6px;
+        padding: 0 5px;
+        z-index: 9;
+      } 
+
+      div#alert-bar {
+        font-size: 11px;
+      }
+    }
+
+    body.isAvail_false .cart-control button {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+    
+    body.template-product .shopify-section.faq-section + script + div#stamped-main-widget {
+      display: none !important;
+    }
+    
+    /*==== Banner Above Review ======*/
+
+    .banner-above-review-section {
+      padding: 30px 0;
+    }
+
+    .banner-above-review-section .container {
+      max-width: calc(100% - 30px);
+      width: 1000px;
+    }
+
+/*     .banner-wrapper-above-review {
+      padding-top: 40%;
+      position: relative;
+    }
+    
+    .banner-image-above-review > a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    } */
+    
+    .banner-image-above-review.mobile-img {
+     	display:none; 
+    }
+    
+    @media(max-width:600px) {
+    
+
+      body.template-product section.section.faq {
+        padding-top: 20px;
+      }
+
+      body.template-product #shopify-section-product-tab + div .stamped-review-wrapper {
+        min-height: 200px;
+      }
+
+      body.template-product .stamped-review-wrapper #stamped-reviews-widget div#stamped-reviews-widget {}
+
+      body.template-product #shopify-section-product-tab + div .stamped-review-wrapper div#stamped-reviews-widget {
+        margin-bottom: 0;
+      }
+      
+      .banner-image-above-review.desktop-img {
+        display:none; 
+      }
+      
+      .banner-image-above-review.mobile-img {
+        display:block; 
+      }
+      
+      .navbar.is-fixed-top-touch .navbar-menu, .navbar.is-fixed-top .navbar-menu {
+        -webkit-overflow-scrolling: touch;
+        max-height: none;
+        overflow: auto;
+      }
+
+      span.close-mega-menu {
+        z-index: 99;
+      }
+    }
+
+    .product-type-belt .body-content.ptab-overview .wrap > img {
+      max-height: 300px;
+      position: absolute;
+      object-fit: cover;
+      object-position: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    
+    body[data-proid="4319939330159"] .price span {
+      margin-left: 10px;
+    }
+
+  </style>
+  {% if customer %}
+  <!-- Hotjar Tracking Code for https://www.xpandlaces.com -->
+  <h2 style="display:none;">{{ customer.orders_count }}</h2>
+  <script>
+    (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:798112,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  <!-- Install this snippet AFTER the Hotjar tracking code. -->
+  <script>
+    var userId = {{ customer.id }} || null; // Replace your_user_id with your own if available.
+    window.hj('identify', userId, {
+      'order purchased': {{ customer.orders_count }}, // Signup date in ISO-8601 format.
+      // Add your own custom attributes here. Some EXAMPLES:
+      // 'Signed up': '2019—06-20Z', // Signup date in ISO-8601 format.
+      // 'Last purchase category': 'Electronics', // Send strings with quotes around them.
+      // 'Total purchases': 15, // Send numbers without quotes.
+      // 'Last purchase date': '2019-06-20Z', // Send dates in ISO-8601 format.
+      // 'Last refund date': null, // Send null when no value exists for a user.
+    });
+  </script>
+  {% endif %}
+{% if product.id == 80264691726 %}
+    <style>
+      h1.cm-gift-card-title {
+        display: none;
+      }
+
+      .cm-gift-img-content-col-list {
+        display: flex;
+      }
+
+      .cm-gift-img-content-col-list > div {
+        width: 50%;
+      }
+
+      .cm-gift-card-wrapper {
+        padding: 50px 0;
+        border-bottom: 1px solid #dedede;
+        background: #fff;
+      }
+
+      .cm-gift-card-title > h1 {
+        font-family: neuzeitgroteskblack;
+        font-size: 20px;
+        line-height: 1.2;
+        letter-spacing: .3px;
+        color: #333;
+        margin: 0 0 10px;
+      }
+
+      .cm-right-col-inner {
+        padding-left: 30px;
+        padding-top: 5px;
+      }
+
+      .cm-gc-des {
+        font-family: neuzeit_grotesk_light;
+        font-weight: 400;
+        font-size: 15px;
+      }
+
+      .cm-gc-vars-inner {
+        position: relative;
+        width: 150px;
+      }
+
+      .cm-gc-vars-inner > span {
+        height: 30px;
+        width: 100%;
+        background: #eee;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 5px;
+        line-height: 20px;
+        display: block;
+        text-transform: uppercase;
+        font-family: Univers-BoldCn;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      .cm-gc-vars-inner > span:after {
+        content: "";
+        height: 10px;
+        width: 10px;
+        position: absolute;
+        top: 7px;
+        right: 15px;
+        border: 2px solid #4a4a4a;
+        border-top: 0;
+        border-left: 0;
+        transform: rotate(45deg);
+        transition: all 0.3s ease;
+        transform-origin: center;
+      }
+
+      ul.cm-gc-varss {
+        position: absolute;
+        top: 32px;
+        z-index: 2;
+        background: #eee;
+        border: 1px solid #ccc;
+        border-radius: 0 0 3px 3px;
+        margin: 0 auto;
+        padding: 10px;
+        margin-top: -3px;
+        width: 100%;
+        margin-bottom: 10px;
+        display: none;
+      }
+
+      ul.cm-gc-varss > li {
+        margin: 3px 0;
+        display: inline-block;
+        font-family: neuzeitgroteskblack;
+        border: 1px solid #000;
+        display: block;
+        text-align: center;
+        height: 32px;
+        line-height: 30px;
+        cursor: pointer;
+      }
+      
+      .cm-gc-var-list > span {
+        text-transform: uppercase;
+        font-family: Univers-BoldCn;
+        font-size: 15px;
+        letter-spacing: .5px;
+        font-weight: 700;
+      }
+
+      .cm-gc-var-list {
+        margin: 0 0 20px;
+      }
+      
+      div#shopify-section-product {
+        display: none;
+      }
+
+      div#shopify-section-product-feature {
+        display: none;
+      }
+
+      div#shopify-section-product-tab {
+        display: none;
+      }
+
+      .cm-gift-card-wrapper.showloader:after {
+        position: fixed;
+        top: 0;
+        left: 0;
+        content: "";
+        background: rgba(0,0,0,0.2);
+        height: 100%;
+        width: 100%;
+        z-index: 99;
+      }
+
+      .cm-gift-card-wrapper > img {
+        display:none;
+      }
+      
+      .cm-gift-card-wrapper.showloader > img {
+        position: fixed;
+        top: 50%;
+        display:block;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 999;
+      }
+      
+      ul.cm-gc-varss > li[data-available="false"] {
+        pointer-events: none;
+        opacity: 0.75;
+      }
+      
+      .cart-control.cn-gc-control form > *:not(button) {
+        display: none;
+      }
+
+      .cart-control.cn-gc-control {}
+
+      .cart-control.cn-gc-control form > *:not(button) {
+        display: none;
+      }
+
+      .cart-control.cn-gc-control button#cm-gc-addbtn {
+        float: left;
+        width: 100%;
+      }
+
+      ul.cm-gc-varss {
+        display: flex !important;
+        position: relative;
+        margin: 0;
+        top: 0;
+        flex-flow: wrap;
+      }
+
+      ul.cm-gc-varss > li {
+        padding: 0 10px;
+        margin: 10px;
+        min-width: 107px;
+      }
+
+      .cm-gc-vars-inner {
+        width: 100%;
+      }
+
+      .cm-gc-vars-inner > span {
+        display: none !important;
+      }
+
+      ul.cm-gc-varss > li.selected:after {
+        content: "";
+        height: 15px;
+        width: 15px;
+        background-color: #fff;
+        top: -6px;
+        position: absolute;
+        border-radius: 100%;
+        left: -6px;
+        background-image: url(https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png);
+        background-size: 100% auto;
+        background-position: center center;
+      }
+
+      ul.cm-gc-varss > li {
+        position: relative;
+      }
+
+      ul.cm-gc-varss > li.selected {
+        background: #0090fc;
+        color: #fff;
+        border-color: #fff;
+      }
+      
+      ul.product-switcher-list > li {
+        display: none;
+      }
+
+      ul.product-switcher-list > li[data-activepro="true"] {
+        display: block;
+      }
+      
+      @media (max-width:767px) {
+        .cm-gift-img-content-col-list {
+          display: block;
+          padding: 0 20px;
+        }
+
+        .cm-gift-img-content-col-list > div {
+          width: 100%;
+        }
+
+        .cm-right-col-inner {
+          padding: 20px 0 0;
+        } 
+        
+        
+      }
+    </style>
+    
+    <script>
+      $(document).ready(function(){
+        $(document).click(function(){
+          //$('ul.cm-gc-varss').slideUp(250);
+        });
+
+        $('span.cm-gc-selected-var').click(function(e){
+          e.stopPropagation();
+          $(this).next('ul').slideToggle(250);
+        });
+
+        $('ul.cm-gc-varss > li').click(function(e){
+          e.stopPropagation();
+          let varTitle = $(this).text();
+          let varId = $(this).attr('data-id')
+          let varAvail = $(this).attr('data-available');
+          $('span.cm-gc-selected-var').text(varTitle);
+          $('span.cm-gc-selected-var').attr('data-id',varId);
+          $('span.cm-gc-selected-var').attr('data-available',varAvail);
+          //$('ul.cm-gc-varss').slideUp(250);
+          $('ul.cm-gc-varss > li').removeClass('selected');
+          $(this).addClass('selected');
+        })
+        
+        $('.cart-control.cn-gc-control a.button.icon-plus').click(function(){
+          let initialCount = Number($('input#cm-gc-qty').val());
+          let newCountVal = initialCount + 1;
+          $('input#cm-gc-qty').val(newCountVal)
+        });
+
+        $('.cart-control.cn-gc-control a.button.icon-minus').click(function(){
+          let initialCount = Number($('input#cm-gc-qty').val());
+          let newCountVal = initialCount - 1;
+          if(newCountVal>0){
+            $('input#cm-gc-qty').val(newCountVal)
+          }
+        });
+        
+        $('#cm-gc-addbtn').click(function(e){
+          $('.cm-gift-card-wrapper').addClass('showloader')
+          let cmGCData = {};
+          cmGCData['id'] = $('span.cm-gc-selected-var').attr('data-id')
+          cmGCData['quantity'] = $('input#cm-gc-qty').val();
+          $.ajax({
+            type: 'POST',
+            url: '/cart/add.js',
+            dataType: 'json',
+            data: cmGCData,
+            success: function(res){
+              window.location.href = window.location.href;
+            },
+            error: function(res){
+              
+            }
+          });
+        });
+        
+      })
+    </script>
+    {% endif %}
+          {% include 'wisepops-generated' %}
+  
+  {% if template == 'index' %}
+  <script type="text/javascript">
+  (function() {
+    var head = document.querySelector("head"), ur = document.createElement("script"), ud = document.createElement("script");      
+    ur.type = "text/javascript"; ur.async = true; ur.src = "https://uibcdn.com/sdk/30123/uResponses.min.js";
+    ud.type = "text/javascript"; ud.async = true; ud.src = "https://uibcdn.com/sdk/30123/udash.min.js";
+    ud.onload = function(){
+        uDash.init({ uProjectName: 'Xpand_2126',uProjectApiPass: '063e15843d6253af8dfbd9ba1de28743',uPort: 30123 });
+    }
+    head.appendChild(ur);
+    head.appendChild(ud);
+  })();
+  </script>
+  {% endif %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+<div class="cm_bottom_content_section">
+  <div class="container">
+    <div class="cm_bottom_content">
+		{{ section.settings.content }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Bottom Content",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content",
+        "default": "<p>Default <em>richtext</em> <a href=\"https://example.com/\">content</a></p>"
+      }	
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

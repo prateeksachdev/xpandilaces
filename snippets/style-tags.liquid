@@ -1,0 +1,178 @@
+
+{%- if layout == 'theme' -%}
+<link type="text/css" href="{{ 'layout.theme.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'layout.theme.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == '404' -%}
+<link type="text/css" href="{{ 'template.404.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.404.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'article' -%}
+<link type="text/css" href="{{ 'template.article.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.article.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'blog' -%}
+<link type="text/css" href="{{ 'template.blog.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.blog.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'cart' -%}
+<link type="text/css" href="{{ 'template.cart.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.cart.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'collection' -%}
+<link type="text/css" href="{{ 'template.collection.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.collection.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'index' -%}
+<link type="text/css" href="{{ 'template.index.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.index.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'page.compare' -%}
+<link type="text/css" href="{{ 'template.page.compare.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.page.compare.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'page.contact' -%}
+<link type="text/css" href="{{ 'template.page.contact.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.page.contact.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'page' -%}
+<link type="text/css" href="{{ 'template.page.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.page.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'page.narrow' -%}
+<link type="text/css" href="{{ 'template.page.narrow.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.page.narrow.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'page.wide' -%}
+<link type="text/css" href="{{ 'template.page.wide.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.page.wide.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'page.with-tab' -%}
+<link type="text/css" href="{{ 'template.page.with-tab.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.page.with-tab.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'product.full-width-images' -%}
+<link type="text/css" href="{{ 'template.product.full-width-images.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.product.full-width-images.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'product' -%}
+<link type="text/css" href="{{ 'template.product.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.product.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'product.primary' -%}
+<link type="text/css" href="{{ 'template.product.primary.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.product.primary.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'search' -%}
+<link type="text/css" href="{{ 'template.search.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.search.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'customers/account' -%}
+<link type="text/css" href="{{ 'template.account.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.account.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'customers/addresses' -%}
+<link type="text/css" href="{{ 'template.addresses.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.addresses.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'customers/login' -%}
+<link type="text/css" href="{{ 'template.login.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.login.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'customers/register' -%}
+<link type="text/css" href="{{ 'template.register.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.register.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'customers/reset_password' -%}
+<link type="text/css" href="{{ 'template.reset_password.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.reset_password.css' | asset_url }}" as="style">
+{%- endif -%} {%- if layout == 'theme' -%}
+<link type="text/css" href="{{ 'layout.theme.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'layout.theme.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == '404' -%}
+<link type="text/css" href="{{ 'template.404.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.404.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'article' -%}
+<link type="text/css" href="{{ 'template.article.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.article.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'blog' -%}
+<link type="text/css" href="{{ 'template.blog.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.blog.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'cart' -%}
+<link type="text/css" href="{{ 'template.cart.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.cart.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'collection' -%}
+<link type="text/css" href="{{ 'template.collection.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.collection.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'index' -%}
+<link type="text/css" href="{{ 'template.index.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.index.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'page.compare' -%}
+<link type="text/css" href="{{ 'template.page.compare.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.page.compare.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'page.contact' -%}
+<link type="text/css" href="{{ 'template.page.contact.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.page.contact.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'page' -%}
+<link type="text/css" href="{{ 'template.page.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.page.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'page.narrow' -%}
+<link type="text/css" href="{{ 'template.page.narrow.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.page.narrow.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'page.wide' -%}
+<link type="text/css" href="{{ 'template.page.wide.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.page.wide.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'page.with-tab' -%}
+<link type="text/css" href="{{ 'template.page.with-tab.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.page.with-tab.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'product.full-width-images' -%}
+<link type="text/css" href="{{ 'template.product.full-width-images.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.product.full-width-images.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'product' -%}
+<link type="text/css" href="{{ 'template.product.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.product.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'product.primary' -%}
+<link type="text/css" href="{{ 'template.product.primary.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.product.primary.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'search' -%}
+<link type="text/css" href="{{ 'template.search.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.search.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'customers/account' -%}
+<link type="text/css" href="{{ 'template.account.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.account.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'customers/addresses' -%}
+<link type="text/css" href="{{ 'template.addresses.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.addresses.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'customers/login' -%}
+<link type="text/css" href="{{ 'template.login.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.login.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'customers/register' -%}
+<link type="text/css" href="{{ 'template.register.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.register.css' | asset_url }}" as="style">
+{%- endif -%} {%- if template == 'customers/reset_password' -%}
+<link type="text/css" href="{{ 'template.reset_password.css' | asset_url }}" rel="stylesheet">
+{%- else -%}
+<link rel="prefetch" href="{{ 'template.reset_password.css' | asset_url }}" as="style">
+{%- endif -%}

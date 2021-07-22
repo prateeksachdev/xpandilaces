@@ -1,0 +1,22 @@
+<div class="cm_full_width_image_section">
+  <img src="{{ section.settings.section_image|img_url:'master' }}" alt=""/>
+</div>
+
+{% schema %}
+  {
+    "name": "Full Width Image",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "section_image",
+        "label": "Section Image"
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,76 @@
+{% for block in section.blocks %}
+<div class="cm_pdp_section left-aligned-{{ block.settings.left_aligned_img }}">
+  <div class="cm_pdp_section_inner">
+    <div class="container">
+      <div class="cm_pdp_section_col_listing">
+	
+        <div class="cm_pdp_img_col">
+          <img src="{{ block.settings.product_image|img_url:'master' }}" alt=""/>
+        </div>
+        <div class="cm_pdp_des_col">
+          
+          <div class="cm_pdp_des_col_inner">
+            <div class="cm_pdp_des">
+              {{ block.settings.product_description }}
+            </div>
+            <div class="cm_pdp_btn">
+              <a href="{{ block.settings.pdp_link }}">SHOP OUR {{ block.settings.title }}  ⟶</a>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "Product Description",
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "col_item",
+        "name": "Column Item",
+        "settings": [
+            {
+               "type":      "text",
+               "id":        "title",
+               "label":     "Title",
+               "placeholder": "Title"
+            },
+            {
+              "type": "image_picker",
+              "id": "product_image",
+              "label": "Product Image"
+            },
+            {
+               "type": "richtext",
+               "id": "product_description",
+               "label": "Description",
+               "default": "<p>Default <em>richtext</em> <a href=\"https://example.com/\">content</a></p>"
+            },
+            {
+              "id": "pdp_link",
+              "type": "url",
+              "label": "PDP Link"
+            },
+            {
+              "type": "checkbox",
+              "id": "left_aligned_img",
+              "label": "Left Aligned Image"
+            }
+        ]
+      }
+    ]
+
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

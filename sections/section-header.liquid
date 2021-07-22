@@ -1,0 +1,42 @@
+<div class="cm_section_header">
+  <div class="container">
+    <div class="cm_section_header_inner_wrapper">
+      <div class="cm_header">
+        {% assign title = section.settings.title|split:' ' %}
+        <h1>{% for item in title %}<span>{{ item }}</span>{% endfor %}</h1>
+      </div>
+      
+      <div class="cm_section_header_content">
+        {{ section.settings.content }}
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Section Header",
+    "settings": [
+      {
+        "type":"text",
+        "id":"title",
+        "label":"Title",
+        "placeholder":"Title"
+      },
+      {
+         "type": "richtext",
+         "id": "content",
+         "label": "Content",
+         "default": "<p>Default <em>richtext</em> <a href=\"https://example.com/\">content</a></p>"
+      }
+
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

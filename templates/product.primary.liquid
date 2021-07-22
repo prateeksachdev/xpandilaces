@@ -1,0 +1,117 @@
+{% section 'product-primary' %}
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": "{{ product.title | escape }}",
+  "url": "{{ shop.url }}{{ product.url }}",
+  {% if product.featured_image %}
+    {% assign image_size = product.featured_image.width | append: 'x' %}
+    "image": [
+      "https:{{ product.featured_image.src | img_url: image_size }}"
+    ],
+  {% endif %}
+  "description": "{{ product.description | strip_html | escape }}",
+  {% if current_variant.sku != blank %}
+    "sku": "{{ current_variant.sku }}",
+  {% endif %}
+  "brand": {
+    "@type": "Thing",
+    "name": "{{ product.vendor | escape }}"
+  },
+  {% if product.variants %}
+    "offers": [
+      {% for variant in product.variants %}
+        {
+          "@type" : "Offer",
+          "availability" : "http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
+          "price" : "{{ variant.price | divided_by: 100.00 }}",
+          "priceCurrency" : "{{ shop.currency }}",
+          "url" : "{{ shop.url }}{{ variant.url }}",
+          "itemOffered" :
+          {
+              "@type" : "Product",
+              {% if variant.image %}
+                {% assign variant_image_size = variant.image.width | append: 'x' %}
+                "image": "http:{{ variant.image.src | img_url: variant_image_size }}",
+              {% endif %}
+              {% if variant.title != blank %}
+                "name" : "{{ variant.title | escape }}",
+              {% endif %}
+              {% if variant.sku != blank %}
+                "sku": "{{ variant.sku }}",
+              {% endif %}
+              {% if variant.weight != blank %}
+                "weight": {
+                  "@type": "QuantitativeValue",
+                  {% if variant.weight_unit != blank %}
+                    "unitCode": "{{ variant.weight_unit }}",
+                  {% endif %}
+                  "value": "{{ variant.weight | weight_with_unit: variant.weight_unit }}"
+                },
+              {% endif %}
+              "url": "{{ shop.url }}{{ variant.url }}"
+          }
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  {% endif %}
+}
+</script>
+
+
+<div id="proVariants" style="display:none;">
+  {% for variant in product.variants %}
+  <span data-title="{{ variant.title }}" data-color="{{ variant.option1 }}" data-available="{{ variant.available }}" class="cm_var_item">{{ variant.title }}-- {{ variant.available }}</span><br>
+  {% endfor %}
+</div>
+
+<script>
+  $(document).ready(function(){
+    let colorValues =[];
+    $('#proVariants > span[data-available="false"]').each(function(){
+      let colorVal = $(this).attr('data-color');
+      if(colorValues.indexOf(colorVal) < 0) {
+        colorValues.push(colorVal);
+      }
+    });
+
+    console.log('colorValues',colorValues);
+    let unavailableColors = [];
+    if(colorValues.length > 0) {
+      colorValues.forEach(function(item){
+        if($('#proVariants > span[data-color="'+item+'"][data-available="true"]').length > 0) {
+
+        }
+        else {
+          var swatchItem = $(`.product .product-swatch .swatch a[data-bg*="/${item}---"]`).parent();
+          swatchItem.hide()
+          if(swatchItem.hasClass('selected')) {
+            swatchItem.next('div').find('a').trigger('click');
+          }
+
+        }
+      });
+    }
+    function checkAvailablity(color,size) {
+      let colorVal = $('span.desktop.selected-swatch-text').text().replace('COLOR: ','');
+      let sizeVal = $('span.desktop.selected-size-text').text().replace('Size: ','');
+      let makeTitle = colorVal + " / " + sizeVal;
+      console.log(makeTitle);
+      let availablity = $(`#proVariants > span[data-title='${makeTitle}'`).attr('data-available');
+      $('body').removeClass('isAvail_false').removeClass('isAvail_true').addClass(`isAvail_${availablity}`)
+      availablity = JSON.parse(availablity);
+      return availablity;
+    }
+
+    checkAvailablity();
+
+    $('.product-swatch .swatch a,.product .column.controls .options .size-option').click(function(){
+      checkAvailablity()
+    });
+
+
+
+  })
+</script>

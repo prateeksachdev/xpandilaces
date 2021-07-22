@@ -1,0 +1,35 @@
+<div class="cm_banner_area" style="background-image:url('{{ section.settings.banner_bg_image|img_url:'master' }}')">
+  <div class="cm_banner_area_inner_wrapper">
+    <div class="container">
+      <div class="banner_content">
+        <h1>{{ section.settings.banner_title }}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Banner Area",
+    "settings": [
+      {
+        "type":      "text",
+        "id":        "banner_title",
+        "label":     "Title",
+        "default":   "Banner Title",
+        "placeholder": "Title"
+      },
+	  {
+        "type": "image_picker",
+        "id": "banner_bg_image",
+        "label": "Banner Image"
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

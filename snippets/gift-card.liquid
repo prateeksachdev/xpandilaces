@@ -1,0 +1,59 @@
+
+<div class="cm-gift-card-wrapper">
+  <div class="container">
+    <div class="cm-gift-card-inner-wrapper">
+      <div class="cm-gift-img-content-col-list">
+        <div class="cm-img-col">
+          <h1 class="cm-gift-card-title">{{ product.title }}</h1>
+          <div class="cm-img">
+            <img src="{{ product.featured_image.src|img_url:'master' }}" alt="{{ product.title }}"/>
+          </div>
+        </div>
+        <div class="cm-right-col">
+          <div class="cm-right-col-inner">
+            <div class="cm-gift-card-title">
+              <h1>{{ product.title }}</h1>
+            </div>
+            
+            <div class="cm-gc-des">
+              <div class="cm-gc-inner-des">
+                {{ product.description }}
+              </div>
+            </div>
+            <div class="cm-gc-var-list">
+              <span>Choose Amount</span>
+              <div class="cm-gc-vars-inner">
+                <span class="cm-gc-selected-var" data-id="{{ product.selected_or_first_available_variant.id }}" data-available="{{ product.selected_or_first_available_variant.available }}">{{ product.selected_or_first_available_variant.title }}</span>
+                <ul class="cm-gc-varss">
+                  {% for variant in product.variants %}
+                  <li data-id="{{ variant.id }}" data-available="{{ variant.available }}" {% if forloop.index == 1 %}class="selected"{% endif %}>{{ variant.title }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+            
+            <div class="cart-control cn-gc-control">
+              <form>
+                <a class="button icon-minus"></a> 
+                <input type="number" min="1" size="2" name="quantity" value="1" id="cm-gc-qty">
+                <a href="javascript:;" class="button icon-plus"></a>
+                <button type="submit" class="button" style="color: rgb(255, 255, 255);" id="cm-gc-addbtn">
+                  <span class="fadeInDown">
+                    <span class="default">Add To Cart</span>
+                    <span class="belt-default">Add to Cart</span>
+                  </span>
+                  <svg  x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" class="checkmark">
+                    <path  fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"></path>
+                  </svg>
+                </button>
+              </form>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="//cdn2.shopify.com/s/files/1/1206/8416/t/110/assets/loader.gif" alt="Loader"/>
+</div>
+

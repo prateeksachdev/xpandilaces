@@ -1,0 +1,397 @@
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available in the "Header" section in the theme editor.
+
+  Theme Store required settings
+  - Show announcement
+  - Text: message to announce
+  - Link: link of the announcement bar
+
+  Theme Store optional settings
+  - Home page only: only shows on the home page
+{%- endcomment -%}
+<div data-section-id="{{ section.id }}" data-section-type="header" class="alert-box-active">
+  
+    <div id="alert-bar" style="background: {{ section.settings.alert_bg_color }}; color:{{ section.settings.alert_text_color }};">
+      <div class="cm-inner-alert-box">{{ section.settings.alert_text }}</div>
+    </div>
+    
+  <top-nav :is-announcement-enabled="{{section.settings.announcement_bar_enabled}}">
+    <template #cart>
+      <script type="application/json">
+        {{cart | json}}
+      </script>
+    </template>
+    
+    {% if section.settings.announcement_bar_enabled %}
+      <template #announcement="{ hide }">
+        <div class="row announcement" style="{%- if section.settings.ab_bg_color -%}background-color: {{section.settings.ab_bg_color}};{%- endif -%}{%- if section.settings.ab_text_color -%}color: {{section.settings.ab_text_color}};{%- endif -%}">
+          <div class="container has-text-centered">
+            {% if section.settings.shipping_text != blank %}
+              <div class="text-wrap">
+                <img class="announcement-icon lazyload" data-src="{{ 'box.svg' | asset_url }}">
+                {{ section.settings.shipping_text }} {{isAnnouncementVisible}}
+              </div>
+            {% endif %}
+            {% if section.settings.promo_text != blank %}
+              <div class="text-wrap">
+                <span class="announcement-icon">
+                  <svg width="16" height="16" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z"/></svg>
+                </span>
+                {{ section.settings.promo_text }}
+              </div>
+            {% endif %}
+          </div>
+
+          <a @click="hide" href="javascript:;" class="close">
+            <svg width="12" height="12" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z" fill="#fff"/></svg>
+          </a>
+        </div>
+      </template>
+    {% endif %}
+
+    <template #primary-menu="{ toggleMobileMenu, showDesktopMega, toggleMobileMega, toggleSearch, showCartDetail, hideCartDetail, isCartDetailVisible, isMobileMenuVisible, vcoCartDetail }">
+      <div class="row menu">
+        <div class="container">
+          <div class="navbar-left">
+            <a @click="toggleMobileMenu" role="button" class="navbar-burger burger" :class="{ 'is-active': isMobileMenuVisible }">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+
+            <div class="navbar-menu">
+              <a @mouseenter="showDesktopMega" class="navbar-item" href="javascript:;">
+                {{section.settings.desktop_cta_text}}
+                <span class="icon-down-arrow">
+              </a>
+
+              {% for link in linklists[section.settings.primary_menu].links %}
+                <a class="navbar-item" href="{{ link.url }}">{{ link.title }}</a>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="navbar-brand">
+            <a class="navbar-item logo" href="{{ shop.url }}">
+              <img
+                srcset="{{ section.settings.logo | img_url: '200x' }} 200w,
+                        {{ section.settings.logo | img_url: '100x' }} 100w,
+                        {{ section.settings.logo | img_url: '50x' }} 50w"
+                src="{{ section.settings.logo | img_url: '100x' }}"
+                alt="{{ shop.name | escape }}"
+              >
+            </a>
+          </div>
+
+          <div class="navbar-right">
+            <a class="navbar-item mobile-cta" href="javascript:;" @click="toggleMobileMega">
+              {{section.settings.mobile_cta_text}}
+              <span class="icon-down-arrow">
+            </a>
+
+            <div class="navbar-menu">
+              {% for link in linklists[section.settings.secondary_menu].links %}
+                <a class="navbar-item" href="{{ link.url }}">{{ link.title }}</a>
+              {% endfor %}
+            </div>
+
+            <a @click="toggleSearch" class="navbar-item search">
+              <img src="{{ 'search.png' | asset_url }}" alt="{{ 'general.search.title' | t }}">
+            </a>
+
+            <a @mouseenter="showCartDetail" @click="showCartDetail" class="navbar-item cart">
+              <img src="{{ 'cart-2.png' | asset_url }}" alt="{{ 'cart.general.title' | t }}">
+              <cart-count></cart-count>
+            </a>
+
+            <transition name="fade">
+              <div v-show="isCartDetailVisible" class="cart-detail">
+                <cart-drawer
+                  v-click-outside="vcoCartDetail"
+                  @hide="hideCartDetail"
+                  :is-visible="isCartDetailVisible"
+                  saving-text-template="{{settings.cart_saving_text}}"
+                  free-shipping-hint-template="{{settings.cart_free_shipping_hint_text}}"
+                  free-shipping-item-count="{{settings.cart_free_shipping_item_count}}"
+                  free-shipping-applied-text="{{settings.cart_free_shipping_applied_text}}"
+                  discount-hint-color="{{settings.cart_discount_hint_color}}"
+                  progress-bar-color="{{settings.cart_progress_bar_color}}"
+                  no-discount-hint-text="{{settings.cart_no_discount_hint_text}}"
+                  discount-applied-template="{{settings.cart_discount_applied_text}}"
+                  checkout-text-color="{{settings.cart_checkout_text_color}}"
+                  checkout-bg-color="{{settings.cart_checkout_bg_color}}"
+                >
+                  <template #continue-shopping>
+                    {{ 'cart.general.continue_shopping_link_html' | t }}
+                  </template>
+
+                  <template #empty-msg>
+                    {{ 'layout.general.empty_cart' | t }}
+                  </template>
+
+                  <template #sub-total-text>
+                    {{ 'layout.general.subtotal' | t }}
+                  </template>
+
+                  <template #checkout>
+                    {{ 'cart.general.checkout' | t }}
+                  </template>
+                </cart-drawer>
+              </div>
+            </transition>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template #mobile-menu>
+      <div class="nav-drop mobile-menu mobile">
+        <div class="navbar-menu is-active">
+          {% for link in linklists[section.settings.mobile_menu].links %}
+            <a class="navbar-item" href="{{ link.url }}">{{ link.title }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </template>
+
+    <template #mobile-mega="{ isMobileMegaVisible, hideMobileMega }">
+      <div v-if="isMobileMegaVisible" v-click-outside="hideMobileMega" class="nav-drop row mega-drop mobile">
+        <div class="columns is-mobile">
+          {% for block in section.blocks %}
+            {% if block.settings.enable_block %}
+              <div class="column is-half">
+                <a href="{{ block.settings.link }}" class="item">
+                  <img class="lazyload" data-src="{{ block.settings.image | img_url: '400x' }}">
+                  <h3>{{ block.settings.name }}</h3>
+                  {{ block.settings.caption }}
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+		<span class="close-mega-menu" @click="hideMobileMega"></span>
+      </div>
+    </template>
+
+    <template #desktop-mega="{ hide }">
+      <div @mouseleave="hide" class="nav-drop row mega-drop desktop">
+        {% for block in section.blocks %}
+          {% if block.settings.enable_block %}
+            <a href="{{ block.settings.link }}" class="item" {%- if section.settings.mega_item_desktop_spacing -%}style="padding: 0 {{section.settings.mega_item_desktop_spacing}}px;"{%- endif -%}>
+              <img class="lazyload" data-src="{{ block.settings.image | img_url: 'x200' }}">
+              <h3>{{ block.settings.name }}</h3>
+              {{ block.settings.caption }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </template>
+
+    <template #search-bar>
+      <div class="nav-drop row search">
+        <form action="/search">
+          {% if settings.search_option != 'everything' %}
+            <input type="hidden" name="type" value="product" />
+          {% endif %}
+
+          <div class="control has-icons-right">
+            <input class="input" type="text" name="q" placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}" autocapitalize="off" autocomplete="off" autocorrect="off">
+            <button class="icon-search icon is-right is-large" type="submit"></button>
+          </div>
+        </form>
+      </div>
+    </template>
+  </top-nav>
+</div>
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Announcement Bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "announcement_bar_enabled",
+        "label": "Show Announcement Bar",
+        "default": true
+      },
+      {
+        "type": "richtext",
+        "id": "shipping_text",
+        "label": "Shipping Text"
+      },
+      {
+        "type": "richtext",
+        "id": "promo_text",
+        "label": "Promo Text"
+      },
+      {
+        "type": "color",
+        "id": "ab_text_color",
+        "label": "Text Color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "ab_bg_color",
+        "label": "Background Color",
+        "default": "#ffd828"
+      },
+      {
+        "type": "header",
+        "content": "Alert Bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_alert_bar",
+        "label": "Show Alert Bar",
+        "default": true
+      },
+      {
+        "type": "richtext",
+        "id": "alert_text",
+        "label": "Alert Text"
+      },
+      {
+        "type": "color",
+        "id": "alert_text_color",
+        "label": "Text Color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "alert_bg_color",
+        "label": "Background Color",
+        "default": "#008ffd"
+      },
+      {
+        "type": "header",
+        "content": "Navbar"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo image"
+      },
+      {
+        "type": "text",
+        "id": "mobile_cta_text",
+        "label": "Mobile CTA Text",
+        "default": "SHOP"
+      },
+      {
+        "type": "text",
+        "id": "desktop_cta_text",
+        "label": "Desktop CTA Text",
+        "default": "SHOP"
+      },
+      {
+        "type": "link_list",
+        "id": "primary_menu",
+        "label": "Primary Menu"
+      },
+      {
+        "type": "link_list",
+        "id": "secondary_menu",
+        "label": "Secondary Menu"
+      },
+      {
+        "type": "link_list",
+        "id": "mobile_menu",
+        "label": "Mobile Menu"
+      },
+      {
+        "type": "header",
+        "content": "Mega Drop"
+      },
+      {
+        "type": "range",
+        "id": "mega_item_desktop_spacing",
+        "min": 10,
+        "max": 100,
+        "step": 5,
+        "unit": "px",
+        "label": "Desktop Mega Item Spacing",
+        "default": 40
+      }
+    ],
+    "max_blocks": 6,
+    "blocks": [
+      {
+        "type": "mega_item",
+        "name": "Mega Item",
+        "settings": [
+          {
+            "type":"checkbox",
+            "id":"enable_block",
+            "label":"Enable Block",
+            "default": true
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name"
+          },
+          {
+            "type": "richtext",
+            "id": "caption",
+            "label": "Caption"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "{{ shop.name }}",
+  {% if section.settings.logo %}
+    {% assign image_size = section.settings.logo.width | append:'x' %}
+    "logo": "https:{{ section.settings.logo | img_url: image_size }}",
+  {% endif %}
+  "sameAs": [
+    "{{ settings.social_twitter_link }}",
+    "{{ settings.social_facebook_link }}",
+    "{{ settings.social_pinterest_link }}",
+    "{{ settings.social_instagram_link }}",
+    "{{ settings.social_tumblr_link }}",
+    "{{ settings.social_snapchat_link }}",
+    "{{ settings.social_youtube_link }}",
+    "{{ settings.social_vimeo_link }}"
+  ],
+  "url": "{{ shop.url }}{{ page.url }}"
+}
+</script>
+
+{% if template.name == 'index' %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "{{ shop.name }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ shop.url }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "url": "{{ shop.url }}{{ page.url }}"
+    }
+  </script>
+{% endif %}

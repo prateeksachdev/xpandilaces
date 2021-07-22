@@ -1,0 +1,84 @@
+<section class="how-it-work-tab">
+  <div class="container">
+    <h1>{{ section.settings.title }}</h1>
+
+    <tab-content>
+      <template #head="{ selectTab, activeTab }">
+        <div class="container">
+          <ul class="columns">
+            {% for block in section.blocks %}
+              <li class="column" :class="{ active: activeTab === 'tab-{{forloop.index}}' }">
+                <span @click="selectTab" id="tab-{{forloop.index}}">{{ block.settings.title }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </template>
+
+      <template #body="{ activeTab }">
+        {% for block in section.blocks %}
+          <transition name="fade">
+            <div v-if="activeTab === 'tab-{{forloop.index}}'" class="body-content">
+              <div class="container">
+                <div class="videos">
+                  {% if block.settings.youtube_video1_url != blank %}
+                    <div class="video">
+                      {% comment %}<div class="video-item" id="video-id-1-{{ forloop.index }}" data-src="{{block.settings.youtube_video1_url | replace: 'watch?v=', 'embed/' | replace:'https://www.youtube.com/embed/',''}}"></div>{% endcomment %}
+                      <iframe src="{{block.settings.youtube_video1_url | replace: 'watch?v=', 'embed/'}}?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video-id-1-{{forloop.index}}"></iframe>
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.youtube_video2_url != blank %}
+                    <div class="video">
+                      {% comment %}<div class="video-item" id="video-id-2-{{ forloop.index }}" data-src="{{block.settings.youtube_video2_url | replace: 'watch?v=', 'embed/'}}"></div>{% endcomment %}
+                      <iframe src="{{block.settings.youtube_video2_url | replace: 'watch?v=', 'embed/'}}?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video-id-2-{{forloop.index}}"></iframe>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </transition>
+        {% endfor %}
+      </template>
+    </tab-content>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Tab",
+    "class": "tab-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Installation Guide"
+      }
+    ],
+    "max_blocks": 4,
+    "blocks": [
+      {
+        "type": "tab",
+        "name": "Tab Content",
+        "settings": [
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Tab Title"
+          },
+          {
+            "id": "youtube_video1_url",
+            "type": "text",
+            "label": "Youtube Video 1"
+          },
+          {
+            "id": "youtube_video2_url",
+            "type": "text",
+            "label": "Youtube Video 2"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

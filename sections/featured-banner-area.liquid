@@ -1,0 +1,71 @@
+<section class="cm-featured-banner-area cd">
+    <div class="container">
+        <div class="cm-feature-list-title">
+            <h2>{{ section.settings.list_title }}</h2>
+        </div>
+
+        <div class="cm-featured-listing-wrapper">
+            <div class="cm-featured-listing cm-col-count-{{ section.blocks.size }}">
+                {% for block in section.blocks %}
+                <div class="cm-featured-item">
+                    <div class="cm-featured-item-inner">
+                        <div class="cm-featured-icon-image">
+                            <img src="{{ block.settings.image|img_url: 'master' }}" alt="{{ block.settings.title }}" />
+                        </div>
+                        <div class="cm-title">
+                            <h3>{{ block.settings.title }}</h3>
+                            <p>{{ block.settings.para }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Banner Area",
+  "max_blocks": 4,
+  "settings":[
+    {
+      "type": "text",
+      "id": "list_title",
+      "label": "Listing Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "box",
+      "name": "Box",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "para",
+          "label": "Paragraph"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Banner Area",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
+
+

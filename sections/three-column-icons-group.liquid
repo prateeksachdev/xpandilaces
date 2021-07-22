@@ -1,0 +1,104 @@
+<div class="three_column_icons_group">
+  <div class="container">
+    <div class="three_column_icons_group_wrapper">
+      <div class="cm_listing_header">
+        <h1>{{ section.settings.listing_title }}</h1>
+      </div>
+      <div class="cm_col_listing_wrapper">
+        <div class="cm_col_listing_wrapper">
+          {% for block in section.blocks %}
+          <div class="cm-block-item">
+            <div class="cm-block-item-inner">
+              <div class="cm-block-image">
+                <img src="{{ block.settings.image|img_url:'master' }}" alt="{{ block.settings.title }}"/>
+              </div>
+              <h3 class="cm-block-title">{{ block.settings.title }}</h3>
+              <div class="cm-block-content">
+                {{ block.settings.content }}
+              </div>
+              <div class="cm-block-button">
+                <a href="{{ block.settings.link }}"><span>{{ block.settings.btn_txt }}  ⟶</span></a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="cm-youtube-video-section">
+        <div class="cm-youtube-video">
+          {{ section.settings.youtube_embeded_path }}
+        </div>
+        <h3>{{ section.settings.bottom_header }}</h3>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Three Column Icons Group",
+    "settings": [
+		{
+           "type":      "text",
+           "id":        "listing_title",
+           "label":     "Listing Title",
+           "placeholder": "Title"
+        },
+		{
+           "type":      "textarea",
+           "id":        "youtube_embeded_path",
+           "label":     "YouTube embeded",
+           "placeholder": "Embeded Path"
+        },
+		{
+           "type":      "text",
+           "id":        "bottom_header",
+           "label":     "Bottom Header",
+           "placeholder": "Bottom Header"
+        }
+	],
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "col_item",
+        "name": "Column Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+          },
+		  {
+            "type": "text",
+            "id": "btn_txt",
+            "label": "Button Text"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ]
+
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

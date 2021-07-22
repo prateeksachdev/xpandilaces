@@ -1,0 +1,1180 @@
+{
+  "current": {
+    "share_image": "",
+    "social_sharing_blog": true,
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "social_twitter_link": "https:\/\/twitter.com\/xpandlaces",
+    "social_facebook_link": "https:\/\/www.facebook.com\/Xpandlaces\/",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/xpandlaces",
+    "social_snapchat_link": "",
+    "social_tumblr_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "search_option": "everything",
+    "cart_discount_hint_group": "Laces",
+    "cart_discount_applied_text": "Congrats, you just received {{discountPercentage}}% off!",
+    "cart_free_shipping_hint_text": "You are {{quantity}} pack away from free shipping!",
+    "cart_free_shipping_applied_text": "Congrats, you just received free shipping!",
+    "cart_free_shipping_item_count": 4,
+    "enable_free_product": false,
+    "cart_free_product_item_count": 12,
+    "cart_free_product_hint_text": "You are {{quantity}} pack away to get a free product!",
+    "cart_free_product_applied_text": "Congrats, you just received free product!",
+    "cart_no_discount_hint_text": "You’re all set!<br>Continue to shop or proceed to checkout!",
+    "tier_1_line_qnty": 3,
+    "tier_1_dis_amount": "1.66",
+    "tier_2_line_qnty": 6,
+    "tier_2_dis_amount": "4.16",
+    "tier_3_line_qnty": 8,
+    "tier_3_dis_amount": "4.37",
+    "tier_4_line_qnty": 0,
+    "tier_4_dis_amount": "0",
+    "cart_progress_bar_color": "#1ec865",
+    "cart_discount_hint_color": "#24726e",
+    "cart_saving_text": "You saved {{savingPercentage}}",
+    "cart_checkout_text_color": "#fff",
+    "cart_checkout_bg_color": "#008ffd",
+    "recommended_title": "Recommended Add-Ons",
+    "recommended_title_bg_color": "#617686",
+    "recommended_title_txt_color": "#fff",
+    "recommended_product_one": "explorer-belt",
+    "recommended_product_two": "lightweight-no-show-socks",
+    "recommended_product_three": "",
+    "favicon": "",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
+    "color_accent": "#c4cdd5",
+    "color_body_text": "#fafafa",
+    "color_main_bg": "#197bbd",
+    "btn_color": "#197bbd",
+    "btn_hover_color": "#ae3333",
+    "btn_text_color": "#ffffff",
+    "font_heading": "helvetica_n4",
+    "font_body": "helvetica_n4",
+    "cart_notes_enable": true,
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "1557712947539": {
+            "type": "mega_item",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Navigation_Banner_-_Flat-min.png",
+              "name": "Original No-Tie",
+              "caption": "<p>Shoelaces<\/p>",
+              "link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
+            }
+          },
+          "1557713608141": {
+            "type": "mega_item",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Navigation_Banner_-_Round-min.png",
+              "name": "Quick-Release",
+              "caption": "<p>Shoelaces<\/p>",
+              "link": "shopify:\/\/products\/quick-release-round-lacing-system"
+            }
+          },
+          "1570145402376": {
+            "type": "mega_item",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Urban_Belt_Main.png",
+              "name": "Urban",
+              "caption": "<p>Elastic Belt<\/p>",
+              "link": "shopify:\/\/products\/urban-belt"
+            }
+          },
+          "1583774544314": {
+            "type": "mega_item",
+            "settings": {
+              "enable_block": false,
+              "image": "shopify:\/\/shop_images\/Urban_Belt_Main.png",
+              "name": "Urban",
+              "caption": "<p>Elastic Belt<\/p>",
+              "link": ""
+            }
+          },
+          "1570148911026": {
+            "type": "mega_item",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Explorer_Belt_-_Black_1.png",
+              "name": "Explorer",
+              "caption": "<p>Elastic Belt<\/p>",
+              "link": "shopify:\/\/products\/explorer-belt"
+            }
+          },
+          "1583774107624": {
+            "type": "mega_item",
+            "settings": {
+              "enable_block": false,
+              "image": "shopify:\/\/shop_images\/No_Show_-_Grey_3x_x200_e45f8447-dbf6-4770-941e-7b5d633fd44e.png",
+              "name": "Lightweight",
+              "caption": "<p>No-Show Socks<\/p>",
+              "link": "shopify:\/\/products\/lightweight-no-show-socks"
+            }
+          }
+        },
+        "block_order": [
+          "1557712947539",
+          "1557713608141",
+          "1570145402376",
+          "1583774544314",
+          "1570148911026",
+          "1583774107624"
+        ],
+        "settings": {
+          "announcement_bar_enabled": true,
+          "shipping_text": "<p><strong>Limited Time: <\/strong>Any 6 laces for $35 | Any 8 laces for $45<\/p>",
+          "promo_text": "<p><strong>Free Shipping on Orders Over $30<\/strong><\/p>",
+          "ab_text_color": "#000000",
+          "ab_bg_color": "#ffe100",
+          "show_alert_bar": false,
+          "alert_text": "<p><strong>25% OFF ALL ORDERS $75+ WITH CODE: <\/strong><em>25SALE<\/em><\/p>",
+          "alert_text_color": "#ffffff",
+          "alert_bg_color": "#0090fc",
+          "logo": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
+          "mobile_cta_text": "SHOP",
+          "desktop_cta_text": "SHOP",
+          "primary_menu": "primary-desktop-menu",
+          "secondary_menu": "secondary-desktop-menu",
+          "mobile_menu": "mobile-menu",
+          "mega_item_desktop_spacing": 40
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "1558329282090": {
+            "type": "link_column",
+            "settings": {
+              "link_list": "new-footer-menu-3"
+            }
+          },
+          "1558329329721": {
+            "type": "link_column",
+            "settings": {
+              "link_list": "support"
+            }
+          },
+          "1558329349340": {
+            "type": "link_column",
+            "settings": {
+              "link_list": "contact-us"
+            }
+          },
+          "1558329357917": {
+            "type": "newsletter_column",
+            "settings": {
+              "title": "Sign up & get 10% off",
+              "action_url": "https:\/\/manage.kmail-lists.com\/subscriptions\/subscribe?a=LFg59c&g=NDrWDc",
+              "button_text": "submit"
+            }
+          }
+        },
+        "block_order": [
+          "1558329282090",
+          "1558329329721",
+          "1558329349340",
+          "1558329357917"
+        ],
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/xpand-dark-logo_410x1_1b6691b5-3267-44aa-a692-2bb6e607b6ee.png",
+          "bottom_links": "new-footer-menu-3"
+        }
+      },
+      "1557967708681": {
+        "type": "hero-banner",
+        "blocks": {
+          "1568179774402": {
+            "type": "slide",
+            "settings": {
+              "type": "video",
+              "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1206\/8416\/files\/Updated_Stop_Motion_Flat_Laces.mp4?v=1595018607",
+              "video_poster": "shopify:\/\/shop_images\/Thumbnail_4a2105de-5f94-456a-9b87-8e111f89d346.jpg",
+              "mobile_link": "",
+              "overlay_position": "left",
+              "title": "NEVER TIE YOUR <br> SHOELACES AGAIN.",
+              "title_caption": "",
+              "primary_cta_text": "SHOP NOW",
+              "primary_cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+              "primary_cta_text_color": "#ffffff",
+              "primary_cta_bg_color": "#008ffd",
+              "enable_secondary_cta": false,
+              "secondary_cta_text": "HOW IT WORKS",
+              "secondary_cta_link": "shopify:\/\/pages\/install-video",
+              "secondary_cta_text_color": "#ffffff",
+              "secondary_cta_bg_color": "#a6b4be"
+            }
+          }
+        },
+        "block_order": [
+          "1568179774402"
+        ],
+        "settings": {}
+      },
+      "1557977971910": {
+        "type": "text-banner",
+        "settings": {
+          "title": "XPAND NO-TIE SHOELACES",
+          "text": "<p><strong>One Size Fits All Shoes - Adults &amp; Kids<\/strong><\/p>",
+          "primary_cta_text": "SHOP NOW",
+          "primary_cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+          "primary_cta_text_color": "#ffffff",
+          "primary_cta_bg_color": "#008ffd",
+          "enable_secondary_cta": true,
+          "secondary_cta_text": "HOW IT WORKS",
+          "secondary_cta_link": "shopify:\/\/pages\/install-video",
+          "secondary_cta_text_color": "#ffffff",
+          "secondary_cta_bg_color": "#a6b4be"
+        }
+      },
+      "1558041214466": {
+        "type": "featured-box",
+        "blocks": {
+          "1558041238811": {
+            "type": "box",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Flat_Lace_3_1.jpg",
+              "title": "Original No-Tie <br>Lacing System",
+              "title_color": "#333333",
+              "link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+              "link_text": "SHOP LACES",
+              "link_text_color": "#ffffff",
+              "link_bg_color": "#0090fc"
+            }
+          },
+          "1558041246675": {
+            "type": "box",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Round_Lace_1.jpg",
+              "title": "Quick-Release <br>Lacing System",
+              "title_color": "#333333",
+              "link": "shopify:\/\/products\/quick-release-round-lacing-system",
+              "link_text": "SHOP QUICK-RELEASE",
+              "link_text_color": "#ffffff",
+              "link_bg_color": "#0090fc"
+            }
+          },
+          "1584906060898": {
+            "type": "box",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Urban_belt_Insert_for_Website-smallest.jpg",
+              "title": "Urban Elastic Belt",
+              "title_color": "#000000",
+              "link": "shopify:\/\/products\/urban-belt",
+              "link_text": "SHOP URBAN BELT",
+              "link_text_color": "#ffffff",
+              "link_bg_color": "#0090fc"
+            }
+          },
+          "1565704762914": {
+            "type": "box",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Xplorer_-_Home_page-01.jpg",
+              "title": "Explorer Elastic Belt",
+              "title_color": "#000000",
+              "link": "shopify:\/\/products\/explorer-belt",
+              "link_text": "SHOP ELASTIC BELT",
+              "link_text_color": "#ffffff",
+              "link_bg_color": "#0090fc"
+            }
+          }
+        },
+        "block_order": [
+          "1558041238811",
+          "1558041246675",
+          "1584906060898",
+          "1565704762914"
+        ],
+        "settings": {}
+      },
+      "1558048205172": {
+        "type": "stamped-review",
+        "settings": {
+          "title": "Over 1 Million Sold",
+          "code_snippet": "<div id=\"stamped-reviews-widget\" data-widget-type=\"visual-gallery\" data-feed-type=\"carousel\" data-min-rating=\"3\" data-with-photos=\"true\"><\/div>"
+        }
+      },
+      "1558075345034": {
+        "type": "three-item-banner",
+        "blocks": {
+          "1558075392065": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/icons-01.png",
+              "text": "<p>Try Xpand<\/p><p>for 90 days<\/p>"
+            }
+          },
+          "1558075411721": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/icons-03.png",
+              "text": "<p>Free North America<\/p><p>shipping<\/p>"
+            }
+          },
+          "1558075403234": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/icons-02.png",
+              "text": "<p>100% money back<\/p><p>guarantee!<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1558075392065",
+          "1558075411721",
+          "1558075403234"
+        ],
+        "settings": {
+          "title": "100% Satisfaction Guarantee",
+          "bg_color": "#42aca7",
+          "cta_text": "SHOP NOW",
+          "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+          "cta_text_color": "#ffffff",
+          "cta_bg_color": "#008ffd"
+        }
+      },
+      "1558131609639": {
+        "type": "image-with-text",
+        "disabled": true,
+        "settings": {
+          "title": "Over 40 Colors",
+          "image": "shopify:\/\/shop_images\/Color_Line_3x_20c85dda-02a2-4d55-a894-a43c54858457.png",
+          "cta_text": "SEE ALL COLORS",
+          "cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+          "cta_text_color": "#ffffff",
+          "cta_bg_color": "#008ffd"
+        }
+      },
+      "1558154461671": {
+        "type": "featured-products",
+        "blocks": {
+          "1558154465957": {
+            "type": "product",
+            "settings": {
+              "enable_block": true,
+              "product": "no-tie-original-elastic-lacing-system",
+              "variant_id": "19252571471983",
+              "image": "shopify:\/\/shop_images\/Black_Pop_colors.jpg",
+              "title": "ORIGINAL NO-TIE LACING SYSTEM",
+              "caption": "<p>BLACK<\/p>",
+              "font_color": "#ffffff",
+              "link_text": "view product"
+            }
+          },
+          "1558154777831": {
+            "type": "product",
+            "settings": {
+              "enable_block": true,
+              "product": "no-tie-original-elastic-lacing-system",
+              "variant_id": "19252660273263",
+              "image": "shopify:\/\/shop_images\/White_Pop.jpg",
+              "title": "ORIGINAL NO-TIE LACING SYSTEM",
+              "caption": "<p>WHITE<\/p>",
+              "font_color": "#ffffff",
+              "link_text": "view product"
+            }
+          },
+          "1558154946227": {
+            "type": "product",
+            "settings": {
+              "enable_block": true,
+              "product": "no-tie-original-elastic-lacing-system",
+              "variant_id": "19252660764783",
+              "image": "shopify:\/\/shop_images\/Red_Pop_colors.jpg",
+              "title": "ORIGINAL NO-TIE LACING SYSTEM",
+              "caption": "<p>RED<\/p>",
+              "font_color": "#000000",
+              "link_text": "view product"
+            }
+          },
+          "1558155113834": {
+            "type": "product",
+            "settings": {
+              "enable_block": true,
+              "product": "quick-release-round-lacing-system",
+              "variant_id": "19252728004719",
+              "image": "shopify:\/\/shop_images\/Blue_Pop_colors.jpg",
+              "title": "QUICK-RELEASE LACING SYSTEM",
+              "caption": "<p>TRUE BLUE<\/p>",
+              "font_color": "#ffffff",
+              "link_text": "view product"
+            }
+          }
+        },
+        "block_order": [
+          "1558154465957",
+          "1558154777831",
+          "1558154946227",
+          "1558155113834"
+        ],
+        "settings": {
+          "title": "Top Sellers",
+          "link_text": "VIEW ALL COLORS",
+          "link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+          "link_text_color": "#ffffff",
+          "link_bg_color": "#008ffd"
+        }
+      },
+      "1558160927845": {
+        "type": "icon-swiper",
+        "blocks": {
+          "1558160952848": {
+            "type": "icon",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Ellen_1_3f85b3d6-3179-4276-91eb-023d6f292629.png",
+              "link": "https:\/\/twitter.com\/TheEllenShow\/status\/994695612812611584",
+              "text": "<p>Ellen DeGeneres<\/p>"
+            }
+          },
+          "1558161066843": {
+            "type": "icon",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/today_show_010ba4e0-504a-4bcd-94d4-dcbd3802eaff.png",
+              "link": "https:\/\/www.today.com\/home\/10-must-have-products-make-even-busiest-mornings-easy-t137729",
+              "text": "<p>The Today Show<\/p>"
+            }
+          },
+          "1558161144526": {
+            "type": "icon",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/50777438-90041a00-12d6-11e9-9e68-d06f82c61f25_3166b84a-248d-4ded-8be7-dd934af86662.png",
+              "link": "https:\/\/www.cbc.ca\/news\/business\/shoelace-shoes-fitness-fashion-health-foot-health-podiatry-christmas-gifts-1.4949031",
+              "text": "<p>CBC National<\/p>"
+            }
+          },
+          "1558161234072": {
+            "type": "icon",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Kickstarter_logo1_1_618076b8-15dd-4391-985a-d29a6142fd08.png",
+              "link": "https:\/\/www.kickstarter.com\/projects\/914635363\/xpand-lacing-system",
+              "text": "<p>The $1.2 Million<\/p><p>Kickstarter success<\/p>"
+            }
+          },
+          "1558161287842": {
+            "type": "icon",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Breakfast_Television_logo_1_4a1b4307-72f7-4522-af5f-335ff11828d4.png",
+              "link": "https:\/\/www.bttoronto.ca\/videos\/the-6-dad-is-in-the-house\/",
+              "text": "<p>Breakfast Television<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1558160952848",
+          "1558161066843",
+          "1558161144526",
+          "1558161234072",
+          "1558161287842"
+        ],
+        "settings": {
+          "heading": "As Featured On"
+        }
+      },
+      "1558366114449": {
+        "type": "newsletter",
+        "settings": {
+          "title": "Join the Club",
+          "text": "Sign up to be the first to know about exclusive deals and new products",
+          "button_text": "SUBMIT",
+          "action_url": "https:\/\/manage.kmail-lists.com\/subscriptions\/subscribe?a=LFg59c&g=NDrWDc",
+          "button_text_color": "#ffffff",
+          "button_bg_color": "#008ffd"
+        }
+      },
+      "1558510378449": {
+        "type": "bottom-banner",
+        "disabled": true,
+        "blocks": {
+          "1558510583817": {
+            "type": "item",
+            "settings": {
+              "title": "",
+              "text": "6 Packs for $35"
+            }
+          },
+          "1558510609132": {
+            "type": "item",
+            "settings": {
+              "title": "",
+              "text": "8 Packs for $45"
+            }
+          }
+        },
+        "block_order": [
+          "1558510583817",
+          "1558510609132"
+        ],
+        "settings": {
+          "title": "LIMITED TIME OFFER",
+          "text_color": "#ffffff",
+          "background_color": "#319691"
+        }
+      },
+      "compare-banner": {
+        "type": "compare-banner",
+        "blocks": {
+          "1558580187344": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Xpand_Navigation_Flat-Laces3.png",
+              "title": "Original No-Tie Lacing System",
+              "text": "",
+              "button_text": "SHOP NOW",
+              "link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system"
+            }
+          },
+          "1558580245980": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Xpand_Navigation_Round_Laces-1_500x_c0668201-8e9b-4568-a40f-4b323c42f3c4.png",
+              "title": "Quick-Release Lacing System",
+              "text": "",
+              "button_text": "SHOP NOW",
+              "link": "shopify:\/\/products\/quick-release-round-lacing-system"
+            }
+          }
+        },
+        "block_order": [
+          "1558580187344",
+          "1558580245980"
+        ],
+        "settings": {
+          "title": "Meet the Laces"
+        }
+      },
+      "stamped-review": {
+        "type": "stamped-review",
+        "settings": {
+          "title": "Customer Reviews",
+          "code_snippet": "<div id=\"stamped-reviews-widget\" data-widget-type=\"visual-gallery\" data-min-rating=\"3\" data-random=\"true\" data-feed-type=\"carousel\" data-with-photos=\"true\"><\/div>"
+        }
+      },
+      "faq": {
+        "type": "faq",
+        "blocks": {
+          "1559077706831": {
+            "type": "faq",
+            "settings": {
+              "question": "Will Xpand Laces work on my shoes or boots?",
+              "answer": "Xpand Lacing System works on all types of shoes - from kids shoes, adults sneakers, Timberlands to  high-top boots."
+            }
+          },
+          "1559077626568": {
+            "type": "faq",
+            "settings": {
+              "question": "Are the Xpand Laces adjustable?",
+              "answer": "Yes! Finding the perfect fit is easy with Xpand Laces. We recommend trying out the length before you trim the laces. Always set the initial adjustment on the loose side, so that you can always tighten them up if needed."
+            }
+          },
+          "1559077723984": {
+            "type": "faq",
+            "settings": {
+              "question": "How long are the laces?",
+              "answer": "Xpand Laces are 52 inches long, and can stretch out to over twice that length, which makes them long enough for all types of shoes or boots."
+            }
+          },
+          "1567013650619": {
+            "type": "faq",
+            "settings": {
+              "question": "What is your return and exchange policy?",
+              "answer": "Xpand offers a 90 day satisfaction guarantee. If you are not 100% satisfied for any reason, we will refund your order. No questions asked!"
+            }
+          }
+        },
+        "block_order": [
+          "1559077706831",
+          "1559077626568",
+          "1559077723984",
+          "1567013650619"
+        ],
+        "settings": {
+          "title": "Frequently Asked Questions",
+          "link": "shopify:\/\/pages\/faqs",
+          "link_text": "SEE ALL FAQs"
+        }
+      },
+      "product": {
+        "type": "product",
+        "settings": {
+          "price_note_desktop": "&#149; one size fits all  &#149; for all shoe types",
+          "price_note_mobile": "One Size Fits All - Adults & Kids",
+          "atc_text_color": "#fff",
+          "atc_bg_color": "#008ffd",
+          "promo_title": "HUGE SAVINGS ON BUNDLES",
+          "promo_one": "<p>ANY 3 FOR $25<\/p>",
+          "promo_two": "<p>6 FOR $35<\/p>",
+          "promo_three": "<p>8 FOR $45<\/p>",
+          "code_one": "",
+          "code_two": "",
+          "code_three": ""
+        }
+      },
+      "product-feature": {
+        "type": "product-feature",
+        "blocks": {
+          "1559621981938": {
+            "type": "item",
+            "settings": {
+              "text": "Free <br> Shipping",
+              "text_mobile": "Free Shipping",
+              "icon": "shopify:\/\/shop_images\/mobile-box.png"
+            }
+          },
+          "1559622328595": {
+            "type": "item",
+            "settings": {
+              "text": "Try Xpand for <br>90 days",
+              "text_mobile": "Try Xpand for 90 Days",
+              "icon": "shopify:\/\/shop_images\/mobile-heart.png"
+            }
+          },
+          "1559622395675": {
+            "type": "item",
+            "settings": {
+              "text": "100% Money Back <br> Guarantee",
+              "text_mobile": "100% Satisfaction Guarantee",
+              "icon": "shopify:\/\/shop_images\/mobile-check.png"
+            }
+          }
+        },
+        "block_order": [
+          "1559621981938",
+          "1559622328595",
+          "1559622395675"
+        ],
+        "settings": {
+          "text_color": "#36807c"
+        }
+      },
+      "how-it-work-tab": {
+        "type": "how-it-work-tab",
+        "blocks": {
+          "1564074420978": {
+            "type": "tab",
+            "settings": {
+              "title": "Original No-Tie",
+              "youtube_video1_url": "https:\/\/www.youtube.com\/watch?v=eMSbyA9wNBo",
+              "youtube_video2_url": "https:\/\/www.youtube.com\/watch?v=xp-4EMkwNQQ"
+            }
+          },
+          "1564162756112": {
+            "type": "tab",
+            "settings": {
+              "title": "Quick-Release",
+              "youtube_video1_url": "https:\/\/www.youtube.com\/watch?v=8hMcup2C-ds",
+              "youtube_video2_url": ""
+            }
+          },
+          "ac5dfba9-3020-46bb-8960-b1ac9ef5738d": {
+            "type": "tab",
+            "settings": {
+              "title": "Urban belt",
+              "youtube_video1_url": "https:\/\/www.youtube.com\/watch?v=c3k8GxAx5HE",
+              "youtube_video2_url": ""
+            }
+          },
+          "b3522db7-dfd4-46e1-9bec-8b18a5a8916d": {
+            "type": "tab",
+            "settings": {
+              "title": "Explorer belt",
+              "youtube_video1_url": "https:\/\/www.youtube.com\/watch?v=u8ZQmC5kzdY",
+              "youtube_video2_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "1564074420978",
+          "1564162756112",
+          "ac5dfba9-3020-46bb-8960-b1ac9ef5738d",
+          "b3522db7-dfd4-46e1-9bec-8b18a5a8916d"
+        ],
+        "settings": {
+          "title": "How It Works"
+        }
+      },
+      "product-tab": {
+        "type": "product-tab",
+        "blocks": {
+          "1559669561171": {
+            "type": "about",
+            "settings": {
+              "name": "overview",
+              "title": "Get to know the laces",
+              "flat_top_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1206\/8416\/files\/XPAND.mp4?16646853987851673823",
+              "flat_video1_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Hidden_and_Visible.mp4?4757277608672948829",
+              "flat_video1_text": "HIDDEN & VISIBLE MODE",
+              "flat_video2_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Slip_On.mp4?4757277608672948829",
+              "flat_video2_text": "SLIP ON & GO",
+              "flat_video3_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Install_and_Adjust.mp4?4757277608672948829",
+              "flat_video3_text": "EASY TO USE",
+              "flat_video4_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Less_Pain.mp4?4757277608672948829",
+              "flat_video4_text": "ULTIMATE COMFORT",
+              "flat_highlight1_type": "video",
+              "flat_highlight1_title": "Long-Lasting Elastic Laces",
+              "flat_highlight1_caption": "PERFORMANCE & DURABILITY",
+              "flat_highlight1_text": "<p>Xpand Laces are made with zero-memory elastic rubber, which ensure a consistent comfortable fit throughout your day and during your workouts. Xpand Laces work on all types of shoes and boots as you simply trim off the excess ends.<\/p>",
+              "flat_highlight1_image": "",
+              "flat_highlight1_video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Flat_-_Horizontal_Sretch.mp4?4757277608672948829",
+              "flat_highlight2_type": "image",
+              "flat_highlight2_title": "Lace Anchor Clips",
+              "flat_highlight2_caption": "PATENTED TECHNOLOGY",
+              "flat_highlight2_text": "<p>Our patented Lace Anchors secure your laces in place through any intense activities, while maintaining an amazing comfortable fit.<\/p>",
+              "flat_highlight2_image": "shopify:\/\/shop_images\/Flat_Lace_Specs.jpg",
+              "flat_highlight2_video_url": "",
+              "round_top_video_url": "",
+              "round_video1_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Round_-_Vertical_Active_to_Relaxed.mp4?15022662146648040962%20",
+              "round_video1_text": "LOCK & UNLOCK MODE",
+              "round_video2_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Round_-_Slip_On.mp4?15022662146648040962",
+              "round_video2_text": "SLIP ON & GO",
+              "round_video3_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Round_-_Install.mp4?15022662146648040962",
+              "round_video3_text": "EASY TO INSTALL",
+              "round_video4_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0043\/5558\/8209\/t\/2\/assets\/Round_-_Low_Profile.mp4?15022662146648040962",
+              "round_video4_text": "LAY FLAT",
+              "round_highlight1_type": "image",
+              "round_highlight1_title": "Guaranteed Not to Slip",
+              "round_highlight1_caption": "PERFORMANCE & DURABILITY",
+              "round_highlight1_text": "<p>The Xpand Lock holds over 30 pounds (16.5 kg) of pressure, ensuring that your feet are secure in your shoe, even during physical activities. The Xpand Lacing System has been tested to be 4 times stronger than any other clip design.<\/p>",
+              "round_highlight1_image": "shopify:\/\/shop_images\/Amazon_Strengths_V2.jpg",
+              "round_highlight1_video_url": "",
+              "round_highlight2_type": "image",
+              "round_highlight2_title": "Quick-Release Locking System",
+              "round_highlight2_caption": "PATENT-PENDING TECHNOLOGY",
+              "round_highlight2_text": "<p>The Xpand Quick-Release Lock is a one piece design that is simple to install and even easier to use. Made with fiber reinforced resin, the patent-pending Quick-Release Lock is nearly indestructible.<\/p>",
+              "round_highlight2_image": "shopify:\/\/shop_images\/Round_Locks_1.jpg",
+              "round_highlight2_video_url": ""
+            }
+          },
+          "1559688483773": {
+            "type": "specs",
+            "settings": {
+              "name": "details",
+              "flat_title": "In the package",
+              "flat_description": "<p><strong>Each pack completes one pair of shoes<\/strong><\/p>\n<p>-<br>2 elastic laces (52 inches - trim to fit)<\/p>\n<p>4 Lace Anchors<\/p>\n<p>4 End Clips<\/p>",
+              "flat_image": "shopify:\/\/shop_images\/flat_specs.jpg",
+              "round_title": "In the package",
+              "round_description": "<p><strong>Each pack completes one pair of shoes<\/strong><\/p>\n<p>-<br>2 elastic laces, 2 Locking Anchors, 2 End Clips<\/p>",
+              "round_image": "shopify:\/\/shop_images\/Round-Specs.jpg"
+            }
+          },
+          "1559691859431": {
+            "type": "reviews",
+            "settings": {
+              "name": "reviews"
+            }
+          },
+          "1559675417021": {
+            "type": "installation",
+            "settings": {
+              "name": "installation",
+              "flat_video1_url": "https:\/\/www.youtube.com\/watch?v=eMSbyA9wNBo",
+              "flat_video2_url": "https:\/\/www.youtube.com\/watch?v=xp-4EMkwNQQ",
+              "round_video1_url": "https:\/\/www.youtube.com\/watch?v=8hMcup2C-ds",
+              "round_video2_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "1559669561171",
+          "1559688483773",
+          "1559691859431",
+          "1559675417021"
+        ],
+        "settings": {}
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "message": "<p><strong>PayPal\/Amazon users<\/strong>:&nbsp; Coupon code will be entered after redirected back to our website<\/p>"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "blocks": {
+          "1560192724865": {
+            "type": "sidebar_section",
+            "settings": {
+              "linklist": "styles"
+            }
+          },
+          "1560192735877": {
+            "type": "sidebar_section",
+            "settings": {
+              "linklist": "need-help"
+            }
+          }
+        },
+        "block_order": [
+          "1560192724865",
+          "1560192735877"
+        ],
+        "settings": {
+          "pagination_limit": 48
+        }
+      },
+      "text-banner": {
+        "type": "text-banner",
+        "settings": {
+          "title": "Banner",
+          "text": "<p>Bold<\/p>",
+          "primary_cta_text": "",
+          "primary_cta_link": "",
+          "primary_cta_text_color": "",
+          "primary_cta_bg_color": "",
+          "enable_secondary_cta": false,
+          "secondary_cta_text": "",
+          "secondary_cta_link": "",
+          "secondary_cta_text_color": "",
+          "secondary_cta_bg_color": ""
+        }
+      },
+      "1569936449790": {
+        "type": "hero-banner",
+        "disabled": true,
+        "blocks": {
+          "1569936456045": {
+            "type": "slide",
+            "settings": {
+              "type": "image",
+              "image": "shopify:\/\/shop_images\/Update_9c4900f0-cbdc-4e88-b59d-92a7128d10dd.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/Update2_42b7efab-a51a-402a-881f-608c085d94f2.jpg",
+              "video_url": "",
+              "mobile_link": "",
+              "overlay_position": "left",
+              "title": "XPAND NO-TIE <br> SHOELACES",
+              "title_caption": "No-Tie Shoelaces - Adults & Kids",
+              "primary_cta_text": "SHOP NOW",
+              "primary_cta_link": "shopify:\/\/products\/no-tie-original-elastic-lacing-system",
+              "primary_cta_text_color": "#ffffff",
+              "primary_cta_bg_color": "#008ffd",
+              "enable_secondary_cta": true,
+              "secondary_cta_text": "HOW IT WORKS",
+              "secondary_cta_link": "shopify:\/\/pages\/install-video",
+              "secondary_cta_text_color": "#ffffff",
+              "secondary_cta_bg_color": "#a6b4be"
+            }
+          }
+        },
+        "block_order": [
+          "1569936456045"
+        ],
+        "settings": {}
+      },
+      "1570986531952": {
+        "type": "featured-box",
+        "disabled": true,
+        "blocks": {
+          "1570986538907": {
+            "type": "box",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/2_-_Grey_Logo.png",
+              "title": "Lightweight No-Show Socks",
+              "title_color": "#333333",
+              "link": "shopify:\/\/products\/lightweight-no-show-socks",
+              "link_text": "SHOP SOCKS",
+              "link_text_color": "#ffffff",
+              "link_bg_color": "#0090fc"
+            }
+          },
+          "1570986658266": {
+            "type": "box",
+            "settings": {
+              "enable_block": true,
+              "image": "shopify:\/\/shop_images\/Cushioned_-_White.png",
+              "title": "Cushioned No-Show Socks",
+              "title_color": "#333333",
+              "link": "shopify:\/\/products\/cushioned-no-show-socks",
+              "link_text": "Shop Socks",
+              "link_text_color": "#ffffff",
+              "link_bg_color": "#0090fc"
+            }
+          }
+        },
+        "block_order": [
+          "1570986538907",
+          "1570986658266"
+        ],
+        "settings": {}
+      },
+      "product-primary": {
+        "type": "product-primary",
+        "settings": {
+          "atc_text_color": "#fff",
+          "atc_bg_color": "#008ffd",
+          "highlight_text_color": "#000000"
+        }
+      },
+      "banner-area": {
+        "type": "banner-area",
+        "settings": {
+          "banner_title": "XPAND  THE LOVE",
+          "banner_bg_image": "shopify:\/\/shop_images\/banner.png"
+        }
+      },
+      "full-width-content": {
+        "type": "full-width-content",
+        "settings": {
+          "full_content": "<p>No matter what life looks like for you, our mission at Xpand is to help you move smarter. But, when our community showed us that our laces could do so much more, we knew we had to help. That's why we are committed to supporting initiatives to keep our communities safe and healthy.&nbsp;<\/p>"
+        }
+      },
+      "three-column-icons-group": {
+        "type": "three-column-icons-group",
+        "blocks": {
+          "1593515523244": {
+            "type": "col_item",
+            "settings": {
+              "title": "Donations to Hospitals",
+              "image": "shopify:\/\/shop_images\/icon_1.png",
+              "content": "<p>A portion of Xpand sales will be donated to local and international hospitals. If you would like us to add a hospital to our list, email us at&nbsp;<a href=\"mailto:hello@xpandlaces.com\">hello@xpandlaces.com<\/a>.<\/p>",
+              "btn_txt": "EMAIL US",
+              "link": "mailto:hello@xpandlaces.com"
+            }
+          },
+          "1593515602116": {
+            "type": "col_item",
+            "settings": {
+              "title": "Donations to Medical Workers",
+              "image": "shopify:\/\/shop_images\/icon_2.png",
+              "content": "<p>We are donating our no-tie laces to hospitals in an effort to help ensure that medical workers stay safe and comfortable while they bravely tackle their work on the frontlines.&nbsp;<\/p>",
+              "btn_txt": "LEARN MORE",
+              "link": "https:\/\/heroes.xpandlaces.com\/"
+            }
+          },
+          "1593515647478": {
+            "type": "col_item",
+            "settings": {
+              "title": "Elastics for DIY masks",
+              "image": "shopify:\/\/shop_images\/icon_3.png",
+              "content": "<p>We are also donating our laces to community members who are currently sewing protective masks to donate to our healthcare heroes.<\/p>",
+              "btn_txt": "DIY MASK TUTORIAL",
+              "link": "https:\/\/www.xpandlaces.com\/blogs\/news\/how-to-make-homemade-medical-face-mask"
+            }
+          }
+        },
+        "block_order": [
+          "1593515523244",
+          "1593515602116",
+          "1593515647478"
+        ],
+        "settings": {
+          "listing_title": "Here’s How We’re Helping",
+          "youtube_embeded_path": "<iframe src=\"https:\/\/www.youtube.com\/embed\/7RrAESvWnXo?wmode=opaque\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\" width=\"100%\" height=\"100%\"><\/iframe>",
+          "bottom_header": "We'll continue updating you with new social impact  initiatives that we are working on."
+        }
+      },
+      "counter-section": {
+        "type": "counter-section",
+        "blocks": {
+          "1593515764788": {
+            "type": "counter_item",
+            "settings": {
+              "counter_value": "650+",
+              "counter_title": "No-Tie Elastic Laces to  healthcare heroes"
+            }
+          },
+          "1593515787344": {
+            "type": "counter_item",
+            "settings": {
+              "counter_value": "3,200+",
+              "counter_title": "No-Tie Elastic Laces  for DIY masks"
+            }
+          },
+          "1593515807041": {
+            "type": "counter_item",
+            "settings": {
+              "counter_value": "650+",
+              "counter_title": "N95 Masks to  hospitals"
+            }
+          }
+        },
+        "block_order": [
+          "1593515764788",
+          "1593515787344",
+          "1593515807041"
+        ],
+        "settings": {
+          "listing_title": "With your support  Xpand has donated",
+          "bottom_title": "and counting..."
+        }
+      },
+      "full-width-image": {
+        "type": "full-width-image",
+        "settings": {
+          "section_image": "shopify:\/\/shop_images\/full_image.png"
+        }
+      },
+      "section-header": {
+        "type": "section-header",
+        "settings": {
+          "title": "XPAND YOUR PRIDE",
+          "content": "<p>On rainy days, we like to search for the rainbow.&nbsp;<br>So, while 2020 has been a challenging year, we are feeling more inspired than ever to incite positive change within the Xpand community and beyond. That&rsquo;s why we are excited to announce some new initiatives we are launching in honour of Pride Month to support and celebrate the diverse and vibrant LGBTQ2S community.<\/p>"
+        }
+      },
+      "product-description": {
+        "type": "product-description",
+        "blocks": {
+          "1593515894894": {
+            "type": "col_item",
+            "settings": {
+              "title": "RAINBOW LACES",
+              "product_image": "shopify:\/\/shop_images\/product_1.jpg",
+              "product_description": "<p>Every time you purchase a pair of our rainbow laces, we will donate a portion of our sales to organizations that support the LGBTQ2S community.<\/p>",
+              "pdp_link": "https:\/\/www.xpandlaces.com\/products\/no-tie-original-elastic-lacing-system?variant=19252661452911",
+              "left_aligned_img": true
+            }
+          },
+          "1593515940890": {
+            "type": "col_item",
+            "settings": {
+              "title": "CUSHIONED NO-SHOW",
+              "product_image": "shopify:\/\/shop_images\/product_2.jpg",
+              "product_description": "<p>During the month of June, for every pair of socks purchased, we will donate a pair to youth shelters who serve the LGBTQ2S community.<\/p>",
+              "pdp_link": "https:\/\/www.xpandlaces.com\/products\/cushioned-no-show-socks?variant=30296303173743",
+              "left_aligned_img": false
+            }
+          }
+        },
+        "block_order": [
+          "1593515894894",
+          "1593515940890"
+        ],
+        "settings": {}
+      },
+      "bottom-content": {
+        "type": "bottom-content",
+        "settings": {
+          "content": "<p><strong>We want to take this opportunity to thank you, our loyal customers.<\/strong><\/p>\n<p>We want you to be proud of wearing Xpand knowing that with every step you take you are helping us support initiatives that keep our communities safe and healthy.<\/p>"
+        }
+      },
+      "1595427573238": {
+        "type": "banner-above-review",
+        "disabled": true,
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/Indiegogo-web.png",
+          "bg_image_for_img": "shopify:\/\/shop_images\/indiegogo-Mobile.png",
+          "banner_link": "https:\/\/igg.me\/at\/urbanbelt"
+        }
+      },
+      "1604053341579ec2fc": {
+        "type": "featured-banner-area",
+        "blocks": {
+          "990fc61c-002a-408c-83dd-c253b31eecda": {
+            "type": "box",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/icon1.png",
+              "title": "Secure Fit",
+              "para": "Set it and forget it with our patented lace anchor technology. Zero distractions, perfect support, all day long."
+            }
+          },
+          "b60d3b7b-4d37-403b-bbbe-d5ce7060396e": {
+            "type": "box",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/icon2.png",
+              "title": "Adjustable Tension",
+              "para": "Designed to move with you and work for you. Need more compression? Need more room? Xpand laces are easy to adjust on the fly."
+            }
+          },
+          "f4a234a2-effd-4830-9aa4-738fea02617e": {
+            "type": "box",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/icon3.png",
+              "title": "One Size Fits All",
+              "para": "No need to search for the right size and hope for the best. Whether you’re shopping for an adult or a child, sneakers, or boots, you can’t go wrong. Trim to your desired length and you’re good to go!"
+            }
+          }
+        },
+        "block_order": [
+          "990fc61c-002a-408c-83dd-c253b31eecda",
+          "b60d3b7b-4d37-403b-bbbe-d5ce7060396e",
+          "f4a234a2-effd-4830-9aa4-738fea02617e"
+        ],
+        "settings": {
+          "list_title": "FEEL THE DIFFERENCE"
+        }
+      }
+    },
+    "content_for_index": [
+      "1557967708681",
+      "1569936449790",
+      "1557977971910",
+      "1558041214466",
+      "1604053341579ec2fc",
+      "1570986531952",
+      "1558131609639",
+      "1595427573238",
+      "1558048205172",
+      "1558075345034",
+      "1558154461671",
+      "1558160927845",
+      "1558366114449",
+      "1558510378449"
+    ]
+  },
+  "presets": {
+    "Default": {
+      "sections": {
+        "collection-list": {
+          "type": "collection-list",
+          "blocks": {
+            "collection-list-0": {
+              "type": "collection",
+              "settings": {}
+            },
+            "collection-list-1": {
+              "type": "collection",
+              "settings": {}
+            },
+            "collection-list-2": {
+              "type": "collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "collection-list-0",
+            "collection-list-1",
+            "collection-list-2"
+          ],
+          "settings": {}
+        },
+        "featured-collection": {
+          "type": "featured-collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "featured-product": {
+          "type": "featured-product",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "collection-list",
+        "featured-collection",
+        "featured-product"
+      ]
+    }
+  }
+}

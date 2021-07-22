@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+    <style>
+      .opt_label {
+        line-height: 13px;
+        padding-top: 6px;
+        font-size: 10px;
+      }
+      
+      @media (min-width: 825px) and (max-width:1400px) {
+        .opt_label {
+          line-height: 13px;
+          padding-top: 6px;
+          font-size: 10px;
+        }
+      }
+
+      @media (min-width: 701px) and (max-width:824px) {
+        .opt_label {
+          line-height: 13px;
+          padding-top: 6px;
+          font-size: 1.28vw;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .opt_label {
+          line-height: 10px;
+          padding-top: 6px;
+          font-size: 6.4px;
+        }
+      }
+</style>
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+    <style>
+      button#continue_button.disabled {
+        pointer-events: none;
+        opacity: 0.6;
+      }
+      
+      .field__input-wrapper.show-error {
+        position: relative;
+      }
+
+      .field__input-wrapper.show-error:after {content: "Character limit reached.(max limit 30)";color: red;font-size: 12px;}
+    </style>
+  </head>
+  <body>
+    {{ skip_to_content_link }}
+
+    <header class="banner" data-header role="banner">
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </header>
+
+    {{ order_summary_toggle }}
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </header>
+          <main class="main__content" role="main">
+            {{ content_for_layout }}
+            <div class="checkbox__input" id="emotiveCheckout" style="visibility:hidden">   
+
+    <br>
+
+    <input type="hidden" name="checkout[attributes][optedIn]" value="No">
+
+    <input type="checkbox" class="input-checkbox" name="checkout[attributes][optedIn]" value="Yes" value="Yes" checked {% if checkout.attributes["optedIn"] == "Yes" %} checked{% endif %}> <span>Receive support and offers via text message*</span><br>
+
+  <label class="checkbox__label opt_label" style="">
+
+    *By submitting this form, you agree to receive automated marketing messages from {{brand-name to be replaced}} at<br> your shipping cell phone number. Consent is not a condition of any purchase.
+
+    Msg & data rates may apply.<br> View <a href="/pages/privacy-policy" target="_blank" style="color:blue;">privacy policy</a>.
+
+  </label>
+
+</div>
+          </main>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    {{ tracking_code }}
+    <script>
+      console.log('abc');
+      var addressEle = document.getElementById('checkout_shipping_address_address1');
+      var addressEle2 = document.getElementById('checkout_shipping_address_address2');
+      addressEle.setAttribute('maxlength',30)
+      addressEle2.setAttribute('maxlength',30)
+      setInterval(function(){
+        var addressCharLength = addressEle.value.replace(/ /g, "").length;
+        var address2CharLength = addressEle2.value.replace(/ /g, "").length;
+        if(addressCharLength >= 29){
+          //document.getElementById('continue_button').classList.add('disabled');
+          addressEle.parentElement.classList.add('show-error')
+          
+        }else {
+          //document.getElementById('continue_button').classList.remove('disabled')
+          addressEle.parentElement.classList.remove('show-error')
+        }
+        
+        if(address2CharLength >= 29){
+          //document.getElementById('continue_button').classList.add('disabled');
+          addressEle2.parentElement.classList.add('show-error')
+          
+        }else {
+          //document.getElementById('continue_button').classList.remove('disabled')
+          addressEle2.parentElement.classList.remove('show-error')
+        }
+      },200)
+    </script>
+  </body>
+  <script type="text/javascript">
+
+    var emotiveCheckbox = document.getElementById("emotiveCheckout");
+
+    var shippingPhone = document.getElementById("checkout_shipping_address_phone");
+
+    shippingPhone.parentNode.insertBefore(emotiveCheckbox, shippingPhone.nextSibling);
+
+    emotiveCheckbox.style.visibility = "visible";
+
+</script>
+</html>

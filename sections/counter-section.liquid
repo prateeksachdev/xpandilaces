@@ -1,0 +1,70 @@
+<div class="cm_counter_section">
+  <div class="container">
+    <div class="cm_counter_section_inner">
+      <div class="cm_counter_list_title">
+        <h1>{{ section.settings.listing_title }}</h1>
+      </div>
+      <div class="cm-counter-content-listing">
+        <div class="cm-counter-content-listing-inner">
+          {% for block in section.blocks %}
+          <div class="cm-counter-col">
+            <div class="cm-counter-col-inner">
+              <h2 class="cm_counter_val">{{ block.settings.counter_value }}</h2>
+              <h3 class="cm_counter_title">{{ block.settings.counter_title }}</h3>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="cm_counter_bottom_title">
+        <h3>{{ section.settings.bottom_title }}</h3>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Counter Section",
+    "settings": [
+		{
+           "type":      "text",
+           "id":        "listing_title",
+           "label":     "Listing Title",
+           "placeholder": "Title"
+        },
+		{
+           "type":      "text",
+           "id":        "bottom_title",
+           "label":     "Bottom Title",
+           "placeholder": "Title"
+        }
+	],
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "counter_item",
+        "name": "Counter Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "counter_value",
+            "label": "Counter Value"
+          },
+			{
+            "type": "text",
+            "id": "counter_title",
+            "label": "Counter Title"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
